@@ -55,19 +55,14 @@ nav > ul > li{
     margin-right: 2px;
 }
 
-nav > ul > li > a{
-    color: white;
-    text-decoration: none;
-}
-
-nav > ul > li > a:hover > svg{
-    fill: grey;
-}
-
 nav > ul > li > a > svg{
     transition-property: fill;
     transition-duration: 0.5s;
     transition-timing-function: ease;
+}
+
+nav > ul > li > a:hover > svg{
+    fill: grey;
 }
 
 nav > ul > li.contact-container{
@@ -79,6 +74,18 @@ nav > ul > li.contact-container{
 nav > ul > li.contact-container > a{
     border: solid 2px rgb(255, 113, 113);
 }
+
+nav > ul > li.contact-container > a > svg{
+    fill: none;
+    transition-property: stroke;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+nav > ul > li.contact-container > a:hover > svg{
+    stroke: grey;
+}
+
 
 
 /* landing */
