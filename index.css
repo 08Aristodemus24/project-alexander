@@ -60,23 +60,14 @@ nav > ul > li > a{
     text-decoration: none;
 }
 
-/* nav > ul > li > a::after{
-    content: "";
-    display: block;
-    border-bottom: 2px solid white;
-} */
+nav > ul > li > a:hover > svg{
+    fill: grey;
+}
 
 nav > ul > li > a > svg{
     transition-property: fill;
     transition-duration: 0.5s;
     transition-timing-function: ease;
-}
-
-nav > ul:not(li[class*="container"]) a:hover > svg{
-    fill: grey;
-    content: "";
-    display: block;
-    border-bottom: 2px solid white;
 }
 
 nav > ul > li.contact-container{
@@ -86,7 +77,7 @@ nav > ul > li.contact-container{
 }
 
 nav > ul > li.contact-container > a{
-    border: solid 2px red;
+    border: solid 2px rgb(255, 113, 113);
 }
 
 
@@ -165,7 +156,7 @@ section#landing{
 }
 
 .socials-container > ul > li{
-    /* border: solid 2px goldenrod; */
+    border: solid 2px goldenrod;
 }
 
 .socials-container svg{
@@ -179,10 +170,9 @@ section#landing{
 }
 
 .socials-container a::after{
-    content: "";
+    /* content: "hello world";
     display: block;
-    border-bottom: solid 2px rgb(255, 255, 255);
-
+    border: solid 2px white; */
 }
 
 .socials-container a svg:hover{
