@@ -37,6 +37,8 @@ section {
     position: relative;
     margin-bottom: 22px;
     
+    // this si the little pictures that allow us to click the 
+    // since inputs like checkboxes and in this case radios have the checked attribute
     > input {
         clip: rect(1px, 1px, 1px, 1px);
         clip-path: inset(50%);
@@ -47,6 +49,8 @@ section {
         padding: 0;
         position: absolute;
         
+        // ~ selector selects element that has a specified element preceding it
+        // select carousel__slides class with preceding 6th radio input with checked
         &:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
             margin-left: -500%; 
         }
@@ -63,7 +67,7 @@ section {
             margin-left: -100%; 
         }
         &:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
-            margin-left: 0%; 
+            margin-left: 0%;
         }
         
         &:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1) {
@@ -150,8 +154,7 @@ section {
     padding: 0;
     margin: 0;
     display: flex;
-    
-    margin: 0 -10px;
+    // margin: 0 -10px;
     
     .carousel__slides + & {
         margin-top: 20px;
