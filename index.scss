@@ -19,6 +19,7 @@ html{
 
 body{
     background-image: var(--primary-image);
+    // opacity: 0.25;
     font-family: var(--primary-font);
     margin: 0;
     color: white;
@@ -26,14 +27,14 @@ body{
 
 
 
-/* navbar */
+// navbar
 nav{
-    /* background-color: black;
-    opacity: .75; */
-    border: solid 2px blueviolet;
+    // background-color: black;
+    // opacity: .75;
+    // border: solid 2px blueviolet;
 
     > ul{
-        border: solid 2px brown;
+        // border: solid 2px brown;
         padding-left: 0;
         list-style: none;
         display: flex;
@@ -41,17 +42,17 @@ nav{
         position: relative;
 
         > li.logo-container{
-            border: solid 2px goldenrod;
+            // border: solid 2px goldenrod;
             position: absolute;
             left: 0;
 
             > a{
-                border: solid 2px red;
+                // border: solid 2px red;
             }
         }
 
         > li{
-            border: solid 2px greenyellow;
+            // border: solid 2px greenyellow;
             padding: 10px;
             margin-left: 2px;
             margin-right: 2px;
@@ -72,12 +73,12 @@ nav{
         }
 
         > li.contact-container{
-            border: solid 2px goldenrod;
+            // border: solid 2px goldenrod;
             position: absolute;
             right: 0;
 
             > a{
-                border: solid 2px rgb(255, 113, 113);
+                // border: solid 2px rgb(255, 113, 113);
 
                 > svg{
                     fill: none;
@@ -133,7 +134,7 @@ section{
             
                 border: 2px solid rebeccapurple;
                 background-color: black;
-                opacity: 0.25;
+
 
                 .profile-name{
                     position: relative;

@@ -19,14 +19,7 @@ body {
   color: white;
 }
 
-/* navbar */
-nav {
-  /* background-color: black;
-  opacity: .75; */
-  border: solid 2px blueviolet;
-}
 nav > ul {
-  border: solid 2px brown;
   padding-left: 0;
   list-style: none;
   display: flex;
@@ -34,15 +27,10 @@ nav > ul {
   position: relative;
 }
 nav > ul > li.logo-container {
-  border: solid 2px goldenrod;
   position: absolute;
   left: 0;
 }
-nav > ul > li.logo-container > a {
-  border: solid 2px red;
-}
 nav > ul > li {
-  border: solid 2px greenyellow;
   padding: 10px;
   margin-left: 2px;
   margin-right: 2px;
@@ -56,12 +44,8 @@ nav > ul > li > a:hover > svg {
   fill: grey;
 }
 nav > ul > li.contact-container {
-  border: solid 2px goldenrod;
   position: absolute;
   right: 0;
-}
-nav > ul > li.contact-container > a {
-  border: solid 2px rgb(255, 113, 113);
 }
 nav > ul > li.contact-container > a > svg {
   fill: none;
@@ -99,7 +83,6 @@ section#landing .profile-container .profile-banner {
   margin: auto;
   border: 2px solid rebeccapurple;
   background-color: black;
-  opacity: 0.25;
 }
 section#landing .profile-container .profile-banner .profile-name {
   position: relative;
