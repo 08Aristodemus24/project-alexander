@@ -121,19 +121,13 @@ section#landing .socials-container {
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 section#landing .socials-container > ul {
-  border: solid 2px brown;
   padding-left: 0;
   list-style: none;
 }
-section#landing .socials-container > ul > li {
-  border: solid 2px goldenrod;
-}
 section#landing .socials-container a svg:hover {
   opacity: 1;
-  background-color: black;
 }
 section#landing .socials-container a svg {
   height: 45px;
@@ -164,7 +158,7 @@ section#projects > ul {
 section#projects > ul > li {
   border: solid 2px aquamarine;
 }
-ul > li > a[class*=repo] {
+section#projects > ul > li > a[class*=repo] {
   border: solid 2px goldenrod;
   color: white;
   text-decoration: none;
@@ -172,12 +166,9 @@ ul > li > a[class*=repo] {
   height: 1in;
   width: 3in;
 }
-
-ul > li > a[class*=repo]:visited {
+section#projects > ul > li > a[class*=repo]:visited {
   color: white;
 }
-
-/* contact section */
 section#contact {
   background-color: cornflowerblue;
   border: 2px solid orange;
