@@ -1,28 +1,4 @@
-@mixin aspect-ratio($width, $height) {
-    position: relative;
-    border: 4px solid rgb(116, 0, 81);
-      
-    &:before {
-        border: 3px solid rgb(26, 0, 18);
-        display: block;
-        content: "";
-        width: 100%;
-        padding-top: ($height / $width) * 100%;
-    }
 
-    // .carousel__thumbnails label > img. This could be the compiled css selector
-    // or this .carousel__slide div > img
-    > img {
-        border: 1px solid rgb(248, 45, 187);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
   
 // Styling
 section {
@@ -207,5 +183,31 @@ section {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    border: 4px solid rgb(116, 0, 81);
+      
+    &:before {
+        border: 3px solid rgb(26, 0, 18);
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    // .carousel__thumbnails label > img. This could be the compiled css selector
+    // or this .carousel__slide div > img
+    > img {
+        border: 1px solid rgb(248, 45, 187);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
     }
 }
