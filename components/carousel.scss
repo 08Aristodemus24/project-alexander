@@ -5,32 +5,50 @@
   --primary-font: "Cinzel", serif;
   --secondary-font: "Cormorant", serif;
   --tertiary-font: "Montserrat", sans-serif;
-  --primary-image: url("./images/masteroogway.jpg");
+  --primary-image: url("../images/masteroogway.jpg");
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background-image: var(--primary-image);
   font-family: var(--primary-font);
-  margin: 0;
+
   border: 5px solid white;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 main{
-    border: 5px solid purple;
-    position: relative;
+  background-color: rgb(127, 163, 163);
+  border: 4px solid rgb(255, 13, 255);
+  position: relative;
 
-    // sets 100% of window's height no matter what size
-    height: 100vh;
+  // sets 100% of window's height no matter what size
+  height: 100%;
 }
 
 div{
-    &.container{
-        position: absolute;
-        border: 4px solid peru;
-        height: 100%;
-    }
+  &.container{
+      position: absolute;
+      border: 3px solid peru;
+      height: 100%;
+
+      
+  }
+
+
+}
+
+.carousel{
+  
+}
+
+.carousel__slides{
+
 }

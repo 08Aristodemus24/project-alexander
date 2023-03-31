@@ -36,6 +36,7 @@ section {
         
         // ~ selector selects element that has a specified element preceding it
         // select carousel__slides class with preceding 6th radio input with checked
+        // when .carousel__slide:first-of-type is selected transition is applied
         &:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
             margin-left: -500%; 
         }
@@ -78,13 +79,43 @@ section {
     }
 }
 
+
+// function that is used in .carousel__thumbnails
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    border: 4px solid rgb(116, 0, 81);
+      
+    &:before {
+        border: 3px solid rgb(26, 0, 18);
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    // .carousel__thumbnails label > img. This could be the compiled css selector
+    // or this .carousel__slide div > img
+    > img {
+        border: 1px solid rgb(248, 45, 187);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+// figure out how the slides move
 .carousel__slides {
     border: 1px solid rgb(73, 73, 253);
     position: relative;
     z-index: 1;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    // overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
     display: flex;
@@ -138,6 +169,10 @@ section {
     }
 }
 
+
+
+
+// following are for the radio inputs
 .carousel__thumbnails {
     border: 5px solid rgb(170, 82, 0);
     list-style: none;
@@ -186,28 +221,3 @@ section {
     }
 }
 
-@mixin aspect-ratio($width, $height) {
-    position: relative;
-    border: 4px solid rgb(116, 0, 81);
-      
-    &:before {
-        border: 3px solid rgb(26, 0, 18);
-        display: block;
-        content: "";
-        width: 100%;
-        padding-top: ($height / $width) * 100%;
-    }
-
-    // .carousel__thumbnails label > img. This could be the compiled css selector
-    // or this .carousel__slide div > img
-    > img {
-        border: 1px solid rgb(248, 45, 187);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
