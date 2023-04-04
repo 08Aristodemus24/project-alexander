@@ -14,6 +14,7 @@ section {
     padding: 0 20px;
 }
 
+// the div container containing also .carousel__slides ul
 .carousel {
     border: 2px solid rgb(0, 131, 96);
     display: block;
@@ -109,6 +110,7 @@ section {
 
 
 // figure out how the slides move
+// this is the ul that has teh .carousel__slides class
 .carousel__slides {
     border: 1px solid rgb(73, 73, 253);
     position: relative;
@@ -117,15 +119,16 @@ section {
     margin: 0;
     // overflow: hidden;
     white-space: nowrap;
-    // box-sizing: border-box;
+    box-sizing: border-box;
     display: flex;
 }
 
+// the individual slides or the li elements of the ul element
 .carousel__slide {
     border: 2px solid rgb(245, 136, 255);
     position: relative;
     display: block;
-    // flex: 1 0 100%;
+    flex: 1 0 100%;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -140,8 +143,8 @@ section {
     }
     
     div {
-        @include aspect-ratio(3, 2);
         width: 100%;
+        @include aspect-ratio(3, 2);
     }
     
     img {
