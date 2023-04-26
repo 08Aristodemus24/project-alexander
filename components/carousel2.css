@@ -22,8 +22,8 @@ section {
   border: 3px solid rgb(54, 0, 153);
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
+  height: 3px;
+  width: 3px;
   margin: -1px;
   overflow: hidden;
   padding: 0;

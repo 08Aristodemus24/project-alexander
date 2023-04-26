@@ -28,8 +28,8 @@ section {
         border: 3px solid rgb(54, 0, 153);
         clip: rect(1px, 1px, 1px, 1px);
         clip-path: inset(50%);
-        height: 1px;
-        width: 1px;
+        height: 3px;
+        width: 3px;
         margin: -1px;
         overflow: hidden;
         padding: 0;
@@ -38,6 +38,9 @@ section {
         // ~ selector selects element that has a specified element preceding it
         // select carousel__slides class with preceding 6th radio input with checked
         // when .carousel__slide:first-of-type is selected transition is applied
+
+        // when last thumbnail is clicked because it has a label hooked to the input
+        // 
         &:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
             margin-left: -500%; 
         }

@@ -17,7 +17,6 @@ html {
 body {
   background-image: var(--primary-image);
   font-family: var(--primary-font);
-  border: 6px solid white;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -25,7 +24,6 @@ body {
 
 main {
   background-color: rgb(127, 163, 163);
-  border: 5px solid rgb(255, 13, 255);
   position: relative;
   height: 100%;
 }
@@ -47,8 +45,13 @@ div.container {
   height: 100%;
   width: 100%;
 }
-
-.carousel__slides {
+.carousel > #left-arrow:checked ~ .carousel__slides .carousel__slide:nth-child(1) {
+  margin-left: -100%;
+}
+.carousel > #right-arrow:checked ~ .carousel__slides .carousel__slide:nth-child(1) {
+  margin-left: -300%;
+}
+.carousel > .carousel__slides {
   border: 2px solid green;
   padding-left: 0;
   list-style: none;
@@ -56,8 +59,7 @@ div.container {
   height: 100%;
   width: 100%;
 }
-
-.carousel__slide {
+.carousel > .carousel__slides > .carousel__slide {
   border: 1px solid rgb(255, 76, 246);
   display: block;
   flex: 1 0 100%;
@@ -65,8 +67,7 @@ div.container {
   width: 100%;
   overflow-y: scroll;
 }
-
-.carousel__slide::-webkit-scrollbar {
+.carousel > .carousel__slides > .carousel__slide::-webkit-scrollbar {
   display: none;
 }
 

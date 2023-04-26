@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&family=Raleway:wght@100;200;300;400&display=swap');
 
 :root{
     --primary-font: 'Cinzel', serif;
     --secondary-font: 'Cormorant', serif;
-    --tertiary-font: 'Montserrat', sans-serif;
-    --primary-image: url('./images/masteroogway.jpg');
+    --tertiary-font-1: 'Raleway', sans-serif;
+    --tertiary-font-2: 'Montserrat', sans-serif;
+    --primary-image: url('../images/masteroogway.jpg');
 }
 
 
@@ -46,9 +45,11 @@ nav{
             position: absolute;
             left: 0;
 
-            > a{
-                // border: solid 2px red;
-            }
+            // > a{
+            //     > svg{
+
+            //     }
+            // }
         }
 
         > li{
@@ -59,6 +60,7 @@ nav{
 
             > a{
                 > svg{
+                    fill: white;
                     transition-property: fill;
                     transition-duration: 0.5s;
                     transition-timing-function: ease;
@@ -81,8 +83,8 @@ nav{
                 // border: solid 2px rgb(255, 113, 113);
 
                 > svg{
-                    fill: none;
-                    transition-property: stroke;
+                    fill: white;
+                    transition-property: fill;
                     transition-duration: 0.5s;
                     transition-timing-function: ease;
                 }
@@ -90,7 +92,7 @@ nav{
 
             > a:hover{
                 > svg{
-                    stroke: grey;
+                    fill: grey;
                 }
             }
         }
@@ -140,13 +142,18 @@ section{
                     position: relative;
                     z-index: 3;
                     border: 2px solid grey;
+                    font-size:0.5in
                 }
                 
                 .profile-msg{
+                    
                     position: relative;
                     z-index: 3;
                     border: 2px solid grey;
                     color: white;
+                    font-family: var(--tertiary-font-1);
+                    font-weight: 200;
+                    
                 }
             }
         }
@@ -182,7 +189,7 @@ section{
             a svg{
                 height: 45px;
                 width: 45px;
-                opacity: 0.125;
+                opacity: 0.25;
                 transition-property: background-color, opacity;
                 transition-duration: 0.5s;
                 transition-timing-function: ease;
