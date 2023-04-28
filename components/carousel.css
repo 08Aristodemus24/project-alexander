@@ -58,6 +58,7 @@ div.container {
   display: flex;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 .carousel > .carousel__slides > .carousel__slide {
   border: 1px solid rgb(255, 76, 246);
@@ -66,6 +67,9 @@ div.container {
   height: 100%;
   width: 100%;
   overflow-y: scroll;
+  transition-property: margin-left;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 .carousel > .carousel__slides > .carousel__slide::-webkit-scrollbar {
   display: none;

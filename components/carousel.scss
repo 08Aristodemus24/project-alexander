@@ -16,7 +16,7 @@ html {
 
 body {
   background-image: var(--primary-image);
-  font-family: var(--primary-font);
+  font-family: var(--primary-font); 
 
   // border: 6px solid white;
   margin: 0;
@@ -71,6 +71,7 @@ div{
     display: flex;
     height: 100%;
     width: 100%;
+    overflow: hidden;
     
     > .carousel__slide{
       border: 1px solid rgb(255, 76, 246);
@@ -79,6 +80,9 @@ div{
       height: 100%;
       width: 100%;
       overflow-y: scroll;
+      transition-property: margin-left;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
     }
     
     > .carousel__slide::-webkit-scrollbar{
