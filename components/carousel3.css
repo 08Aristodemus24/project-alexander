@@ -1,6 +1,7 @@
 .carousel {
   margin-left: 15%;
   margin-right: 15%;
+  background-color: grey;
 }
 
 ul.slides {
@@ -10,7 +11,7 @@ ul.slides {
   height: 600px;
   margin: 0;
   padding: 0;
-  /*     overflow: hidden; */
+  overflow: scroll;
   list-style: none;
 }
 
@@ -76,6 +77,7 @@ ul.slides input {
 }
 
 .carousel-controls .prev-slide {
+  border: 1px solid darkorange;
   width: 49%;
   text-align: left;
   left: 0;
@@ -85,6 +87,25 @@ ul.slides input {
   width: 49%;
   text-align: right;
   right: 0;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 999;
+  text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 10px;
 }
 
 input:checked + .slide-container .slide-image {
