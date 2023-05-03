@@ -1,21 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&family=Raleway:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&display=swap");
 :root {
   --primary-font: "Cinzel", serif;
   --secondary-font: "Cormorant", serif;
-  --tertiary-font-1: "Raleway", sans-serif;
-  --tertiary-font-2: "Montserrat", sans-serif;
+  --tertiary-font: "Montserrat", sans-serif;
   --primary-image: url("../images/masteroogway.jpg");
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background-image: var(--primary-image);
   font-family: var(--primary-font);
   margin: 0;
-  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+main.main-container {
+  background-color: rgb(127, 163, 163);
+  position: relative;
+  height: 100%;
+}
+
+div.container {
+  border: 4px solid peru;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 nav > ul {
@@ -55,122 +77,6 @@ nav > ul > li.contact-container > a > svg {
 }
 nav > ul > li.contact-container > a:hover > svg {
   fill: grey;
-}
-
-section#landing {
-  border: 2px solid rgb(58, 209, 255);
-  position: relative;
-}
-section#landing .profile-container {
-  border: 2px solid blue;
-  height: 10in;
-  position: relative;
-  z-index: 1;
-}
-section#landing .profile-container .profile-banner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-  /* take 50% height of relative parent */
-  height: 50%;
-  width: 50%;
-  margin: auto;
-  border: 2px solid rebeccapurple;
-  background-color: black;
-}
-section#landing .profile-container .profile-banner .profile-name {
-  position: relative;
-  z-index: 3;
-  border: 2px solid grey;
-  font-size: 0.5in;
-}
-section#landing .profile-container .profile-banner .profile-msg {
-  position: relative;
-  z-index: 3;
-  border: 2px solid grey;
-  color: white;
-  font-family: var(--tertiary-font-1);
-  font-weight: 200;
-}
-section#landing .socials-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 3;
-  border: 3px solid violet;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-section#landing .socials-container > ul {
-  padding-left: 0;
-  list-style: none;
-}
-section#landing .socials-container a svg:hover {
-  opacity: 1;
-}
-section#landing .socials-container a svg {
-  height: 45px;
-  width: 45px;
-  opacity: 0.25;
-  transition-property: background-color, opacity;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  fill: white;
-}
-section#about {
-  background-color: rgb(65, 65, 65);
-  border: 2px solid rebeccapurple;
-}
-section#projects {
-  background-color: rgb(34, 34, 34);
-  border: 2px solid greenyellow;
-}
-section#projects > ul {
-  border: solid 2px brown;
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.5in;
-}
-section#projects > ul > li {
-  border: solid 2px aquamarine;
-}
-section#projects > ul > li > a[class*=repo] {
-  border: solid 2px goldenrod;
-  color: white;
-  text-decoration: none;
-  display: block;
-  height: 1in;
-  width: 3in;
-}
-section#projects > ul > li > a[class*=repo]:visited {
-  color: white;
-}
-section#contact {
-  background-color: cornflowerblue;
-  border: 2px solid orange;
-}
-
-/* mobile */
-@media (max-width: 440px) {
-  nav > ul {
-    border: solid 2px brown;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */
