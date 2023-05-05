@@ -26,9 +26,6 @@ main {
 }
 
 to do:
-create carousel based on carousel2.scss
-change radio input into arrows
-change images into the landing, about, projects, and contact sections
-
+create arrow button in javascript to go through each section of horizontal page
 
 
