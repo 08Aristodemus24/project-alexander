@@ -54,3 +54,11 @@ const load_repos = async () => {
 // of window to the load_repos async callback
 window.onload = load_repos;
 
+
+const navigate = () => {
+    const links = ['about-me', 'projects', 'contact']
+
+    // grab the a element with arrow
+    
+    // change current state of the buttons
+}
