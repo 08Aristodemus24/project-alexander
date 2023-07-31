@@ -16,7 +16,7 @@ const load_repos = async () => {
                 "Authorization": `Bearer ${token}`,
             },
         });
-
+        console.log(response)
         if(response.status === 200){
             console.log("retrieval successful");
             const repos = await response.json();
