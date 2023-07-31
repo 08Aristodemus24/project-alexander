@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&family=Raleway:wght@100;200;300;400&display=swap");
+:root {
+  --primary-font: "Cinzel", serif;
+  --secondary-font: "Cormorant", serif;
+  --tertiary-font-1: "Raleway", sans-serif;
+  --tertiary-font-2: "Montserrat", sans-serif;
+  --primary-image: url("../images/masteroogway.jpg");
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(35, 63, 223, 0.753);
+  font-family: var(--primary-font);
+}
+
+nav {
+  border: solid 2px blueviolet;
+}
+nav > ul {
+  border: solid 2px brown;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+nav > ul > li.logo-container {
+  border: solid 2px goldenrod;
+  position: absolute;
+  left: 0;
+}
+nav > ul > li {
+  border: solid 2px greenyellow;
+  padding: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+nav > ul > li > a svg {
+  fill: white;
+  transition-property: fill;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+nav > ul > li > a:hover svg {
+  fill: grey;
+}
+nav > ul > li.contact-container {
+  border: solid 2px goldenrod;
+  position: absolute;
+  right: 0;
+}
+nav > ul > li.contact-container > a {
+  border: solid 2px rgb(255, 113, 113);
+}
+nav > ul > li.contact-container > a svg {
+  fill: white;
+  transition-property: fill;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+nav > ul > li.contact-container > a:hover svg {
+  fill: grey;
+}
+
+main {
+  position: relative;
+  height: 100%;
+  border: 5px solid rgb(255, 13, 255);
+}
+main > div {
+  border: 4px solid violet;
+}
+main > div.carousel {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+ul.slides {
+  border: 5px solid red;
+  display: block;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+ul.slides input {
+  display: none;
+}
+
+.slide-container {
+  border: 2px solid peru;
+  overflow-y: auto;
+  display: block;
+}
+
+.slide-image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+.slide-image img {
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+}
+
+.carousel-controls {
+  background-color: aquamarine;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 100px;
+  line-height: 600px;
+  color: #fff;
+}
+
+.carousel-controls label {
+  border: 2px solid salmon;
+  display: none;
+  position: absolute;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label {
+  opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+  opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+  border: 1px solid darkorange;
+  width: 49%;
+  text-align: left;
+  left: 0;
+}
+
+.carousel-controls .next-slide {
+  border: 1px solid darkorange;
+  width: 49%;
+  text-align: right;
+  right: 0;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 999;
+  text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+  display: block;
+}
+
+label#img-dot-1,
+label#img-dot-2,
+label#img-dot-3,
+label#img-dot-4,
+label#img-dot-5,
+label#img-dot-6 {
+  opacity: 1;
+}
+
+input:checked + .slide-container .nav label {
+  border: 1px solid salmon;
+  display: block;
+}
+
+/*# sourceMappingURL=carousel4.css.map */

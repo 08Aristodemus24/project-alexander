@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&family=Raleway:wght@100;200;300;400&display=swap");
+:root {
+  --secondary-font: "Cinzel", serif;
+  --primary-font: "Cormorant", serif;
+  --tertiary-font-1: "Raleway", sans-serif;
+  --tertiary-font-2: "Montserrat", sans-serif;
+  --primary-image: url("../images/masteroogway.jpg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+  transition: all 0.4s;
+  z-index: 15;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+
+h1 {
+  border: 1px solid sandybrown;
+  font-size: 70px;
+  text-transform: uppercase;
+  font-family: var(--primary-font);
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+
+h3 {
+  border: 1px solid sandybrown;
+  font-size: 30px;
+  font-family: var(--tertiary-font-1);
+  font-weight: 300;
+}
+
+p {
+  border: 1px solid sandybrown;
+  margin-top: 30px;
+  font-size: 14px;
+  font-family: var(--tertiary-font-1);
+  font-weight: 300;
+}
+
+.btn {
+  border: 1px solid steelblue;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgb(214, 178, 178);
+  letter-spacing: 5px;
+}
+
+.btn:hover {
+  transform: scale(0.97);
+  background-color: rgb(221, 157, 72);
+}
+
+.main-container {
+  border: 1px solid orangered;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.main-nav {
+  border: 2px solid rgb(18, 56, 18);
+  position: fixed;
+  display: flex;
+  padding: 2em 4em;
+  z-index: 12;
+  right: 0;
+  left: 0;
+}
+.main-nav .ul__first {
+  border: 1px solid rgb(0, 128, 117);
+}
+.main-nav .ul__first #logo {
+  border: 1px solid black;
+  padding: 0 15px;
+}
+.main-nav .ul__second {
+  border: 1px solid rgb(18, 207, 18);
+  display: flex;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+}
+.main-nav .ul__second li {
+  border: 1px solid green;
+  margin-left: 1.5em;
+}
+.main-nav .ul__second #border {
+  border: 1px solid black;
+  padding: 0 15px;
+  align-items: center;
+}
+.main-nav .ul__third {
+  border: 1px solid rgb(22, 0, 150);
+}
+.main-nav .ul__third .contact {
+  border: 1px solid rgb(141, 0, 0);
+  padding: 0 15px;
+}
+
+.container {
+  border: 2px solid rgb(248, 13, 197);
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+}
+.container .summer {
+  border: 1px solid rgb(44, 64, 247);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+.container .summer .image {
+  border: 1px solid slateblue;
+  width: 400px;
+  height: 600px;
+}
+.container .summer .image img {
+  border: 1px solid seagreen;
+}
+
+.content {
+  border: 1px solid rgb(129, 27, 160);
+  margin-top: 50px;
+  text-align: center;
+  z-index: 10;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=horizontal-layout.css.map */

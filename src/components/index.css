@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&display=swap");
+:root {
+  --primary-font: "Cinzel", serif;
+  --secondary-font: "Cormorant", serif;
+  --tertiary-font: "Montserrat", sans-serif;
+  --primary-image: url("../images/masteroogway.jpg");
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: var(--primary-image);
+  font-family: var(--primary-font);
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+main.main-container {
+  background-color: rgb(127, 163, 163);
+  position: relative;
+  height: 100%;
+}
+
+div.container {
+  border: 4px solid peru;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+nav > ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+nav > ul > li.logo-container {
+  position: absolute;
+  left: 0;
+}
+nav > ul > li {
+  padding: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+nav > ul > li > a > svg {
+  fill: white;
+  transition-property: fill;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+nav > ul > li > a:hover > svg {
+  fill: grey;
+}
+nav > ul > li.contact-container {
+  position: absolute;
+  right: 0;
+}
+nav > ul > li.contact-container > a > svg {
+  fill: white;
+  transition-property: fill;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+nav > ul > li.contact-container > a:hover > svg {
+  fill: grey;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant&family=Montserrat&family=Raleway:wght@100;200;300;400&display=swap');
+
+:root{
+    --primary-font: 'Cinzel', serif;
+    --secondary-font: 'Cormorant', serif;
+    --tertiary-font-1: 'Raleway', sans-serif;
+    --tertiary-font-2: 'Montserrat', sans-serif;
+    --primary-image: url('../images/masteroogway.jpg');
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+body{
+    background-image: var(--primary-image);
+    // opacity: 0.25;
+    font-family: var(--primary-font);
+    margin: 0;
+    color: white;
+}
+
+
+
+// navbar
+nav{
+    // background-color: black;
+    // opacity: .75;
+    // border: solid 2px blueviolet;
+
+    > ul{
+        // border: solid 2px brown;
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        > li.logo-container{
+            // border: solid 2px goldenrod;
+            position: absolute;
+            left: 0;
+
+            // > a{
+            //     > svg{
+
+            //     }
+            // }
+        }
+
+        > li{
+            // border: solid 2px greenyellow;
+            padding: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+
+            > a{
+                > svg{
+                    fill: white;
+                    transition-property: fill;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease;
+                }
+            }
+
+            > a:hover{
+                > svg{
+                    fill: grey;
+                }
+            }
+        }
+
+        > li.contact-container{
+            // border: solid 2px goldenrod;
+            position: absolute;
+            right: 0;
+
+            > a{
+                // border: solid 2px rgb(255, 113, 113);
+
+                > svg{
+                    fill: white;
+                    transition-property: fill;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease;
+                }
+            }
+
+            > a:hover{
+                > svg{
+                    fill: grey;
+                }
+            }
+        }
+    }
+}
+
+
+
+// landing
+section{
+    &#landing{
+        border: 2px solid rgb(58, 209, 255); 
+        position: relative;
+
+        // profile container
+        .profile-container{
+            // background-color: greenyellow;
+            // opacity also affects the socials container as well as profile-banner
+            // opacity: .25;
+            border: 2px solid blue; 
+            
+            height: 10in;
+            position: relative;
+            z-index: 1;
+
+            .profile-banner{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 2;
+            
+                /* take 50% height of relative parent */
+                height: 50%;
+                width: 50%;
+                margin: auto;
+            
+                border: 2px solid rebeccapurple;
+                background-color: black;
+
+
+                .profile-name{
+                    position: relative;
+                    z-index: 3;
+                    border: 2px solid grey;
+                    font-size:0.5in
+                }
+                
+                .profile-msg{
+                    
+                    position: relative;
+                    z-index: 3;
+                    border: 2px solid grey;
+                    color: white;
+                    font-family: var(--tertiary-font-1);
+                    font-weight: 200;
+                    
+                }
+            }
+        }
+
+        // socials
+        .socials-container{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            border: 3px solid violet;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            // background-color: rgba(0, 0, 0, 0.50);
+
+            > ul{
+                // border: solid 2px brown;
+                padding-left: 0;
+                list-style: none;
+
+                > li{
+                    // border: solid 2px goldenrod;
+                }
+            }
+
+            a svg:hover{
+                opacity: 1;
+                // background-color: black;
+            }
+
+            a svg{
+                height: 45px;
+                width: 45px;
+                opacity: 0.25;
+                transition-property: background-color, opacity;
+                transition-duration: 0.5s;
+                transition-timing-function: ease;
+                fill: white;    
+            }
+        }
+    }
+
+    // about section
+    &#about{
+        background-color: rgb(65, 65, 65);
+        border: 2px solid rebeccapurple;
+    }
+
+    // projects section
+    &#projects{
+        background-color: rgb(34, 34, 34);
+        border: 2px solid greenyellow;
+
+        > ul{
+            border: solid 2px brown;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            
+            align-items: center;
+            row-gap: 0.5in;
+
+            > li{
+                border: solid 2px aquamarine;
+                // display: block;
+
+                > a[class*="repo"]{
+                    border: solid 2px goldenrod;
+                    color: white;
+                    text-decoration: none;
+
+                    display: block;
+                    height: 1in;
+                    width: 3in;
+
+                    &:visited{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    // contact section
+    &#contact{
+        background-color: cornflowerblue;
+        border: 2px solid orange    
+    }
+}
+
+/* mobile */
+@media (max-width:440px) {
+    nav{
+        > ul{
+            border: solid 2px brown;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+            flex-direction: column;
+            align-items: center;   
+        }
+    }
+}
+
+
