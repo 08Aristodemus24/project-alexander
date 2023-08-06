@@ -39,12 +39,16 @@ https://codepen.io/DivyaPatel/pen/dxjgVL
 
 
 # To do:
-create arrow button in javascript to go through each section of horizontal page
-customize navbar
-make page responsive to mobile
-make navbar responsive to mobile
-create diagram for what content in about me
-projects
-and contact me will look like
+1. create designs for each section on paper
+a. about
+b. skills or technologies used
+b. projects
+c. experience
+d. contact me
+2. create background image in landing page
+a. could use AI generated images from leonardo
+b. could use photoshop to collage images from mediafiles
+3. figure out colors to be used
+4. figure out shape, border, texture, etc. of components like buttons, container, socials, navbar items, etc.
 
 

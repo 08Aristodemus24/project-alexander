@@ -66,20 +66,27 @@
 // // of window to the load_repos async callback
 // window.onload = load_repos;
 
+// event listener to document itself when dom content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    console.log($navbarBurgers)
-    // Add a click event on each of them
-    $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
+    console.log($navbarBurgers);
+    console.log($navbarBurgers.length);
+
+    // Add a click event on each of them should 
+    // there be numerous .navbar-burger elements
+    $navbarBurgers.forEach(element => {
+        element.addEventListener('click', () => {
     
             // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
+            const target = element.dataset.target;
+            
+            // data-target attribute will be "navbarBasicExample" 
+            // which points to div with this class
             const $target = document.getElementById(target);
     
             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
+            element.classList.toggle('is-active');
             $target.classList.toggle('is-active');
         });
     });  
