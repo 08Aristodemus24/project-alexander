@@ -1,6 +1,12 @@
 # **STILL IN PRODUCTION**
 
-references:
+
+# Tech used:
+* Vanilla.js
+* Bulma
+* Three.js (TBD)
+
+# References:
 https://css-tricks.com/css-only-carousel/
 
 
@@ -25,7 +31,14 @@ main {
     flex-direction: column;
 }
 
-to do:
+
+article cards:
+https://codepen.io/aeryla/pen/PoKaBYM
+https://codepen.io/jshwrnr/pen/BaRwBZM
+https://codepen.io/DivyaPatel/pen/dxjgVL
+
+
+# To do:
 create arrow button in javascript to go through each section of horizontal page
 customize navbar
 make page responsive to mobile
@@ -33,10 +46,5 @@ make navbar responsive to mobile
 create diagram for what content in about me
 projects
 and contact me will look like
-
-article cards:
-https://codepen.io/aeryla/pen/PoKaBYM
-https://codepen.io/jshwrnr/pen/BaRwBZM
-https://codepen.io/DivyaPatel/pen/dxjgVL
 
 
