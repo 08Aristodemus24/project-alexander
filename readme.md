@@ -7,10 +7,16 @@
 * Three.js (TBD)
 
 # References:
-https://css-tricks.com/css-only-carousel/
+* https://wikiki.github.io/components/carousel/
+* https://bulma-carousel.onrender.com/
+* https://codepen.io/aeryla/pen/PoKaBYM
+* https://codepen.io/jshwrnr/pen/BaRwBZM
+* https://codepen.io/DivyaPatel/pen/dxjgVL
 
 
-main {
+# Side notes:
+**mixins in sass**
+1. main {
     @include flexCenter(row);
     width: 80%;
     margin: 0 auto;
@@ -31,11 +37,6 @@ main {
     flex-direction: column;
 }
 
-
-article cards:
-https://codepen.io/aeryla/pen/PoKaBYM
-https://codepen.io/jshwrnr/pen/BaRwBZM
-https://codepen.io/DivyaPatel/pen/dxjgVL
 
 
 # To do:
