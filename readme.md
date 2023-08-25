@@ -1,22 +1,38 @@
 # **STILL IN PRODUCTION**
 
 
-# Tech used:
+# Frontend
+## Designing website template:
+**Prerequisites to do:**
+1. 
+**To do:**
+1. create designs for each section on paper for mobile and desktop
+a. <s>about</s>
+b. <s>skills or technologies used</s>
+b. <s>projects</s>
+c. <s>experience</s>
+d. <s>contact me</s>
+2. create background image in landing page
+a. could use AI generated images from leonardo
+b. could use photoshop to collage images from mediafiles
+3. figure out colors to be used
+4. figure out shape, border, texture, etc. of components like buttons, container, socials, navbar items, etc.
+
+**Tech used:**
 * Vanilla.js
 * Bulma
 * Three.js (TBD)
 
-# References:
+**References:**
 * https://wikiki.github.io/components/carousel/
 * https://bulma-carousel.onrender.com/
 * https://codepen.io/aeryla/pen/PoKaBYM
 * https://codepen.io/jshwrnr/pen/BaRwBZM
 * https://codepen.io/DivyaPatel/pen/dxjgVL
 
-
-# Side notes:
-**mixins in sass**
-1. main {
+**Side notes:**
+1. Mixins in sass:
+main {
     @include flexCenter(row);
     width: 80%;
     margin: 0 auto;
@@ -36,20 +52,5 @@
     align-items: center;
     flex-direction: column;
 }
-
-
-
-# To do:
-1. create designs for each section on paper
-a. about
-b. skills or technologies used
-b. projects
-c. experience
-d. contact me
-2. create background image in landing page
-a. could use AI generated images from leonardo
-b. could use photoshop to collage images from mediafiles
-3. figure out colors to be used
-4. figure out shape, border, texture, etc. of components like buttons, container, socials, navbar items, etc.
 
 
