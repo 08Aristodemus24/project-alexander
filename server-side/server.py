@@ -1,4 +1,5 @@
 from flask import Flask
+import requests
 from pathlib import Path
 
 # ff. imports are for getting secret values from .env file
@@ -20,10 +21,26 @@ def index():
     in url succeeds another string <some string> then
     app will run at http://127.0.0.1:5000/<some string>
 
-    returns .json file of the github access token upon
-    request to the route
+    returns json of all github repositories using
+    github access token
     """
 
-    return {
-        'gat': os.environ['GITHUB_ACCESS_TOKEN']
+    url = 'https://api.github.com/users/08Aristodemus24/repos 1'
+    accept = 'application/vnd.github+json'
+    auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
+    headers = {
+        "Accept": accept,
+        "Authorization": auth_token
     }
+
+    response = requests.get(url, headers=headers)
+    data = response.json()
+
+    # check if response returns an 'ok' (200) status 
+    if response.status_code == 200:
+        return data
+    
+    # if error occurs in request just return the key value
+    # pairs of the response.json() dictionary and the status
+    # code of the response object
+    return dict(documentation_url=data['documentation_url'], message=data['message'], status_code=response.status_code)
