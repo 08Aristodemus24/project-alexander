@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 import requests
 from pathlib import Path
 
@@ -10,9 +11,13 @@ from dotenv import load_dotenv
 env_dir = Path('./').resolve()
 load_dotenv(os.path.join(env_dir, '.env'))
 
-
 app = Flask(__name__)
 
+# since simple html from url http://127.0.0.1:5000 requests to
+# api endpoint at http://127.0.0.1:5000/ we must set the allowed
+# origins or web apps with specific urls like http://127.0.0.1:5000
+# to be included otherwise it will be blocked by CORS policy
+CORS(app, origins=["http://127.0.0.1:5500"])
 
 @app.route('/', methods=['GET'])
 def index():
@@ -25,7 +30,7 @@ def index():
     github access token
     """
 
-    url = 'https://api.github.com/users/08Aristodemus24/repos 1'
+    url = 'https://api.github.com/users/08Aristodemus24/repos'
     accept = 'application/vnd.github+json'
     auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
     headers = {

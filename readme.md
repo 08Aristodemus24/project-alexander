@@ -1,5 +1,6 @@
 # **STILL IN PRODUCTION**
 
+# My portfolio website for my AI/ML projects built with Vanilla.js, Bootstrap, and Flask
 
 # Frontend
 ## Designing website template:
@@ -17,12 +18,13 @@ a. could use AI generated images from leonardo
 b. could use photoshop to collage images from mediafiles
 3. figure out colors to be used
 4. figure out shape, border, texture, etc. of components like buttons, container, socials, navbar items, etc.
-5. uninstall bulma and switch to bootstrap for more components and community support
-6. uninstall dotenv since dotenv will just be handled by backend server proxy
+5. <s>uninstall bulma and switch to bootstrap for more components and community support</s>
+6. <s>uninstall dotenv since dotenv will just be handled by backend server proxy</s>
+7. include only relevant repositories by maybe including a rules lookup/dictionary or iterable that contains only the repositories to be displayed or not displayed
 
 **Tech used:**
 * Vanilla.js
-* Bulma
+* Boostrap
 * Three.js (TBD)
 
 **References:**
@@ -57,5 +59,22 @@ main {
 
 # Backend
 ## Setting up backend proxy server for accessing .env file
-1. install flask
-2. set route's url pattern to https://<localhost>:5000 in order to receive http requests from client requesting this url
+**Prerequisities to do:**
+1. 
+
+**To do:**
+1. <s>install flask</s>
+2. <s>set route's url pattern to https://<localhost>:5000 in order to receive http requests from client requesting this url</s>
+
+**Problems and solutions:**
+1. http://127.0.0.1:5000 blocked by CORS policy when requesting to api endpoint http://127.0.0.1:5500/ - solution: https://medium.com/@mterrano1/cors-in-a-flask-api-38051388f8cc
+2. 
+
+**Tech used:**
+1. flask
+2. flask-cors
+
+**References:**
+1. a
+
+**Side notes:**

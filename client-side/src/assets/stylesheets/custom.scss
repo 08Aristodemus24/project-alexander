@@ -1,5 +1,20 @@
-@charset "utf-8";
-@import "../../../node_modules/bulma/bulma.sass";
+// @charset "utf-8";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// functions (mix-ins) of bootstrap
+// @import "../../../node_modules/bootstrap/scss/functions";
+
+// // required imports
+// @import "../../../node_modules/bootstrap/scss/variables";
+// @import "../../../node_modules/bootstrap/scss/variables-dark";
+// @import "../../../node_modules/bootstrap/scss/maps";
+// @import "../../../node_modules/bootstrap/scss/mixins";
+// @import "../../../node_modules/bootstrap/scss/root";
+
+// // include other parts/modules of components here as needed 
+// // if you need to customize them
+// @import "../../../node_modules/bootstrap/scss/nav";
+// @import "../../../node_modules/bootstrap/scss/navbar";
+
 
 html{
     scroll-behavior: smooth;
