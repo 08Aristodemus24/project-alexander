@@ -17,6 +17,8 @@ a. could use AI generated images from leonardo
 b. could use photoshop to collage images from mediafiles
 3. figure out colors to be used
 4. figure out shape, border, texture, etc. of components like buttons, container, socials, navbar items, etc.
+5. uninstall bulma and switch to bootstrap for more components and community support
+6. uninstall dotenv since dotenv will just be handled by backend server proxy
 
 **Tech used:**
 * Vanilla.js
@@ -53,4 +55,7 @@ main {
     flex-direction: column;
 }
 
-
+# Backend
+## Setting up backend proxy server for accessing .env file
+1. install flask
+2. set route's url pattern to https://<localhost>:5000 in order to receive http requests from client requesting this url

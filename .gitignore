@@ -1,4 +1,4 @@
-/src/concepts
-/dark-academia.rar
-/node_modules/
-/.env
+/client-side/src/concepts
+/client-side/dark-academia.rar
+/client-side/node_modules/
+/server-side/.env
