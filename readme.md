@@ -187,15 +187,31 @@ v. matplotlib: <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="1440"
   </div>
 </div>
 
-2. parallax: 
-https://bootsnipp.com/snippets/9X8RW
+2. Install tailwindcss via `npm install -D tailwindcss` in base directory, and create your `tailwind.config.js` file using `npx tailwindcss init` which will contain the code below:
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+initially the content array will be empty so we need to populate it with something like `"./src/**/*.{html,js}"` to let tailwind know that where to look for the initial css file containing the tailwind directives in order to compile these files into a final vanilla `.css` file
+3. aadd command in package.json
+4. add directives in src/assets/stylesheets.css
+5. compile using npm run build-css custom.css
+3. npm install purge --save-dev
+
 
 
 
 
 **Tech used:**
-* Vanilla.js
-* Boostrap
+* Svelte.js
+* Tailwind
 * Three.js (TBD)
 
 **References:**
