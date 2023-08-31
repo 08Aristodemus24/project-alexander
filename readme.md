@@ -199,11 +199,19 @@ module.exports = {
 }
 ```
 
-initially the content array will be empty so we need to populate it with something like `"./src/**/*.{html,js}"` to let tailwind know that where to look for the initial css file containing the tailwind directives in order to compile these files into a final vanilla `.css` file
-3. aadd command in package.json
-4. add directives in src/assets/stylesheets.css
-5. compile using npm run build-css custom.css
-3. npm install purge --save-dev
+initially the extend dictionary will be empty so we can populate it with our own styles e.g. `'font-family': ['Nunito]` to let tailwind know that there are new utility classes we have added that we can use as value in the class attribute of html elements
+
+3. create a `src/assets/stylesheets/<name that will contain tailwind directives e.g. custom>.css`
+4. add directives in this `src/assets/stylesheets/<name that will contain tailwind directives e.g. custom>.css` file which when compiled to another `.css` file we will use, will finally contain the utility classes that will allow us to use it in our html elements
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+5. create this another `.css` file `src/app.css` or just delete the contents of the `app.css` if it already exists in svelte app. This output file will basically contain the compiled `src/assets/stylesheets/<name that will contain tailwind directives e.g. custom>.css` file.
+6. in order to compile open the `package.json` file and add the key-value pair `"build-css": "tailwindcss build src/assets/stylesheets/custom.css -o src/app.css"` under the `scripts` dictionary along with all other commands that allows us to run and/or build our svelte app. Adding this will allow us to run `npm run build-css custom.css` whenever we add new directives in our `custom.css` file
+7. compile using `npm run build-css custom.css`
 
 
 

@@ -5,6 +5,8 @@
   // initial state
   let repos = [];
 
+  // upon mounting of component send http request to flask
+  // backend proxy server and retrieve repositories
   onMount(async () => {
     const url = 'http://127.0.0.1:5000/';
     const response = await fetch(url);
