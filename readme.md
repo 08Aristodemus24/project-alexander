@@ -1,6 +1,6 @@
 # **STILL IN PRODUCTION**
 
-# My portfolio website for my AI/ML projects built with Vanilla.js, Bootstrap, and Flask
+# My portfolio website for my AI/ML projects built with Svelte, Tailwind, and Flask
 
 # Frontend
 ## Designing website template:
@@ -249,3 +249,4 @@ main {
 1. a
 
 **Side notes:**
+1. to run flask server use `python server.py` or `python --app server run`

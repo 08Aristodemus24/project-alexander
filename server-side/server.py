@@ -17,7 +17,7 @@ app = Flask(__name__)
 # api endpoint at http://127.0.0.1:5000/ we must set the allowed
 # origins or web apps with specific urls like http://127.0.0.1:5000
 # to be included otherwise it will be blocked by CORS policy
-CORS(app, origins=["http://127.0.0.1:5500"])
+CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173"])
 
 @app.route('/', methods=['GET'])
 def index():
@@ -49,3 +49,7 @@ def index():
     # pairs of the response.json() dictionary and the status
     # code of the response object
     return dict(documentation_url=data['documentation_url'], message=data['message'], status_code=response.status_code)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
