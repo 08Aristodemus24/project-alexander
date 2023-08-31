@@ -1,4 +1,8 @@
+# assets
 /client-side/src/concepts
-/client-side/dark-academia.rar
+
+# packages
 /client-side/node_modules/
+
+# secrets
 /server-side/.env

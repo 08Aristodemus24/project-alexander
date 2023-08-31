@@ -1,23 +1,16 @@
 {
-  "name": "project-alexander",
-  "version": "1.0.0",
-  "description": "references:\r https://css-tricks.com/css-only-carousel/",
-  "main": "index.js",
+  "name": "client-side",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/08Aristodemus24/project-alexander.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/08Aristodemus24/project-alexander/issues"
-  },
-  "homepage": "https://github.com/08Aristodemus24/project-alexander#readme",
-  "dependencies": {
-    "bootstrap": "^5.3.1"
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "svelte": "^4.0.5",
+    "vite": "^4.4.5"
   }
 }
