@@ -1,6 +1,7 @@
 <script>
-  import './app.css'
   import { onMount, onDestroy } from "svelte";
+  import Navbar from './components/Navbar.svelte';
+  import Tailwind from './components/Tailwind.svelte';
 
   // initial state
   let repos = [];
@@ -33,13 +34,12 @@
   // this is a variable dependent upon the state of repos
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
 
+  // pass the state to the experience section component
+
 </script>
 
 <main>
-  <ul>
-    {#each repos as repo}
-      <li>{repo}</li>
-    {/each}
-    <!-- {some_var} -->
-  </ul>
+  <Navbar/>
 </main>
+
+<Tailwind/>
