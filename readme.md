@@ -228,6 +228,7 @@ initially the extend dictionary will be empty so we can populate it with our own
 * https://codepen.io/aeryla/pen/PoKaBYM
 * https://codepen.io/jshwrnr/pen/BaRwBZM
 * https://codepen.io/DivyaPatel/pen/dxjgVL
+* https://css-tricks.com/styling-based-on-scroll-position/
 
 **Side notes:**
 1. Mixins in sass:
