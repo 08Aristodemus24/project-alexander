@@ -47,3 +47,120 @@
     </div>
   </nav>
 </header>
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
+
+  /* html{
+    border: 1px solid purple;  
+  } */
+
+  body{
+    background: white;
+    border: 1px solid red;
+  }
+
+  .navbar-container{
+  }
+
+  .navbar{
+    /* size */
+    height: 5rem;
+    width: 100vw;
+    
+    /* display */
+    display: flex;
+    
+    /*alignment */
+    justify-content: center;
+    align-items: center;
+    
+    /* position */
+    position: relative;
+    
+    /* design */
+    border: 1px solid green;
+    background: black;
+  }
+
+  .nav-brand-container{
+    /* size */
+    height: min-content;
+    width: min-content;
+    
+    /* position */
+    position: absolute;
+    left: 5rem;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    /* design */
+    border: 2px solid red;
+  }
+
+  .nav-brand-container .navbar-brand{
+    /* design */
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    text-decoration: none;
+  }
+
+  .nav-menu-container{
+    /* design */
+  /*   border: 1px solid red; */
+  }
+
+  .nav-menu{
+    display: flex;
+  }
+
+  .nav-item{
+    /* spacing */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    
+    /* size */
+    width: 10rem;
+    
+    /* design */
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    border: 1px solid transparent;
+    
+    /* animation */
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  .nav-item:hover{
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+  }
+
+
+  @media (min-width: 768px){
+    .nav-brand-container .button-container{
+      display: none;
+    }
+  }
+
+  /* @media (min-width: 320px){
+    .brand-button-container .button-container{
+      display: block;
+    }
+  } */
+</style>
