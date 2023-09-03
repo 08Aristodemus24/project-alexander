@@ -12,17 +12,17 @@
 
 <div class="centerer">
     <div on:click={toggle_menu} class="button-container" class:opened={is_opened === true}>
-      <a class="top-left-corner"></a>
-      <a class="top-edge"></a>
-      <a class="top-right-corner"></a>
+      <a href="" class="top-left-corner"></a>
+      <a href="" class="top-edge"></a>
+      <a href="" class="top-right-corner"></a>
       
-      <a class="left-edge"></a>
-      <a class="center"></a>
-      <a class="right-edge"></a>
+      <a href="" class="left-edge"></a>
+      <a href="" class="center"></a>
+      <a href="" class="right-edge"></a>
       
-      <a class="bottom-left-corner"></a>
-      <a class="bottom-edge"></a>
-      <a class="bottom-right-corner"></a>
+      <a href="" class="bottom-left-corner"></a>
+      <a href="" class="bottom-edge"></a>
+      <a href="" class="bottom-right-corner"></a>
     </div>
 </div>
 
