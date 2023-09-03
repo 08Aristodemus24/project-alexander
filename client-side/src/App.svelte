@@ -1,6 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import Navbar from './components/Navbar.svelte';
+  import NavbarBurger from './components/NavbarBurger.svelte';
   import Tailwind from './components/Tailwind.svelte';
 
   // initial state
@@ -39,6 +40,7 @@
 </script>
 
 <main>
+  <!-- <NavbarBurger/> -->
   <Navbar/>
 </main>
 

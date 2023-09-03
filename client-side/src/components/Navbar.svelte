@@ -2,10 +2,30 @@
 
 </script>
 
+<!-- <header class="">
+  <nav class="" aria-label="Global">
+    <div class="">
+      <a class="" href="/">Michael</a>
+      <div class="">
+        <button type="button" class="" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+          navbar burger here
+        </button>
+      </div>
+    </div>
+    <div id="navbar-collapse-with-animation" class="">
+      <div class="">
+        <a class="" href="about-section" aria-current="page">About</a>
+        <a class="" href="work-section">Work</a>
+        <a class="" href="contact-section">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header> -->
+
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 dark:bg-gray-800">
-  <nav class="relative max-w-[85rem] border-2 border-orange-300 w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between dark:bg-red-200" aria-label="Global">
-    <div class="absolute border-2 border-red-300 flex items-center justify-between">
-      <a class="flex-none text-xl font-semibold dark:text-white" href="/">Michael</a>
+  <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
+    <div class="flex items-center justify-between">
+      <a class="flex-none text-xl font-semibold dark:text-white" href="#">Brand</a>
       <div class="sm:hidden">
         <button type="button" class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
           <svg class="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -18,14 +38,12 @@
       </div>
     </div>
     <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
-      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-center sm:mt-0 sm:pl-5">
-        <a class="font-medium text-blue-500" href="about-section" aria-current="page">About</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="proj-section">Projects</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="skills-section">Skills</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="exp-section">Experience</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="contact-section">Contact</a>
+      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
+        <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a>
+        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">Account</a>
+        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">Work</a>
+        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">Blog</a>
       </div>
     </div>
   </nav>
 </header>
-
