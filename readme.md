@@ -22,7 +22,8 @@ b. could use photoshop to collage images from mediafiles
 5. <s>uninstall bulma and switch to bootstrap for more components and community support</s>
 6. <s>uninstall dotenv since dotenv will just be handled by backend server proxy</s>
 7. include only relevant repositories by maybe including a rules lookup/dictionary or iterable that contains only the repositories to be displayed or not displayed
-8. make svgs for python, tensorflow, sklearn, numpy, matplotlib, seaborn, pandas, django, c, c++, html, css, sass, bootstrap, javascript, photoshop, react, postgresql, firebase, git
+8. <s>make svgs for python, tensorflow, sklearn, numpy, matplotlib, seaborn, pandas, django, c, c++, html, css, sass, bootstrap, javascript, photoshop, react, postgresql, firebase, git</s>
+9. make navbar responsive to mobile if width value is equal or less than 767 pixels
 
 a. keras: <svg version="1.0" xmlns="http://www.w3.org/2000/svg" fill="white" width="1344" height="1344" viewBox="0 0 1008 1008"><path d="M0 504v504h1008V0H0v504zm990 0v486H18V18h972v486z"/><path d="M299.3 212.7c-1.1 1-5.4 5.5-9.7 10l-7.6 8.2v540.5l9.3 9.3 9.3 9.3h60.8l9.8-9.8 9.8-9.8V587.2l11.3-10.9C422.5 547 453 518 453.7 518c.5 0 41.7 60.6 91.7 134.8 50 74.1 91.6 135.3 92.4 135.9 2.4 2 83.5 1.9 85.4-.1.7-.7 4.7-7.9 8.8-15.9 7.2-14 7.4-14.7 6-17.2-1.5-2.6-66.8-97.3-163.5-237l-50.5-73 99-98.5 99-98.5v-4.7c0-3.3-1.4-7.9-5.1-16.5-2.7-6.5-5.7-12.8-6.5-14.1L709 211h-83.5L503.3 333.7 381.1 456.5V343.7l-.1-112.8-8.2-8.7c-4.5-4.8-8.8-9.3-9.7-10-1.1-.9-9-1.2-31.7-1.2-27.3 0-30.4.2-32.1 1.7z"/></svg>
 
@@ -68,124 +69,11 @@ u. sass: <svg fill="white" width="800" height="800" viewBox="0 -4 32 32" xmlns="
 
 v. matplotlib: <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="1440" height="1008" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M684.5 3.5c137.435-7.022 258.435 33.478 363 121.5 102.43 90.694 159.6 205.194 171.5 343.5 7.56 137.977-33.1 259.31-122 364-109.197 120.437-246.03 177.27-410.5 170.5-151.922-13.172-274.088-79.005-366.5-197.5-91.31-125.53-120.643-264.53-88-417C268.688 246.304 349.855 138.804 475.5 66c65.252-35.892 134.919-56.726 209-62.5zm15 9h15v100a362.646 362.646 0 00-84 10 985.193 985.193 0 01-17-67 5630.757 5630.757 0 00-168.5 83c-.418 2.288.249 4.288 2 6l35.5 47.5a248.616 248.616 0 00-35 30c-.667.667-1.333.667-2 0l-69-69c90.025-86.645 197.692-133.479 323-140.5zm25 0c131.298 3.182 243.965 50.015 338 140.5a6834.163 6834.163 0 01-70 69.5c-74.938-70.781-164.271-107.448-268-110v-100zm-17 110h7v100a266.65 266.65 0 00-57 7 2067.04 2067.04 0 01-25-97c24.91-5.071 49.91-8.404 75-10zm17 0c100.922 3.002 187.589 39.169 260 108.5a6874.988 6874.988 0 01-70 69.5 369.934 369.934 0 00-40-32.5 743.995 743.995 0 0124.5-39.5c.781-1.444.614-2.777-.5-4l-77-42.5c-1.284-.684-2.451-.517-3.5.5a951.365 951.365 0 01-17.5 52c-24.749-7.631-50.082-11.631-76-12v-100zm-356 38a3463.268 3463.268 0 0170 70c-70.805 74.991-107.472 164.324-110 268h-100c3.28-131.156 49.946-243.822 140-338zm701 0c77.59 79.533 123.43 174.866 137.5 286a583.196 583.196 0 013.5 52h-100c-2.55-103.71-39.21-193.044-110-268l69-70zm-581 40a71096.803 71096.803 0 0159 80 30058.767 30058.767 0 00-23 20 6874.988 6874.988 0 01-70-69.5 483.48 483.48 0 0134-30.5zm209 33h17v99a168.647 168.647 0 00-30 4 3.647 3.647 0 01-1.5-1 5030.496 5030.496 0 01-23.5-96 560.099 560.099 0 0138-6zm27 0c24.177.029 47.843 3.529 71 10.5.928.388 1.595 1.055 2 2L767 339.5a168.717 168.717 0 00-42.5-7v-99zm-278 5a3463.268 3463.268 0 0170 70c-29.395 31.096-50.895 67.096-64.5 108a3.943 3.943 0 01-2 1 2181.017 2181.017 0 01-93.5-29c18.812-56.998 48.812-106.998 90-150zm545 0c61.19 62.393 96.69 137.393 106.5 225 .93 11.671 1.77 23.338 2.5 35h-100c-2.352-73.33-28.352-136.664-78-190l69-70zm-124 39c13.994 9.149 26.994 19.649 39 31.5a6874.988 6874.988 0 01-70 69.5 255.222 255.222 0 00-21-17 151036.36 151036.36 0 0152-84zm-314 12a7508.768 7508.768 0 0160 79.5 63.726 63.726 0 00-10 9c-.667.667-1.333.667-2 0l-69-69a244.026 244.026 0 0121-19.5zm-29 27a6763.513 6763.513 0 0169.5 69c.667.667.667 1.333 0 2-16.767 17.967-29.267 38.634-37.5 62a4968.291 4968.291 0 00-94-28c12.435-40.047 33.102-75.047 62-105zm389 0c48.858 50.507 74.191 111.173 76 182-33.24.329-66.407-.004-99.5-1-1.958-42.561-17.124-79.561-45.5-111l69-70zm-209 27h10v100h-5a2911.008 2911.008 0 00-24-96.5c6.472-1.187 12.806-2.354 19-3.5zm20 0a152.512 152.512 0 0137 5.5c.928.388 1.595 1.055 2 2L734 441.5c-2.804 1.844-5.97 2.511-9.5 2v-100zm84 28c7.343 4.163 14.01 9.329 20 15.5L759 456.5a9.454 9.454 0 00-2.5-1.5 11553.796 11553.796 0 0052-83.5zm-141 72a2299.866 2299.866 0 01-57-57 108.03 108.03 0 019.5-8 1848.636 1848.636 0 0147.5 65zm-65-49a6763.513 6763.513 0 0169.5 69c-3.004 4.996-5.837 10.329-8.5 16-1.223 1.114-2.556 1.281-4 .5a4745.74 4745.74 0 01-92-28c7.827-21.626 19.494-40.793 35-57.5zm233 0c27.752 28.869 42.418 63.535 44 104-26.002.167-52.002 0-78-.5a2111.92 2111.92 0 0142-5.5 357.612 357.612 0 00-10-42.5 764.58 764.58 0 00-60 24.5l-7-10 69-70zm-492 47a813 813 0 011 57h-6a695.764 695.764 0 015-57zm369 12c1.193.47 1.86 1.47 2 3l-.5 3-1.5-6zm12 0c2.165-.384 3.832.283 5 2a298.108 298.108 0 00-4.5 13 112.97 112.97 0 01-.5-15zm-45 19a173.063 173.063 0 0120 18.5 187.853 187.853 0 01-26-7 188.909 188.909 0 006-11.5zm65 14a246.626 246.626 0 0113-13.5c2.351.863 4.018 2.697 5 5.5a108.53 108.53 0 01-18 8zm-516 22h100c2.529 103.677 39.196 193.011 110 268a6874.988 6874.988 0 01-69.5 70c-90.476-94.02-137.309-206.686-140.5-338zm110 0h6c1.298 75.785-.702 75.785-6 0zm397 1c10.821-.995 21.821-1.328 33-1-.597 7.958-3.097 15.291-7.5 22a746.248 746.248 0 00-25.5-21zm44-1h100c-1.33 34.002-12.33 64.335-33 91a6872.708 6872.708 0 01-77-62.5c5.814-8.607 9.147-18.107 10-28.5zm111 0h99c-1.433 60.475-20.6 114.475-57.5 162a3644.893 3644.893 0 01-76.5-63.5c21.678-29.207 33.345-62.04 35-98.5zm110 0h100c-2.55 86.342-30.22 163.342-83 231a6872.708 6872.708 0 01-77-62.5c38.306-49.405 58.306-105.572 60-168.5zm110 0h100c-3.53 131.175-50.36 243.841-140.5 338a1091.17 1091.17 0 01-27.5-28 1252.288 1252.288 0 0129.5-30c.67-1.333.67-2.667 0-4a3967.508 3967.508 0 00-46.5-37.5c55.16-69.626 83.49-149.126 85-238.5zm-400 11c.543.06.876.393 1 1a234.686 234.686 0 00-5 30c-6.682-1.173-12.349-4.173-17-9 7.021-7.354 14.021-14.687 21-22zm19 8a421.468 421.468 0 0115 18.5 52.288 52.288 0 01-12 4.5 815.49 815.49 0 00-3-23zm-73 1a4475.556 4475.556 0 01-80 40.5c-2.564.45-4.064-.716-4.5-3.5a114.501 114.501 0 01-3.5-9.5 3.943 3.943 0 011-2 2830.887 2830.887 0 0187-25.5zm24 21c7.249 5.459 15.249 9.626 24 12.5a3306.423 3306.423 0 00-17 97.5c-29.554-5.776-55.22-18.943-77-39.5a6970.792 6970.792 0 0070-70.5zm-21 6a4548.329 4548.329 0 01-56.5 57 57.217 57.217 0 01-8.5-9.5 1848.636 1848.636 0 0165-47.5zm89 0c1.322-.17 2.489.163 3.5 1a5181.98 5181.98 0 0057.5 78c-17.246 12.978-36.58 21.311-58 25a3306.423 3306.423 0 00-17-97.5c5.101-1.519 9.768-3.686 14-6.5zm-193 2c.876-.131 1.543.202 2 1a167.54 167.54 0 007 16.5l-56 28c-1.017 1.049-1.184 2.216-.5 3.5a706.542 706.542 0 0127 36c1.726 1.076 3.559 1.243 5.5.5a3426.777 3426.777 0 0044.5-33.5 58.737 58.737 0 019.5 11 6874.988 6874.988 0 01-69.5 70c-29.011-30.004-49.844-65.004-62.5-105a3176.847 3176.847 0 0093-28zm-107 32h4c12.876 41.436 34.209 77.769 64 109a6874.988 6874.988 0 01-69.5 70c-41.61-42.85-71.777-92.85-90.5-150 .881-1.471 2.214-2.304 4-2.5a4203.68 4203.68 0 0088-26.5zm153 39a437.533 437.533 0 0035 24.5 229.045 229.045 0 0049 18.5 7077.951 7077.951 0 00-16.5 95c-.519 1.016-1.353 1.682-2.5 2-51.677-10.667-96.343-34.167-134-70.5a6763.513 6763.513 0 0069-69.5zm214 16c1.693.975 3.193 2.308 4.5 4l55.5 75.5c-31.162 21.908-65.495 36.741-103 44.5-1.147-.318-1.981-.984-2.5-2a7077.951 7077.951 0 00-16.5-95c22.441-5.228 43.108-14.228 62-27zm-292 62a389.701 389.701 0 0057 41.5c26.301 14.812 54.301 25.145 84 31 1.692 1.401 2.359 3.234 2 5.5h48v99c-100.83-2.421-187.497-38.254-260-107.5a6763.513 6763.513 0 0069-69.5zm358 26a2625.89 2625.89 0 0159 80c-64.415 46.026-136.415 69.693-216 71v-99h48c-.359-2.266.308-4.099 2-5.5 39.303-7.692 74.97-23.192 107-46.5zm-436 52a659.608 659.608 0 0064 49.5c62.655 39.048 130.989 59.215 205 60.5v100c-131.183-3.527-243.849-50.36-338-140.5a6763.513 6763.513 0 0069-69.5zm501 37a50283.997 50283.997 0 0040 51 1007.085 1007.085 0 0047-45.5c.67-.667 1.33-.667 2 0l27 27c-94.151 90.14-206.817 136.973-338 140.5v-100c81.925-1.198 155.925-25.532 222-73z"/></svg>
 
-1. timeline:
 
-<div class="container py-5">
-  <div class="main-timeline-4 text-white">
-    <div class="timeline-4 left-4">
-      <div class="card gradient-custom">
-        <div class="card-body p-4">
-          <i class="fas fa-brain fa-2x mb-3"></i>
-          <h4>7:45PM</h4>
-          <p class="small text-white-50 mb-4">May 21</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 right-4">
-      <div class="card gradient-custom-4">
-        <div class="card-body p-4">
-          <i class="fas fa-camera fa-2x mb-3"></i>
-          <h4>8:00 AM</h4>
-          <p class="small text-white-50 mb-4">May 18</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 left-4">
-      <div class="card gradient-custom">
-        <div class="card-body p-4">
-          <i class="fas fa-campground fa-2x mb-3"></i>
-          <h4>7:25 PM</h4>
-          <p class="small text-white-50 mb-4">May 6</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 right-4">
-      <div class="card gradient-custom-4">
-        <div class="card-body p-4">
-          <i class="fas fa-sun fa-2x mb-3"></i>
-          <h4>3:55 PM</h4>
-          <p class="small text-white-50 mb-4">Apr 26</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 left-4">
-      <div class="card gradient-custom">
-        <div class="card-body p-4">
-          <i class="fas fa-palette fa-2x mb-3"></i>
-          <h4>5:24 PM</h4>
-          <p class="small text-white-50 mb-4">Apr 12</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 right-4">
-      <div class="card gradient-custom-4">
-        <div class="card-body p-4">
-          <i class="fas fa-laugh-beam fa-2x mb-3"></i>
-          <h4>11:25 AM</h4>
-          <p class="small text-white-50 mb-4">Apr 11</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-    <div class="timeline-4 left-4">
-      <div class="card gradient-custom">
-        <div class="card-body p-4">
-          <i class="fas fa-pizza-slice fa-2x mb-3"></i>
-          <h4>12:30 PM</h4>
-          <p class="small text-white-50 mb-4">Apr 5</p>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-            dignissim
-            per, habeo iusto primis ea eam.
-          </p>
-          <h6 class="badge bg-light text-black mb-0">New</h6>
-          <h6 class="badge bg-light text-black mb-0">Admin</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+## Writing html, css, and svelte based on website template:
+**To do:**
+1. timeline:
 
 2. Install tailwindcss via `npm install -D tailwindcss` in base directory, and create your `tailwind.config.js` file using `npx tailwindcss init` which will contain the code below:
 ```
@@ -213,10 +101,6 @@ initially the extend dictionary will be empty so we can populate it with our own
 6. in order to compile open the `package.json` file and add the key-value pair `"build-css": "tailwindcss build src/assets/stylesheets/custom.css -o src/app.css"` under the `scripts` dictionary along with all other commands that allows us to run and/or build our svelte app. Adding this will allow us to run `npm run build-css custom.css` whenever we add new directives in our `custom.css` file
 7. compile using `npm run build-css custom.css`
 
-
-
-
-
 **Tech used:**
 * Svelte.js
 * Tailwind
@@ -228,7 +112,8 @@ initially the extend dictionary will be empty so we can populate it with our own
 * https://codepen.io/aeryla/pen/PoKaBYM
 * https://codepen.io/jshwrnr/pen/BaRwBZM
 * https://codepen.io/DivyaPatel/pen/dxjgVL
-* https://css-tricks.com/styling-based-on-scroll-position/
+* styling based on scroll position - https://css-tricks.com/styling-based-on-scroll-position/
+* min-widht and max-width in media queries - https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/
 
 **Side notes:**
 1. Mixins in sass:
