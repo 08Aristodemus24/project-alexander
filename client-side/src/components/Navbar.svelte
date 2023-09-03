@@ -70,17 +70,17 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
 
-  html{
+  /* html{
     border: 1px solid purple;  
-  }
+  } */
 
-  body{
+  /* body{
     background: white;
     border: 1px solid red;
-  }
+  } */
 
-  .navbar-container{
-  }
+  /* .navbar-container{
+  } */
 
   .navbar{
     /* size */
@@ -98,7 +98,7 @@
     position: relative;
     
     /* design */
-    border: 1px solid green;
+    /* border: 1px solid green; */
     background: black;
   }
 
@@ -132,10 +132,10 @@
     display: none;
   }
 
-  .nav-menu-container{
-    /* design */
-  /*   border: 1px solid red; */
-  }
+  /* .nav-menu-container{
+    
+    border: 1px solid red;
+  } */
 
   .nav-menu{
     display: flex;
