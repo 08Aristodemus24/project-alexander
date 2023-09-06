@@ -150,15 +150,8 @@
 
   @media (width < 768px){
     .nav-menu-container{
-      /* display: none; */
       position: fixed;
-      /* transform: scale(0%); */
-      visibility: hidden;
-      opacity: 0%;
-
-      transition-property: visibility, opacity;
-      transition-duration: 250ms;
-      transition-timing-function: ease-in-out;
+      display: none;
     }
     
     /* override min-height and min-width height and width values of .nav-brand-container 
@@ -179,12 +172,12 @@
       margin-left: auto;
       
       /* design */
-      border: 1px solid red;
+      /* border: 1px solid red; */
     }
     
     .nav-brand-container .navbar-brand{
       display: block;
-      border: 1px solid yellow;
+      /* border: 1px solid yellow; */
 
       transition-property: opacity;
       transition-duration: 250ms;
@@ -206,7 +199,7 @@
       /* design */
       color: white;
       background: transparent;
-      border: 1px solid lightgreen;
+      /* border: 1px solid lightgreen; */
     }
 
     .button-container > a{
@@ -307,61 +300,23 @@
 
     /* on hover on button-container then translate top, left, bottom, right edges to */
     .button-container.opened .top-edge{
-      transform: translate(-107%, 107%);
+      transform: translate(-115%, 115%);
     }
 
     .button-container.opened .left-edge{
-      transform: translate(107%, 107%);
+      transform: translate(115%, 115%);
     }
 
     .button-container.opened .bottom-edge{
-      transform: translate(107%, -107%);
+      transform: translate(115%, -115%);
     }
 
     .button-container.opened .right-edge{
-      transform: translate(-107%, -107%);
+      transform: translate(-115%, -115%);
     }
 
     .navbar.opened .nav-brand-container .navbar-brand{
       opacity: 0%;
     }
-
-    /* TO TEST AND REFACTOR FOR BUGS */
-    /* when .navbar has .opened class apply block display
-    to the none displayed .nav-menu-container */
-    .navbar.opened .nav-menu-container{
-      /* display */
-      /* since .navbar is in flex this will be a flex item still */
-      /* .navbar still has height to 6.5rem that's why when showing 
-      this .nav-menu-container it still stays in the .navbar and not in the middle */
-      opacity: 100%;
-      visibility: visible;
-      /* display: flex; */
-
-      /* size */
-      width: 100vw;
-      /* transform: scale(100%); */
-
-      /* position */
-      position: fixed;
-
-      /* alignment */
-      top: 6.5rem;
-      bottom: 0;
-      margin-top: auto;
-      margin-bottom: auto;
-      justify-content: center;
-
-      /* design */
-      background-color: black;
-
-    }
-
-    .navbar.opened .nav-menu-container .nav-menu{
-      flex-direction: column;
-      justify-content: center;
-      row-gap: 5rem;
-    }
-
   }
 </style>
