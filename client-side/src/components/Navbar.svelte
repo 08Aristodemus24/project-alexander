@@ -11,7 +11,7 @@
 </script>
 
 <header class="navbar-container">
-  <nav class="navbar">
+  <nav class="navbar" class:opened={is_opened === true}>
     <div class="nav-brand-container">
       <a class="navbar-brand" href="/">Michael</a>
       <div on:click={toggle_menu} class="button-container" class:opened={is_opened === true}>
@@ -43,7 +43,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
 
   /* html{
-    border: 1px solid purple;  
+    border: 1px solid purple;
   } */
 
   /* body{
@@ -104,13 +104,13 @@
     display: none;
   }
 
-  /* .nav-menu-container{
+  .nav-menu-container{
     border: 1px solid red;
-  } */
+  }
 
   .nav-menu{
     display: flex;
-  /*     border: 1px solid blue; */
+    border: 1px solid blue;
   }
 
   .nav-item{
@@ -134,6 +134,7 @@
     font-weight: 300;
     text-decoration: none;
     border: 1px solid transparent;
+    border: 1px solid red;
     
     /* animation */
     transition-property: border;
@@ -147,9 +148,17 @@
   }
 
 
-  @media (max-width: 768px){
+  @media (width < 768px){
     .nav-menu-container{
-      display: none;
+      /* display: none; */
+      position: fixed;
+      /* transform: scale(0%); */
+      visibility: hidden;
+      opacity: 0%;
+
+      transition-property: visibility, opacity;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
     }
     
     /* override min-height and min-width height and width values of .nav-brand-container 
@@ -176,16 +185,16 @@
     .nav-brand-container .navbar-brand{
       display: block;
       border: 1px solid yellow;
+
+      transition-property: opacity;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
     }
     
     /* for the navbar button and its animations */
     .nav-brand-container .button-container{
       /* display */
-      display: block;
-      
-      /* design */
-      color: white;
-      border: 1px solid red;
+      display: block;      
       
       /* position*/
       position: relative;
@@ -195,6 +204,7 @@
       width: 2.25rem;
 
       /* design */
+      color: white;
       background: transparent;
       border: 1px solid lightgreen;
     }
@@ -311,5 +321,47 @@
     .button-container.opened .right-edge{
       transform: translate(-107%, -107%);
     }
+
+    .navbar.opened .nav-brand-container .navbar-brand{
+      opacity: 0%;
+    }
+
+    /* TO TEST AND REFACTOR FOR BUGS */
+    /* when .navbar has .opened class apply block display
+    to the none displayed .nav-menu-container */
+    .navbar.opened .nav-menu-container{
+      /* display */
+      /* since .navbar is in flex this will be a flex item still */
+      /* .navbar still has height to 6.5rem that's why when showing 
+      this .nav-menu-container it still stays in the .navbar and not in the middle */
+      opacity: 100%;
+      visibility: visible;
+      /* display: flex; */
+
+      /* size */
+      width: 100vw;
+      /* transform: scale(100%); */
+
+      /* position */
+      position: fixed;
+
+      /* alignment */
+      top: 6.5rem;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      justify-content: center;
+
+      /* design */
+      background-color: black;
+
+    }
+
+    .navbar.opened .nav-menu-container .nav-menu{
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 5rem;
+    }
+
   }
 </style>
