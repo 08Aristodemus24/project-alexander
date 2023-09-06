@@ -12,17 +12,17 @@
 
 <div class="centerer">
     <div on:click={toggle_menu} class="button-container" class:opened={is_opened === true}>
-      <a href="/" class="top-left-corner"></a>
-      <a href="/" class="top-edge"></a>
-      <a href="/" class="top-right-corner"></a>
+      <a href="#" class="top-left-corner"></a>
+      <a href="#" class="top-edge"></a>
+      <a href="#" class="top-right-corner"></a>
       
-      <a href="/" class="left-edge"></a>
-      <a href="/" class="center"></a>
-      <a href="/" class="right-edge"></a>
+      <a href="#" class="left-edge"></a>
+      <a href="#" class="center"></a>
+      <a href="#" class="right-edge"></a>
       
-      <a href="/" class="bottom-left-corner"></a>
-      <a href="/" class="bottom-edge"></a>
-      <a href="/" class="bottom-right-corner"></a>
+      <a href="#" class="bottom-left-corner"></a>
+      <a href="#" class="bottom-edge"></a>
+      <a href="#" class="bottom-right-corner"></a>
     </div>
 </div>
 
@@ -30,39 +30,39 @@
     @media (max-width: 768px){
         /* for the navbar button and its animations */
         div.button-container{
-        /* display */
-        display: block;
-        
-        /* design */
-        color: white;
-        border: 1px solid red;
-        
-        /* position*/
-        position: relative;
+            /* display */
+            display: block;
+            
+            /* design */
+            color: white;
+            border: 1px solid red;
+            
+            /* position*/
+            position: relative;
 
-        /* size */
-        height: 2rem;
-        width: 2rem;
+            /* size */
+            height: 2rem;
+            width: 2rem;
 
-        /* design */
-        background: transparent;
-        border: 1px solid lightgreen;
+            /* design */
+            background: transparent;
+            border: 1px solid lightgreen;
         }
 
         .button-container > a{
-        /* display */
-        display: block;
+            /* display */
+            display: block;
 
-        /* position */
-        position: absolute;
+            /* position */
+            position: absolute;
 
-        /* sizing */
-        height: 6px;
-        width: 6px;
+            /* sizing */
+            height: 6px;
+            width: 6px;
 
-        /* design */
-        border-radius: 50%;
-        background: white;
+            /* design */
+            border-radius: 50%;
+            background: white;
         }
 
         .top-left-corner{

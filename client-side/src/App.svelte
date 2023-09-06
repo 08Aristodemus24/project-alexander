@@ -39,8 +39,6 @@
 
 </script>
 
-<Navbar>
-  <NavbarBurger/>
-</Navbar>
+<Navbar/>
 
 <Tailwind/>
