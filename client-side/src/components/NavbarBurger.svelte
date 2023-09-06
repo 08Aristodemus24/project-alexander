@@ -12,173 +12,154 @@
 
 <div class="centerer">
     <div on:click={toggle_menu} class="button-container" class:opened={is_opened === true}>
-      <a href="" class="top-left-corner"></a>
-      <a href="" class="top-edge"></a>
-      <a href="" class="top-right-corner"></a>
+      <a href="/" class="top-left-corner"></a>
+      <a href="/" class="top-edge"></a>
+      <a href="/" class="top-right-corner"></a>
       
-      <a href="" class="left-edge"></a>
-      <a href="" class="center"></a>
-      <a href="" class="right-edge"></a>
+      <a href="/" class="left-edge"></a>
+      <a href="/" class="center"></a>
+      <a href="/" class="right-edge"></a>
       
-      <a href="" class="bottom-left-corner"></a>
-      <a href="" class="bottom-edge"></a>
-      <a href="" class="bottom-right-corner"></a>
+      <a href="/" class="bottom-left-corner"></a>
+      <a href="/" class="bottom-edge"></a>
+      <a href="/" class="bottom-right-corner"></a>
     </div>
 </div>
 
 <style>
-    .centerer{
-        /* display */
-        display: flex;
-        
-        /* // position */
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        
-        /* parent alignment */
-        margin-top: auto;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-left: auto;
-        
-        /* child alignment */
-        justify-content: center;
-        align-items: center;
-        
-        /* size */
-        height: 50vh;
-        width: 50vw;
-        
-        /* design */
-        border: 1px solid blue;
-    }
-
-    .button-container{
-        /* position */
-        position: relative;
-        
-        /* size */
-        height: 10rem;
-        width: 10rem;
-        
-        /* design */
-        background: transparent;
-    }
-
-    a{
+    @media (max-width: 768px){
+        /* for the navbar button and its animations */
+        div.button-container{
         /* display */
         display: block;
         
+        /* design */
+        color: white;
+        border: 1px solid red;
+        
+        /* position*/
+        position: relative;
+
+        /* size */
+        height: 2rem;
+        width: 2rem;
+
+        /* design */
+        background: transparent;
+        border: 1px solid lightgreen;
+        }
+
+        .button-container > a{
+        /* display */
+        display: block;
+
         /* position */
         position: absolute;
-        
+
         /* sizing */
-        height: 1rem;
-        width: 1rem;
-        
+        height: 6px;
+        width: 6px;
+
         /* design */
         border-radius: 50%;
-        background: black;
-    }
+        background: white;
+        }
 
-    .top-left-corner{
-        top: 1rem;
-        left: 1rem;
-    }
+        .top-left-corner{
+        top: 1px;
+        left: 1px;
+        }
 
-    .top-edge{
-        top: 1rem;
+        .top-edge{
+        top: 1px;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        
+
         /* animation */
         transition-property: transform;
         transition-duration: .5s;
         transition-timing-function: ease-in-out;
-    }
+        }
 
-    .top-right-corner{
-        top: 1rem;
-        right: 1rem;
-    }
+        .top-right-corner{
+        top: 1px;
+        right: 1px;
+        }
 
-    .left-edge{
-        left: 1rem;
+        .left-edge{
+        left: 1px;
         top: 0;
         bottom: 0;
         margin-top: auto;
         margin-bottom: auto;
-        
+
         /* animation */
         transition-property: transform;
         transition-duration: .5s;
         transition-timing-function: ease-in-out;
-    }
+        }
 
-    .center{
+        .center{
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         margin: auto auto auto auto;
-    }
+        }
 
-    .right-edge{
-        right: 1rem;
+        .right-edge{
+        right: 1px;
         top: 0;
         bottom: 0;
         margin-top: auto;
         margin-bottom: auto;
-        
+
         /* animation */
         transition-property: transform;
         transition-duration: .5s;
         transition-timing-function: ease-in-out;
-    }
+        }
 
-    .bottom-left-corner{
-        left: 1rem;
-        bottom: 1rem;
-    }
+        .bottom-left-corner{
+        left: 1px;
+        bottom: 1px;
+        }
 
-    .bottom-edge{
-        bottom: 1rem;
+        .bottom-edge{
+        bottom: 1px;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        
+
         /* animation */
         transition-property: transform;
-        transition-duration: 500ms;
+        transition-duration: .5s;
         transition-timing-function: ease-in-out;
-    }
+        }
 
-    .bottom-right-corner{
-        right: 1rem;
-        bottom: 1rem;
-    }
+        .bottom-right-corner{
+        right: 1px;
+        bottom: 1px;
+        }
 
-    /* on hover on button-container then translate top, left, bottom, right edges to */
+        /* on hover on button-container then translate top, left, bottom, right edges to */
+        .button-container.opened .top-edge{
+        transform: translate(-100%, 100%);
+        }
 
-    .button-container.opened .top-edge{
-        transform: translate(-175%, 175%);
-    }
+        .button-container.opened .left-edge{
+        transform: translate(100%, 100%);
+        }
 
-    .button-container.opened .left-edge{
-        transform: translate(175%, 175%);
-    }
+        .button-container.opened .bottom-edge{
+        transform: translate(100%, -100%);
+        }
 
-    .button-container.opened .bottom-edge{
-        transform: translate(175%, -175%);
-    }
-
-    .button-container.opened .right-edge{
-        transform: translate(-175%, -175%);
+        .button-container.opened .right-edge{
+        transform: translate(-100%, -100%);
+        }
     }
 </style>
