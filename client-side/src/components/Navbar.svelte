@@ -149,9 +149,36 @@
 
 
   @media (width < 768px){
+    .navbar{
+      height: 5rem;
+      
+    }
+    
     .nav-menu-container{
+      /* display */
+      display: flex;
+      visibility: hidden;
+      opacity: 0%;
+      
+      /* position */
       position: fixed;
-      display: none;
+      
+      /* design */
+      background-color: black;
+      
+      /* alignment */
+      top: 5rem;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      justify-content: center;
+      
+      /* size */
+      width: 100vw;
+      
+      transition-property: opacity, visibility;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
     }
     
     /* override min-height and min-width height and width values of .nav-brand-container 
@@ -172,15 +199,18 @@
       margin-left: auto;
       
       /* design */
-      /* border: 1px solid red; */
+      border: 1px solid red;
     }
     
     .nav-brand-container .navbar-brand{
       display: block;
-      /* border: 1px solid yellow; */
+      
+      /* design */
+      font-size: 24px;
+      border: 1px solid yellow;
 
       transition-property: opacity;
-      transition-duration: 250ms;
+      transition-duration: 125ms;
       transition-timing-function: ease-in-out;
     }
     
@@ -193,8 +223,8 @@
       position: relative;
 
       /* size */
-      height: 2.25rem;
-      width: 2.25rem;
+      height: 1.75rem;
+      width: 1.75rem;
 
       /* design */
       color: white;
@@ -210,12 +240,13 @@
       position: absolute;
 
       /* sizing */
-      height: 6px;
-      width: 6px;
+      height: 5px;
+      width: 5px;
 
       /* design */
       border-radius: 50%;
       background: white;
+      /* border: 1px solid red; */
     }
 
     .top-left-corner{
@@ -232,7 +263,7 @@
 
       /* animation */
       transition-property: transform;
-      transition-duration: .5s;
+      transition-duration: 125ms;
       transition-timing-function: ease-in-out;
     }
 
@@ -250,7 +281,7 @@
 
       /* animation */
       transition-property: transform;
-      transition-duration: .5s;
+      transition-duration: 125ms;
       transition-timing-function: ease-in-out;
     }
 
@@ -271,7 +302,7 @@
 
       /* animation */
       transition-property: transform;
-      transition-duration: .5s;
+      transition-duration: 125ms;
       transition-timing-function: ease-in-out;
     }
 
@@ -289,7 +320,7 @@
 
       /* animation */
       transition-property: transform;
-      transition-duration: .5s;
+      transition-duration: 125ms;
       transition-timing-function: ease-in-out;
     }
 
@@ -300,23 +331,34 @@
 
     /* on hover on button-container then translate top, left, bottom, right edges to */
     .button-container.opened .top-edge{
-      transform: translate(-115%, 115%);
+      transform: translate(-105%, 105%);
     }
 
     .button-container.opened .left-edge{
-      transform: translate(115%, 115%);
+      transform: translate(105%, 105%);
     }
 
     .button-container.opened .bottom-edge{
-      transform: translate(115%, -115%);
+      transform: translate(105%, -105%);
     }
 
     .button-container.opened .right-edge{
-      transform: translate(-115%, -115%);
+      transform: translate(-105%, -105%);
     }
 
     .navbar.opened .nav-brand-container .navbar-brand{
       opacity: 0%;
+    }
+    
+    .navbar.opened .nav-menu-container{
+      visibility: visible;
+      opacity: 100%;
+    }
+    
+    .navbar .nav-menu-container .nav-menu{
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 5rem;
     }
   }
 </style>
