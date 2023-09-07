@@ -2,7 +2,11 @@
   import { onMount, onDestroy } from "svelte";
   import Navbar from './components/Navbar.svelte';
   import NavbarBurger from './components/NavbarBurger.svelte';
-  import Tailwind from './components/Tailwind.svelte';
+
+  import './assets/stylesheets/small-desktop.css';
+  import './assets/stylesheets/small-phone.css';
+  // import Tailwind from "./components/Tailwind.svelte";
+  
 
   // initial state
   let repos = [];
@@ -40,5 +44,3 @@
 </script>
 
 <Navbar/>
-
-<Tailwind/>

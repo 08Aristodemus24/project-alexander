@@ -131,6 +131,10 @@ main {
     }
 }
 
+## Writing navbar
+**To do:**
+1. Maybe I can fix the nav-menu-container being in a fixed position using z-index
+
 @mixin <function name>($<parameter name>){
     display: flex;
     justify-content: center;
