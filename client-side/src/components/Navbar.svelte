@@ -32,7 +32,7 @@
     <div class="nav-menu-container">
       <div class="nav-menu">
         <a class="nav-item" href="about-section" aria-current="page">ABOUT</a>
-        <a class="nav-item" href="proj-section">WORK</a>
+        <a class="nav-item" href="work-section">WORK</a>
         <a class="nav-item" href="contact-section">CONTACT</a>
       </div>
     </div>

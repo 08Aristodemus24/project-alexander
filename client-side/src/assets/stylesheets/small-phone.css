@@ -311,4 +311,8 @@
         justify-content: center;
         row-gap: 5rem;
     }
+
+    #about-section, #work-section, #contact-section{
+        
+    }
 }
