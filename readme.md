@@ -124,6 +124,7 @@ initially the extend dictionary will be empty so we can populate it with our own
 * https://codepen.io/DivyaPatel/pen/dxjgVL
 * styling based on scroll position - https://css-tricks.com/styling-based-on-scroll-position/
 * min-widht and max-width in media queries - https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/
+* scaling font depending on device using clamp - https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 
 **Side notes:**
 1. Mixins in sass:
