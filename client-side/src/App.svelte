@@ -52,6 +52,6 @@
 <Hero/>
 <Hero/>
 <Hero/>
-<Hero/>
-<Hero/>
-<Hero/>
+<Hero section="about-section"/>
+<Hero section="work-section"/>
+<Hero section="contact-section"/>
