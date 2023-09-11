@@ -5,6 +5,7 @@
 
   import './assets/stylesheets/small-desktop.css';
   import './assets/stylesheets/small-phone.css';
+  import Hero from "./components/Hero.svelte";
   // import Tailwind from "./components/Tailwind.svelte";
   
 
@@ -44,3 +45,13 @@
 </script>
 
 <Navbar/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>
+<Hero/>

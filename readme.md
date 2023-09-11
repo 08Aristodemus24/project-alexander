@@ -128,6 +128,14 @@ initially the extend dictionary will be empty so we can populate it with our own
 
 **Side notes:**
 1. Mixins in sass:
+```
+@mixin <function name>($<parameter name>){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 main {
     @include flexCenter(row);
     width: 80%;
@@ -141,17 +149,28 @@ main {
         }
     }
 }
+```
 
 ## Writing navbar
 **To do:**
-1. Maybe I can fix the nav-menu-container being in a fixed position using z-index
 
-@mixin <function name>($<parameter name>){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
+**Problems and solutions:**
+1. <s>Maybe I can fix the nav-menu-container being in a fixed position using z-index - resolved</s>
+2. prevent scrolling when navbar modal is open
+3. for some reason adding sections causes x or horizontal overflow thus having a sidebar appear - https://stackoverflow.com/questions/68363478/why-horizontal-scrollbar-appears#:~:text=You%20horizontal%20scrollbar%20is%20caused,with%20a%20vertical%20one)%3B
+
+4. <s>yes nav-menu-container is now fixed but problem of getting it behind .navbar still occurs because .navbar is relative - solution could be to just set fixed nav-menu-container behind nav-brand-container. Resolved</s>
+5. since opening and closing of navbar functionality is finished is codepen implement it in svelte since codepen uses pure javascript like the DOM api to interact with the modal
+
+**Insights:**
+* A stacking context is a group of elements that have a common parent and move up and down the z axis together.
+
+**Questions:**
+
+**Conclusions:**
+
+
 
 # Backend
 ## Setting up backend proxy server for accessing .env file

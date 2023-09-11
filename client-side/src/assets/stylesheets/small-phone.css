@@ -4,314 +4,316 @@
     *,
     ::before,
     ::after{
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     html{
-        /* design */
-        line-height: 1.5;
-        /* border: 1px solid purple; */
+      /* design */
+      line-height: 1.5;
+      /* border: 1px solid purple; */
 
-        /* behavior */
-        scroll-behavior: smooth;
+      /* behavior */
+      scroll-behavior: smooth;
     }
 
     body{
-        /* design */
-        /* inherit line height of parent which is html */
-        line-height: inherit;
-        /* border: 1px solid red; */
+      /* design */
+      /* inherit line height of parent which is html */
+      line-height: inherit;
+      /* border: 1px solid red; */
 
-        /* spacing */
-        margin: 0;   
+      /* spacing */
+      margin: 0;   
     }
 
-    /* .navbar-container{
-
-    } */
+    .navbar-container{
+      
+    }
 
     .navbar{
-        /* size */
-        height: 5rem;
-        width: 100vw;
+      /* size */
+      height: 5rem;
+      width: 100vw;
 
-        /* display */
-        display: flex;
+      /* display */
+      display: flex;
 
-        /*alignment */
-        justify-content: center;
-        align-items: center;
+      /*alignment */
+      justify-content: center;
+      align-items: center;
 
-        /* position */
-        position: relative;
+      /* position */
+      position: relative;
 
-        /* design */
-        /* border: 1px solid green; */
-        background: black;
+      /* design */
+      outline: 1px solid white;
+      background-color: black;
     }
 
     /* override min-height and min-width height and width values of .nav-brand-container 
     but keep it absolute still */
     .nav-brand-container{
-        /* display */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      /* display */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        /* size */
-        height: min-content;
-        width: 85%;
+      /* size */
+      height: min-content;
+      width: 85%;
 
-        /* position */
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: auto;
-        margin-left: auto;
+      /* position */
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+      margin-left: auto;
 
-        /* design */
-        /* border: 2px solid red; */
+      /* design */
+      outline: 2px solid red;
+      background-color: black;
     }
 
     .nav-brand-container .navbar-brand{
-        /* display */
-        display: block;
+      /* display */
+      display: block;
 
-        /* design */
-        color: white;
-        font-size: 24px;
-        font-weight: 700;
-        font-family: 'Cormorant Garamond', serif;
-        text-decoration: none;
-        /* border: 1px solid yellow; */
+      /* design */
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      text-decoration: none;
+      outline: 1px solid yellow;
 
-        /* animation */
-        transition-property: opacity;
-        transition-duration: 125ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: opacity;
+      transition-duration: 125ms;
+      transition-timing-function: ease-in-out;
     }
 
     /* for the navbar button and its animations */
     .nav-brand-container .button-container{
-        /* display */
-        display: block;      
-        
-        /* position*/
-        position: relative;
+      /* display */
+      display: block;      
 
-        /* size */
-        height: 1.75rem;
-        width: 1.75rem;
+      /* position*/
+      position: relative;
 
-        /* design */
-        color: white;
-        background: transparent;
-        /* border: 1px solid lightgreen; */
+      /* size */
+      height: 1.75rem;
+      width: 1.75rem;
+
+      /* design */
+      color: white;
+      background: transparent;
+      outline: 1px solid lightgreen;
     }
 
     .nav-menu-container{
-        /* display */
-        display: flex;
-        visibility: hidden;
-        opacity: 0%;
-        
-        /* position */
-        position: fixed;
-        
-        /* design */
-        background-color: black;
-        /* border: 1px solid red; */
-        
-        /* alignment */
-        top: 5rem;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-        justify-content: center;
-        
-        /* size */
-        width: 100vw;
-        
-        /* animation */
-        transition-property: opacity, visibility;
-        transition-duration: 250ms;
-        transition-timing-function: ease-in-out;
+      /* display */
+      display: flex;
+      visibility: hidden;
+      opacity: 0%;
+
+      /* position */
+      position: fixed;
+      z-index: 2;
+
+      /* design */
+      background-color: black;
+      outline: 1px solid yellow;
+
+      /* alignment */
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      justify-content: center;
+
+      /* size */
+      width: 100vw;
+
+      /* animation */
+      transition-property: opacity, visibility;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
     }
 
     .nav-menu{
-        display: flex;
-        /* border: 1px solid blue; */
+      display: flex;
+      /* border: 1px solid blue; */
     }
 
     .nav-item{
-        /* display */
-        display: block;
+      /* display */
+      display: block;
 
-        /* spacing */
-        margin-left: 1rem;
-        margin-right: 1rem;
-        padding-top: .5rem;
-        padding-bottom: .5rem;
+      /* spacing */
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
 
-        /* size */
-        width: 10rem;
+      /* size */
+      width: 10rem;
 
-        /* design */
-        text-align: center;
-        color: white;
-        font-size: 13px;
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: 300;
-        text-decoration: none;
-        border: 1px solid transparent;
-        /* border: 1px solid red; */
+      /* design */
+      text-align: center;
+      color: white;
+      font-size: 13px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
+      text-decoration: none;
+      border: 1px solid transparent;
+      /* outline: 1px solid red; */
 
-        /* animation */
-        transition-property: border;
-        transition-duration: 250ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: border;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
     }
 
     .nav-item:hover{
-        border-top: solid 1px white;
-        border-bottom: solid 1px white;
+      border-top: solid 1px white;
+      border-bottom: solid 1px white;
     }
 
     /* MOBILE */
-
     .button-container > a{
-        /* display */
-        display: block;
+      /* display */
+      display: block;
 
-        /* position */
-        position: absolute;
+      /* position */
+      position: absolute;
 
-        /* sizing */
-        height: 5px;
-        width: 5px;
+      /* sizing */
+      height: 5px;
+      width: 5px;
 
-        /* design */
-        border-radius: 50%;
-        background: white;
-        /* border: 1px solid red; */
+      /* design */
+      border-radius: 50%;
+      background: white;
+      /* outline: 1px solid red; */
     }
 
     .top-left-corner{
-        top: 1px;
-        left: 1px;
+      top: 1px;
+      left: 1px;
     }
 
     .top-edge{
-        top: 1px;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
+      top: 1px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
 
-        /* animation */
-        transition-property: transform;
-        transition-duration: 125ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: transform;
+      transition-duration: 125ms;
+      transition-timing-function: ease-in-out;
     }
 
     .top-right-corner{
-        top: 1px;
-        right: 1px;
+      top: 1px;
+      right: 1px;
     }
 
     .left-edge{
-        left: 1px;
-        top: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
+      left: 1px;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
 
-        /* animation */
-        transition-property: transform;
-        transition-duration: 125ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: transform;
+      transition-duration: 125ms;
+      transition-timing-function: ease-in-out;
     }
 
     .center{
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto auto auto auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto auto auto auto;
     }
 
     .right-edge{
-        right: 1px;
-        top: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
+      right: 1px;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
 
-        /* animation */
-        transition-property: transform;
-        transition-duration: 125ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: transform;
+      transition-duration: 125ms;
+      transition-timing-function: ease-in-out;
     }
 
     .bottom-left-corner{
-        left: 1px;
-        bottom: 1px;
+      left: 1px;
+      bottom: 1px;
     }
 
     .bottom-edge{
-        bottom: 1px;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
 
-        /* animation */
-        transition-property: transform;
-        transition-duration: 125ms;
-        transition-timing-function: ease-in-out;
+      /* animation */
+      transition-property: transform;
+      transition-duration: 125ms;
+      transition-timing-function: ease-in-out;
     }
 
     .bottom-right-corner{
-        right: 1px;
-        bottom: 1px;
+      right: 1px;
+      bottom: 1px;
     }
 
     /* on hover on button-container then translate top, left, bottom, right edges to */
     .button-container.opened .top-edge{
-        transform: translate(-105%, 105%);
+      transform: translate(-105%, 105%);
     }
 
     .button-container.opened .left-edge{
-        transform: translate(105%, 105%);
+      transform: translate(105%, 105%);
     }
 
     .button-container.opened .bottom-edge{
-        transform: translate(105%, -105%);
+      transform: translate(105%, -105%);
     }
 
     .button-container.opened .right-edge{
-        transform: translate(-105%, -105%);
+      transform: translate(-105%, -105%);
     }
 
     .navbar.opened .nav-brand-container .navbar-brand{
-        opacity: 0%;
+      opacity: 0%;
     }
 
     .navbar.opened .nav-menu-container{
-        visibility: visible;
-        opacity: 100%;
+      visibility: visible;
+      opacity: 100%;
     }
 
     .navbar .nav-menu-container .nav-menu{
-        flex-direction: column;
-        justify-content: center;
-        row-gap: 5rem;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 5rem;
     }
-
+    
     #about-section, #work-section, #contact-section{
         
     }
