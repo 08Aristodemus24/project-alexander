@@ -6,6 +6,7 @@
   import './assets/stylesheets/small-desktop.css';
   import './assets/stylesheets/small-phone.css';
   import Hero from "./components/Hero.svelte";
+    import Content from "./components/Content.svelte";
   // import Tailwind from "./components/Tailwind.svelte";
   
 
@@ -45,13 +46,6 @@
 </script>
 
 <Navbar/>
-<Hero/>
-<Hero/>
-<Hero/>
-<Hero/>
-<Hero/>
-<Hero/>
-<Hero/>
-<Hero section="about-section"/>
-<Hero section="work-section"/>
-<Hero section="contact-section"/>
+<Content>
+  <Hero slot="landing-section"/>
+</Content>
