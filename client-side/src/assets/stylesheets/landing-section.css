@@ -25,105 +25,9 @@ body{
     margin: 0;   
 }
 
-.navbar-container{
-    width: 100vw;
-}
-
-.navbar{
-    /* size */
-    height: 6.5rem;
-    width: 100%;
-
-    /* display */
-    display: flex;
-
-    /*alignment */
-    justify-content: center;
-    align-items: center;
-
-    /* position */
-    position: relative;
-
-    /* design */
-    /* border: 1px solid green; */
-    background: black;
-}
-
-.nav-brand-container{
-    /* size */
-    height: min-content;
-    width: min-content;
-
-    /* position */
-    position: absolute;
-    left: 8rem;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-
-    /* design */
-    /* border: 2px solid red; */
-}
-
-.nav-brand-container .navbar-brand{
-    /* design */
-    color: white;
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
-    text-decoration: none;
-}
-
-.nav-brand-container .button-container{
-    display: none;
-}
-
-.nav-menu-container{
-    /* border: 1px solid red; */
-}
-
-.nav-menu{
-    display: flex;
-    /* border: 1px solid blue; */
-}
-
-.nav-item{
-    /* display */
-    display: block;
-
-    /* spacing */
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-
-    /* size */
-    width: 10rem;
-
-    /* design */
-    text-align: center;
-    color: white;
-    font-size: 13px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    text-decoration: none;
-    border: 1px solid transparent;
-    /* border: 1px solid red; */
-
-    /* animation */
-    transition-property: border;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
-}
-
-.nav-item:hover{
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
-}
-
 .main-content{
-    width: 100vw;
+    /* set to 100% not vw since it will not ake into account scrollbar */
+    width: 100%;
 }
 
 #landing-section{
@@ -240,7 +144,7 @@ body{
 
 #about-section, #work-section, #contact-section{
     outline: 1px solid black;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .about-content h1{

@@ -36,5 +36,43 @@
             </div>
         </nav>
     </header>
+    <script>
+        const button_container = document.querySelector('.button-container');
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+        const nav_items = document.querySelectorAll('.nav-item');
+
+        button_container.addEventListener('click', (event) => {
+        console.log(1);
+        
+        if(navbar.classList.contains('closed')){
+            button_container.classList.remove('closed');
+            button_container.classList.add('opened');
+            navbar.classList.remove('closed');
+            navbar.classList.add('opened');
+            body.style.overflow = "hidden";
+        
+        }else{
+            button_container.classList.remove('opened');
+            button_container.classList.add('closed');
+            navbar.classList.remove('opened');
+            navbar.classList.add('closed');
+            body.style.overflow = "auto";
+        } 
+        });
+
+        for(let nav_item of nav_items){
+            console.log(1);
+            nav_item.addEventListener('click', (event) => {
+                if(navbar.classList.contains('opened')){
+                    button_container.classList.remove('opened');
+                    button_container.classList.add('closed');
+                    navbar.classList.remove('opened');
+                    navbar.classList.add('closed');
+                    body.style.overflow = "auto";
+                }
+            });  
+        }
+    </script>
 </body>
 </html>
