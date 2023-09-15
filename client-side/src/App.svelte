@@ -2,11 +2,8 @@
   import { onMount, onDestroy } from "svelte";
   import Navbar from './components/Navbar.svelte';
   import NavbarBurger from './components/NavbarBurger.svelte';
-
-  import './assets/stylesheets/small-desktop.css';
-  import './assets/stylesheets/small-phone.css';
   import Hero from "./components/Hero.svelte";
-    import Content from "./components/Content.svelte";
+  import Content from "./components/Content.svelte";
   // import Tailwind from "./components/Tailwind.svelte";
   
 

@@ -20,7 +20,7 @@
     /* design */
     /* inherit line height of parent which is html */
     line-height: inherit;
-/*       border: 1px solid red; */
+    /* border: 1px solid red; */
 
     /* spacing */
     margin: 0;
@@ -89,7 +89,7 @@
     font-weight: 700;
     font-family: 'Cormorant Garamond', serif;
     text-decoration: none;
-/*       outline: 1px solid yellow; */
+    /* outline: 1px solid yellow; */
 
     /* animation */
     transition-property: opacity;
@@ -112,7 +112,7 @@
     /* design */
     color: white;
     background: transparent;
-/*       outline: 1px solid lightgreen; */
+    /* outline: 1px solid lightgreen; */
   }
 
   .nav-menu-container{
@@ -127,7 +127,7 @@
 
     /* design */
     background-color: black;
-/*       outline: 1px solid yellow; */
+    /* outline: 1px solid yellow; */
 
     /* alignment */
     top: 0;
