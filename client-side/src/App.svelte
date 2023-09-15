@@ -1,11 +1,14 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import Navbar from './components/Navbar.svelte';
-  import NavbarBurger from './components/NavbarBurger.svelte';
   import Hero from "./components/Hero.svelte";
   import Content from "./components/Content.svelte";
-  // import Tailwind from "./components/Tailwind.svelte";
-  
+
+  import './assets/stylesheets/landing-section.css';
+  import './assets/stylesheets/navbar-862-and-up.css';
+  import './assets/stylesheets/navbar-862-down.css';
+    import About from "./components/About.svelte";
+    import Contact from "./components/Contact.svelte";
 
   // initial state
   let repos = [];
@@ -45,4 +48,6 @@
 <Navbar/>
 <Content>
   <Hero slot="landing-section"/>
+  <About slot="about-section"/>
+  <Contact slot="contact-section"/>
 </Content>

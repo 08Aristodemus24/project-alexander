@@ -44,7 +44,7 @@ body{
     position: relative;
 
     /* design */
-    outline: 2px solid green;
+    /* outline: 2px solid green; */
 }
 
 #landing-section::after{
@@ -87,11 +87,11 @@ body{
     /* spacing */ 
     row-gap: clamp(32px, 5vw, 80px);
 
-    outline: 3px solid purple;
+    /* outline: 3px solid purple; */
 }
 
 .greetings-container{
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 .greetings-container h1{
@@ -125,7 +125,7 @@ body{
     width: fit-content;
 
     /* design */
-    outline: 2px solid blue;
+    /* outline: 2px solid blue; */
 
     /* display */
     display: flex;
@@ -161,8 +161,4 @@ body{
 #about-section, #work-section, #contact-section{
     outline: 1px solid black;
     min-height: 100vh;
-}
-
-.about-content h1{
-    font-size: 14px
 }
