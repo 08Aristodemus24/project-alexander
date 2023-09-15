@@ -32,32 +32,21 @@ body{
 
 #landing-section{
     /* size for each section*/
-    height: 100vh;
+    min-height: 100vh;
 
-    /* design */
-    /* outline: 2px solid green; */
-}
-
-.landing-content{
-    /* size. takes % of landing-section as min-height */
-    min-height: 100%;
-
-    /* alignment */
+    /* display */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     /* position */
     position: relative;
 
-    /* spacing */ 
-    row-gap: clamp(32px, 5vw, 80px);
-
-    /* outline: 3px solid purple; */
+    /* design */
+    outline: 2px solid green;
 }
 
-.landing-content::after{
+#landing-section::after{
     width: 100%;
     height: 100%;
 
@@ -82,10 +71,26 @@ body{
     background-attachment: fixed;
     background-position: center;
     filter: grayscale(100%) brightness(50%);
-    }
+}
+
+.landing-content{
+    /* size. takes % of landing-section as min-height */
+    /* min-height: 100%; */
+
+    /* alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* spacing */ 
+    row-gap: clamp(32px, 5vw, 80px);
+
+    outline: 3px solid purple;
+}
 
 .greetings-container{
-    /* outline: 2px solid red; */
+    outline: 2px solid red;
 }
 
 .greetings-container h1{
@@ -119,7 +124,7 @@ body{
     width: fit-content;
 
     /* design */
-    /* outline: 2px solid blue; */
+    outline: 2px solid blue;
 
     /* display */
     display: flex;
