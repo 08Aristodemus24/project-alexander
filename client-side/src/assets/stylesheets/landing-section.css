@@ -32,7 +32,8 @@ body{
 
 #landing-section{
     /* size for each section*/
-    min-height: 100vh;
+    /* take into account navbar in landing section */
+    min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem));
 
     /* display */
     display: flex;
