@@ -112,7 +112,7 @@
     /* design */
     color: white;
     background: transparent;
-    /* outline: 1px solid lightgreen; */
+    outline: 1px solid lightgreen;
   }
 
   .nav-menu-container{
