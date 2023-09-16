@@ -45,7 +45,7 @@
 
   // this is a variable dependent upon the state of repos
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
-
+  
   // pass the state to the experience section component
 
 </script>

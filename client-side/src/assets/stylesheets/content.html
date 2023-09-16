@@ -60,9 +60,45 @@
         </section>
         <section id="contact-section">
             <div class="contact-content">
-                <div class="">
+                <div class="header-container">
                     <h1>Send me a message</h1>
-                    <p></p>
+                </div>
+                <div class="form-container">
+                    <form class="form" action="/" method="post">
+                        <div class="">
+                            <div class="">
+                                <label for="floating_first_name" class="">First name</label>
+                                <input type="text" name="floating_first_name" id="floating_first_name" class="" placeholder="Larry Miguel" required />
+                            </div>
+                            <div class="">
+                                <label for="floating_last_name" class="">Last name</label>
+                                <input type="text" name="floating_last_name" id="floating_last_name" class="" placeholder="Cueva" required />
+                            </div>
+                        </div>
+                        <div class="">
+                            <label for="floating_email" class="">Email</label>
+                            <input type="email" name="floating_email" id="floating_email" class="" placeholder="MichaelAveuc571@gmail.com" required />
+                        </div>
+                        <div class="form-group js-mobile-country required mobile-number">
+                            <label for="mobile">Country Code</label>
+                            <select name="mobile_country" id="mobile_country" class="js-mobile-country">
+                                <option value="AF" label="Afghanistan (+93)" none="" data-iso3="AFG" data-telephonecodes="+93">Afghanistan (+93)</option>
+                                <option value="AX" label="Aland Islands (+358)" none="" data-iso3="ALA" data-telephonecodes="+358">Aland Islands (+358)</option>
+                                <option value="AL" label="Albania (+355)" none="" data-iso3="ALB" data-telephonecodes="+355">Albania (+355)</option>
+                                <option value="DZ" label="Algeria (+213)" none="" data-iso3="DZA" data-telephonecodes="+213">Algeria (+213)</option>
+                                <option value="MF" label="Saint Martin (+590)" none="" data-iso3="MAF" data-telephonecodes="+590">Saint Martin (+590)</option>
+                                <option value="SG" label="Singapore (+65)" none="" data-iso3="SGP" data-telephonecodes="+65">Singapore (+65)</option>
+                                <option value="SK" label="Slovakia (+421)" none="" data-iso3="SVK" data-telephonecodes="+421">Slovakia (+421)</option>
+                            </select>
+                            <label for="floating_phone" class="">Phone</label>
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="" placeholder="970-745-1021"/>
+                        </div>
+                        <div>
+                            <label for="message" class="">Message</label>
+                            <textarea id="message" rows="5" class="" placeholder="Leave a comment..."></textarea>
+                        </div>
+                        <button type="submit" class="">Submit</button>
+                    </form>
                 </div>
             </div>
         </section>

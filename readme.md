@@ -196,3 +196,47 @@ main {
 
 **Side notes:**
 1. to run flask server use `python server.py` or `python --app server run`
+
+## Making API calls in backend proxy server and returning to frontend
+**Prerequisities to do:**
+1. 
+
+**To do:**
+1. https://restcountries.com/v3.1/all
+2. https://restcountries.com/v3.1/name/philippines
+3. https://restcountries.com/v3.1/name/usa
+4. form template: 
+```
+<div class="form-group js-mobile-country required mobile-number">
+
+  <label for="mobile">Mobile Number</label>
+
+  <select name="mobile_country" id="mobile_country" class="js-mobile-country required">
+      <option value="AF" label="Afghanistan (+93)" none="" data-iso3="AFG" data-telephonecodes="+93">Afghanistan (+93)</option>
+      <option value="AX" label="Aland Islands (+358)" none="" data-iso3="ALA" data-telephonecodes="+358">Aland Islands (+358)</option>
+      <option value="AL" label="Albania (+355)" none="" data-iso3="ALB" data-telephonecodes="+355">Albania (+355)</option>
+      <option value="DZ" label="Algeria (+213)" none="" data-iso3="DZA" data-telephonecodes="+213">Algeria (+213)</option>
+      <option value="MF" label="Saint Martin (+590)" none="" data-iso3="MAF" data-telephonecodes="+590">Saint Martin (+590)</option>
+      <option value="SG" label="Singapore (+65)" none="" data-iso3="SGP" data-telephonecodes="+65">Singapore (+65)</option>
+      <option value="SK" label="Slovakia (+421)" none="" data-iso3="SVK" data-telephonecodes="+421">Slovakia (+421)</option>
+  </select>
+  <div class="mobile-country-mask">
+    <p class="mobile-country-mask-text">+65</p>
+  </div>
+
+  <input type="tel" value="" name="mobile" id="mobile" placeholder="8123 4567" class="">
+</div>
+```
+5. https://gist.githubusercontent.com/anubhavshrimal/75f6183458db8c453306f93521e93d37/raw/f77e7598a8503f1f70528ae1cbf9f66755698a16/CountryCodes.json
+
+**Problems and solutions:**
+1. 
+
+**Tech used:**
+1. 
+
+**References:**
+1. 
+
+**Side notes:**
+1. 
