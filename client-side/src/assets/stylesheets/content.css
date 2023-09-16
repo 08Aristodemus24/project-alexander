@@ -30,7 +30,9 @@ body{
     width: 100%;
 }
 
-/* landing section */
+
+
+/* LANDING SECTION */
 #landing-section{
     /* size for each section*/
     /* take into account navbar in landing section */
@@ -211,15 +213,77 @@ body{
     fill: rgb(243, 80, 15);
 }
 
-#about-section, #contact-section{
+
+
+/* ABOUT SECTION */
+#about-section{
     outline: 1px solid black;
     min-height: 100vh;
 }
 
-#work-section{
-    
+
+
+/* PROJECTS, SKILLS, AND EXPERIENCE SECTIONS */
+#work-group-section{
+    outline: 2px solid purple;
+    min-height: 100vh;
 }
 
+
+
+/* CONTACT SECTIOn */
+#contact-section{
+    /* design */
+    outline: 2px solid darkcyan;
+    background-color: black;
+
+    /* size */
+    min-height: 100vh;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-content{
+    /* design */
+    outline: 1px solid rgb(243, 80, 15);
+
+    /* alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* spacing */ 
+    row-gap: clamp(32px, 5vw, 80px);
+
+    /* outline: 3px solid purple; */
+}
+
+.header-container h1{
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: white;
+    outline: 1px solid lightgreen;
+}
+
+.fname-label, 
+.lname-label, 
+.email-label, 
+.country-code-label, 
+.mobile-num-label, 
+.message-label{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: white;
+    outline: 1px solid brown;
+} 
 /* @keyframes fade-animation{
     0% {
         opacity: 0%;
