@@ -3,12 +3,13 @@
   import Navbar from './components/Navbar.svelte';
   import Hero from "./components/Hero.svelte";
   import Content from "./components/Content.svelte";
+  import About from "./components/About.svelte";
+  import Contact from "./components/Contact.svelte";
 
-  import './assets/stylesheets/landing-section.css';
+  import './assets/stylesheets/content.css';
   import './assets/stylesheets/navbar-862-and-up.css';
   import './assets/stylesheets/navbar-862-down.css';
-    import About from "./components/About.svelte";
-    import Contact from "./components/Contact.svelte";
+  
 
   // initial state
   let repos = [];

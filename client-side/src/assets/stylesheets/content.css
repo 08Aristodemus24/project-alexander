@@ -30,6 +30,7 @@ body{
     width: 100%;
 }
 
+/* landing section */
 #landing-section{
     /* size for each section*/
     /* take into account navbar in landing section */
@@ -105,6 +106,12 @@ body{
     text-align: center;
     color: white;
     /* outline: 1px solid lightgreen; */
+
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 0s;
 }
 
 .greetings-container p{
@@ -118,6 +125,12 @@ body{
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
     /* outline: 1px solid lightgreen; */
+
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 250ms;
 }
 
 .socials-container{
@@ -151,14 +164,68 @@ body{
     /* animation */
     transition-property: fill;
     transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease;
+}
+
+.github-icon{
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 500ms;
+}
+
+.kaggle-icon{
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 750ms;
+}
+
+.stackoverflow-icon{
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 1000ms;
+}
+
+.facebook-icon{
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 1250ms;
+}
+
+.linkedin-icon{
+    /* animation */
+    animation-name: fade-animation;
+    animation-duration: 250ms;
+    animation-timing-function: ease;
+    animation-delay: 1500ms;
 }
 
 .socials-container svg:hover{
     fill: rgb(243, 80, 15);
 }
 
-#about-section, #work-section, #contact-section{
+#about-section, #contact-section{
     outline: 1px solid black;
     min-height: 100vh;
 }
+
+#work-section{
+    
+}
+
+/* @keyframes fade-animation{
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+} */
