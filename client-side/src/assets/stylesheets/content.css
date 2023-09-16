@@ -258,8 +258,6 @@ body{
 
     /* spacing */ 
     row-gap: clamp(32px, 5vw, 80px);
-
-    /* outline: 3px solid purple; */
 }
 
 .header-container h1{
@@ -268,7 +266,32 @@ body{
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
     color: white;
-    outline: 1px solid lightgreen;
+    /* outline: 1px solid lightgreen; */
+}
+
+.form-container .form{
+    /* design */
+    /* outline: 3px solid lightgreen; */
+}
+
+.name-group-container,
+.email-container,
+.info-group-container,
+.message-container{
+    /* design */
+    /* outline: 2px solid slateblue; */
+}
+
+.first-container,
+.lname-container{
+    /* design */
+    /* outline: 2px solid lightblue; */
+}
+
+.country-code-container,
+.mobile-num-container{
+    /* design */
+    /* outline: 2px solid lightseagreen; */
 }
 
 .fname-label, 
@@ -282,8 +305,68 @@ body{
     font-weight: 300;
     font-size: 12px;
     color: white;
-    outline: 1px solid brown;
-} 
+    /* outline: 1px solid brown; */
+}
+
+.fname-field,
+.lname-field,
+.email-field,
+.country-code-field,
+.mobile-num-field,
+.message-field{
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid white;
+}
+
+.message-label,
+.message-field{
+    display: block;
+}
+
+.submit-btn{
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border: 1px solid white;
+    padding: .5em 5em;
+
+    /* animation */
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+.submit-btn:hover{
+    /* design */
+    cursor: pointer;
+    background-color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    color: black;
+    border: 1px solid white;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder{ 
+    color: rgba(255, 255, 255, 0.075);
+    opacity: 1; /* Firefox */
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder{ 
+    color: rgba(255, 255, 255, 0.075);
+}
+
+/* Microsoft Edge */
+::-ms-input-placeholder{ 
+    color: rgba(255, 255, 255, 0.075);
+}
 /* @keyframes fade-animation{
     0% {
         opacity: 0%;

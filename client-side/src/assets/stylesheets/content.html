@@ -79,17 +79,21 @@
                             <label for="email-address" class="email-label">Email</label>
                             <input type="email" name="email-address" id="email-address" class="email-field" placeholder="MichaelAveuc571@gmail.com" required />
                         </div>
-                        <div class="caller-info-container">
-                            <label for="country-code" class="country-code-label">Country Code</label>
-                            <select name="country-code" id="country-code" class="country-code-field">
-                                <option value="DZ" label="Algeria (+213)" none="" data-iso3="DZA" data-telephonecodes="+213">Algeria (+213)</option>
-                            </select>
-                            <label for="mobile-number" class="mobile-num-label">Phone</label>
-                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="mobile-number" id="mobile-number" class="mobile-num-field" placeholder="970-745-1021"/>
+                        <div class="info-group-container">
+                            <div class="country-code-container">
+                                <label for="country-code" class="country-code-label">Country Code</label>
+                                <select name="country-code" id="country-code" class="country-code-field">
+                                    <option value="DZ" label="Algeria (+213)" none="" data-iso3="DZA" data-telephonecodes="+213">Algeria (+213)</option>
+                                </select>
+                            </div>
+                            <div class="mobile-num-container">
+                                <label for="mobile-number" class="mobile-num-label">Phone</label>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="mobile-number" id="mobile-number" class="mobile-num-field" placeholder="970-745-1021"/>
+                            </div>
                         </div>
                         <div class="message-container">
                             <label for="message" class="message-label">Message</label>
-                            <textarea id="message" rows="5" class="message-field" placeholder="Leave a comment..."></textarea>
+                            <textarea id="message" rows="5" class="message-field" placeholder="Your message here"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Submit</button>
                     </form>
