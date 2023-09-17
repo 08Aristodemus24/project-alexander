@@ -188,6 +188,7 @@ main {
 
 **References:**
 * responsive grid-layout without media queries: https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/
+* how the minmax function works: https://bitsofco.de/how-the-minmax-function-works/
 
 **Side notes:**
 1. 

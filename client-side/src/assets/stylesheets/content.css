@@ -270,28 +270,59 @@ body{
 }
 
 .form-container .form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        ". fname lname ."
+        ". email email ."
+        ". country-code mobile-num ."
+        ". message message ."
+        ". submit submit ."
+    ;
+
+    row-gap: 1rem;
+    column-gap: 1rem;
     /* design */
     /* outline: 3px solid lightgreen; */
 }
 
-.name-group-container,
+.fname-container,
+.lname-container,
 .email-container,
-.info-group-container,
+.country-code-container,
+.mobile-num-container,
 .message-container{
     /* design */
     /* outline: 2px solid slateblue; */
 }
 
-.first-container,
-.lname-container{
-    /* design */
-    /* outline: 2px solid lightblue; */
+.fname-container{
+    grid-area: fname;
 }
 
-.country-code-container,
+.lname-container{
+    grid-area: lname;
+}
+
+.email-container{
+    grid-area: email;
+}
+
+.country-code-container{
+    grid-area: country-code;
+}
+
 .mobile-num-container{
-    /* design */
-    /* outline: 2px solid lightseagreen; */
+    grid-area: mobile-num;
+}
+
+.message-container{
+    grid-area: message;
+}
+
+.submit-btn{
+    grid-area: submit;
 }
 
 .fname-label, 
@@ -333,8 +364,10 @@ body{
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(0.5rem, .75vw, .75rem);
     color: white;
     border: 1px solid white;
+    
     padding: .5em 5em;
 
     /* animation */
