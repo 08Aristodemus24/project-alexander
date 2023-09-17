@@ -179,6 +179,23 @@ main {
 **To do:**
 1. <s>make an api call that fetches country data from this endpoint: https://gist.githubusercontent.com/anubhavshrimal/75f6183458db8c453306f93521e93d37/raw/f77e7598a8503f1f70528ae1cbf9f66755698a16/CountryCodes.json, and then use it for providing the country codes for the form</s>
 2. make form responsive without media query such that when it reaches a certain breakpoint it turns the fields into columns
+3. use the ff. to remove background of form auto-fill:
+```
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: transparent;
+  -webkit-text-fill-color: transparent;
+  /* -webkit-box-shadow: 0 0 0px 1000px #000 inset; */
+  transition: background-color 5000s ease-in-out 0s;
+}
+```
 
 **Problems and solutions:**
 1. current problem is that button takes 50% of the grid area it was assigned to, it also has `padding` set to `.5em 5em` and `font-size` set to `clamp(0.5rem, .75vw, .75rem)`. Solution could be to again think about the font-size on certain screens like 320 x 1600, 640 x 1600, and 1600 x 320, and what max size does it take when it gets to a certain viewport width and what min size does ti take when it gets to a certain viewport width again

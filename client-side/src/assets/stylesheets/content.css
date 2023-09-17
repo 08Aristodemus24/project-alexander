@@ -248,7 +248,7 @@ body{
 
 .contact-content{
     /* design */
-    outline: 1px solid rgb(243, 80, 15);
+    /* outline: 1px solid rgb(243, 80, 15); */
 
     /* alignment */
     display: flex;
@@ -291,7 +291,7 @@ body{
     column-gap: 1rem;
 
     /* design */
-    outline: 2px solid lightgreen;
+    /* outline: 2px solid lightgreen; */
 }
 
 .fname-container,
@@ -301,7 +301,7 @@ body{
 .mobile-num-container,
 .message-container{
     /* design */
-    outline: 2px solid slateblue;
+    /* outline: 2px solid slateblue; */
 }
 
 .fname-container{
@@ -418,6 +418,7 @@ select{
 ::-ms-input-placeholder{ 
     color: rgba(255, 255, 255, 0.075);
 }
+
 /* @keyframes fade-animation{
     0% {
         opacity: 0%;
