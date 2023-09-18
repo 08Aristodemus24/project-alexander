@@ -46,7 +46,7 @@
                     <label for="country-code" class="country-code-label">Country Code</label>
                     <select name="country-code" id="country-code" class="country-code-field">
                         {#each countries as country}
-                            <option value={country['dial_code']} label={`${country['code']} (${country['dial_code']})`} data-country-name={country['name']} data-country-code={country['code']} data-dial-code={country['dial_code']}></option>
+                            <option value={country['dial_code']} label={`${country['name']} (${country['dial_code']})`} data-country-name={country['name']} data-country-code={country['code']} data-dial-code={country['dial_code']}></option>
                         {/each}
                     </select>
                 </div>

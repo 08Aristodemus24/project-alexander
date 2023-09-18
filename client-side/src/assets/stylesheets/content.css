@@ -266,7 +266,7 @@ body{
 }
 
 .header-container{
-  /* outline: 1px solid yellow; */
+    /* outline: 1px solid yellow; */
 }
 
 .header-container h1{
@@ -276,11 +276,15 @@ body{
     text-align: center;
     color: white;
     /* outline: 1px solid lightgreen; */
+
+    /* spacing */
+    margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .form-container{
-  /* outline: 1px solid yellow; */
-  width: 100%;
+    /* outline: 1px solid yellow; */
+    width: 100%;
 }
 
 .form-container .form{
@@ -320,6 +324,10 @@ body{
     font-size: 12px;
     color: white;
     /* outline: 1px solid brown; */
+
+    /* spacing */
+    margin-top: 1em;
+    margin-bottom: 1em;
   
     /* display */
     display: block;
@@ -339,12 +347,19 @@ body{
     border-right: none;
     border-left: none;
     border-bottom: 1px solid white;
+    /* outline: 1px solid brown; */
     
     /* size */
     width: 100%;
   
     /* display */
     display: block;
+}
+
+.country-code-field option{
+    /* design */
+    background-color: rgba(255, 0, 0, 0);
+    color: black;
 }
 
 .submit-btn{
