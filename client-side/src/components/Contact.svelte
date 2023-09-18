@@ -21,6 +21,8 @@
             console.log(`retrieval unsuccessful. Response status ${response.status} occured`)
         }
     });
+
+    const phone_reg = `[0-9]{'{'}3{'}'}-[0-9]{'{'}3{'}'}-[0-9]{'{'}4{'}'}`;
 </script>
 
 <section id="contact-section">
@@ -52,7 +54,7 @@
                 </div>
                 <div class="mobile-num-container">
                     <label for="mobile-number" class="mobile-num-label">Phone</label>
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="mobile-number" id="mobile-number" class="mobile-num-field" placeholder="XXX-XXX-XXXX"/>
+                    <input type="tel" pattern={phone_reg} name="mobile-number" id="mobile-number" class="mobile-num-field" placeholder="XXX-XXX-XXXX"/>
                 </div>
                 <div class="message-container">
                     <label for="message" class="message-label">Message</label>

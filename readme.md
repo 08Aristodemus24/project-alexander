@@ -194,6 +194,8 @@ select:-webkit-autofill:focus {
 }
 ```
 4. use some kind of min minmax, or clamp to change grid-column-end of email, message, and button without having to use media queries
+5. build functionality of form component with svelte by having form send the message to my email
+6. design css of form with invalid input
 
 **Problems and solutions:**
 1. <s>current problem is that button takes 50% of the grid area it was assigned to, it also has `padding` set to `.5em 5em` and `font-size` set to `clamp(0.5rem, .75vw, .75rem)`. Solution could be to again think about the font-size on certain screens like 320 x 1600, 640 x 1600, and 1600 x 320, and what max size does it take when it gets to a certain viewport width and what min size does ti take when it gets to a certain viewport width again</s>
@@ -205,6 +207,8 @@ select:-webkit-autofill:focus {
 * responsive grid layout without media queries: https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/
 * how the `minmax()` function works: https://bitsofco.de/how-the-minmax-function-works/
 * `auto-fill` and `auto-fit` in `repeat()` function used in grid: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+* invalid input css: https://css-tricks.com/almanac/selectors/r/required/, https://css-tricks.com/almanac/selectors/v/valid/, https://css-tricks.com/almanac/selectors/i/invalid/
+* https://webdesign.tutsplus.com/html5-form-validation-with-the-pattern-attribute--cms-25145t
 
 **Side notes:**
 1. 
