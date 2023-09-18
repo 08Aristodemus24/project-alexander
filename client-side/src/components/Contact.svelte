@@ -52,7 +52,7 @@
 
 <section id="contact-section">
     <div class="contact-content">
-        <div class="header-container">
+        <div class="contact-header-container">
             <h1>Send me a message</h1>
         </div>
         <div class="form-container">
