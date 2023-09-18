@@ -231,7 +231,7 @@ body{
 
 
 
-/* CONTACT SECTIOn */
+/* CONTACT SECTION */
 #contact-section{
     /* design */
     outline: 2px solid darkcyan;
@@ -250,6 +250,9 @@ body{
     /* design */
     /* outline: 1px solid rgb(243, 80, 15); */
 
+    /* size */
+    min-height: 90vh;
+
     /* alignment */
     display: flex;
     flex-direction: column;
@@ -258,6 +261,12 @@ body{
 
     /* spacing */ 
     row-gap: clamp(32px, 5vw, 80px);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-container{
+  /* outline: 1px solid yellow; */
 }
 
 .header-container h1{
@@ -269,67 +278,34 @@ body{
     /* outline: 1px solid lightgreen; */
 }
 
+.form-container{
+  /* outline: 1px solid yellow; */
+  width: 100%;
+}
+
 .form-container .form{
     /* display */
     display: grid;
 
     /* size of columns and rows */
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "fname lname"
-        "email email"
-        "country-code mobile-num"
-        "message message"
-        "submit submit"
-    ;
+    grid-template-columns: repeat(auto-fit, 1fr);
 
     /* alignment */
     align-items: center;
 
     /* spacing */
-    row-gap: 1rem;
-    column-gap: 1rem;
+    row-gap: 2rem;
+    column-gap: 1.5rem;
 
     /* design */
     /* outline: 2px solid lightgreen; */
 }
 
-.fname-container,
-.lname-container,
 .email-container,
-.country-code-container,
-.mobile-num-container,
-.message-container{
-    /* design */
-    /* outline: 2px solid slateblue; */
-}
-
-.fname-container{
-    grid-area: fname;
-}
-
-.lname-container{
-    grid-area: lname;
-}
-
-.email-container{
-    grid-area: email;
-}
-
-.country-code-container{
-    grid-area: country-code;
-}
-
-.mobile-num-container{
-    grid-area: mobile-num;
-}
-
-.message-container{
-    grid-area: message;
-}
-
+.message-container,
 .submit-btn{
-    grid-area: submit;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .fname-label, 
@@ -344,6 +320,9 @@ body{
     font-size: 12px;
     color: white;
     /* outline: 1px solid brown; */
+  
+    /* display */
+    display: block;
 }
 
 .fname-field,
@@ -363,12 +342,7 @@ body{
     
     /* size */
     width: 100%;
-}
-
-label, 
-input, 
-textarea, 
-select{
+  
     /* display */
     display: block;
 }
@@ -382,8 +356,7 @@ select{
     border: 1px solid white;
     
     /* size */
-    /* will padding change based on text  */
-    padding: .5em 4em;
+    padding: .5em 5em;
 
     /* alignment */
     justify-self: center;
@@ -419,12 +392,11 @@ select{
     color: rgba(255, 255, 255, 0.075);
 }
 
-/* @keyframes fade-animation{
-    0% {
-        opacity: 0%;
+@media (width < 640px){
+    .email-container,
+    .message-container,
+    .submit-btn{
+        grid-column-start: 1;
+        grid-column-end: 2;
     }
-
-    100% {
-        opacity: 100%;
-    }
-} */
+}
