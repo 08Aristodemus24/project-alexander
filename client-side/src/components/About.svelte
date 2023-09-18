@@ -1,8 +1,8 @@
 <section id="about-section">
     <div class="about-content">
         <div class="">
-            <h1>About</h1>
-            <p></p>
+            <h1>I am a currently a student specializing in machine learning engineering and an aspiring computational immunologist</h1>
+            <p>Here's some technologies I picked up</p>
         </div>
     </div>
 </section>

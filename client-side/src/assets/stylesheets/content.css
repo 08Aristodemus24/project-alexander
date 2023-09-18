@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
 
 *,
-::before,
-::after{
+*::before,
+*::after{
     box-sizing: border-box;
+
+    /* spacing */
+    margin: 0;
 }
 
 html{
@@ -20,9 +23,6 @@ body{
     /* inherit line height of parent which is html */
     line-height: inherit;
     /* border: 1px solid red; */
-
-    /* spacing */
-    margin: 0;   
 }
 
 .main-content{
@@ -47,7 +47,7 @@ body{
     position: relative;
 
     /* design */
-    /* outline: 2px solid green; */
+    outline: 2px solid lightseagreen;
 }
 
 #landing-section::after{
@@ -217,8 +217,28 @@ body{
 
 /* ABOUT SECTION */
 #about-section{
+    /* design */
     outline: 1px solid black;
+    background-color: black;
+
+    /* size */
     min-height: 100vh;
+}
+
+.about-content{
+
+}
+
+.about-content h1{
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: white;
 }
 
 
@@ -227,6 +247,58 @@ body{
 #work-group-section{
     outline: 2px solid purple;
     min-height: 100vh;
+}
+
+#projects-section{
+    outline: 2px solid purple;
+    min-height: 100vh;
+}
+
+.projects-content h1{
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: black;
+}
+
+#skills-section{
+    background-color: black;
+    outline: 2px solid purple;
+    min-height: 100vh;
+}
+
+.skills-content h1{
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: white;
+}
+
+#exp-section{
+    outline: 2px solid purple;
+    min-height: 100vh;
+}
+
+.exp-content h1{
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: black;
 }
 
 

@@ -218,6 +218,9 @@ If it's a string, a response object is created with that data and the default pa
 If a tuple is returned the items in the tuple can provide extra information. Such tuples have to be in the form (response, status, headers) or (response, headers) where at least one item has to be in the tuple. The status value will override the status code and headers can be a list or dictionary of additional header values.
 If none of that works, Flask will assume the return value is a valid WSGI application and convert that into a response object.
 
+2. reason why emailjs api didn't work the first time was because you were not passing privateKey and API Settings to `Allow EmailJS API for non-browser applications` was not set. If this is enabled according to emailjs "Non-Browser Applications Allow to use EmailJS API on the server side, in mobile apps, etc. If allowed, the API will be public and the whitelist will be ignored."
+
+
 
 
 # Backend

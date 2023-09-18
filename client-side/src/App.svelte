@@ -42,9 +42,6 @@
       console.log(`retrieval unsuccessful. Response status ${response.status} occured`)
     }
   });
-
-  // this is a variable dependent upon the state of repos
-  $: some_var = JSON.stringify(repos.slice(-1)) + "test";
   
   const send_mail = async (event) => {
     const raw_data = event.detail;
@@ -68,6 +65,8 @@
     }
   }
 
+  // this is a variable dependent upon the state of repos
+  $: some_var = JSON.stringify(repos.slice(-1)) + "test";
 </script>
 
 <Navbar/>
