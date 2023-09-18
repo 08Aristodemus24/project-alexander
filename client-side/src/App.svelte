@@ -46,7 +46,27 @@
   // this is a variable dependent upon the state of repos
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
   
-  // pass the state to the experience section component
+  const send_mail = async (event) => {
+    const raw_data = event.detail;
+
+    // send here the data from the contact component to 
+    // the backend proxy server
+    const url = 'http://127.0.0.1:5000/send-mail';
+    const response = await fetch(url, {
+      'method': 'POST',
+      'headers': {
+        'Content-Type': 'application/json'
+      },
+      'body': JSON.stringify(raw_data)
+    });
+
+    if(response.status === 200){
+      console.log('message sent');
+
+    }else{
+      console.log(`message submission unsucessful. Response status ${response.status} occured`);
+    }
+  }
 
 </script>
 
@@ -59,5 +79,5 @@
     <Skills slot="skills-section"/>
     <Experience slot="exp-section"/>
   </Work>
-  <Contact slot="contact-section"/>
+  <Contact slot="contact-section" on:sendMail={send_mail}/>
 </Content>

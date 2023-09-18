@@ -211,7 +211,12 @@ select:-webkit-autofill:focus {
 * https://webdesign.tutsplus.com/html5-form-validation-with-the-pattern-attribute--cms-25145t
 
 **Side notes:**
-1. 
+1. About Responses The return value from a view function is automatically converted into a response object for you. If the return value is a string it's converted into a response object with the string as response body, a 200 OK status code and a text/html mimetype. The logic that Flask applies to converting return values into response objects is as follows:
+
+If a response object of the correct type is returned it's directly returned from the view.
+If it's a string, a response object is created with that data and the default parameters.
+If a tuple is returned the items in the tuple can provide extra information. Such tuples have to be in the form (response, status, headers) or (response, headers) where at least one item has to be in the tuple. The status value will override the status code and headers can be a list or dictionary of additional header values.
+If none of that works, Flask will assume the return value is a valid WSGI application and convert that into a response object.
 
 
 
