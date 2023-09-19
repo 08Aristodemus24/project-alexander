@@ -82,7 +82,6 @@ e. linkedin: <svg class="linkedin-icon" version="1.0" xmlns="http://www.w3.org/2
 
 
 
-
 ## Writing html, css, and svelte based on website template:
 **To do:**
 1. timeline:
@@ -220,6 +219,21 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 
 2. reason why emailjs api didn't work the first time was because you were not passing privateKey and API Settings to `Allow EmailJS API for non-browser applications` was not set. If this is enabled according to emailjs "Non-Browser Applications Allow to use EmailJS API on the server side, in mobile apps, etc. If allowed, the API will be public and the whitelist will be ignored."
 
+## Writing accordion component
+**To do:**
+1. 
+
+**Problems and solutions:**
+1. 
+
+**Tech used:**
+1. 
+
+**References:**
+* 
+
+**Side notes:**
+1. All I know is that I would have to use flex-basis to preserve height and width of accordion items in either a landscape or portrait orientation or screen sizes like 320 x 640, 320 x 1600, 640 x 1600
 
 
 
