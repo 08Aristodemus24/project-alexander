@@ -381,6 +381,64 @@ body{
 
 }
 
+.accordion-group{
+    /* display */
+    display: flex;
+    
+    /* design*/
+    outline: 3px solid red;
+}
+
+.accordion-item{
+    /* size*/
+    flex-basis: 100%;
+    
+    /* display */
+    outline: 1px solid purple;
+}
+
+.accordion-item:nth-child(1){
+    /* design */
+    background-color: #091d36;
+}
+
+.accordion-item:nth-child(2){
+    /* design */
+    background-color: #3a4e7a;
+}
+
+.accordion-item:nth-child(3){
+    /* design */
+    background-color: #5e83ba;
+}
+
+.accordion-item:nth-child(4){
+    /* design */
+    background-color: #81b1d5;
+}
+
+.accordion-item:nth-child(5){
+    /* design */
+    background-color: #c2d2e9;
+}
+
+.accordion-item:nth-child(6){
+    /* design */
+    background-color: #f1f1f0;
+}
+
+.accordion-content .accordion-header{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+}
+
+@media (width < 862px){
+    .accordion-group{
+        flex-direction: column;
+    }
+}
+
 
 
 #skills-section{
