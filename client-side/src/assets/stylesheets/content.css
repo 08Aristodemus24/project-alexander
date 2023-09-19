@@ -50,7 +50,7 @@ body{
     position: relative;
 
     /* design */
-    outline: 2px solid lightseagreen;
+    /* outline: 2px solid lightseagreen; */
 }
 
 #landing-section::after{
@@ -221,7 +221,7 @@ body{
 /* ABOUT SECTION */
 #about-section{
     /* design */
-    outline: 1px solid black;
+    /* outline: 1px solid yellow; */
     background-color: black;
 
     /* size */
@@ -232,9 +232,7 @@ body{
 
 }
 
-.about-header-container
-
-.about-content h1{
+.about-header-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -246,20 +244,89 @@ body{
     color: white;
 }
 
+.about-header-container p{
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* design */
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+    /* outline: 1px solid lightgreen; */
+}
+
 
 
 /* PROJECTS, SKILLS, AND EXPERIENCE SECTIONS */
 #work-group-section{
-    outline: 2px solid purple;
-    min-height: 100vh;
+    outline: 3px solid rgb(72, 52, 255);
+    /* min-height: 100vh; */
 }
+
+
 
 #projects-section{
-    outline: 2px solid purple;
+    /* design */
+    /* outline: 2px solid purple; */
+
+    /* size */
     min-height: 100vh;
+
+    /* display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.projects-content h1{
+.projects-content{
+    /* design */
+    outline: 1px solid cyan;
+    background-color: rgba(0, 255, 255, 0.25);
+
+    /* size */
+    min-height: 100vh;
+    width: 100%;
+
+    /* position */
+    position: relative;
+}
+
+.projects-header-container{
+    /* design */
+    /*   outline: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.25); */
+    background-color: white;
+    visibility: visible;
+    opacity: 100%;
+
+    /* size */
+    width: 100%;
+    height: 100%;
+
+    /* display*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* position */
+    position: absolute;
+    /*   top: .5rem;
+    left: .5rem; */
+
+    /* spacing */
+    row-gap: 2rem;
+
+    /* animation */
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+.projects-header-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -268,16 +335,63 @@ body{
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
-    color: black;   
+    color: black;
+    outline: 1px solid black;
 }
+
+.projects-header-container button{
+    /* display */
+    display: block;
+
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: black;
+    border: 1px solid black;
+    
+    /* size */
+    padding: .5em 3em;
+
+    /* animation */
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+.projects-header-container button:hover{
+    /* design */
+    cursor: pointer;
+    background-color: black;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: white;
+    border: 1px solid black;
+    
+    /* size */
+    padding: .5em 3em;
+}
+
+.projects-header-container.closed{
+    visibility: hidden;
+    opacity: 0%;
+}
+
+.projects-accordion-container{
+
+}
+
+
 
 #skills-section{
     background-color: black;
-    outline: 2px solid purple;
+    /* outline: 2px solid purple; */
+
+    /* size */
     min-height: 100vh;
 }
 
-.skills-content h1{
+.skills-header-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -290,11 +404,14 @@ body{
 }
 
 #exp-section{
-    outline: 2px solid purple;
+    /* design */
+    /* outline: 2px solid purple; */
+
+    /* size */
     min-height: 100vh;
 }
 
-.exp-content h1{
+.exp-header-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -311,7 +428,7 @@ body{
 /* CONTACT SECTION */
 #contact-section{
     /* design */
-    outline: 2px solid darkcyan;
+    /* outline: 2px solid darkcyan; */
     background-color: black;
 
     /* size */
@@ -340,6 +457,8 @@ body{
     row-gap: clamp(32px, 5vw, 80px);
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contact-header-container{
