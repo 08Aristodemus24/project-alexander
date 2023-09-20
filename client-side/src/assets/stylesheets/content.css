@@ -284,7 +284,7 @@ body{
 .projects-content{
     /* design */
     outline: 1px solid cyan;
-    background-color: rgba(0, 255, 255, 0.25);
+    /* background-color: rgba(0, 255, 255, 0.25); */
 
     /* size */
     min-height: 100vh;
@@ -427,10 +427,18 @@ body{
     background-color: #f1f1f0;
 }
 
-.accordion-content .accordion-header{
+.accordion-item:nth-child(-n + 3) .accordion-content .accordion-header{
+    font-weight: 200;
     font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
+}
+
+.accordion-item:nth-child(n + 4) .accordion-content .accordion-header{
+    font-weight: 200;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: black;
 }
 
 @media (width < 862px){
