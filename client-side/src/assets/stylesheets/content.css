@@ -395,64 +395,59 @@ body{
 .accordion-item{
     /* size */
     min-height: 100vh;
-    flex-basis: 200px;
     flex-grow: 1;
     
     /* design */
+    cursor: pointer;
     /* outline: 1px solid purple; */
 }
 
 .accordion-item:nth-child(1){
     /* design */
-    background-color: #091d36;
+    background-color: #141414;
 }
 
 .accordion-item:nth-child(2){
     /* design */
-    background-color: #3a4e7a;
+    background-color: #1a1b1d;
 }
 
 .accordion-item:nth-child(3){
     /* design */
-    background-color: #5e83ba;
+    background-color: #1e1f21;
 }
 
 .accordion-item:nth-child(4){
     /* design */
-    background-color: #81b1d5;
+    background-color: #373a3e;
 }
 
 .accordion-item:nth-child(5){
     /* design */
-    background-color: #c2d2e9;
+    background-color: #66696e;
 }
 
 .accordion-item:nth-child(6){
     /* design */
-    background-color: #f1f1f0;
-}
-
-.accordion-item:nth-child(1):hover,
-.accordion-item:nth-child(2):hover,
-.accordion-item:nth-child(3):hover,
-.accordion-item:nth-child(4):hover,
-.accordion-item:nth-child(5):hover,
-.accordion-item:nth-child(6):hover{
-    /* size */
-    flex-basis: 400px;
+    background-color: #999ca2;
 }
 
 .accordion-item:nth-child(-n + 3) .accordion-content .accordion-header{
-    font-weight: 200;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: clamp(14px, 2.1875vw, 22.4px);
+    /* design */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
     color: white;
+    outline: 1px solid black;
 }
 
 .accordion-item:nth-child(n + 4) .accordion-content .accordion-header{
-    font-weight: 200;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: clamp(14px, 2.1875vw, 22.4px);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.75vw, 3.75rem);
+    text-align: center;
+    color: white;
     color: black;
 }
 
