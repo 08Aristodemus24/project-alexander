@@ -272,8 +272,11 @@ body{
     /* design */
     /* outline: 2px solid purple; */
 
-    /* size */
-    min-height: 100vh;
+    /* size will be by default auto and 100% 
+    for height and width which takes height of children
+    and 100% of parent respectively so no need to set
+    size. This is because section and divs are block level
+    elements */
 
     /* display */
     display: flex;
@@ -286,8 +289,9 @@ body{
     outline: 1px solid cyan;
     /* background-color: rgba(0, 255, 255, 0.25); */
 
-    /* size */
-    min-height: 100vh;
+    /* size will be by default auto for height which
+    will take height of its children which in this case
+    is min-height of 100vh for accordion-item */
     width: 100%;
 
     /* position */
@@ -378,7 +382,7 @@ body{
 }
 
 .projects-accordion-container{
-
+    /* outline: 2px solid salmon; */
 }
 
 .accordion-group{
@@ -386,15 +390,17 @@ body{
     display: flex;
     
     /* design*/
-    outline: 3px solid red;
+    /* outline: 3px solid red; */
 }
 
 .accordion-item{
-    /* size*/
-    flex-basis: 100%;
+    /* size */
+    min-height: 100vh;
+    flex-basis: 200px;
+    flex-grow: 1;
     
-    /* display */
-    outline: 1px solid purple;
+    /* design */
+    /* outline: 1px solid purple; */
 }
 
 .accordion-item:nth-child(1){
@@ -427,6 +433,16 @@ body{
     background-color: #f1f1f0;
 }
 
+.accordion-item:nth-child(1):hover,
+.accordion-item:nth-child(2):hover,
+.accordion-item:nth-child(3):hover,
+.accordion-item:nth-child(4):hover,
+.accordion-item:nth-child(5):hover,
+.accordion-item:nth-child(6):hover{
+    /* size */
+    flex-basis: 400px;
+}
+
 .accordion-item:nth-child(-n + 3) .accordion-content .accordion-header{
     font-weight: 200;
     font-family: 'Nunito Sans', sans-serif;
@@ -444,6 +460,11 @@ body{
 @media (width < 862px){
     .accordion-group{
         flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .accordion-item{
+        min-height: initial;
     }
 }
 
