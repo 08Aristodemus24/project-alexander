@@ -423,36 +423,6 @@ body{
     transition-timing-function: ease-in-out;
 }
 
-.accordion-item:nth-child(1){
-    /* design */
-    background-color: #141414;
-}
-
-.accordion-item:nth-child(2){
-    /* design */
-    background-color: #1a1b1d;
-}
-
-.accordion-item:nth-child(3){
-    /* design */
-    background-color: #1e1f21;
-}
-
-.accordion-item:nth-child(4){
-    /* design */
-    background-color: #373a3e;
-}
-
-.accordion-item:nth-child(5){
-    /* design */
-    background-color: #66696e;
-}
-
-.accordion-item:nth-child(6){
-    /* design */
-    background-color: #999ca2;
-}
-
 .accordion-item:nth-child(1):hover,
 .accordion-item:nth-child(2):hover,
 .accordion-item:nth-child(3):hover,
@@ -474,28 +444,75 @@ body{
     left: 0;
     z-index: 3;
 
-    /* alignment */
-    margin-right: auto;
-    margin-left: auto;
+    /* size */
+    width: 100%;
+    height: 100%;
+
+    /* design */
+    outline: 1px solid red;
+}
+
+.accordion-item:nth-child(1) .project-id{
+    /* design */
+    background-color: #141414;
+}
+
+.accordion-item:nth-child(2) .project-id{
+    /* design */
+    background-color: #1a1b1d;
+}
+
+.accordion-item:nth-child(3) .project-id{
+    /* design */
+    background-color: #1e1f21;
+}
+
+.accordion-item:nth-child(4) .project-id{
+    /* design */
+    background-color: #373a3e;
+}
+
+.accordion-item:nth-child(5) .project-id{
+    /* design */
+    background-color: #66696e;
+}
+
+.accordion-item:nth-child(6) .project-id{
+    /* design */
+    background-color: #999ca2;
+}
+
+.accordion-item .project-id::before{
+    /* position */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     /* size */
     width: 25%;
     height: 25%;
 
+    /* alignment */
+    margin-left: auto;
+    margin-right: auto;
+
     /* design */
+    content: attr(data-project-id);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
-    outline: 1px solid red;
-    background-color: rgba(243, 15, 15, 0.315);
+    outline: 1px solid rgb(255, 0, 242);
+    background-color: rgba(243, 15, 224, 0.315);
 }
 
-.accordion-item:nth-child(n + 4) .project-id{
+.accordion-item:nth-child(n + 4) .project-id::before{
     color: black;
 }
 
-.accordion-item:nth-child(-n + 3) .project-id{
+.accordion-item:nth-child(-n + 3) .project-id::before{
     color: white;
 }
 
@@ -515,6 +532,7 @@ body{
     /* design */
     outline: 1px solid slateblue;
     background-color: rgba(105, 90, 205, 0.466);
+    overflow: hidden;
 }
 
 .project-title{
@@ -525,7 +543,11 @@ body{
 
 }
 
-.github-fork, .github-star{
+.project-link{
+    text-decoration: none;
+}
+
+.project-link svg, .github-fork, .github-star{
     /* design */
     fill: white;
     cursor: pointer;
@@ -536,7 +558,7 @@ body{
     height: clamp(20px, 3.125vw, 30px);
 }
 
-.project-image{
+.accordion-item .project-image{
     /* position */
     position: absolute;
     top: 0;
@@ -565,7 +587,7 @@ body{
         min-height: initial;
     }
 
-    .accordion-item .project-id{
+    .accordion-item .project-id::before{
         /* alignment */
         margin-left: 0;
         margin: 0;

@@ -15,8 +15,11 @@
   import './assets/stylesheets/navbar-862-down.css';
   
 
-  // initial state
+  // initial state of list before fetching repositories
   let repos = [];
+
+  // list of repositories to include in projects section
+  const included = ['larj-corpus', 'phil-jurisprudence-recsys', 'hate-speech-classifier', 'breast-cancer-classifier', 'housing-prices-predictor', 'project-alexander'];
 
   // upon mounting of component send http request to flask
   // backend proxy server and retrieve repositories

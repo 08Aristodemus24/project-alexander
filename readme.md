@@ -234,6 +234,7 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 
 **Side notes:**
 1. All I know is that I would have to use flex-basis to preserve height and width of accordion items in either a landscape or portrait orientation or screen sizes like 320 x 640, 320 x 1600, 640 x 1600
+2. Currently, an element with position: absolute is positioned relative to the nearest positioned ancestor (an element with position other than static) so not only do absolute elements acnhor themselves to relative elements but elements with position other than static
 
 
 
