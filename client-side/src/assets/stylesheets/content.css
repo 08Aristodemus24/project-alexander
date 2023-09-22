@@ -511,6 +511,11 @@ body{
     text-align: center;
     outline: 1px solid rgb(255, 0, 242);
     background-color: rgba(243, 15, 224, 0.315);
+
+    /* animation */
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 .accordion-item:nth-child(n + 4) .project-id::before{
@@ -529,7 +534,16 @@ body{
 .accordion-item:nth-child(6):hover .project-id{
     /* design */
     opacity: 70%;
-    filter: brightness(25%);
+}
+
+.accordion-item:nth-child(1):hover .project-id::before,
+.accordion-item:nth-child(2):hover .project-id::before,
+.accordion-item:nth-child(3):hover .project-id::before,
+.accordion-item:nth-child(4):hover .project-id::before,
+.accordion-item:nth-child(5):hover .project-id::before,
+.accordion-item:nth-child(6):hover .project-id::before{
+    /* design */
+    opacity: 0%;
 }
 
 .accordion-item .project-content{
@@ -546,8 +560,8 @@ body{
     taking up the size of its children */
 
     /* design */
-    outline: 1px solid slateblue;
-    background-color: rgba(105, 90, 205, 0.466);
+    /* outline: 1px solid slateblue;
+    background-color: rgba(105, 90, 205, 0.466); */
     overflow: hidden;
 }
 
