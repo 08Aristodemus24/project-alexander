@@ -1,6 +1,6 @@
 # **STILL IN PRODUCTION**
 
-# My portfolio website for my AI/ML projects built with Svelte, Tailwind, and Flask
+# My portfolio website for my AI/ML projects built with Svelte, Vanilla CSS, and Flask
 
 # Frontend
 ## Designing website template:
