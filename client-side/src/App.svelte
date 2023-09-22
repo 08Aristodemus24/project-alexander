@@ -59,6 +59,16 @@
 
     }else{
       console.log(`retrieval unsuccessful. Response status ${response.status} occured`)
+
+      // if retrieval of repositories is unsuccessful just initialize empty repos
+      included = [
+        {name: null, description: null, html_url: null},
+        {name: null, description: null, html_url: null},
+        {name: null, description: null, html_url: null},
+        {name: null, description: null, html_url: null},
+        {name: null, description: null, html_url: null},
+        {name: null, description: null, html_url: null}
+      ];
     }
   });
   
