@@ -565,6 +565,10 @@ body{
     /* position */
     /* transform: translateX(-100rem); */
 
+    /* spacing */
+    padding-left: 1em;
+    padding-right: 1em;
+
     /* design */
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
@@ -583,6 +587,10 @@ body{
 .project-description{
     /* position */
     /* transform: translateX(-100rem); */
+
+    /* spacing */
+    padding-left: 1em;
+    padding-right: 1em;
 
     /* design */
     font-family: 'Nunito Sans', sans-serif;
@@ -651,9 +659,6 @@ body{
     transition-timing-function: ease-in-out;
 }
 
-.github-fork::after{
-}
-
 .github-star{
     /* position */
     position: absolute;
@@ -702,7 +707,7 @@ body{
 }
 
 /* DEMO */
-.accordion-item:hover{
+/* .accordion-item:hover{
     flex-basis: 500px;
 }
 
@@ -720,7 +725,7 @@ body{
 
 .accordion-item:hover .project-image{
     filter: grayscale(0%) brightness(30%);
-} 
+} */
 
 @media (width < 862px){
     .accordion-group{

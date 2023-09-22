@@ -27,7 +27,7 @@
 
             // on mount set state of country code to dial code of first country
             country_code = countries[0]['dial_code'];
-            console.table(countries);
+            // console.table(countries);
 
         }else{
             console.log(`retrieval unsuccessful. Response status ${response.status} occured`)

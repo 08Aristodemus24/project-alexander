@@ -6,6 +6,7 @@
   import About from "./components/About.svelte";
   import Work from "./components/Work.svelte";
   import Projects from "./components/Projects.svelte";
+  import Accordion from "./components/Accordion.svelte";
   import Skills from "./components/Skills.svelte";
   import Experience from "./components/Experience.svelte";
   import Contact from "./components/Contact.svelte";
@@ -19,7 +20,7 @@
   let repos = [];
 
   // list of repositories to include in projects section
-  const included = ['larj-corpus', 'phil-jurisprudence-recsys', 'hate-speech-classifier', 'breast-cancer-classifier', 'housing-prices-predictor', 'project-alexander'];
+  let included = [];
 
   // upon mounting of component send http request to flask
   // backend proxy server and retrieve repositories
@@ -38,7 +39,22 @@
       // contents of the repos state
       repos = [...data];
       console.log('repositories: ');
-      console.table(repos);
+      // console.table(repos);
+
+      included = repos.filter((repo) => {
+        const repo_names = ['LaRJ-Corpus',
+         'phil-jurisprudence-recsys',
+         'hate-speech-classifier',
+         'breast-cancer-classifier',
+         'housing-prices-predictor',
+         'project-alexander'];
+        
+        // callbacdk returns true if repo name is part of
+        // exclusive repos list
+        return repo_names.includes(repo['name']);
+      });
+
+      console.log(included);
 
 
     }else{
@@ -77,7 +93,9 @@
   <Hero slot="landing-section"/>
   <About slot="about-section"/>
   <Work slot="work-group-section">
-    <Projects slot="projects-section"/>
+    <Projects slot="projects-section">
+      <Accordion slot="accordion-group" repos={included}/>      
+    </Projects>
     <Skills slot="skills-section"/>
     <Experience slot="exp-section"/>
   </Work>
