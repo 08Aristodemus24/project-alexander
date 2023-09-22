@@ -438,10 +438,12 @@ body{
     height: 100%;
 
     /* design */
+    opacity: 100%;
+    visibility: visible;
     /* outline: 1px solid red; */
 
     /* animation */
-    transition-property: opacity, filter;
+    transition-property: opacity, visibility;
     transition-duration: 250ms;
     transition-timing-function: ease-in-out;
 }
@@ -498,11 +500,13 @@ body{
     font-weight: 400;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
+    opacity: 100%;
+    visibility: visible;
     /* outline: 1px solid rgb(255, 0, 242);
     background-color: rgba(243, 15, 224, 0.315); */
 
     /* animation */
-    transition-property: opacity;
+    transition-property: opacity, visibility;
     transition-duration: 250ms;
     transition-timing-function: ease-in-out;
 }
@@ -529,6 +533,7 @@ body{
 .accordion-item:nth-child(6):hover .project-id::before{
     /* design */
     opacity: 0%;
+    visibility: hidden;
 }
 
 .accordion-item .project-content{
@@ -544,6 +549,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 1rem;
 
 
     /* size */
@@ -552,41 +558,46 @@ body{
 
     /* design */
     /* outline: 1px solid slateblue; */
-    background-color: rgba(0, 0, 0, 0);
-    overflow: hidden;
-
-    /* animation */
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    /* overflow: hidden; */
 }
 
 .project-title{
     /* position */
-    transform: translateX(-100rem);
+    /* transform: translateX(-100rem); */
 
     /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
     opacity: 0%;
+    /* outline: 1px solid white; */
 
     /* animation */
     transition-property: transform, opacity;
     transition-duration: 250ms;
-    transition-delay: 0.5s, 1s;
+    transition-delay: 0.5s, 0s;
     transition-timing-function: ease-in-out;
 }
 
 .project-description{
     /* position */
-    transform: translateX(-100rem);
+    /* transform: translateX(-100rem); */
 
     /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    text-align: justify;
+    color: white;
     opacity: 0%;
+    /* outline: 1px solid white; */
 
     /* animation */
     transition-property: transform, opacity;
     transition-duration: 250ms;
-    transition-delay: 0.5s, 1s;
-    transition-timing-function: ease-in-out;
+    transition-delay: 0.5s, 0s;
+    transition-timing-function: ease-in;
 }
 
 .project-link{
@@ -598,12 +609,12 @@ body{
     /* design */
     cursor: pointer;
     text-decoration: none;
-    filter: blur(100px);
+    opacity: 0%;
 
     /* animation */
-    transition-property: filter;
+    transition-property: opacity;
     transition-duration: 250ms;
-    transition-delay: 1s;
+    transition-delay: .25s;
     transition-timing-function: ease-in-out;
 }
 
@@ -626,7 +637,7 @@ body{
     /* design */
     fill: white;
     cursor: pointer;
-    filter: blur(100px);
+    opacity: 0%;
     /* outline: 1px solid lightgreen; */
 
     /* size */
@@ -634,10 +645,13 @@ body{
     height: clamp(20px, 3.125vw, 30px);
 
     /* animation */
-    transition-property: filter;
+    transition-property: opacity;
     transition-duration: 250ms;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
     transition-timing-function: ease-in-out;
+}
+
+.github-fork::after{
 }
 
 .github-star{
@@ -649,7 +663,8 @@ body{
     /* design */
     fill: white;
     cursor: pointer;
-    filter: blur(100px);
+    opacity: 0%;
+    
     /* outline: 1px solid lightgreen; */
 
     /* size */
@@ -657,9 +672,9 @@ body{
     height: clamp(20px, 3.125vw, 30px);
 
     /* animation */
-    transition-property: filter;
+    transition-property: opacity;
     transition-duration: 250ms;
-    transition-delay: 1s;
+    transition-delay: 0.75s;
     transition-timing-function: ease-in-out;
 }
 
@@ -676,34 +691,36 @@ body{
     /* size */
     height: 100%;
     width: 100%;
+
+    /* design */
+    filter: grayscale(100%) brightness(100%);
+
+    /* animation */
+    transition-property: filter;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 /* DEMO */
-/* .accordion-item:hover{
+.accordion-item:hover{
     flex-basis: 500px;
 }
 
-.accordion-item:hover .project-title{
-    transform: translateX(0px);
-    opacity: 100%;
-}
-
+.accordion-item:hover .project-title,
 .accordion-item:hover .project-description{
     transform: translateX(0px);
     opacity: 100%;
 }
 
-.accordion-item:hover .project-link{
-    filter: blur(0px);
-}
-
-.accordion-item:hover .github-fork{
-    filter: blur(0px);
-}
-
+.accordion-item:hover .project-link,
+.accordion-item:hover .github-fork,
 .accordion-item:hover .github-star{
-    filter: blur(0px);
-} */
+    opacity: 100%;
+} 
+
+.accordion-item:hover .project-image{
+    filter: grayscale(0%) brightness(30%);
+} 
 
 @media (width < 862px){
     .accordion-group{
