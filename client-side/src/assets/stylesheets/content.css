@@ -450,6 +450,11 @@ body{
 
     /* design */
     outline: 1px solid red;
+
+    /* animation */
+    transition-property: opacity, filter;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 .accordion-item:nth-child(1) .project-id{
@@ -514,6 +519,17 @@ body{
 
 .accordion-item:nth-child(-n + 3) .project-id::before{
     color: white;
+}
+
+.accordion-item:nth-child(1):hover .project-id,
+.accordion-item:nth-child(2):hover .project-id,
+.accordion-item:nth-child(3):hover .project-id,
+.accordion-item:nth-child(4):hover .project-id,
+.accordion-item:nth-child(5):hover .project-id,
+.accordion-item:nth-child(6):hover .project-id{
+    /* design */
+    opacity: 70%;
+    filter: brightness(25%);
 }
 
 .accordion-item .project-content{
