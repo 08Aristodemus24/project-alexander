@@ -632,8 +632,8 @@ body{
     /* outline: 1px solid lightgreen; */
 
     /* size */
-    width: clamp(20px, 3.125vw, 30px);
-    height: clamp(20px, 3.125vw, 30px);
+    width: clamp(14px, 2.1875vw, 22.4px);
+    height: clamp(14px, 2.1875vw, 22.4px);
 }
 
 .github-fork{
@@ -649,8 +649,8 @@ body{
     /* outline: 1px solid lightgreen; */
 
     /* size */
-    width: clamp(20px, 3.125vw, 30px);
-    height: clamp(20px, 3.125vw, 30px);
+    width: clamp(14px, 2.1875vw, 22.4px);
+    height: clamp(14px, 2.1875vw, 22.4px);
 
     /* animation */
     transition-property: opacity;
@@ -673,8 +673,8 @@ body{
     /* outline: 1px solid lightgreen; */
 
     /* size */
-    width: clamp(20px, 3.125vw, 30px);
-    height: clamp(20px, 3.125vw, 30px);
+    width: clamp(14px, 2.1875vw, 22.4px);
+    height: clamp(14px, 2.1875vw, 22.4px);
 
     /* animation */
     transition-property: opacity;
