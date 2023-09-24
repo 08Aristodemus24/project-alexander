@@ -10,7 +10,7 @@
         if(event.key === 'Enter' || event.type === 'click'){
             // get the closest .accordion-item when a panel is clicked 
             const active_panel = event.target.closest('.accordion-item');
-            console.log(active_panel)
+            // console.log(active_panel);
 
             // identify index of this active panel
             active_panel_index = Array.from(active_panel.parentNode.children).indexOf(active_panel);

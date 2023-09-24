@@ -29,8 +29,11 @@
 <header class="navbar-container">
   <nav class="navbar" class:opened={is_opened === true}>
     <div class="nav-brand-container">
-      <a class="navbar-brand" href="/">Michael</a>
-      <div on:click={toggle_menu} class="button-container" class:opened={is_opened === true}>
+      <a class="navbar-brand" href="/" on:click|preventDefault={() => {
+        document.body.scrollIntoView();
+      }}>Michael</a>
+      
+      <div on:click|preventDefault={toggle_menu} class="button-container" class:opened={is_opened === true}>
         <a href="#" class="top-left-corner"></a>
         <a href="#" class="top-edge"></a>
         <a href="#" class="top-right-corner"></a>
