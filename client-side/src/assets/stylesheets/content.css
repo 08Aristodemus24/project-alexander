@@ -707,25 +707,42 @@ body{
 }
 
 /* DEMO */
-/* .accordion-item:hover{
+.accordion-item[aria-expanded="true"]{
     flex-basis: 500px;
 }
 
-.accordion-item:hover .project-title,
-.accordion-item:hover .project-description{
+.accordion-item:nth-child(1)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(2)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(3)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(4)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(5)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(6)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(1)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(2)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(3)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(4)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(5)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(6)[aria-expanded="true"] .project-id::before{
+    /* design */
+    opacity: 0%;
+    visibility: hidden;
+}
+
+.accordion-item[aria-expanded="true"] .project-title,
+.accordion-item[aria-expanded="true"] .project-description{
     transform: translateX(0px);
     opacity: 100%;
 }
 
-.accordion-item:hover .project-link,
-.accordion-item:hover .github-fork,
-.accordion-item:hover .github-star{
+.accordion-item[aria-expanded="true"] .project-link,
+.accordion-item[aria-expanded="true"] .github-fork,
+.accordion-item[aria-expanded="true"] .github-star{
     opacity: 100%;
 } 
 
-.accordion-item:hover .project-image{
+.accordion-item[aria-expanded="true"] .project-image{
     filter: grayscale(0%) brightness(30%);
-} */
+}
 
 @media (width < 862px){
     .accordion-group{

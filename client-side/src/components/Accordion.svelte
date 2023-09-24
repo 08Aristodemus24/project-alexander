@@ -1,22 +1,34 @@
 <script>
     export let repos = [];
 
-    let is_expanded = false;
-    
-    const toggle_panel = (event) => {
-        const active_panel = event.target;
-        console.log(event.target);
-        is_expanded = !is_expanded;
+    // initially all panels are closed
+    let panel_activity = [false, false, false, false, false, false];
+    let active_panel_index = null;
 
-        if(event.key === 'Enter'){
-            console.log(1);
+    const toggle_panel = (event) => {
+        // only allow enter and click events to toggle panel
+        if(event.key === 'Enter' || event.type === 'click'){
+            // get the closest .accordion-item when a panel is clicked 
+            const active_panel = event.target.closest('.accordion-item');
+            console.log(active_panel)
+
+            // identify index of this active panel
+            active_panel_index = Array.from(active_panel.parentNode.children).indexOf(active_panel);
+
+            // set this panels activity to true based on its index
+            // set all other panels activity to false
+            panel_activity = panel_activity.map((value, index) => {
+                return active_panel_index === index ? true : false;
+            });
         }
+
+        return;
     };
 </script>
 
 <div class="accordion-group">
     {#each repos as repo, index}
-        <div class="accordion-item" aria-expanded={is_expanded} tabindex={0} on:click={toggle_panel} on:keypress={toggle_panel}>
+        <div class="accordion-item" aria-expanded={panel_activity[index]} tabindex={0} on:click={toggle_panel} on:keypress={toggle_panel}>
             <h1 class="project-id" data-project-id={repo['project_id']}></h1>
             <div class="project-content" id="project-content">
                 <h4 class="project-title">{repo['name']}</h4>

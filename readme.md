@@ -221,10 +221,10 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 
 ## Writing accordion component
 **To do:**
-1. 
+1. on expansion of item remove teh project-id or fade it also
 
 **Problems and solutions:**
-1. 
+1. because you are selecting right away .accordion-item you never get project-link to be selected
 
 **Tech used:**
 1. 
