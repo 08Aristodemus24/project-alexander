@@ -75,7 +75,7 @@
         })
 
       }else{
-        console.log(`retrieval unsuccessful. Response status ${response.status} occured`);
+        console.log(`retrieval unsuccessful. Response status '${response.status}' occured`);
       }
 
     }catch(error){
@@ -101,7 +101,7 @@
       console.log('message sent');
 
     }else{
-      console.log(`message submission unsucessful. Response status ${response.status} occured`);
+      console.log(`message submission unsucessful. Response status '${response.status}' occured`);
     }
   }
 

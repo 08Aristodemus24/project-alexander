@@ -246,9 +246,12 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 **To do:**
 1. <s>install flask</s>
 2. <s>set route's url pattern to https://<localhost>:5000 in order to receive http requests from client requesting this url</s>
+3. setup spam prevention in server to ensure email spamming in contact form is prevented
+a. ban ip forever if sent more than 20 requests, since individual may be malicious and might just do it again should ban be removed
+b. however user may send a requset 20times but have interval between those requests which may imply they may not be malicious. So somehow setup a way that ip ban retains same ip address for how many number of seconds before it expires and user can then send another request
 
 **Problems and solutions:**
-1. http://127.0.0.1:5000 blocked by CORS policy when requesting to api endpoint http://127.0.0.1:5500/ - solution: https://medium.com/@mterrano1/cors-in-a-flask-api-38051388f8cc
+1. <s>http://127.0.0.1:5000 blocked by CORS policy when requesting to api endpoint http://127.0.0.1:5500/ - solution: https://medium.com/@mterrano1/cors-in-a-flask-api-38051388f8cc</s>
 2. 
 
 **Tech used:**
@@ -256,7 +259,90 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 2. flask-cors
 
 **References:**
-1. a
+1. flask-ipban: https://pypi.org/project/flask-ipban/
+
+`server.py`
+```
+...
+app.secret_key = os.environ.get('SECRET_KEY', str(os.urandom(50)))
+ban_count = 5
+ban_seconds = 5
+
+ip_ban = IpBan(app=app, ban_count=ban_count, ban_seconds=ban_seconds)
+ip_ban.load_nuisances()
+...
+```
+
+```
+...
+class IpBan:
+    """
+    Implements a simple list of ip addresses that
+    seem to be trying credential stuffing.  Blocks items from that list
+    once they exceed the ban count.
+
+    Optional config by env variable
+    ======
+    IP_BAN_LIST_COUNT - number of observations before 403 exception
+    IP_BAN_LIST_SECONDS - number of seconds to retain memory of IP
+
+    """
+
+    VERSION = '1.1.5'
+
+    def __init__(self, app=None, ban_count=20, ban_seconds=3600 * 24, persist=False, record_dir=None, ipc=False,
+                 secret_key=None, ip_header=None, abuse_IPDB_config=None):
+        """
+        start
+
+        :param app: (optional when using init_app) flask application with logger defined
+        :param ban_count: (optional) number of observations before ban
+        :param ban_seconds: (optional) number minutes of silence before ban rescinded (0 is never rescind)
+        :param persist: (optional) persists the ban records between app starts by storing in a temp folder
+        :param record_dir: (optional default is flask-ip-ban in the temp folder) a record directory that stores ban records for ipc sync and persistence.
+        :param ipc: enable ipc communication
+        :param secret_key: optional secret key for signing ipc records.  Default is to use flask secret key
+        :param ip_header: name of request header that contains the ip for use behind proxies when in docker/kube hosted env
+        :param abuse_IPDB_config: config {key=,report=False,load=False} to a AbuseIPDB.com account.  Blocked ip addresses via url nuisance matching will be reported.
+        """
+
+        HERE IF THERE IS NO IP_BAN_LIST_COUNT SUPPLIED IN OUR ENVIRONMENT VARIABLES THEN BAN_COUNT 
+        PASSED IN CLASS IS INSTEAD USED SAME GOES FOR IP_BAN_LIST_SECONDS
+        self.ban_count = int(os.environ.get('IP_BAN_LIST_COUNT', ban_count))  # type: int
+        self.ban_seconds = int(os.environ.get('IP_BAN_LIST_SECONDS', ban_seconds))  # type: int
+
+        self._ip_whitelist = {'127.0.0.1': True}
+        # self._ip_whitelist = {}
+        self._ip_ban_list = {}
+        self._cidr_entries = {}
+        # initialise with well known search bot links
+        self._url_whitelist_patterns = {}
+        self._url_blocklist_patterns = {}
+        self.load_allowed()
+        self.app = None
+        self._logger = None
+        self.abuse_reporter = None
+        self.ip_header = ip_header
+        self.abuse_IPDB_config = abuse_IPDB_config or {}
+        self.init = True
+
+        self.ip_record = IpRecord(self, record_dir, persist, ipc, secret_key)
+
+        if app:
+            self.init_app(app)
+...
+```
+
+```
+...
+# bans any ip address if request exceeds 20
+ip_ban = IpBan(app, ban_count=20)
+ip_ban.load_nuisances()
+ip_ban.url_pattern_add(r'/', match_type='regex')
+# use this for users who spam your site and pass to .blo9ck method of ip_ban
+# request.remote_addr
+...
+```
 
 **Side notes:**
 1. to run flask server use `python server.py` or `python --app server run`
