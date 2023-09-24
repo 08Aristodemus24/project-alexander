@@ -229,7 +229,7 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 2. fade project-title, and project-description also with link fork and star icons
 
 **Problems and solutions:**
-1. because you are selecting right away .accordion-item you never get project-link to be selected
+1. <s>because you are selecting right away .accordion-item you never give a chance for project-link to be selected or clicked on. Solved using cursor default on accordion item, since I was all along able to click the link to project but because of cursor pointer set to accordion item itself it was very hard to see if I was on top of link element</s>
 
 **Tech used:**
 1. 

@@ -343,7 +343,7 @@ body{
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
     color: black;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
 }
 
 .projects-header-container button{
@@ -558,12 +558,12 @@ body{
 
     /* design */
     /* outline: 1px solid slateblue; */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .project-title{
     /* position */
-    /* transform: translateX(-100rem); */
+    transform: translateX(-100px);
 
     /* spacing */
     padding-left: 1em;
@@ -579,14 +579,14 @@ body{
 
     /* animation */
     transition-property: transform, opacity;
-    transition-duration: 250ms;
-    transition-delay: 0.5s, 0s;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.6s, 0.6s;
+    transition-delay: 0.25s, 0.4s;
+    transition-timing-function: ease-in;
 }
 
 .project-description{
     /* position */
-    /* transform: translateX(-100rem); */
+    transform: translateX(-100px);
 
     /* spacing */
     padding-left: 1em;
@@ -603,8 +603,8 @@ body{
 
     /* animation */
     transition-property: transform, opacity;
-    transition-duration: 250ms;
-    transition-delay: 0.5s, 0s;
+    transition-duration: 0.6s, 0.6s;
+    transition-delay: 0.5s, 0.65s;
     transition-timing-function: ease-in;
 }
 
@@ -621,9 +621,9 @@ body{
 
     /* animation */
     transition-property: opacity;
-    transition-duration: 250ms;
-    transition-delay: .25s;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.65s;
+    transition-delay: 0.25s;
+    transition-timing-function: linear;
 }
 
 .project-link svg{
@@ -654,9 +654,9 @@ body{
 
     /* animation */
     transition-property: opacity;
-    transition-duration: 250ms;
-    transition-delay: 0.5s;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.65s;
+    transition-delay: 1s;
+    transition-timing-function: linear;
 }
 
 .github-star{
@@ -669,7 +669,6 @@ body{
     fill: white;
     cursor: pointer;
     opacity: 0%;
-    
     /* outline: 1px solid lightgreen; */
 
     /* size */
@@ -678,9 +677,9 @@ body{
 
     /* animation */
     transition-property: opacity;
-    transition-duration: 250ms;
-    transition-delay: 0.75s;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.65s;
+    transition-delay: 1.25s;
+    transition-timing-function: linear;
 }
 
 .accordion-item .project-image{
@@ -708,6 +707,10 @@ body{
 
 /* DEMO */
 .accordion-item[aria-expanded="true"]{
+    /* design */
+    cursor: default;
+
+    /* size */
     flex-basis: 500px;
 }
 
@@ -730,7 +733,7 @@ body{
 
 .accordion-item[aria-expanded="true"] .project-title,
 .accordion-item[aria-expanded="true"] .project-description{
-    transform: translateX(0px);
+    transform: translateX(0);
     opacity: 100%;
 }
 

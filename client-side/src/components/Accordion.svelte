@@ -5,6 +5,7 @@
     let panel_activity = [false, false, false, false, false, false];
     let active_panel_index = null;
 
+    // handler for either click and enter key event
     const toggle_panel = (event) => {
         // only allow enter and click events to toggle panel
         if(event.key === 'Enter' || event.type === 'click'){
