@@ -242,6 +242,11 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 2. Currently, an element with position: absolute is positioned relative to the nearest positioned ancestor (an element with position other than static) so not only do absolute elements acnhor themselves to relative elements but elements with position other than static
 
 
+## Writing about component
+**To do:**
+1. Need to fix why gif file does not render in document
+<img src="https://github.com/08Aristodemus24/project-alexander/blob/master/client-side/src/assets/mediafiles/MorphingHeaders_ManimCE_v0.17.3.gif" alt="michaelcueva" width="100" height="100" style="color: white;"/>
+
 
 # Backend
 ## Setting up backend proxy server for accessing .env file
