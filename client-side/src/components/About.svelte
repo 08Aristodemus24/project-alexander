@@ -6,7 +6,8 @@
             <p>Here's some technologies I picked up</p>
         </div>
         <div class="anims-container">
-            <video autoplay muted loop src="../mediafiles/Skillsfinal.mp4"></video>
+            <!-- <video autoplay muted loop src="../mediafiles/Skillsfinal.mp4"></video> -->
+            <video autoplay muted loop src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4"></video>
         </div>
     </div>
 </section>
