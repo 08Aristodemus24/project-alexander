@@ -258,6 +258,19 @@ body{
     /* outline: 1px solid lightgreen; */
 }
 
+.anims-container{
+    outline: 1px solid salmon;
+}
+
+.anims-container video{
+    /* design */
+    outline: 1px solid orangered;
+
+    /* size */
+    /* clamp on smaller screens and larger screens */
+    width: 50vw;
+    min-height: 600px;
+}
 
 
 /* PROJECTS, SKILLS, AND EXPERIENCE SECTIONS */
