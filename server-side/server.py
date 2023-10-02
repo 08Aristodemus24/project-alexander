@@ -1,9 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_ipban import IpBan
 
 import requests
 import json
+from bs4 import BeautifulSoup
+from datetime import datetime as dt
 
 # ff. imports are for getting secret values from .env file
 from pathlib import Path
@@ -22,8 +24,8 @@ app = Flask(__name__)
 # to be included otherwise it will be blocked by CORS policy
 CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173"])
 
-@app.route('/', methods=['GET'])
-def index():
+@app.route('/repos', methods=['GET'])
+def get_repos():
     """
     flask app will run at http://127.0.0.1:5000 if /
     in url succeeds another string <some string> then
@@ -51,7 +53,7 @@ def index():
     # if error occurs in request just return the key value
     # pairs of the response.json() dictionary and the status
     # code of the response object
-    return dict(documentation_url=data['documentation_url'], message=data['message'], status_code=response.status_code)
+    return json.dumps({'success': False}, response.status_code, {'Content-Type': 'appliction/json'})
 
 @app.route('/send-mail', methods=['POST'])
 def send_mail():
@@ -84,13 +86,88 @@ def send_mail():
 
     if response.status_code == 200:
         print('submission successful')
-        return json.dumps(({'success': True}, 200, {'Content-Type': 'application/json'}))
+        return json.dumps(({'success': True}, 200, {'Content-Type': 'application/text'}))
     
     else:
-        print('submission unsucessful')
-        print(response.status_code)
-        print(response.text)
-        return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
+        print(f'submission unsucessful.\nstatus code: {response.status_code}\nmessage: {response.text}')
+        return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/text'}))
+    
+@app.route('/contribs/<int:year>', methods=['GET'])
+@app.route('/contribs', methods=['GET'])
+def get_contribs(year=None):
+    """
+    instead of client-side making the request to fetch the raw html data
+    leading as we know a CORS error this route function will instead make
+    such a request for us in order to bypass this CORS error
+
+    by default user will request for route /contribs thereby not specifying 
+    the year which allows our route function to return to the user the maximum
+    date and minimum year to which he can choose from
+    """
+    print(year)
+    
+
+    url = 'https://github.com/users/08Aristodemus24/contributions' if year == None \
+    else f'https://github.com/users/08Aristodemus24/contributions?from={year}-01-01&to={year}-12-31'
+
+    response = requests.get(url)
+    dom = BeautifulSoup(response.text)
+
+    # determine also min year and max year
+    min_year = dt.now().year
+    max_year = 0
+    contribs = []
+    
+    # select all table rows and in every row select
+    # only the days and not the label of the day
+    rows = dom.find_all('tr')
+    for row in rows:
+        days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
+        for day in days:
+            content = day.text.split(' ')
+
+            # for edge cases if there is no content or content has no elements 
+            # whatsoever just append null to contribs
+            if len(content) > 1:
+                print(content)
+
+                # some important attributes of the td element are also data-date
+                # and data-level which both contain the date of push and the 
+                # strength level of number of pushes the user has done in that day
+                date = day['data-date']
+                level = day['data-level']
+
+                contribs.append({
+                    'pushes': 0 if content[0] == 'No' else int(content[0]),
+                    'day-name': content[3].replace(',', ''),
+                    'month': content[4],
+                    'day-num': content[5].replace(',', ''),
+                    'year': content[6],
+                    'level': level
+                })
+
+                # determine the minimum and maximum years in whole span
+                # of github contributions timeline
+                max_year = max_year if max_year > int(content[6]) else int(content[6])
+                min_year = min_year if min_year < int(content[6]) else int(content[6])
+            else:
+                contribs.append(None)
+    
+    # if year is None meaning get all contributions 
+    # all the way from first push to recent push
+    data = [{'contribs': contribs}]
+    if year == None:
+        data[0]['min_year'] = min_year
+        data[0]['max_year'] = max_year
+
+    if response.status_code == 200:
+        print('retrieval successful')
+        return jsonify(data)
+    
+    return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

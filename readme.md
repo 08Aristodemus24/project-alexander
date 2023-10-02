@@ -244,8 +244,26 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 
 ## Writing about component
 **To do:**
-1. Need to fix why gif file does not render in document
-<!-- <img src="https://github.com/08Aristodemus24/project-alexander/blob/master/client-side/src/assets/mediafiles/MorphingHeaders_ManimCE_v0.17.3.gif" alt="michaelcueva" style="color: white;"/> -->
+1. <s>Need to fix why gif file does not render in document</s>
+2. position video container and video element
+
+
+## Writing skills component
+
+
+## Writing experience component
+**To do:**
+1. Because you have little experience show instead your github contributions profile
+2. Write the contributions in 3d using three js
+3. Scrape ther contributions using backend server proxy utilizing requests, beautiful soup, json to get, parse, and transform the raw html data respectively to be send back in json format to our client-side
+
+**Problems and solutions:**
+1. because github skyline api was only until 2022 we would have to setup our own api to scrape and return our github contributions data. But because we cannot use our client site to fetch our contributions from our github profile we will have to set up a backend server proxy to make these requests for us instead of the client. This is because github has and will throw a cross origin resource sharing error due to our client side url being a foreign or being of a foreign origin and not recognized
+
+
+
+
+
 
 
 # Backend

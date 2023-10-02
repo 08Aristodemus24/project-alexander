@@ -14,8 +14,29 @@
   import './assets/stylesheets/content.css';
   import './assets/stylesheets/navbar-862-and-up.css';
   import './assets/stylesheets/navbar-862-down.css';
-  
 
+  const send_mail = async (event) => {
+    const raw_data = event.detail;
+
+    // send here the data from the contact component to 
+    // the backend proxy server
+    const url = 'http://127.0.0.1:5000/send-mail';
+    const response = await fetch(url, {
+      'method': 'POST',
+      'headers': {
+        'Content-Type': 'application/json'
+      },
+      'body': JSON.stringify(raw_data)
+    });
+
+    if(response.status === 200){
+      console.log('message sent');
+
+    }else{
+      console.log(`message submission unsucessful. Response status '${response.status}' occured`);
+    }
+  }
+  
   // initial state of list before fetching repositories
   let repos = [];
 
@@ -30,11 +51,9 @@
     {name: null, description: null, html_url: null, project_id: 'VI', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1.jpg"}
   ];
 
-  // upon mounting of component send http request to flask
-  // backend proxy server and retrieve repositories
-  onMount(async () => {
+  const fetch_repos = async () => {
     try{
-      const url = 'http://127.0.0.1:5000/';
+      const url = 'http://127.0.0.1:5000/repos';
       const response = await fetch(url);
       
       if(response.status === 200){
@@ -81,29 +100,61 @@
     }catch(error){
       console.log(`request denied. Error '${error}' occured.`);
     }
-  });
+  }
   
-  const send_mail = async (event) => {
-    const raw_data = event.detail;
+  // initially all but user can change this depending
+  // on what he wants to view
+  let curr_year = null;
 
-    // send here the data from the contact component to 
-    // the backend proxy server
-    const url = 'http://127.0.0.1:5000/send-mail';
-    const response = await fetch(url, {
-      'method': 'POST',
-      'headers': {
-        'Content-Type': 'application/json'
-      },
-      'body': JSON.stringify(raw_data)
-    });
+  // on moount min year and max year states will only be set once
+  let min_year = null;
+  let max_year = null;
+  
+  const fetch_contribs = async (event) => {
+    // upon mounting since user has not chosen a year yet 
+    // event will be undefined // and then should user click
+    // a year only then event is not undefined, .detail can
+    // be accessed, and then only can we set its next state
+    curr_year = event === undefined ? null : event.detail;
+    try{
+      const url = `http://127.0.0.1:5000/contribs${curr_year === null ? '' : `/${curr_year}`}`;
+      const response = await fetch(url);
 
-    if(response.status === 200){
-      console.log('message sent');
+      if(response.status === 200){
+        console.log("retrieval successful");
 
-    }else{
-      console.log(`message submission unsucessful. Response status '${response.status}' occured`);
+        // pass retrieved repositories to another component called
+        // Experience.svelte
+        const data = await response.json();
+
+        // if and only if upon page load curr_year is null in order
+        // to get min and max years but if user requests for a specific
+        // year then data does not contain anymore min and max year keys
+        // so we only have to confine setting min and max year upon mounting
+        if(curr_year === null){
+          min_year = data[0]['min_year'];
+          max_year = data[0]['max_year'];
+        }
+        console.log(data);
+
+      }else{
+        console.log(`retrieval unsuccessful. Response status '${response.status}' occured`);
+      }
+
+    }catch(error){
+      console.log(`request denied. Error '${error}' occured.`);
     }
   }
+
+  // upon mounting of component send http request to flask
+  // backend proxy server and retrieve repositories
+  onMount(async () => {
+    fetch_repos();
+    fetch_contribs();
+  });
+
+  
+  
 
   // this is a variable dependent upon the state of repos
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
@@ -118,7 +169,7 @@
       <Accordion slot="accordion-group" repos={included}/>      
     </Projects>
     <Skills slot="skills-section"/>
-    <Experience slot="exp-section"/>
+    <Experience slot="exp-section" min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs}/>
   </Work>
   <Contact slot="contact-section" on:sendMail={send_mail}/>
 </Content>
