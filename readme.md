@@ -246,6 +246,10 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 **To do:**
 1. <s>Need to fix why gif file does not render in document</s>
 2. position video container and video element
+3. 
+
+**References:**
+* https://css-tricks.com/how-do-you-make-a-layout-with-pictures-down-one-side-of-a-page-matched-up-with-paragraphs-on-the-other-side/
 
 
 ## Writing skills component
