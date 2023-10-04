@@ -239,13 +239,13 @@ body{
 .about-content{
     /* display */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     /* size */
     width: 100%;
     /* has height auto so it will take height of children */
-    column-gap: 2rem;
+    /* column-gap: 2rem; */
 
     /* design */
     /* border: 2px solid lightseagreen; */
@@ -810,7 +810,6 @@ body{
 @media (width < 862px){
     .about-content{
         flex-direction: column;
-        row-gap: 4rem;
     }
 
     .accordion-group{
