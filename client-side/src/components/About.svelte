@@ -2,8 +2,16 @@
     <div class="about-content">
         <div class="about-header-container">
             <h1>About me</h1>
-            <p>I am a currently a student specializing in machine learning engineering and an aspiring computational immunologist</p>
-            <p>Here's some technologies I picked up</p>
+            <p>
+                I am a currently a student specializing<br>
+                in machine learning engineering and an<br>
+                aspiring computational immunologist
+            </p>
+            <p>
+                Albeit I'm still in this continuous<br>
+                journey of learning here's some<br>
+                technologies I picked up
+            </p>
         </div>
         <div class="anims-container">
             <!-- <video autoplay muted loop src="../mediafiles/Skillsfinal.mp4"></video> -->

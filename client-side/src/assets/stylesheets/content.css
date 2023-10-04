@@ -226,75 +226,90 @@ body{
 
     /* size */
     min-height: 100vh;
+
+    /* unlike the accordion item which has 
+    content embedded in it and which basically 
+    just expands when content overflows such a
+    luxury is limited to the children in about 
+    so we have to set min-height in the parent*/
+    display: flex;
+    /* align-content: center; */
 }
 
 .about-content{
     /* display */
     display: flex;
     justify-content: center;
+    align-items: center;
 
     /* size */
-    min-height: 90vh;
+    width: 100%;
+    /* has height auto so it will take height of children */
+    column-gap: 2rem;
 
     /* design */
-    outline: 1px solid lightseagreen;
-
-    /* position */
-    position: relative;
+    /* border: 2px solid lightseagreen; */
 }
 
 .about-header-container{
     /* design */
-    outline: 2px solid grey;
-    
-    /* position */
-    position: absolute;
-    left: clamp(4rem, 8vw, 8rem);
-    z-index: 1;
-    margin-top: auto;
-    margin-bottom: auto;
+    /* outline: 2px solid grey;; */
 }
 
 .about-header-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 2em;
 
     /* design */
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
-    text-align: center;
+    text-align: left;
     color: white;
+    /* outline: 1px solid lightgreen; */
 }
 
-.about-header-container p{
+.about-header-container p:nth-child(2){
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
-
-    /* width: min-content; */
+    margin-top: 2em;
+    margin-bottom: 2em;
 
     /* design */
-    text-align: center;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
+    text-align: justify;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+    /* outline: 1px solid lightgreen; */
+}
+
+.about-header-container p:nth-child(3){
+    /* spacing */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2em;
+    margin-bottom: 0;
+
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    text-align: justify;
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
     /* outline: 1px solid lightgreen; */
 }
 
 .anims-container{
-    /* position */
-    position: relative;
-    z-index: 0;
-
     /* design */
-    outline: 2px solid salmon;
+    /* outline: 1px solid salmon; */
 }
 
 .anims-container video{
     /* design */
-    outline: 1px solid orangered;
+    /* outline: 2px solid orangered; */
     
     /* size */
     /* clamp on smaller screens and larger screens */
@@ -302,6 +317,7 @@ body{
     width: clamp(320px, 50vw, 640px);
     display: block;
 }
+
 
 
 /* PROJECTS, SKILLS, AND EXPERIENCE SECTIONS */
@@ -792,6 +808,11 @@ body{
 }
 
 @media (width < 862px){
+    .about-content{
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+
     .accordion-group{
         /* display */
         flex-direction: column;
@@ -809,7 +830,6 @@ body{
     .accordion-item .project-id::before{
         /* alignment */
         margin-left: 0;
-        margin: 0;
         margin-top: auto;
         margin-bottom: auto;
     }

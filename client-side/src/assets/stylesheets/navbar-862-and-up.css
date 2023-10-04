@@ -57,7 +57,7 @@ body{
     position: relative;
 
     /* design */
-    border: 1px solid green;
+    /* border: 1px solid green; */
     background: black;
 }
 
@@ -75,7 +75,7 @@ body{
     margin-bottom: auto;
 
     /* design */
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .nav-brand-container .navbar-brand{
@@ -92,7 +92,7 @@ body{
 }
 
 .nav-menu-container{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 .nav-menu{
