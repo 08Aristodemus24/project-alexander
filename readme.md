@@ -253,6 +253,60 @@ If none of that works, Flask will assume the return value is a valid WSGI applic
 
 
 ## Writing skills component
+**To do:**
+1. instead of installing three.js itself we add threlte (svelte integrated with three.js) to our existing svelte project instead
+2. in our project install three and @threlte/core with npm e.g. npm install three @threlte/core
+3. in the vite.config.js and jsconfig.json (or vite.config.ts and tsconfig.json if you're using typescript) we add the following statements to both files
+`vite.congfig.js`
+```
+import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [svelte()],
+  ssr: {
+    noExternal: ['three']
+  }
+})
+
+```
+
+and in `tsconfig.json`
+```
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    /**
+     * svelte-preprocess cannot figure out whether you have
+     * a value or a type, so tell TypeScript to enforce using
+     * `import type` instead of `import` for Types.
+     */
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    /**
+     * To have warnings / errors of the Svelte compiler at the
+     * correct position, enable source maps by default.
+     */
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    /**
+     * Typecheck JS in `.svelte` and `.js` files by default.
+     * Disable this if you'd like to use dynamic types.
+     */
+    "checkJs": true
+  },
+  /**
+   * Use global.d.ts instead of compilerOptions.types
+   * to avoid limiting type declarations.
+   */
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
+}
+```
 
 
 ## Writing experience component

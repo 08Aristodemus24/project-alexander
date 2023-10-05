@@ -1,3 +1,7 @@
+<script>
+
+</script>
+
 <section id="skills-section">
     <div class="skills-content">
         <div class="skills-header-container">
