@@ -23,7 +23,6 @@
       body.style.overflow = "auto";
     }
   }
-
 </script>
 
 <header class="navbar-container">

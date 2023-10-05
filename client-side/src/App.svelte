@@ -160,6 +160,7 @@
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
 </script>
 
+<svelte:body/>
 <Navbar/>
 <Content>
   <Hero slot="landing-section"/>
@@ -169,6 +170,7 @@
       <Accordion slot="accordion-group" repos={included}/>      
     </Projects>
     <Skills slot="skills-section"/>
+    
     <Experience slot="exp-section" min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs}/>
   </Work>
   <Contact slot="contact-section" on:sendMail={send_mail}/>

@@ -767,7 +767,6 @@ body{
     transition-timing-function: ease-in-out;
 }
 
-/* DEMO */
 .accordion-item[aria-expanded="true"]{
     /* design */
     cursor: default;
@@ -840,6 +839,7 @@ body{
 
 
 
+/* SKILLS SECTION */
 #skills-section{
     background-color: black;
     /* outline: 2px solid purple; */
@@ -860,6 +860,23 @@ body{
     color: white;
 }
 
+.skills-objects-container{
+    /* design */
+    outline: 1px solid lightseagreen;
+}
+
+.skills-objects-container svg{
+    width: 75px;
+    height: 75px;
+
+    /* design */
+    fill: white;
+    outline: 1px solid slateblue;
+}
+
+
+
+/* EXPERIENCE SECTION */
 #exp-section{
     /* design */
     /* outline: 2px solid purple; */

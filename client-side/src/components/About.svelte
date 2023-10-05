@@ -1,3 +1,12 @@
+<script>
+    import { onMount } from "svelte";
+
+    let is_mounted = false;
+    onMount(async () => {
+        is_mounted = true
+    });
+
+</script>
 <section id="about-section">
     <div class="about-content">
         <div class="about-header-container">
@@ -14,8 +23,10 @@
             </p>
         </div>
         <div class="anims-container">
-            <!-- <video autoplay muted loop src="../mediafiles/Skillsfinal.mp4"></video> -->
-            <video autoplay muted loop src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4"></video>
+            <!-- render only video if component has mounted to prevent freezing -->
+            {#if is_mounted === true}
+                <video autoplay muted loop src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4"></video>    
+            {/if}
         </div>
     </div>
 </section>
