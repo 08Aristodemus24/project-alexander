@@ -39,7 +39,8 @@ body{
 #landing-section{
     /* size for each section*/
     /* take into account navbar in landing section */
-    min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem));
+    /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
+    min-height: 100vh;
 
     /* display */
     display: flex;
@@ -872,9 +873,17 @@ body{
     /* design */
     fill: white;
     outline: 1px solid slateblue;
+
+    /* animations */
+    transition-property: fill;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
 }
 
-
+.skills-objects-container svg:hover{
+    /* fill: url(#black-white-grad); */
+    fill: rgba(255, 255, 255, 0.452);
+}
 
 /* EXPERIENCE SECTION */
 #exp-section{
