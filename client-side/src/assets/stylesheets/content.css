@@ -842,11 +842,99 @@ body{
 
 /* SKILLS SECTION */
 #skills-section{
+    /* design */
     background-color: black;
     /* outline: 2px solid purple; */
+}
+
+.skills-content{
+    /* size */
+    /* set min height here so #skills-section height will follow
+    .skills-content min height because of its auto height */
+    min-height: 100vh;
+    /* design */
+    outline: 1px solid greenyellow;
+
+    /* display */
+    position: relative;
+}
+
+.skills-toggler-container{
+    /* design */
+    border: 1px solid red;
+    /* outline: 2px solid purple;
+    outline-offset: 1rem; */
+    cursor: pointer;
+
+    /* position */
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+button.skills-toggler::before{
+    /* design */
+    content: '';
+    background-color: white;
 
     /* size */
-    min-height: 100vh;
+    width: 2.25rem; 
+    height: 2px;
+
+    /* position */
+    position: absolute;
+    top: -6px;
+    left: 0;
+
+    /* display */
+    display: block;
+}
+
+button.skills-toggler{
+    /* design */
+    /* remove default border of button */
+    border: none;
+    background-color: greenyellow;
+
+    /* size */
+    width: 2.25rem;
+    height: 2px;
+
+    /* position */
+    position: relative;
+
+    /* display */
+    display: block;
+}
+
+button.skills-toggler::after{
+    /* design */
+    content: '';
+    background-color: white;
+
+    /* size */
+    width: 1.5rem;
+    height: 2px;
+
+    /* position */
+    position: absolute;
+    top: 6px;
+    left: 0;
+
+    /* display */
+    display: block;
+}
+
+.skills-header-container{
+    /* design */
+    /* outline: 2px solid violet; */
+
+    /* position */
+    position: absolute;
+    top: 50%;
+
+    /* size */
+    width: 100%;
 }
 
 .skills-header-container h1{
@@ -859,11 +947,66 @@ body{
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
     color: white;
+    /* outline: 1px solid lawngreen; */
+
+    /* position */
+    position: relative;
+}
+
+.skills-header-container h1::before{
+    /* position */
+    /* position is relative so it goes after our content but can also be static
+    position also the line relatively vertically in the middle of the header so
+    that as font grows or shrinks translateY always follows the font size */
+    /* position: relative; */
+    transform: translateY(-0.25em);
+
+    /* size */
+    width: 12.5%;
+    height: 1px;
+
+    /* design */
+    content: '';
+    background-color: white;
+
+    /* display as inline block so width of h1 does not
+    follow intrinsic sizing of just the content itself */
+    display: inline-block;
+
+    /* spacing */
+    margin-right: 0.5em;
+}
+
+.skills-header-container h1::after{
+    /* position */
+    /* position is relative so it goes after our content but can also be static
+    position also the line relatively vertically in the middle of the header so
+    that as font grows or shrinks translateY always follows the font size */
+    position: relative;
+    transform: translateY(-0.25em);
+
+    /* size */
+    width: 75%;
+    height: 1px;
+
+    /* design */
+    content: '';
+    background-color: white;
+
+    /* display as inline block so width of h1 does not
+    follow intrinsic sizing of just the content itself */
+    display: inline-block;
+
+    /* spacing */
+    margin-left: 0.5em;
 }
 
 .skills-objects-container{
     /* design */
     outline: 1px solid lightseagreen;
+
+    /* display */
+    display: none;
 }
 
 
@@ -907,7 +1050,7 @@ body{
 
     /* position */
     position: relative;
-    transform: translateY(-2rem) scaleX(50%);
+    transform: translateY(-2rem);
 
     /* spacing */
     margin-left: 1rem;
@@ -1139,6 +1282,14 @@ body{
 }
 
 @media (width < 640px){
+    .skills-header-container h1::before,
+    .skills-header-container h1::after{
+        /* size */
+        /* when it reaches below 640px set both before and after lines to 50% */
+        width: 30%;
+        height: 1px;
+    }
+
     .email-container,
     .message-container,
     .submit-btn{
