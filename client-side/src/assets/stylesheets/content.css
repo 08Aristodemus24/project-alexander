@@ -511,34 +511,34 @@ body{
     transition-timing-function: ease-in-out;
 }
 
-.accordion-item:nth-child(1) .project-id{
+.accordion-item:nth-child(6) .project-id{
     /* design */
-    background-color: #141414;
-}
-
-.accordion-item:nth-child(2) .project-id{
-    /* design */
-    background-color: #1a1b1d;
-}
-
-.accordion-item:nth-child(3) .project-id{
-    /* design */
-    background-color: #1e1f21;
-}
-
-.accordion-item:nth-child(4) .project-id{
-    /* design */
-    background-color: #373a3e;
+    background-color: #666b71;
 }
 
 .accordion-item:nth-child(5) .project-id{
     /* design */
-    background-color: #66696e;
+    background-color: #a1a1a3;
 }
 
-.accordion-item:nth-child(6) .project-id{
+.accordion-item:nth-child(4) .project-id{
     /* design */
-    background-color: #999ca2;
+    background-color: #cacbcf;
+}
+
+.accordion-item:nth-child(3) .project-id{
+    /* design */
+    background-color: #e5e8ed;
+}
+
+.accordion-item:nth-child(2) .project-id{
+    /* design */
+    background-color: #eaeaea;
+}
+
+.accordion-item:nth-child(1) .project-id{
+    /* design */
+    background-color: #f1f1f1;
 }
 
 .accordion-item .project-id::before{
@@ -579,7 +579,7 @@ body{
 }
 
 .accordion-item:nth-child(-n + 3) .project-id::before{
-    color: white;
+    color: black;
 }
 
 .accordion-item:nth-child(1):hover .project-id,
@@ -866,6 +866,57 @@ body{
     outline: 1px solid lightseagreen;
 }
 
+
+.skills-objects-container span{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+}
+
+.machine-learning-item{
+    /* display */
+    display: flex;
+    column-gap: 1rem;
+
+    /* design */
+    outline: 1px solid skyblue;
+}
+
+.machine-learning-item div{
+    /* position */
+    position: relative;
+    z-index: 0;
+
+    /* size */
+    flex-basis: auto;
+
+    outline: 1px solid seagreen;
+}
+
+.machine-learning-item div::after{
+    /* design */
+    content: '';
+    background-color: white;
+    outline: 1px solid greenyellow;
+
+    /* size */
+    width: 5rem;
+    height: 1px;
+
+    /* position */
+    position: relative;
+    transform: translateY(-2rem) scaleX(50%);
+
+    /* spacing */
+    margin-left: 1rem;
+
+    /* display */
+    /* after and befoer are by default inline elements */
+    display: inline-block;
+}
+
 .skills-objects-container svg{
     width: 75px;
     height: 75px;
@@ -877,13 +928,14 @@ body{
     /* animations */
     transition-property: fill;
     transition-duration: 0.25s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
 }
 
-.skills-objects-container svg:hover{
-    /* fill: url(#black-white-grad); */
-    fill: rgba(255, 255, 255, 0.452);
-}
+
+
+
+
+
 
 /* EXPERIENCE SECTION */
 #exp-section{

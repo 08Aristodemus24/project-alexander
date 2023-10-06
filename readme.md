@@ -326,7 +326,7 @@ and in `tsconfig.json`
 
 **Insights:**
 1. viewBox is an attribute that is set to value `"<min-x> <min-y> <width> <height>"`. You can think of view box as the scope in which we see the svg object we have
-
+2. use transform origin to change origin where transformation starts which is by default on the center
 
 
 ## Writing experience component
@@ -338,7 +338,9 @@ and in `tsconfig.json`
 **Problems and solutions:**
 1. because github skyline api was only until 2022 we would have to setup our own api to scrape and return our github contributions data. But because we cannot use our client site to fetch our contributions from our github profile we will have to set up a backend server proxy to make these requests for us instead of the client. This is because github has and will throw a cross origin resource sharing error due to our client side url being a foreign or being of a foreign origin and not recognized
 
-
+**Articles:**
+* staggered animations: https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
+* for cubic bezier calculator: https://cubic-bezier.com/#0,.5,0,1
 
 
 
