@@ -852,84 +852,12 @@ body{
     /* set min height here so #skills-section height will follow
     .skills-content min height because of its auto height */
     min-height: 100vh;
+
     /* design */
-    outline: 1px solid greenyellow;
+    /* outline: 1px solid greenyellow; */
 
     /* display */
     position: relative;
-}
-
-.skills-toggler-container{
-    /* design */
-    /* outline: 1px solid white; */
-    cursor: pointer;
-
-    /* position */
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-
-    /* display */
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-
-    /* spacing */
-    padding: 0.5rem;
-
-    /* animation */
-    transition: transform 0.25s ease-in-out;
-}
-
-.skills-toggler-container::before,
-.skills-toggler-container::after{
-    /* design */
-    content: '';
-    background-color: white;
-
-    /* size */
-    height: 2px;
-
-    /* display */
-    display: block;
-
-    /* animation */
-    transition: transform 0.25s ease-in-out;
-}
-
-.skills-toggler-container::before{
-    transform-origin: 100% 50%;
-    width: 2.5rem;
-}
-
-button.skills-toggler{
-    /* design */
-    /* remove default border of button */
-    border: none;
-    background-color: white;
-
-    /* size */
-    width: 2rem;
-    height: 1px;
-
-    /* display */
-    display: block;
-
-    /* spacing */
-    margin-block: 5px;
-}
-
-.skills-toggler-container::after{
-    transform-origin: 100% 50%;
-    width: 1.5rem;
-}
-
-.skills-toggler-container.closed::before{
-    transform: translateY(7px) scaleX(80%);
-}
-
-.skills-toggler-container.closed::after{
-    transform: translateY(-7px) scaleX(135%);
 }
 
 .skills-header-container{
@@ -1008,33 +936,183 @@ button.skills-toggler{
     margin-left: 0.5em;
 }
 
-.skills-objects-container{
+.carousel-container{
     /* design */
     outline: 1px solid lightseagreen;
 }
 
-
-.skills-objects-container span{
+.carousel-inner{
     /* design */
+    outline: 2px solid burlywood;
+
+    /* size */
+    /* set initial height since all children are absolute*/
+    min-height: 75vh;
+
+
+    /* position */
+    position: relative;
+}
+
+.carousel-item{
+    /* design */
+    outline: 1px solid white;
+
+    /* position */
+    position: absolute;
+}
+
+.carousel-item:nth-child(1){
+    background-color: rgba(243, 80, 15, 0.384);
+
+    top: 20px;
+    left: 0;
+}
+
+.carousel-item:nth-child(2){
+    background-color: rgba(18, 197, 122, 0.384);
+
+    top: 30px;
+    left: 20rem;
+}
+
+.carousel-item:nth-child(3){
+    background-color: rgba(95, 15, 243, 0.384);
+
+    top: 40px;
+    left: 40rem;
+}
+
+.carousel-item:nth-child(4){
+    background-color: rgba(209, 243, 15, 0.384);
+
+    top: 50px;
+    left: 80rem;
+}
+
+.carousel-item span{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+    outline: 1px solid red;
+}
+
+.carousel-item ul[class$="item"]{
+    /* design */
+    list-style: none;
+    padding-left: 0;
+    outline: 3px solid red;
+
+    /* size */
+    min-height: 75vh;
+
+    /* spacing */
+    
+
+    /* display */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.carousel-item li{
+    /* design */
+    outline: 1px solid green;
+
+    /* position */
+    position: relative;
+
+    /* display */
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.carousel-item li::before{
+    /* position */
+    position: absolute;
+
+    /* display */
+    display: block;
+    
+    /* design */
+    opacity: 0%;
+    /* content: attr(class); */
+    color: white;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
     font-size: clamp(14px, 2.1875vw, 22.4px);
-    color: white;
+    outline: 1px solid greenyellow;
+
+    /* animation */
+    transition: opacity 0.5s ease-in-out;
 }
 
-.skills-objects-container svg[class$="icon"]{
-    width: 75px;
-    height: 75px;
+.carousel-item svg[class$="icon"]{
+    width: 50px;
+    height: 50px;
 
     /* design */
     fill: white;
     outline: 1px solid slateblue;
 
     /* animations */
-    transition-property: fill;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    transition: opacity 0.5s ease-in-out;
+    /* transition-timing-function: cubic-bezier(0, 0.5, 0, 1); */
 }
+
+.carousel-item li:hover::before{
+    opacity: 100%;
+}
+
+.carousel-item li:hover svg[class$="icon"]{
+    opacity: 0%;
+}
+
+.skill-bar{
+    /* size */
+    width: 10rem;
+    height: 1rem;
+
+    /* design */
+    background-color: transparent;
+    outline: 1px solid white;
+
+    /* position */
+    position: relative;
+
+    
+}
+
+.skill-bar:hover::before{
+    transform: scaleX(100%);
+}
+
+.skill-bar::before{
+    /* size */
+    width: 10rem;
+    height: 1rem;
+
+    /* position */
+    position: absolute;
+
+    /* design */
+    content: '';
+    background-color: white;
+    transform-origin: 0% 50%;
+    transform: scaleX(0%);
+
+    /* display */
+    display: inline-block;
+
+    /* animation */
+    transition: transform 0.75s ease-in-out;
+}
+
+
 
 
 
