@@ -946,7 +946,7 @@ body{
     outline: 2px solid burlywood;
 
     /* size */
-    /* set initial height since all children are absolute*/
+    /* height of carousel will be inherited through its child elements */
     min-height: 75vh;
 
 
@@ -960,37 +960,39 @@ body{
 
     /* position */
     position: absolute;
-
-    /*  */
 }
 
+
+/* tests */
 .carousel-item:nth-child(1){
     background-color: rgba(243, 80, 15, 0.384);
-
     top: 20px;
-    left: 0;
+
+    display: none;
 }
 
 .carousel-item:nth-child(2){
     background-color: rgba(18, 197, 122, 0.384);
-
     top: 30px;
-    left: 20rem;
+
+    display: none;
 }
 
 .carousel-item:nth-child(3){
-    background-color: rgba(95, 15, 243, 0.384);
-
+    /* background-color: rgba(95, 15, 243, 0.384); */
     top: 40px;
-    left: 40rem;
+
+    /* display: none; */
 }
 
 .carousel-item:nth-child(4){
-    background-color: rgba(209, 243, 15, 0.384);
-
+    /* background-color: rgba(209, 243, 15, 0.384); */
     top: 50px;
-    left: 60rem;
+    left: 20px;
+
+    display: none;
 }
+/* tests */
 
 .carousel-item span{
     /* design */
@@ -998,7 +1000,13 @@ body{
     font-weight: 400;
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
-    outline: 1px solid red;
+    outline: 4px solid rgb(0, 255, 234);
+
+    /* display */
+    display: block;
+
+    /* spacing */
+    margin-bottom: 2em;
 }
 
 .carousel-item ul[class$="item"]{
