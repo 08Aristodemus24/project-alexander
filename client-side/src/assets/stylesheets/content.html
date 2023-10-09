@@ -459,23 +459,21 @@
             // and the clicked panel to aria expanded true
         });
 
-        const skills_toggler = document.querySelector('.skills-toggler-container');
+        // this is to set hte height of carousel elements dynamically
+        // since this is an exception because child elements are absolute and
+        // height cannot be "inherited" by the relative parent
+        const carousel_items = Array.from(document.querySelectorAll('.carousel-item'));
+        console.log(carousel_items);
 
-        skills_toggler.addEventListener('click', (event) => {
-            console.log(event.target);
-            
-            /* set not display but visibility and opacity instead
-            of absolute element to hidden and 0% */
-            if(skills_toggler.classList.contains('opened')){
-                console.log(skills_toggler)
-                skills_toggler.classList.remove('opened');
-                skills_toggler.classList.add('closed');
-                
-            }else{
-                skills_toggler.classList.remove('closed');
-                skills_toggler.classList.add('opened');
-            }
-        });
+        // get height of each item
+        const max_height = Math.max(...carousel_items.map((carousel_item) => carousel_item.offsetHeight));
+        console.log(max_height);
+
+        for(let carousel_item of carousel_items){
+            // set the height of the carousel_item through the
+            // calculated max_height
+            carousel_item.style.height = `${max_height}px`;
+        }
 
     </script>
 </body>

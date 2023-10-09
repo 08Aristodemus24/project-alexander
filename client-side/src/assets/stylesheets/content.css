@@ -1060,12 +1060,12 @@ body{
     /* display */
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
     flex-direction: column;
     row-gap: 2rem;
 
     /* size */
-    height: fit-content;
+    height: min-content;
     width: fit-content;
 }
 
