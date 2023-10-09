@@ -848,31 +848,34 @@ body{
 }
 
 .skills-content{
-    /* size */
-    /* set min height here so #skills-section height will follow
-    .skills-content min height because of its auto height */
-    min-height: 100vh;
-
     /* design */
-    /* outline: 1px solid greenyellow; */
+    outline: 2px solid greenyellow;
 
     /* display */
-    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .skills-header-container{
     /* design */
-    /* outline: 2px solid violet; */
+    outline: 2px solid violet;
 
-    /* position */
-    position: absolute;
-    top: 50%;
-
-    /* size */
-    width: 100%;
+    /* display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.skills-header-container h1{
+.titles-container{
+    /* design */
+    /* outline: 1px solid rgb(0, 80, 80); */
+
+    /* position */
+    position: relative;
+}
+
+.skills-header-container .titles-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -884,71 +887,160 @@ body{
     color: white;
     /* outline: 1px solid lawngreen; */
 
+    opacity: 0%;
+
+    /* size */
+    width: 6.5em;
+}
+
+.skills-header-container .titles-container span{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+    text-align: center;
+    /* outline: 1px solid lawngreen; */
+
+    /* display */
+    display: block;
+
+    /* size */
+    height: max-content;
+    width: fit-content;
+
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+}
+
+.titles-container span:nth-child(2){
+    display: none;
+}
+
+.titles-container span:nth-child(3){
+    display: none;
+}
+
+/* .titles-container span:nth-child(4){
+    display: none;
+} */
+
+.titles-container span:nth-child(5){
+    display: none;
+}
+
+.button-container-next, .button-container-prev{
+    /* design */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* outline: 1px solid rgb(22, 201, 255); */
+
+    /* size */
+    height: auto;
+    width: auto;
+    padding-inline: 1rem;
+
+    /* display */
+    display: block;
+}
+
+.button-container-prev small[class*="dot"], 
+.button-container-next small[class*="dot"]{
+    /* design */
+    background-color: white;
+    border-radius: 50%;
+    /* outline: 1px solid red; */
+
+    /* size */
+    width: 5px;
+    height: 5px;
+
+    /* spacing */
+    margin-block: .25rem;
+
+    /* display */
+    display: block;
+
     /* position */
     position: relative;
 }
 
-.skills-header-container h1::before{
-    /* position */
-    /* position is relative so it goes after our content but can also be static
-    position also the line relatively vertically in the middle of the header so
-    that as font grows or shrinks translateY always follows the font size */
-    position: relative;
-    transform: translateY(-0.25em);
-
-    /* size */
-    width: 12.5%;
-    height: 1px;
-
+.button-container-next .dot-1::after,
+.button-container-next .dot-2::after,
+.button-container-next .dot-3::after,
+.button-container-next .dot-4::after,
+.button-container-next .dot-5::after,
+.button-container-prev .dot-1::before,
+.button-container-prev .dot-2::before,
+.button-container-prev .dot-3::before,
+.button-container-prev .dot-4::before,
+.button-container-prev .dot-5::before{
     /* design */
     content: '';
     background-color: white;
+    border-radius: 50%;
+    
+    /* size */
+    width: 5px;
+    height: 5px;
 
-    /* display as inline block so width of h1 does not
-    follow intrinsic sizing of just the content itself */
-    display: inline-block;
+    /* display */
+    display: block;
 
-    /* spacing */
-    margin-right: 0.5em;
+    position: absolute;
+    top: 0;
 }
 
-.skills-header-container h1::after{
-    /* position */
-    /* position is relative so it goes after our content but can also be static
-    position also the line relatively vertically in the middle of the header so
-    that as font grows or shrinks translateY always follows the font size */
-    position: relative;
-    transform: translateY(-0.25em);
+.button-container-next .dot-1::after,
+.button-container-next .dot-2::after,
+.button-container-next .dot-3::after,
+.button-container-next .dot-4::after,
+.button-container-next .dot-5::after{
+    left: .5rem;
+}
 
-    /* size */
-    width: 75%;
-    height: 1px;
+.button-container-prev .dot-1::before,
+.button-container-prev .dot-2::before,
+.button-container-prev .dot-3::before,
+.button-container-prev .dot-4::before,
+.button-container-prev .dot-5::before{
+    right: .5rem;
+}
 
-    /* design */
-    content: '';
-    background-color: white;
+.button-container-next .dot-2, .button-container-next .dot-4{
+    transform: translateX(100%);
+}
 
-    /* display as inline block so width of h1 does not
-    follow intrinsic sizing of just the content itself */
-    display: inline-block;
+.button-container-next .dot-3{
+    transform: translateX(200%);
+}
 
-    /* spacing */
-    margin-left: 0.5em;
+.button-container-prev .dot-2, .button-container-prev .dot-4{
+    transform: translateX(-100%);
+}
+
+.button-container-prev .dot-3{
+    transform: translateX(-200%);
 }
 
 .carousel-container{
     /* design */
-    outline: 1px solid lightseagreen;
+    outline: 3px solid lightseagreen;
 }
 
 .carousel-inner{
     /* design */
-    outline: 2px solid burlywood;
+    outline: 2px solid brown;
 
     /* size */
-    /* height of carousel will be inherited through its child elements */
-    min-height: 75vh;
-
+    /* set min height here so #skills-section height will follow
+    .skills-content min height because of its auto height */
+    min-height: 100vh;
+    width: 20rem;
 
     /* position */
     position: relative;
@@ -956,81 +1048,48 @@ body{
 
 .carousel-item{
     /* design */
+    list-style: none;
+    padding-left: 0;
     outline: 1px solid white;
 
     /* position */
     position: absolute;
-}
-
-
-/* tests */
-.carousel-item:nth-child(1){
-    background-color: rgba(243, 80, 15, 0.384);
-    top: 20px;
-
-    display: none;
-}
-
-.carousel-item:nth-child(2){
-    background-color: rgba(18, 197, 122, 0.384);
-    top: 30px;
-
-    display: none;
-}
-
-.carousel-item:nth-child(3){
-    /* background-color: rgba(95, 15, 243, 0.384); */
-    top: 40px;
-
-    /* display: none; */
-}
-
-.carousel-item:nth-child(4){
-    /* background-color: rgba(209, 243, 15, 0.384); */
-    top: 50px;
-    left: 20px;
-
-    display: none;
-}
-/* tests */
-
-.carousel-item span{
-    /* design */
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    font-size: clamp(14px, 2.1875vw, 22.4px);
-    color: white;
-    outline: 4px solid rgb(0, 255, 234);
-
-    /* display */
-    display: block;
-
-    /* spacing */
-    margin-bottom: 2em;
-}
-
-.carousel-item ul[class$="item"]{
-    /* design */
-    list-style: none;
-    padding-left: 0;
-    outline: 3px solid red;
-
-    /* size */
-    min-height: 75vh;
+    inset: 0;
+    margin: auto;
 
     /* display */
     display: flex;
     align-items: center;
+    justify-content: start;
     flex-direction: column;
     row-gap: 2rem;
+
+    /* size */
+    height: fit-content;
+    width: fit-content;
 }
+
+/* tests */
+.carousel-item:nth-child(1){
+    display: none;
+}
+
+.carousel-item:nth-child(2){
+    display: none;
+}
+
+.carousel-item:nth-child(3){
+    /* display: none; */
+}
+
+.carousel-item:nth-child(4){
+    display: none;
+}
+/* tests */
 
 .carousel-item li{
     /* design */
     outline: 1px solid green;
-
-    /* position */
-    position: relative;
 
     /* display */
     display: flex;
@@ -1078,8 +1137,8 @@ body{
     margin: auto;
 
     /* size */
-    width: 50px;
-    height: 50px;
+    width: clamp(25px, 3.125vw, 50px);
+    height: clamp(25px, 3.125vw, 50px);
 
     /* design */
     fill: white;
@@ -1097,8 +1156,8 @@ body{
 
 .skill-bar{
     /* size */
-    width: 20rem;
-    height: 1rem;
+    width: clamp(10rem, 20vw, 20rem);
+    height: clamp(0.5rem, 1vw, 1rem);
 
     /* design */
     background-color: transparent;
@@ -1110,8 +1169,8 @@ body{
 
 .skill-bar::after{
     /* size */
-    width: 20rem;
-    height: 1rem;
+    width: clamp(10rem, 20vw, 20rem);
+    height: clamp(0.5rem, 1vw, 1rem);
 
     /* position */
     position: absolute;
@@ -1341,13 +1400,19 @@ body{
 }
 
 @media (width < 640px){
-    .skills-header-container h1::before,
-    .skills-header-container h1::after{
+    .skills-content{
         /* size */
         /* when it reaches below 640px set both before and after lines to 50% */
-        width: 30%;
-        height: 1px;
+        flex-direction: column;
     }
+
+    /* .carousel-inner{
+        min-height: initial;
+    }
+
+    .carousel-container{
+        flex-basis: 750px;
+    } */
 
     .email-container,
     .message-container,
