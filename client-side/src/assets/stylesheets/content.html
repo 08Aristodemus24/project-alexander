@@ -459,21 +459,43 @@
             // and the clicked panel to aria expanded true
         });
 
-        // this is to set hte height of carousel elements dynamically
-        // since this is an exception because child elements are absolute and
-        // height cannot be "inherited" by the relative parent
-        const carousel_items = Array.from(document.querySelectorAll('.carousel-item'));
-        console.log(carousel_items);
+        const set_carousel_height = () => {
+            // this is to set hte height of carousel elements dynamically
+            // since this is an exception because child elements are absolute and
+            // height cannot be "inherited" by the relative parent
+            const carousel_items = Array.from(document.querySelectorAll('.carousel-item'));
 
-        // get height of each item
-        const max_height = Math.max(...carousel_items.map((carousel_item) => carousel_item.offsetHeight));
-        console.log(max_height);
+            // get height of each item
+            const max_height = Math.max(...carousel_items.map((carousel_item) => {
+                // console.log(carousel_item);
+                // console.log(carousel_item.offsetHeight);
+                return carousel_item.offsetHeight;
+            }));
 
-        for(let carousel_item of carousel_items){
-            // set the height of the carousel_item through the
-            // calculated max_height
-            carousel_item.style.height = `${max_height}px`;
-        }
+            // get max width of each item
+            const max_width = Math.max(...carousel_items.map((carousel_item) => carousel_item.offsetWidth));
+
+            console.log(max_height);
+            console.log(max_width);
+
+            // get the .carousel-inner containing the absolute items
+            // and set the new dynamic height on every resize
+            const carousel_inner = document.querySelector('.carousel-inner');
+            console.log(carousel_inner);
+            carousel_inner.style.minHeight = `${max_height}px`;
+            carousel_inner.style.width = `${max_width}px`;
+        };
+
+        // call function initially to set state of elements on page load
+        set_carousel_height()
+
+        // then add event listener to call the set_carousel_height()
+        // function again on resize
+        window.addEventListener('resize', (event) => {
+            set_carousel_height();
+        });
+
+            
 
     </script>
 </body>

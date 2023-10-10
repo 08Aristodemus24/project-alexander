@@ -851,6 +851,9 @@ body{
     /* design */
     outline: 2px solid greenyellow;
 
+    /* size */
+    min-height: 100vh;
+
     /* display */
     display: flex;
     justify-content: space-evenly;
@@ -1037,10 +1040,10 @@ body{
     outline: 2px solid brown;
 
     /* size */
-    /* set min height here so #skills-section height will follow
-    .skills-content min height because of its auto height */
-    min-height: 100vh;
-    width: 20rem;
+    /* min-height will be dynmamic using javascript
+    so #skills-section height will follow the height
+    of .skills-content which inherits from .carousel-inners
+    min-height. Same with width */
 
     /* position */
     position: relative;
@@ -1065,25 +1068,25 @@ body{
     row-gap: 2rem;
 
     /* size */
-    height: min-content;
+    height: max-content;
     width: fit-content;
 }
 
 /* tests */
 .carousel-item:nth-child(1){
-    display: none;
+    opacity: 0%;
 }
 
 .carousel-item:nth-child(2){
-    display: none;
+    opacity: 100%;
 }
 
 .carousel-item:nth-child(3){
-    /* display: none; */
+    opacity: 100%;
 }
 
 .carousel-item:nth-child(4){
-    display: none;
+    opacity: 0%;
 }
 /* tests */
 
