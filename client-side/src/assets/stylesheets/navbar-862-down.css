@@ -59,7 +59,7 @@
 
     /* design */
     /* outline: 1px solid white; */
-    background-color: black;
+    background-color: transparent;
   }
 
   /* override min-height and min-width height and width values of .nav-brand-container 
@@ -88,7 +88,7 @@
 
     /* design */
     /* outline: 2px solid red; */
-    background-color: black;
+    background-color: transparent;
   }
 
   .nav-brand-container .navbar-brand{

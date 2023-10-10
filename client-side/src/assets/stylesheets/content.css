@@ -1033,6 +1033,7 @@ body{
 .carousel-container{
     /* design */
     /* outline: 3px solid lightseagreen; */
+    margin-block: 1rem;
 }
 
 .carousel-inner{
