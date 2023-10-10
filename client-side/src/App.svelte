@@ -160,7 +160,6 @@
   $: some_var = JSON.stringify(repos.slice(-1)) + "test";
 </script>
 
-<svelte:body/>
 <Navbar/>
 <Content>
   <Hero slot="landing-section"/>

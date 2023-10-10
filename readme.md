@@ -279,7 +279,6 @@ export default defineConfig({
 })
 
 ```
-
 and in `tsconfig.json`
 ```
 {
@@ -327,6 +326,8 @@ and in `tsconfig.json`
 **Insights:**
 1. viewBox is an attribute that is set to value `"<min-x> <min-y> <width> <height>"`. You can think of view box as the scope in which we see the svg object we have
 2. use transform origin to change origin where transformation starts which is by default on the center
+3. like a bind:value in an input in svelte to change the state of our state variable which is just the equivalent of onClick={(event) => setState(event.target.value)} albeit longer, bind:scrollY of a svelte:window fragment will change the state of our state variable binded to this scrollY attribute of a window fragment everytime we scroll down across or page in svelte
+4. likewise we can use an on:resize event on the svelte:window fragment to change the state of our page or in our problem the css of our element everytime we resize the dimensions of our window
 
 
 ## Writing experience component

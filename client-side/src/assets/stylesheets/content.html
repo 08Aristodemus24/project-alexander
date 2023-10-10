@@ -41,7 +41,10 @@
                 </div>
                 <div class="anims-container">
                     <!-- render only video if component has mounted to prevent freezing -->
-                    <video autoplay muted loop src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4"></video>    
+                    <video autoplay muted loop>
+                        <source src="../mediafiles/Skillsfinal.mp4">
+                    </video>
+                    <!-- <video autoplay muted loop src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4"></video>     -->
                 </div>
             </div>
         </section>
@@ -482,8 +485,8 @@
             // and set the new dynamic height on every resize
             const carousel_inner = document.querySelector('.carousel-inner');
             console.log(carousel_inner);
-            carousel_inner.style.minHeight = `${max_height}px`;
-            carousel_inner.style.width = `${max_width}px`;
+            carousel_inner['style'].minHeight = `${max_height}px`;
+            carousel_inner['style'].width = `${max_width}px`;
         };
 
         // call function initially to set state of elements on page load
