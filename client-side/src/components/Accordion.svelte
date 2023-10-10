@@ -18,7 +18,7 @@
 
             // set this panels activity to true based on its index
             // set all other panels activity to false
-            panel_activity = panel_activity.map((value, index) => {
+            panel_activity = panel_activity.map((_, index) => {
                 return active_panel_index === index ? true : false;
             });
         }

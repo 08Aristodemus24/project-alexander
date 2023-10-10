@@ -41,13 +41,7 @@
 <section id="skills-section">
     <div class="skills-content">
         <div class="skills-header-container">
-            <button class="button-container-prev">
-                <small class="dot-1"></small>
-                <small class="dot-2"></small>
-                <small class="dot-3"></small>
-                <small class="dot-4"></small>
-                <small class="dot-5"></small>
-            </button>
+            <button class="button-container-prev"></button>
             <div class="titles-container">
                 <h1>Skills</h1>
                 <span class="ml-skills-title">Machine Learning & Deep Learning</span>
@@ -55,13 +49,7 @@
                 <span class="csswd-skills-title">Client & Server Side Web Development</span>
                 <span class="misc-skills-title">Miscellaenous</span>
             </div>
-            <button class="button-container-next">
-                <small class="dot-1"></small>
-                <small class="dot-2"></small>
-                <small class="dot-3"></small>
-                <small class="dot-4"></small>
-                <small class="dot-5"></small>
-            </button>
+            <button class="button-container-next"></button>
         </div>
         
         <div class="carousel-container">

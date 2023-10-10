@@ -849,7 +849,7 @@ body{
 
 .skills-content{
     /* design */
-    outline: 2px solid greenyellow;
+    /* outline: 2px solid greenyellow; */
 
     /* size */
     min-height: 100vh;
@@ -862,12 +862,16 @@ body{
 
 .skills-header-container{
     /* design */
-    outline: 2px solid violet;
+    /* outline: 2px solid violet; */
+
+    /* spacing */
+    margin-block: 1rem;
 
     /* display */
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 1rem;
 }
 
 .titles-container{
@@ -890,7 +894,7 @@ body{
     color: white;
     /* outline: 1px solid lawngreen; */
 
-    opacity: 0%;
+    opacity: 00%;
 
     /* size */
     width: 6.5em;
@@ -938,107 +942,76 @@ body{
 .button-container-next, .button-container-prev{
     /* design */
     background-color: transparent;
-    border: none;
     cursor: pointer;
+    border-bottom: none;
     /* outline: 1px solid rgb(22, 201, 255); */
 
     /* size */
-    height: auto;
-    width: auto;
-    padding-inline: 1rem;
+    height: 1rem;
+    width: 1rem;
 
     /* display */
     display: block;
 }
 
-.button-container-prev small[class*="dot"], 
-.button-container-next small[class*="dot"]{
-    /* design */
-    background-color: white;
-    border-radius: 50%;
-    /* outline: 1px solid red; */
-
-    /* size */
-    width: 5px;
-    height: 5px;
-
-    /* spacing */
-    margin-block: .25rem;
-
-    /* display */
-    display: block;
-
-    /* position */
-    position: relative;
+.button-container-next{
+    border-top: 1.75px solid white;
+    border-right: 1.75px solid white;
+    border-left: none;
+    transform: rotate(45deg);
 }
 
-.button-container-next .dot-1::after,
-.button-container-next .dot-2::after,
-.button-container-next .dot-3::after,
-.button-container-next .dot-4::after,
-.button-container-next .dot-5::after,
-.button-container-prev .dot-1::before,
-.button-container-prev .dot-2::before,
-.button-container-prev .dot-3::before,
-.button-container-prev .dot-4::before,
-.button-container-prev .dot-5::before{
-    /* design */
-    content: '';
-    background-color: white;
-    border-radius: 50%;
-    
-    /* size */
-    width: 5px;
-    height: 5px;
-
-    /* display */
-    display: block;
-
-    position: absolute;
-    top: 0;
-}
-
-.button-container-next .dot-1::after,
-.button-container-next .dot-2::after,
-.button-container-next .dot-3::after,
-.button-container-next .dot-4::after,
-.button-container-next .dot-5::after{
-    left: .5rem;
-}
-
-.button-container-prev .dot-1::before,
-.button-container-prev .dot-2::before,
-.button-container-prev .dot-3::before,
-.button-container-prev .dot-4::before,
-.button-container-prev .dot-5::before{
-    right: .5rem;
-}
-
-.button-container-next .dot-2, .button-container-next .dot-4{
-    transform: translateX(100%);
-}
-
-.button-container-next .dot-3{
-    transform: translateX(200%);
-}
-
-.button-container-prev .dot-2, .button-container-prev .dot-4{
-    transform: translateX(-100%);
-}
-
-.button-container-prev .dot-3{
-    transform: translateX(-200%);
+.button-container-prev{
+    border-top: 1.75px solid white;
+    border-left: 1.75px solid white;
+    border-right: none;
+    transform: rotate(-45deg);
 }
 
 .carousel-container{
     /* design */
     /* outline: 3px solid lightseagreen; */
     margin-block: 1rem;
+
+    /* position */
+    position: relative;
+}
+
+.carousel-container::before, .carousel-container::after{
+    /* design */
+    content: '';
+    
+    /* size */
+    width: 5%;
+    height: 5%;
+
+    /* position */
+    position: absolute;
+}
+
+.carousel-container::before{
+    /* design */
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+
+    /* position */
+    top: -1rem;
+    left: -1rem;
+}
+
+.carousel-container::after{
+    /* design */
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+
+    /* position */
+    bottom: -1rem;
+    right: -1rem;
 }
 
 .carousel-inner{
     /* design */
-    outline: 2px solid brown;
+    /* outline: 2px solid brown; */
 
     /* size */
     /* min-height will be dynmamic using javascript
@@ -1075,23 +1048,19 @@ body{
 
 /* tests */
 .carousel-item:nth-child(1){
-    opacity: 0%;
     visibility: hidden;
 }
 
 .carousel-item:nth-child(2){
-    opacity: 100%;
     visibility: hidden;
 }
 
 .carousel-item:nth-child(3){
-    opacity: 100%;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .carousel-item:nth-child(4){
-    opacity: 0%;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 /* tests */
 
