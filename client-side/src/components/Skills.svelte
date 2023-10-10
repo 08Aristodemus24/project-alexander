@@ -54,6 +54,11 @@
         
         <div class="carousel-container">
             <div class="carousel-inner" style:min-height={`${max_height}px`} style:width={`${max_width}px`}>
+                <p class="carousel-item initial">
+                    And here are some of the hard skills <br> 
+                    I learned building the projects I've <br>
+                    made above
+                </p>
                 <ul class="carousel-item active" bind:offsetWidth={offsets[0].offset_width} bind:offsetHeight={offsets[0].offset_height}>
                     <li class="tensorflow">
                         <div class="tensorflow-icon" data-title="tensorflow">
