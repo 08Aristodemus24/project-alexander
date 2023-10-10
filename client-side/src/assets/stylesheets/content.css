@@ -1032,7 +1032,7 @@ body{
 
 .carousel-container{
     /* design */
-    outline: 3px solid lightseagreen;
+    /* outline: 3px solid lightseagreen; */
 }
 
 .carousel-inner{
@@ -1053,7 +1053,7 @@ body{
     /* design */
     list-style: none;
     padding-left: 0;
-    outline: 1px solid white;
+    /* outline: 1px solid white; */
 
     /* position */
     position: absolute;
@@ -1075,24 +1075,28 @@ body{
 /* tests */
 .carousel-item:nth-child(1){
     opacity: 0%;
+    visibility: hidden;
 }
 
 .carousel-item:nth-child(2){
     opacity: 100%;
+    visibility: hidden;
 }
 
 .carousel-item:nth-child(3){
     opacity: 100%;
+    /* visibility: hidden; */
 }
 
 .carousel-item:nth-child(4){
     opacity: 0%;
+    visibility: hidden;
 }
 /* tests */
 
 .carousel-item li{
     /* design */
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 
     /* display */
     display: flex;
@@ -1106,7 +1110,7 @@ body{
     position: relative;
 
     /* design */
-    outline: 1px solid salmon;
+    /* outline: 1px solid salmon; */
 }
 
 .carousel-item li div[class$="icon"]::after{
@@ -1145,7 +1149,7 @@ body{
 
     /* design */
     fill: white;
-    outline: 1px solid slateblue;
+    /* outline: 1px solid slateblue; */
 
     /* animations */
     transition: opacity 0.5s ease-in-out;
@@ -1172,8 +1176,8 @@ body{
 
 .skill-bar::after{
     /* size */
-    width: clamp(10rem, 20vw, 20rem);
-    height: clamp(0.5rem, 1vw, 1rem);
+    width: 100%;
+    height: 100%;
 
     /* position */
     position: absolute;
