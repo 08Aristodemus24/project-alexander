@@ -1121,15 +1121,23 @@ p.carousel-item{
     fill: white;
     /* outline: 1px solid slateblue; */
 
-    /* animations */
-    transition: opacity 0.5s ease-in-out;
-    
+    /* transition */
+    transition: opacity 0.25s ease-in-out;
 }
 
 .carousel-item li div:hover svg{
     opacity: 0%;
 }
 
+.carousel-item.active li{
+    /* animations */
+    /* animation is only triggered once .active class is added */
+    animation-name: load-skill-icon;
+    animation-delay: calc(var(--animation-order) * 0.25s);
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
 
 .skill-bar{
     /* size */
@@ -1144,9 +1152,9 @@ p.carousel-item{
     position: relative;
 }
 
-.skill-bar::after{
+.carousel-item .skill-bar::after{
     /* size */
-    width: 100%;
+    width: var(--percent-level);
     height: 100%;
 
     /* position */
@@ -1156,21 +1164,43 @@ p.carousel-item{
     content: '';
     background-color: white;
     transform-origin: 0% 50%;
-    transform: scaleX(0%);
+    /* transform: scaleX(0%); */
 
     /* display */
     display: inline-block;
-
-    /* animation */
-    transition: transform 1s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.skill-bar:hover::after{
-    transform: scaleX(100%);
+
+.carousel-item.active .skill-bar::after{
+    /* animation */
+    /* animation is only triggered once .active class is added */
+    animation-name: load-skill-bar;
+    animation-delay: calc(var(--animation-order) * 0.25s);
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
 }
 
 /* create the staggered animations of svgs and .skill-bar here */
+@keyframes load-skill-bar{
+    0%{
+        transform: scaleX(0%);
+    }
 
+    100%{
+        transform: scaleX(100%);
+    }
+}
+
+@keyframes load-skill-icon{
+    0%{
+        opacity: 0%;        
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
 
 
 

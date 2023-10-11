@@ -314,7 +314,7 @@ and in `tsconfig.json`
   "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
 }
 ```
-4. 
+4. use clamp in row gap of skills
 
 **Problems:**
 * not being able to import .js file in .html file https://discourse.threejs.org/t/error-relative-references-must-start-with-either-or/13573/11
@@ -332,6 +332,12 @@ and in `tsconfig.json`
 3. like a bind:value in an input in svelte to change the state of our state variable which is just the equivalent of onClick={(event) => setState(event.target.value)} albeit longer, bind:scrollY of a svelte:window fragment will change the state of our state variable binded to this scrollY attribute of a window fragment everytime we scroll down across or page in svelte
 4. likewise we can use an on:resize event on the svelte:window fragment to change the state of our page or in our problem the css of our element everytime we resize the dimensions of our window
 5. we can use style directive to dynamically change an elements css e.g. ```<div class="carousel-inner" style:min-height={`${max_height}px`} style:width={`${max_width}px`}>```
+6. In the carousel slider indces only ramge from 0 to 4. 
+
+Adding 0 to -1 would result in -1 which cannot be in this case we set the new index to 4 or the index of last element/item of the carousel, which is generalized to carousel.length. 
+
+And then adding 4 to offset of 1 would result in index 5 which is out of the ramge of our carousel items indeces or >= carousel length, in this case we want to loop back to 0 again everytime this is the case. So the new index will always be set to 0 every time this is the case
+7. for staggered animations we cant place data attributes that will be assigned to the numbers representing the order of animations, because of its abysmal browser support. We can use however custom properties that are assigned a whole number and not a number with a unit
 
 
 ## Writing experience component
