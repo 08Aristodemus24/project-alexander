@@ -882,7 +882,7 @@ body{
     position: relative;
 }
 
-.skills-header-container .titles-container h1{
+.titles-container h1{
     /* spacing */
     margin-left: 10px;
     margin-right: 10px;
@@ -900,13 +900,15 @@ body{
     width: 6.5em;
 }
 
-.skills-header-container .titles-container span{
+.titles-container span{
     /* design */
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
     text-align: center;
+    opacity: 0%;
+    visibility: hidden;
     /* outline: 1px solid lawngreen; */
 
     /* display */
@@ -923,20 +925,15 @@ body{
 
 }
 
-.titles-container span:nth-child(2){
-    display: none;
+.titles-container *[class*="title"]{
+    transition: opacity .5s ease-in-out,
+                visibility .5s ease-in-out;
 }
 
-.titles-container span:nth-child(3){
-    display: none;
-}
-
-/* .titles-container span:nth-child(4){
-    display: none;
-} */
-
-.titles-container span:nth-child(5){
-    display: none;
+.titles-container *[class*="title"].active{
+    /* only show current title when title has .active class */
+    opacity: 100%;
+    visibility: visible;
 }
 
 .button-container-next, .button-container-prev{
@@ -1027,6 +1024,8 @@ body{
     /* design */
     list-style: none;
     padding-left: 0;
+    opacity: 0%;
+    visibility: hidden;
     /* outline: 1px solid white; */
 
     /* position */
@@ -1044,25 +1043,26 @@ body{
     /* size */
     height: max-content;
     width: fit-content;
+
+    /* animation */
+    transition: opacity .5s ease-in-out,
+                visibility .5s ease-in-out;
 }
 
-/* tests */
-.carousel-item:nth-child(1){
-    visibility: hidden;
+p.carousel-item{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    font-size: clamp(14px, 2.1875vw, 22.4px);
+    color: white;
+    text-align: justify;
 }
 
-.carousel-item:nth-child(2){
-    visibility: hidden;
+.carousel-item.active{
+    /* when carousel has .active class show it */
+    opacity: 100%;
+    visibility: visible;
 }
-
-.carousel-item:nth-child(3){
-    visibility: hidden;
-}
-
-.carousel-item:nth-child(4){
-    /* visibility: hidden; */
-}
-/* tests */
 
 .carousel-item li{
     /* design */
