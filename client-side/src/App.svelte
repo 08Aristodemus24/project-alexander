@@ -109,13 +109,15 @@
   // on moount min year and max year states will only be set once
   let min_year = null;
   let max_year = null;
+  let contribs = [];
   
   const fetch_contribs = async (event) => {
     // upon mounting since user has not chosen a year yet 
-    // event will be undefined // and then should user click
+    // event will be undefined and then should user click
     // a year only then event is not undefined, .detail can
     // be accessed, and then only can we set its next state
     curr_year = event === undefined ? null : event.detail;
+
     try{
       const url = `http://127.0.0.1:5000/contribs${curr_year === null ? '' : `/${curr_year}`}`;
       const response = await fetch(url);
@@ -135,7 +137,7 @@
           min_year = data[0]['min_year'];
           max_year = data[0]['max_year'];
         }
-        console.log(data);
+        contribs = data[0]['contribs'];
 
       }else{
         console.log(`retrieval unsuccessful. Response status '${response.status}' occured`);
@@ -169,7 +171,7 @@
       <Accordion slot="accordion-group" repos={included}/>      
     </Projects>
     <Skills slot="skills-section"/>
-    <Experience slot="exp-section" min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs}/>
+    <Experience slot="exp-section" min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
   </Work>
   <Contact slot="contact-section" on:sendMail={send_mail}/>
 </Content>

@@ -120,8 +120,10 @@ def get_contribs(year=None):
     
     # select all table rows and in every row select
     # only the days and not the label of the day
-    rows = dom.find_all('tr')
+    rows = dom.find('tbody').find_all('tr')
+    print(len(rows))
     for row in rows:
+        curr_row = []
         days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
         for day in days:
             content = day.text.split(' ')
@@ -129,7 +131,7 @@ def get_contribs(year=None):
             # for edge cases if there is no content or content has no elements 
             # whatsoever just append null to contribs
             if len(content) > 1:
-                print(content)
+                # print(content)
 
                 # some important attributes of the td element are also data-date
                 # and data-level which both contain the date of push and the 
@@ -137,7 +139,7 @@ def get_contribs(year=None):
                 date = day['data-date']
                 level = day['data-level']
 
-                contribs.append({
+                curr_row.append({
                     'pushes': 0 if content[0] == 'No' else int(content[0]),
                     'day-name': content[3].replace(',', ''),
                     'month': content[4],
@@ -151,7 +153,11 @@ def get_contribs(year=None):
                 max_year = max_year if max_year > int(content[6]) else int(content[6])
                 min_year = min_year if min_year < int(content[6]) else int(content[6])
             else:
-                contribs.append(None)
+                curr_row.append(None)
+
+        # once done appending one of the 7 rows representing each 
+        # day in a week append it to contribs
+        contribs.append(curr_row)
     
     # if year is None meaning get all contributions 
     # all the way from first push to recent push

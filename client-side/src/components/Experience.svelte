@@ -1,10 +1,11 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { afterUpdate, createEventDispatcher } from 'svelte';
     import {range} from './Range';
 
     let curr_year;
     export let max_year;
     export let min_year;
+    export let contribs;
 
     let dispatch = createEventDispatcher();
 
@@ -15,6 +16,10 @@
         console.log(curr_year);
         dispatch('changeYear', curr_year);
     }
+
+    afterUpdate(() => {
+        console.log(contribs);
+    });
 </script>
 
 <section id="exp-section">
@@ -22,9 +27,20 @@
         <div class="exp-header-container">
             <h1>Experience</h1>
             {#each range(min_year, max_year + 1, 1) as year}
-                <button data-year={year} on:click={handle_click}>{year}</button>
+                <button class={`button-${year}`} data-year={year} on:click={handle_click}>{year}</button>
             {/each}
-            <button data-year="all" on:click={handle_click}>all</button>    
+            <button class="button-all" data-year="all" on:click={handle_click}>all</button>    
+        </div>
+        <div class="exp-container">
+            <table>
+                {#each contribs as row, i}
+                    <tr>
+                        {#each row as data, j}
+                            <td data-level={data['level']} style:--exp-animation-order={j + i}></td>
+                        {/each}
+                    </tr>
+                {/each}
+            </table>
         </div>
     </div>
 </section>

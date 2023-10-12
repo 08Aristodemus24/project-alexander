@@ -247,7 +247,6 @@ svg.linkedin-icon{
     /* size */
     width: 100%;
     /* has height auto so it will take height of children */
-    /* column-gap: 2rem; */
 
     /* design */
     /* border: 2px solid lightseagreen; */
@@ -648,7 +647,7 @@ svg.linkedin-icon{
 
 .project-description{
     /* position */
-    transform: translateX(-100px);
+    transform: translateX(-50px);
 
     /* spacing */
     padding-left: 1em;
@@ -1137,8 +1136,8 @@ p.carousel-item{
 .carousel-item.active li{
     /* animations */
     /* animation is only triggered once .active class is added */
-    animation-name: load-skill-icon;
-    animation-delay: calc(var(--animation-order) * 0.25s);
+    animation-name: fade-in;
+    animation-delay: calc(var(--skill-animation-order) * 0.25s);
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-timing-function: linear;
@@ -1180,7 +1179,7 @@ p.carousel-item{
     /* animation */
     /* animation is only triggered once .active class is added */
     animation-name: load-skill-bar;
-    animation-delay: calc(var(--animation-order) * 0.25s);
+    animation-delay: calc(var(--skill-animation-order) * 0.25s);
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
@@ -1197,21 +1196,19 @@ p.carousel-item{
     }
 }
 
-@keyframes load-skill-icon{
-    0%{
-        opacity: 0%;        
-    }
-
-    100%{
-        opacity: 100%;
-    }
-}
 
 
 
 
 /* EXPERIENCE SECTION */
 #exp-section{
+    /* variables */
+    --contrib-level-5: #090909;
+    --contrib-level-4: #222222;
+    --contrib-level-3: #585858;
+    --contrib-level-2: #9b9b9b;
+    --contrib-level-1: #d0d0d0;
+
     /* design */
     /* outline: 2px solid purple; */
 
@@ -1230,6 +1227,44 @@ p.carousel-item{
     text-align: center;
     color: black;
 }
+
+table tr td{
+    /* size */
+    padding: .5rem;
+
+    /* animation */
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: calc(var(--exp-animation-order) * 50ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+table tr td[data-level="0"]{
+    /* design */
+    background-color: var(--contrib-level-1);
+}
+
+table tr td[data-level="1"]{
+    /* design */
+    background-color: var(--contrib-level-2);
+}
+
+table tr td[data-level="2"]{
+    /* design */
+    background-color: var(--contrib-level-3);
+}
+
+table tr td[data-level="3"]{
+    /* design */
+    background-color: var(--contrib-level-4);
+}
+
+table tr td[data-level="4"]{
+    /* design */
+    background-color: var(--contrib-level-5);
+}
+
 
 
 
