@@ -1,24 +1,57 @@
 <script>
-    import { afterUpdate, createEventDispatcher } from 'svelte';
-    import {range} from './Range';
+    import { onMount } from "svelte";
+    import Contributions from "./Contributions.svelte";
 
-    let curr_year;
-    export let max_year;
-    export let min_year;
-    export let contribs;
+    // initially all but user can change this depending
+    // on what he wants to view
+    let curr_year = null;
 
-    let dispatch = createEventDispatcher();
+    // on moount min year and max year states will only be set once
+    let min_year = null;
+    let max_year = null;
+    let contribs = [];
 
-    // when user clicks on one of the years this will dispatch an event which will change the
-    // state of the year and call the fetch_data function handler again
-    const handle_click = (event) => {
-        curr_year = event.target.getAttribute('data-year') === "all" ? null : event.target.getAttribute('data-year');
-        console.log(curr_year);
-        dispatch('changeYear', curr_year);
+    const fetch_contribs = async (event) => {
+        // upon mounting since user has not chosen a year yet 
+        // event will be undefined and then should user click
+        // a year only then event is not undefined, .detail can
+        // be accessed, and then only can we set its next state
+        curr_year = event === undefined ? null : event.detail;
+
+        try{
+            const url = `http://127.0.0.1:5000/contribs${curr_year === null ? '' : `/${curr_year}`}`;
+            const response = await fetch(url);
+
+            if(response.status === 200){
+                console.log("retrieval successful");
+
+                // pass retrieved repositories to another component called
+                // Experience.svelte
+                const data = await response.json();
+
+                // if and only if upon page load curr_year is null in order
+                // to get min and max years but if user requests for a specific
+                // year then data does not contain anymore min and max year keys
+                // so we only have to confine setting min and max year upon mounting
+                if(curr_year === null){
+                    min_year = data[0]['min_year'];
+                    max_year = data[0]['max_year'];
+                }
+                contribs = data[0]['contribs'];
+
+            }else{
+                console.log(`retrieval unsuccessful. Response status '${response.status}' occured`);
+            }
+
+        }catch(error){
+            console.log(`request denied. Error '${error}' occured.`);
+        }
     }
 
-    afterUpdate(() => {
-        console.log(contribs);
+    // upon mounting of component send http request to flask
+    // backend proxy server and retrieve contributions
+    onMount(async () => {
+        fetch_contribs();
     });
 </script>
 
@@ -26,21 +59,11 @@
     <div class="exp-content">
         <div class="exp-header-container">
             <h1>Experience</h1>
-            {#each range(min_year, max_year + 1, 1) as year}
-                <button class={`button-${year}`} data-year={year} on:click={handle_click}>{year}</button>
-            {/each}
-            <button class="button-all" data-year="all" on:click={handle_click}>all</button>    
         </div>
         <div class="exp-container">
-            <table>
-                {#each contribs as row, i}
-                    <tr>
-                        {#each row as data, j}
-                            <td data-level={data['level']} style:--exp-animation-order={j + i}></td>
-                        {/each}
-                    </tr>
-                {/each}
-            </table>
+            <div class="contribs-container">
+                <Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
+            </div>
         </div>
     </div>
 </section>
