@@ -57,10 +57,13 @@
 
 <section id="exp-section">
     <div class="exp-content">
-        <div class="exp-header-container">
-            <h1>Experience</h1>
-        </div>
-        <div class="exp-container">
+        <div class="exp-grid-container">
+            <h1 class="exp-header">Experience</h1>
+            <div class="first-exp">1st</div>
+            <div class="second-exp">2nd</div>
+            <div class="third-exp">3rd</div>
+            <div class="fourth-exp">4th</div>
+            <div class="fifth-exp">5th</div>
             <div class="contribs-container">
                 <Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
             </div>

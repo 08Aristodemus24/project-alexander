@@ -1210,30 +1210,112 @@ p.carousel-item{
     --contrib-level-2: #9b9b9b;
     --contrib-level-1: #d0d0d0;
 
+    --exp-header: #f1f1f1;
+    --first-exp: #eaeaea;
+    --second-exp: #e5e8ed;
+    --third-exp: #cacbcf;
+    --fourth-exp: #a1a1a3;
+    --fifth-exp: #666b71;
+    --contribs-container: #585858;
+
     /* design */
     /* outline: 2px solid purple; */
+
+    
+}
+
+.exp-grid-container{
+    /* design */
+    outline: 2px solid rgb(146, 26, 26);
+
+    /* display */
+    display: grid;
+
+    /* size of columns and rows */
+    grid-template-columns: repeat(auto-fit, 1fr);
 
     /* size */
     min-height: 100vh;
 }
 
-.exp-container{
-    outline: 2px solid rgb(146, 26, 26);
-}
-
-.exp-header-container h1{
-    /* spacing */
-    margin-left: 10px;
-    margin-right: 10px;
-
+.exp-header{
     /* design */
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
     text-align: center;
     color: black;
+    background-color: var(--exp-header);
+    /* outline: 1px solid grey; */
+
+    /* grid position */
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+
 }
 
-.exp-container .button-container button{
+div[class*="exp"]{
+    /* design */
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+.first-exp{
+    /* design */
+    background-color: var(--first-exp);
+
+    /* grid position */
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+
+.second-exp{
+    /* design */
+    background-color: var(--second-exp);
+
+    /* grid position */
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+}
+
+.third-exp{
+    /* design */
+    background-color: var(--third-exp);
+
+    /* grid position */
+    grid-row: 1 / 3;
+    grid-column: 4 / 5;
+}
+
+.fourth-exp{
+    /* design */
+    background-color: var(--fourth-exp);
+
+    /* grid position */
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+}
+
+.fifth-exp{
+    /* design */
+    background-color: var(--fifth-exp);
+
+    /* grid position */
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+}
+
+.contribs-container{
+    /* design */
+    /* outline: 1px solid grey; */
+    background-color: var(--contribs-container);
+
+    /* grid position */
+    grid-row: 3 / 4;
+    grid-column: 3 / 5;
+}
+
+.contribs-container .button-container button{
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
@@ -1253,7 +1335,6 @@ p.carousel-item{
 
     /* size */
     width: 100%;
-    min-height: 50%;
 }
 
 .empty-contribs{
@@ -1304,7 +1385,6 @@ table tr td[data-level="4"]{
 
 
 
-
 /* CONTACT SECTION */
 #contact-section{
     /* design */
@@ -1335,10 +1415,7 @@ table tr td[data-level="4"]{
 
     /* spacing */ 
     row-gap: clamp(32px, 5vw, 80px);
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 
 .contact-header-container{
@@ -1426,7 +1503,7 @@ table tr td[data-level="4"]{
     /* outline: 1px solid brown; */
     
     /* size */
-    width: 100%;
+    width: clamp(12rem, 100%, 1800px);
   
     /* display */
     display: block;
@@ -1489,14 +1566,6 @@ table tr td[data-level="4"]{
         /* when it reaches below 640px set both before and after lines to 50% */
         flex-direction: column;
     }
-
-    /* .carousel-inner{
-        min-height: initial;
-    }
-
-    .carousel-container{
-        flex-basis: 750px;
-    } */
 
     .email-container,
     .message-container,
