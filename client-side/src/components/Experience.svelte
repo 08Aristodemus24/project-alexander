@@ -58,14 +58,30 @@
 <section id="exp-section">
     <div class="exp-content">
         <div class="exp-grid-container">
-            <h1 class="exp-header">Experience</h1>
-            <div class="first-exp">1st</div>
-            <div class="second-exp">2nd</div>
-            <div class="third-exp">3rd</div>
-            <div class="fourth-exp">4th</div>
-            <div class="fifth-exp">5th</div>
-            <div class="contribs-container">
+            <div class="exp-grid-item">
+                <h1 class="exp-header">Experience</h1>
+            </div>
+            <div class="exp-grid-item">
+                <h1>Sept 2022 - Oct 2022</h1>
+                <!-- <h3>X++ Developer</h3>
+                <span>Creative Dynamix Solutions, Inc.</span>
+                <p>
+                    Primarily developed in X++ to create D365 reports for Rockwell Land Corporation
+                </p> -->
+            </div>
+            <div class="exp-grid-item">
+                <h3>View my github contributions</h3>
                 <Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
+            </div>
+            <div class="exp-grid-item"></div>
+            <div class="exp-grid-item"></div>
+            <div class="exp-grid-item">
+                <h3>
+                    <a href="https://drive.google.com/uc?export=download&id=1s36RyoYfjZOtEAxKcF4hchcIuXBYdAzu" download="Larry Miguel R. Cueva Resume">Download my cv</a>
+                </h3>
+            </div>
+            <div class="exp-grid-item">
+                <h1>Oct 2023 - Present</h1>                
             </div>
         </div>
     </div>
