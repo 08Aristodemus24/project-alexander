@@ -392,8 +392,8 @@ svg.linkedin-icon{
 
     /* animation */
     transition-property: opacity, visibility;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s, 0.5s;
+    transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .projects-header-container h1{
@@ -416,30 +416,25 @@ svg.linkedin-icon{
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 12px;
+    font-size: clamp(12px, 1vw, 1rem);
     color: black;
     border: 1px solid black;
+    cursor: pointer;
     
     /* size */
     padding: .5em 3em;
 
     /* animation */
     transition-property: background-color, color;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .projects-header-container button:hover{
     /* design */
-    cursor: pointer;
     background-color: black;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 12px;
     color: white;
     border: 1px solid white;
-    
-    /* size */
-    padding: .5em 3em;
 }
 
 .projects-header-container.closed{
@@ -483,8 +478,8 @@ svg.linkedin-icon{
 
     /* animation */
     transition-property: transform, flex-basis;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .accordion-item .project-id{
@@ -507,8 +502,8 @@ svg.linkedin-icon{
 
     /* animation */
     transition-property: opacity, visibility;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .accordion-item:nth-child(6) .project-id{
@@ -570,8 +565,8 @@ svg.linkedin-icon{
 
     /* animation */
     transition-property: opacity, visibility;
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .accordion-item:nth-child(n + 4) .project-id::before{
@@ -1232,15 +1227,33 @@ p.carousel-item{
 .exp-header-container{
     /* position */
     position: absolute;
+
+    /* size */
     width: 100%;
     height: 100%;
 
+    /* display */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    visibility: visible;
+    opacity: 100%;
+
+    /* spacing */
+    row-gap: 2rem;
 
     /* design */
-    background-color: rgba(0, 0, 0, 0.041);
+    background-color: rgb(255, 255, 255);
+
+    transition: 
+        visibility 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+}
+
+.exp-header-container.closed{
+    visibility: hidden;
+    opacity: 0%;
 }
 
 .exp-header-container .exp-header{
@@ -1252,9 +1265,36 @@ p.carousel-item{
     /* outline: 1px solid grey; */
 }
 
+.exp-header-container button{
+    /* display */
+    display: block;
+
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 1rem);
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    
+    /* size */
+    padding: .5em 3em;
+
+    /* animation */
+    transition-property: background-color, color;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+}
+
+.exp-header-container button:hover{
+    background-color: black;
+    color: white;
+    border: white;
+}
+
 .exp-grid-container{
     /* design */
-    outline: 2px solid rgb(8, 74, 255);
+    /* outline: 2px solid rgb(8, 74, 255); */
 
     /* display */
     display: grid;
@@ -1280,6 +1320,16 @@ p.carousel-item{
 
     /* design */
     outline: 1px solid black;
+
+    /* transition */
+    transition: 
+        background-color 0.25s ease-in-out,
+        transform 0.25s ease-in-out;
+}
+
+.exp-grid-item:hover{
+    /* design */
+    background-color: black;
 }
 
 .exp-grid-item:nth-child(1){

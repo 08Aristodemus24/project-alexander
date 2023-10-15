@@ -7,6 +7,14 @@
     const num_grid_columns = 12;
     const mid_columns = Math.floor(num_grid_columns / 2);
 
+    let is_opened = false;
+    const close_header = (event) => {
+        // close header only once
+        if(is_opened === false){
+            is_opened = true;
+        }
+    };
+
     // initially all but user can change this depending
     // on what he wants to view
     let curr_year = null;
@@ -62,12 +70,15 @@
 
 <section id="exp-section">
     <div class="exp-content">
-        <div class="exp-header-container">
+        <div class="exp-header-container" class:closed={is_opened === true}>
             <h1 class="exp-header">Experience</h1>
+            <button on:click={close_header}>View time sequence</button>
         </div>
         <div class="exp-grid-container" style:grid-template-columns={`repeat(${num_grid_columns}, minmax(0, 1fr))`}>
             {#each range(1, num_grid_rows + 1, 1) as index}
-                <div class="exp-grid-item" style:grid-row={`${index} / ${index + 1}`}></div>    
+                <div class="exp-grid-item" style:grid-row={`${index} / ${index + 1}`}>
+                
+                </div>    
             {/each}
         </div>
     </div>

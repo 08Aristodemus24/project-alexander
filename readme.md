@@ -170,8 +170,9 @@ main {
 5. <s>since opening and closing of navbar functionality is finished is codepen implement it in svelte since codepen uses pure javascript like the DOM api to interact with the modal</s>
 6. <s>when setting navbar container to sticky yes it works however button does not work anymore when scrolling on other. Fixed by just adding z-index since we know position of element is relative when inactive and fixed when scrolling so we wanted it to be on top of all static elements in the page but still contained within the body</s>
 7. another problem about navbar is that when position is indeed sticky we don't want it to block the sections when we go to a section, we want it to do the ff:
-a. have black background when position is relative or stuck to its rightful position
-b. have maybe visibility and opacity of hidden and 0 if on parts of the page other than its rightful position
+a. have black background when position is in white sections like projects and experience
+b. have maybe visibility and opacity of hidden and 0 if it reaches a threshold of idleness on parts of the page other than its original position
+c. when mouse or when user swipes down the view port show the navbar
 
 **Insights:**
 * A stacking context is a group of elements that have a common parent and move up and down the z axis together.
@@ -182,6 +183,8 @@ b. have maybe visibility and opacity of hidden and 0 if on parts of the page oth
 
 **Articles:**
 * showing and hiding navbar on scroll: https://stackoverflow.com/questions/67943713/svelte-hide-and-show-nav-on-scroll
+* changing color of navbar if on certain sections: https://stackoverflow.com/questions/64369395/want-to-change-the-navbar-font-color-when-it-reaches-another-section-with-a-diff
+* hide navbar when reached time threshold of being idle  https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still
 
 ## Writing form component
 **To do:**

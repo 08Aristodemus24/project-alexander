@@ -23,7 +23,12 @@
       body.style.overflow = "auto";
     }
   }
+
+  const change_nav_color = () => {
+
+  }
 </script>
+
 
 <header class="navbar-container">
   <nav class="navbar" class:opened={is_opened === true}>
