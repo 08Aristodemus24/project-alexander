@@ -29,7 +29,7 @@
 
 <div class="accordion-group">
     {#each repos as repo, index}
-        <div class="accordion-item" aria-expanded={panel_activity[index]} tabindex={0} on:click={toggle_panel} on:keypress={toggle_panel}>
+        <div style:--project-animation-order={index + 1} class="accordion-item" aria-expanded={panel_activity[index]} tabindex={0} on:click={toggle_panel} on:keypress={toggle_panel}>
             <h1 class="project-id" data-project-id={repo['project_id']}></h1>
             <div class="project-content" id="project-content">
                 <h4 class="project-title">{repo['name']}</h4>

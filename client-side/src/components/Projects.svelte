@@ -89,7 +89,7 @@
             <h1>Projects</h1>
             <button on:click={close_header}>See my projects</button>
         </div>
-        <div class="projects-accordion-container">
+        <div class="projects-accordion-container" class:opened={is_opened === true}>
             <Accordion repos={included}/>
         </div>
     </div>

@@ -1,11 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import Contributions from "./Contributions.svelte";
-    import { range } from "./Range";
-
-    const num_grid_rows = 14;
-    const num_grid_columns = 12;
-    const mid_columns = Math.floor(num_grid_columns / 2);
+    import ExperienceHelix from "./ExperienceHelix.svelte";
 
     let is_opened = false;
     const close_header = (event) => {
@@ -74,13 +70,14 @@
             <h1 class="exp-header">Experience</h1>
             <button on:click={close_header}>View time sequence</button>
         </div>
-        <div class="exp-grid-container" style:grid-template-columns={`repeat(${num_grid_columns}, minmax(0, 1fr))`}>
-            {#each range(1, num_grid_rows + 1, 1) as index}
-                <div class="exp-grid-item" style:grid-row={`${index} / ${index + 1}`}>
-                
-                </div>    
-            {/each}
-        </div>
+        <ExperienceHelix opened={is_opened === true}>
+            <h3 class="first-exp-header" slot="first-exp">2022</h3>
+            <h3 class="second-exp-header" slot="second-exp">2023</h3>
+            <h3 class="contribs-header" slot="contribs">View my github contributions</h3>
+            <h3 class="cv-header" slot="cv">
+                <a href="https://drive.google.com/uc?export=download&id=1s36RyoYfjZOtEAxKcF4hchcIuXBYdAzu" download="Larry Miguel R. Cueva Resume">Download my cv</a>
+            </h3>
+        </ExperienceHelix>
     </div>
 </section>
 
