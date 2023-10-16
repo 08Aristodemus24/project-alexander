@@ -356,6 +356,9 @@ And then adding 4 to offset of 1 would result in index 5 which is out of the ram
 * staggered animations: https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
 * for cubic bezier calculator: https://cubic-bezier.com/#0,.5,0,1
 
+**Insights:**
+1. its better to use animation when you don't want to use a befire state and an after state for your components
+2. its better to use transition when same components have different values of the same property of their before state since animation only applies the same property of the same values for the components before state and after state e.g. `transform: translateX()` of each grid item before states must be different from each other
 
 
 
