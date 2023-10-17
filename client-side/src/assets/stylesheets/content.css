@@ -1310,8 +1310,9 @@ p.carousel-item{
 
     /* display */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
+    column-gap: 10rem;
 
     /* position */
     position: relative;
@@ -1333,10 +1334,10 @@ p.carousel-item{
     justify-content: center;
 
     /* spacing */
-    row-gap: 10rem;
+    row-gap: 5rem;
 
     /* design */
-    outline: 1px solid rgb(202, 202, 202);
+    /* outline: 1px solid rgb(202, 202, 202); */
 
     /* transition */
     transition: 
