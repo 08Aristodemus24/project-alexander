@@ -3,14 +3,6 @@
     import Contributions from "./Contributions.svelte";
     import Timeline from "./Timeline.svelte";
 
-    // let is_opened = false;
-    // const close_header = (event) => {
-    //     // close header only once
-    //     if(is_opened === false){
-    //         is_opened = true;
-    //     }
-    // };
-
     // initially all but user can change this depending
     // on what he wants to view
     let curr_year = null;
@@ -57,13 +49,6 @@
         }
     }
 
-    const exp_descriptions = [
-        {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
-        {year: '2023', title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Mentored and guided AI/ML department of org in developing roadmap used by junior AI/ML cadets"]},
-        {title: 'Machine Learning Engineer', organization: 'Turing', accolades: ["Built recommendation models that helped increase customer satisfaction by 75%"]},
-        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]}
-    ];
-
     // upon mounting of component send http request to flask
     // backend proxy server and retrieve contributions
     onMount(async () => {
@@ -77,25 +62,7 @@
             <h1 class="exp-header">Experience</h1>
             <button on:click={close_header}>View time sequence</button>
         </div> -->
-        <Timeline>
-            {#each exp_descriptions as exp_desc}
-                <div class="timeline-item">
-                    <div class="bar"></div>
-                    <div class="header">
-                        <h3 class="title">{exp_desc['title']}</h3>
-                        <h5 class="organization">{exp_desc['organization']}</h5>
-                    </div>
-                    {#if exp_desc['year'] !== undefined}
-                        <h3 class="year">{exp_desc['year']}</h3>    
-                    {/if}
-                    <ul class="accolades">
-                        {#each exp_desc['accolades'] as accolade}
-                            <li class="accolade">{accolade}</li>
-                        {/each}
-                    </ul>
-                </div>
-            {/each}
-        </Timeline>
+        <Timeline/>
         <button class="contribs-header">
             View Github contributions
         </button>

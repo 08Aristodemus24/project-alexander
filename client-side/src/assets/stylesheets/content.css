@@ -1316,6 +1316,9 @@ p.carousel-item{
     /* position */
     position: relative;
 
+    /* containment */
+    overflow-x: scroll;
+
     /* size */
     min-height: 100vh;
 }
@@ -1326,9 +1329,8 @@ p.carousel-item{
 
     /* display */
     display: flex;
-    align-items: center;
+    
     justify-content: center;
-    flex-direction: column;
 
     /* spacing */
     row-gap: 10rem;
@@ -1341,6 +1343,16 @@ p.carousel-item{
         background-color 0.25s ease-in-out,
         transform 1s calc(var(--exp-grid-item-animation-order) * .3s) cubic-bezier(0.5, 0, 0, 1),
         opacity 2s calc(var(--exp-grid-item-animation-order) * .3s) cubic-bezier(0.5, 0, 0, 1);
+}
+
+.timeline-item.up{
+    align-items: start;
+    flex-direction: column;
+}
+
+.timeline-item.down{
+    align-items: end;
+    flex-direction: column-reverse;
 }
 
 .timeline-item .bar{
@@ -1367,7 +1379,7 @@ p.carousel-item{
     margin-block: auto;
 
     /* size */
-    width: 10rem;
+    width: 25rem;
     height: 1px;
 
     /* design */
@@ -1378,6 +1390,33 @@ p.carousel-item{
 .timeline-item .header{
     /* design */
     outline: 1px solid black;
+
+    /* position */
+    position: relative;
+
+    /* size */
+    padding: 0.25rem;
+    min-height: min-content;
+    width: fit-content;
+}
+
+.header .title{
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0.0625em;
+    text-align: left;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    width: max-content;
+}
+
+.header .organization{
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: left;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    width: max-content;
 }
 
 .timeline-item .year{
@@ -1397,9 +1436,23 @@ p.carousel-item{
 
     /* position */
     position: absolute;
+    z-index: -1;
 
     /* transition */
     transition: color 0.25s ease-in-out;
+}
+
+.timeline-item.up .year{
+    /* position */
+    bottom: 90%;
+    left: 90%;
+    
+}
+
+.timeline-item.down .year{
+    /* position */
+    top: 90%;
+    right: 90%;
 }
 
 .timeline-item .accolades{
@@ -1410,15 +1463,19 @@ p.carousel-item{
 }
 
 .accolades .accolade{
+    /* spacing */
+    margin-block: 1em;
+
     /* size */
-    width: 20rem;
-    height: 5rem;
+    width: 20em;
+    height: min-content;
 
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(12px, 1vw, 1rem);
     font-weight: 300;
+    text-align: justify;
 }
 
 

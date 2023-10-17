@@ -29,8 +29,8 @@
         max_height = Math.max(...size_offsets.map((carousel_item_offset) => carousel_item_offset['offset_height']));
         max_width = Math.max(...size_offsets.map((carousel_item_offset) => carousel_item_offset['offset_width']));
 
-        console.log(max_height);
-        console.log(max_width);
+        // console.log(max_height);
+        // console.log(max_width);
     });
 </script>
 
