@@ -1226,12 +1226,14 @@ p.carousel-item{
 
     /* design */
     /* outline: 2px solid purple; */
-
-    
+    min-height: 100vh;
 }
 
 .exp-content{
     position: relative;
+
+    display: flex;
+    justify-content: center;
 }
 
 .exp-header-container{
@@ -1306,7 +1308,7 @@ p.carousel-item{
 .timeline-container{
     /* design */
     /* background-color: rgb(255, 255, 255); */
-    outline: 2px solid rgb(8, 74, 255);
+    border: 2px solid rgb(8, 74, 255);
 
     /* display */
     display: flex;
@@ -1317,11 +1319,27 @@ p.carousel-item{
     /* position */
     position: relative;
 
+    /* spacing */
+    padding: 1rem;
+    margin-inline: 1rem;
+
     /* containment */
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 1rem;
 
     /* size */
-    min-height: 100vh;
+    height: 75vh;
+    width: 100%;
+}
+
+.timeline-container::-webkit-scrollbar{
+    height: .25rem;
+}
+
+.timeline-container::-webkit-scrollbar-thumb{
+    background-color: black;
 }
 
 .timeline-item{
@@ -1330,20 +1348,20 @@ p.carousel-item{
 
     /* display */
     display: flex;
-    
     justify-content: center;
 
     /* spacing */
-    row-gap: 5rem;
+    row-gap: 10rem;
 
     /* design */
     /* outline: 1px solid rgb(202, 202, 202); */
 
+    /* scroll type */
+    scroll-snap-align: start;
+
     /* transition */
     transition: 
         background-color 0.25s ease-in-out,
-        transform 1s calc(var(--exp-grid-item-animation-order) * .3s) cubic-bezier(0.5, 0, 0, 1),
-        opacity 2s calc(var(--exp-grid-item-animation-order) * .3s) cubic-bezier(0.5, 0, 0, 1);
 }
 
 .timeline-item.up{
@@ -1395,6 +1413,11 @@ p.carousel-item{
     /* position */
     position: relative;
 
+    /* display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     /* size */
     padding: 0.25rem;
     min-height: min-content;
@@ -1408,7 +1431,6 @@ p.carousel-item{
     font-size: clamp(12px, 1vw, 1rem);
     font-weight: bold;
     color: rgb(0, 0, 0);
-    width: max-content;
 }
 
 .header .organization{
@@ -1417,7 +1439,6 @@ p.carousel-item{
     font-size: clamp(12px, 1vw, 1rem);
     font-weight: 300;
     color: rgb(0, 0, 0);
-    width: max-content;
 }
 
 .timeline-item .year{
@@ -1461,15 +1482,26 @@ p.carousel-item{
     list-style: none;
     padding-left: 0;
     outline: 1px solid black;
+
+    /* size */
+    min-height: min-content;
+    width: fit-content;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* spacing */
+    row-gap: 1rem;
 }
 
 .accolades .accolade{
-    /* spacing */
-    margin-block: 1em;
-
     /* size */
     width: 20em;
-    height: min-content;
+
+    /* spacing */
+    margin-left: 1em;
 
     /* design */
     background-color: transparent;
@@ -1481,6 +1513,9 @@ p.carousel-item{
 
 
 button.contribs-header{
+    /* position */
+    position: absolute;
+
     /* display */
     display: block;
 
@@ -1519,7 +1554,7 @@ button.contribs-header{
 }
 
 .contribs-container .button-container{
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
 }
 
 .contribs-container .button-container button{
@@ -1539,9 +1574,6 @@ button.contribs-header{
 .contribs-table{
     /* design */
     outline: 1px solid black;
-
-    /* size */
-    /* width: 100%; */
 }
 
 table tr td{
@@ -1582,6 +1614,9 @@ table tr td[data-level="4"]{
 }
 
 a.cv-header{
+    /* position */
+    position: absolute;
+
     /* design */
     display: block;
     text-decoration: none;

@@ -345,12 +345,13 @@ And then adding 4 to offset of 1 would result in index 5 which is out of the ram
 
 ## Writing experience component
 **To do:**
-1. Because you have little experience show instead your github contributions profile
-2. Write the contributions in 3d using three js
-3. Scrape ther contributions using backend server proxy utilizing requests, beautiful soup, json to get, parse, and transform the raw html data respectively to be send back in json format to our client-side
+1. <s>Because you have little experience show instead your github contributions profile</s>
+2. <s>Write the contributions in 3d using three js</s>
+3. <s>Scrape ther contributions using backend server proxy utilizing requests, beautiful soup, json to get, parse, and transform the raw html data respectively to be send back in json format to our client-side</s>
 
 **Problems and solutions:**
-1. because github skyline api was only until 2022 we would have to setup our own api to scrape and return our github contributions data. But because we cannot use our client site to fetch our contributions from our github profile we will have to set up a backend server proxy to make these requests for us instead of the client. This is because github has and will throw a cross origin resource sharing error due to our client side url being a foreign or being of a foreign origin and not recognized
+1. <s>because github skyline api was only until 2022 we would have to setup our own api to scrape and return our github contributions data. But because we cannot use our client site to fetch our contributions from our github profile we will have to set up a backend server proxy to make these requests for us instead of the client. This is because github has and will throw a cross origin resource sharing error due to our client side url being a foreign or being of a foreign origin and not recognized</s>
+2. Make accolade across all timeline items must be of the same height as well as header, however main problem with this is what if content from accolades is now bigger then header would now be bigger too and have too much whitespace 
 
 **Articles:**
 * staggered animations: https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
