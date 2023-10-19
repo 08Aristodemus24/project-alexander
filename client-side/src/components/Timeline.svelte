@@ -13,12 +13,13 @@
 
     // initially define width and height offsets as null for this
     // will be changed as size of the timeline-item header changes
-    let header_size_offsets = exp_descriptions.map(() => ({offset_width: null}));
+    let header_size_offsets = exp_descriptions.map(() => ({offset_width: null, offset_height: null}));
     let accolades_size_offsets = exp_descriptions.map(() => ({offset_width: null, offset_height: null}));
     
     let header_max_width = null;
+    let header_max_height = null;
     let accolades_max_width = null;
-    let accolades_max_height = null;
+    // let accolades_max_height = null;
 
     afterUpdate(() => {
         /* 
@@ -30,17 +31,18 @@
         of height and width by resizing window calculate the max height and width
         and change the previous max height and width states 
         */
+        header_max_height = Math.max(...header_size_offsets.map((timeline_item_header_offset) => timeline_item_header_offset['offset_height']));
         header_max_width = Math.max(...header_size_offsets.map((timeline_item_header_offset) => timeline_item_header_offset['offset_width']));
-        accolades_max_height = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_height']));
+        // accolades_max_height = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_height']));
         accolades_max_width = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_width']));
     });
 </script>
 <div class="timeline-container">
     {#each exp_descriptions as exp_desc, index}
         <div class="timeline-item" class:up={index % 2 === 0} class:down={index % 2 !== 0}>
-            <div class="bar"></div>
             
-            <div class="header" style:min-height={`${accolades_max_height}px`} style:width={`${header_max_width}px`} bind:offsetWidth={header_size_offsets[index].offset_width}>
+            
+            <div class="header" style:min-height={`${header_max_height}px`} style:width={`${header_max_width}px`} bind:offsetWidth={header_size_offsets[index].offset_width} bind:offsetHeight={header_size_offsets[index].offset_height}>
                 <h3 class="title">{exp_desc['title']}</h3>
                 <h5 class="organization">{exp_desc['organization']}</h5>
                 {#if exp_desc['year'] !== undefined}
@@ -48,7 +50,9 @@
                 {/if}                        
             </div>
 
-            <ul class="accolades" style:min-height={`${accolades_max_height}px`} style:width={`${accolades_max_width}px`} bind:offsetWidth={accolades_size_offsets[index].offset_width} bind:offsetHeight={accolades_size_offsets[index].offset_height}>
+            <div class="bar"></div>
+
+            <ul class="accolades" style:width={`${accolades_max_width}px`} bind:offsetWidth={accolades_size_offsets[index].offset_width} bind:offsetHeight={accolades_size_offsets[index].offset_height}>
                 {#each exp_desc['accolades'] as accolade}
                     <li class="accolade">{accolade}</li>
                 {/each}
