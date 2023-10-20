@@ -38,10 +38,8 @@
     });
 </script>
 <div class="timeline-container">
-    {#each exp_descriptions as exp_desc, index}
+    <!-- {#each exp_descriptions as exp_desc, index}
         <div class="timeline-item" class:up={index % 2 === 0} class:down={index % 2 !== 0}>
-            
-            
             <div class="header" style:min-height={`${header_max_height}px`} style:width={`${header_max_width}px`} bind:offsetWidth={header_size_offsets[index].offset_width} bind:offsetHeight={header_size_offsets[index].offset_height}>
                 <h3 class="title">{exp_desc['title']}</h3>
                 <h5 class="organization">{exp_desc['organization']}</h5>
@@ -58,5 +56,43 @@
                 {/each}
             </ul>
         </div>
+    {/each} -->
+    
+    {#each exp_descriptions as exp_desc, index}
+        <div 
+            class="header"
+            style:min-height={`${header_max_height}px`}
+            style:width={`${header_max_width}px`}
+            style:grid-row={index % 2 === 0 ? `${1} / ${2}` : `${3} / ${4}`}
+            style:grid-column={`${index + 1} / ${index + 2}`}
+            style:align-self={index % 2 === 0 ? `end` : `start`}
+            
+            bind:offsetWidth={header_size_offsets[index].offset_width} 
+            bind:offsetHeight={header_size_offsets[index].offset_height}
+        >
+            <h3 class="title">{exp_descriptions[index]['title']}</h3>
+            <h5 class="organization">{exp_descriptions[index]['organization']}</h5>
+            {#if exp_descriptions[index]['year'] !== undefined}
+                <h3 class="year">{exp_descriptions[index]['year']}</h3>
+            {/if}                        
+        </div>
+        <div 
+            class="bar"
+            style:grid-row={`${2} / ${3}`}
+            style:grid-column={`${index + 1} / ${index + 2}`}
+        ></div>
+        <ul
+            class="accolades" 
+            style:width={`${accolades_max_width}px`} 
+            style:grid-row={index % 2 === 0 ? `${3} / ${4}` : `${1} / ${2}`}
+            style:grid-column={`${index + 1} / ${index + 2}`}
+            style:align-self={index % 2 === 0 ? `start` : `end`}
+            bind:offsetWidth={accolades_size_offsets[index].offset_width} 
+            bind:offsetHeight={accolades_size_offsets[index].offset_height}
+        >
+            {#each exp_desc['accolades'] as accolade}
+                <li class="accolade">{accolade}</li>
+            {/each}
+        </ul>
     {/each}
 </div>

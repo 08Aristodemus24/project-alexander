@@ -58,10 +58,10 @@
 
 <section id="exp-section">
     <div class="exp-content">
-        <!-- <div class="exp-header-container" class:closed={is_opened === true}>
+        <div class="exp-header-container">
             <h1 class="exp-header">Experience</h1>
-            <button on:click={close_header}>View time sequence</button>
-        </div> -->
+            <button>View time sequence</button>
+        </div>
         <Timeline/>
         <button class="contribs-header">
             View Github contributions
