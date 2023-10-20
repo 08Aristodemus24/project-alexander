@@ -60,7 +60,7 @@
     
     {#each exp_descriptions as exp_desc, index}
         <div 
-            class="header"
+            class="header" class:up={index % 2 === 0} class:down={index % 2 !== 0}
             style:min-height={`${header_max_height}px`}
             style:width={`${header_max_width}px`}
             style:grid-row={index % 2 === 0 ? `${1} / ${2}` : `${3} / ${4}`}
@@ -82,7 +82,7 @@
             style:grid-column={`${index + 1} / ${index + 2}`}
         ></div>
         <ul
-            class="accolades" 
+            class="accolades" class:up={index % 2 === 0} class:down={index % 2 !== 0}
             style:width={`${accolades_max_width}px`} 
             style:grid-row={index % 2 === 0 ? `${3} / ${4}` : `${1} / ${2}`}
             style:grid-column={`${index + 1} / ${index + 2}`}

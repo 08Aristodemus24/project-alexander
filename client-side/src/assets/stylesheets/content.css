@@ -1326,15 +1326,102 @@ p.carousel-item{
     
     /* size */
     min-height: 75vh;
+    padding: 1rem;
 
     /* containment */
-    overflow-x: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 1rem;
+
+    /* design */
+    outline: 1px solid green;
+
+    /* position */
+    position: relative;
 
     /* spacing */
 }
 
+.timeline-container::before{
+    content: '';
+    background-color: black;
+
+    /* size */
+    width: 100%;
+    height: 1px;
+
+    /* position */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .timeline-container .header{
+    /* position */
+    position: relative;
+
+    /* scroll type */
+    scroll-snap-align: center;
+
+    /* design */
     outline: 1px solid black;
+}
+
+.header .title{
+    /* design */
+    background-color: rgba(153, 205, 50, 0.233);
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0.0625em;
+    text-align: left;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+
+    /* size */
+    width: max-content;
+}
+
+.header .organization{
+    /* design */
+    background-color: rgba(210, 105, 30, 0.295);
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: left;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+
+    /* size */
+    width: max-content;
+}
+
+.header .year{
+    /* design */
+    background-color: rgba(30, 138, 210, 0.295);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.25em;
+    text-align: center;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    outline: 1px solid rgb(0, 0, 0);
+
+    /* size */
+    padding-inline: 1em;
+    padding-block: 0.5em;
+
+    /* position */
+    position: absolute;
+}
+
+.header.up .year{
+    bottom: 90%;
+    left: 90%;
+}
+
+.header.down .year{
+    top: 90%;
+    right: 90%;
 }
 
 .timeline-container .bar{
@@ -1348,7 +1435,23 @@ p.carousel-item{
 }
 
 .timeline-container .accolades{
+    /* design */
     outline: 1px solid black;
+    list-style: none;
+    padding: 0.25em;
+    
+}
+
+.accolades .accolade{
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    text-align: justify;
+
+    /* size */
+    width: 100%;
 }
 
 
