@@ -9,6 +9,7 @@
         {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
         {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
         {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
     ];
 
     // initially define width and height offsets as null for this
@@ -31,33 +32,14 @@
         of height and width by resizing window calculate the max height and width
         and change the previous max height and width states 
         */
+
         header_max_height = Math.max(...header_size_offsets.map((timeline_item_header_offset) => timeline_item_header_offset['offset_height']));
         header_max_width = Math.max(...header_size_offsets.map((timeline_item_header_offset) => timeline_item_header_offset['offset_width']));
-        // accolades_max_height = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_height']));
+        // // accolades_max_height = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_height']));
         accolades_max_width = Math.max(...accolades_size_offsets.map((timeline_item_accolades_offset) => timeline_item_accolades_offset['offset_width']));
     });
 </script>
-<div class="timeline-container">
-    <!-- {#each exp_descriptions as exp_desc, index}
-        <div class="timeline-item" class:up={index % 2 === 0} class:down={index % 2 !== 0}>
-            <div class="header" style:min-height={`${header_max_height}px`} style:width={`${header_max_width}px`} bind:offsetWidth={header_size_offsets[index].offset_width} bind:offsetHeight={header_size_offsets[index].offset_height}>
-                <h3 class="title">{exp_desc['title']}</h3>
-                <h5 class="organization">{exp_desc['organization']}</h5>
-                {#if exp_desc['year'] !== undefined}
-                    <h3 class="year">{exp_desc['year']}</h3>
-                {/if}                        
-            </div>
-
-            <div class="bar"></div>
-
-            <ul class="accolades" style:width={`${accolades_max_width}px`} bind:offsetWidth={accolades_size_offsets[index].offset_width} bind:offsetHeight={accolades_size_offsets[index].offset_height}>
-                {#each exp_desc['accolades'] as accolade}
-                    <li class="accolade">{accolade}</li>
-                {/each}
-            </ul>
-        </div>
-    {/each} -->
-    
+<div class="timeline-container">    
     {#each exp_descriptions as exp_desc, index}
         <div 
             class="header" class:up={index % 2 === 0} class:down={index % 2 !== 0}
@@ -70,6 +52,9 @@
             bind:offsetWidth={header_size_offsets[index].offset_width} 
             bind:offsetHeight={header_size_offsets[index].offset_height}
         >
+        {header_size_offsets[index].offset_width}
+        {header_size_offsets[index].offset_height}
+        {header_max_width}
             <h3 class="title">{exp_descriptions[index]['title']}</h3>
             <h5 class="organization">{exp_descriptions[index]['organization']}</h5>
             {#if exp_descriptions[index]['year'] !== undefined}
