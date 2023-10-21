@@ -1237,6 +1237,7 @@ p.carousel-item{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    row-gap: 2rem;
 
     /* size */
     min-height: 100vh;
@@ -1322,15 +1323,14 @@ p.carousel-item{
 .timeline-container{
     /* display */
     display: grid;
-    grid-template-columns: repeat(auto-fit, fit-content);
+    grid-template-columns: repeat(auto-fit, min-content);
     grid-auto-rows: 1fr;
     align-items: center;
     justify-items: center;
     column-gap: 10rem;
     
     /* size */
-    min-height: 75%;
-    margin-inline: 1rem;
+    flex-basis: 50vh;
     padding: 0.25rem;
 
     /* containment */
@@ -1339,8 +1339,11 @@ p.carousel-item{
     scroll-behavior: smooth;
     scroll-padding-inline: 1rem;
 
+    /* alignment */
+    margin-inline: 1rem;
+
     /* design */
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 
     /* position */
     position: relative;
@@ -1361,6 +1364,14 @@ p.carousel-item{
 
     /* design */
     outline: 1px solid black;
+}
+
+.header.up{
+    align-self: end;
+}
+
+.header.down{
+    align-self: start;
 }
 
 .header .title{
@@ -1427,29 +1438,31 @@ p.carousel-item{
 
 .timeline-container .bar{
     /* size */
-    width: 175%;
+    width: calc(100% + 10rem);
     height: 1px;
 
-    position: relative;
-
     /* design */
+    /* outline: 1px solid greenyellow; */
     background-color: black;
+
+    /* position */
+    position: relative;
 }
 
 .timeline-container .bar::before{
+    /* size */
+    width: 1.5rem;
+    height: .25rem;
+
     /* position */
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateY(-50%) translateX(-50%);
 
     /* design */
     content: '';
     background-color: black;
-
-    /* size */
-    width: 1.5rem;
-    height: 3px;
 }
 
 .timeline-container .accolades{
@@ -1465,6 +1478,14 @@ p.carousel-item{
     padding-right: 0.5rem;
 }
 
+.accolades.up{
+    align-self: start;
+}
+
+.accolades.down{
+    align-self: end;
+}
+
 .accolades .accolade{
     /* design */
     background-color: transparent;
@@ -1475,7 +1496,7 @@ p.carousel-item{
     /* outline: 1px solid black; */
 
     /* size */
-    width: 20em;
+    width: clamp(100px, 25vw, 20em)
 }
 
 .accolades .accolade:not(:first-child){
@@ -1495,12 +1516,15 @@ button.contribs-header{
     text-align: center;
     border: none;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.466);
-    outline: 1px solid rgba(0, 0, 0, 0.445);
+    color: rgb(0, 0, 0);
+    outline: 1px solid rgb(0, 0, 0);
 
     /* size */
     padding-inline: 1em;
     padding-block: 0.5em;
+
+    /* alignment */
+    align-self: flex-start;
 
     /* transition */
     transition: color 0.25s ease-in-out;
@@ -1590,12 +1614,15 @@ a.cv-header{
     font-size: clamp(12px, 1vw, 1rem);
     font-weight: 300;
     text-align: center;
-    color: rgba(0, 0, 0, 0.466);
-    outline: 1px solid rgba(0, 0, 0, 0.445);
+    color: rgb(0, 0, 0);
+    outline: 1px solid rgb(0, 0, 0);
 
     /* size */
     padding-inline: 1em;
     padding-block: 0.5em;
+
+    /* alignment */
+    align-self: flex-start;
 
     /* transition */
     transition: color 0.25s ease-in-out;
