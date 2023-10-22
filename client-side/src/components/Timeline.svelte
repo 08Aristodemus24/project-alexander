@@ -12,21 +12,15 @@
         {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
     ];
 
-    // take the current width of the timeline container
-    let timeline_container_width = null;
+    // determine the number of grid columns based 
+    // on length of experience descriptions
+    const num_columns = exp_descriptions.length;
+    const end_col_index = num_columns + 1;
 
-    // on mount or after update 
-    afterUpdate(() => {
-        console.log(timeline_container_width);
-    });
+    
 </script>
 
-<svelte:window on:resize={() => {
-    const timeline_container = document.querySelector('.timeline-container');
-    timeline_container_width = timeline_container.scrollWidth;
-}}/>
-
-<div class="timeline-container" data-scroll-width={timeline_container_width}>
+<div class="timeline-container" style:--end-col-index={end_col_index}>
     {#each exp_descriptions as exp_desc, index}
         <!-- all odd numbered experiences will have its header on the end of the vertical axis and start of the horizontal axis -->
         <div 

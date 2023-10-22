@@ -1323,8 +1323,8 @@ p.carousel-item{
 .timeline-container{
     /* display */
     display: grid;
-    grid-template-columns: repeat(auto-fit, min-content);
     grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, min-content);
     align-items: center;
     justify-items: center;
     column-gap: 10rem;
@@ -1342,11 +1342,28 @@ p.carousel-item{
     /* alignment */
     margin-inline: 1rem;
 
-    /* design */
-    /* outline: 1px solid green; */
-
     /* position */
     position: relative;
+
+    /* design */
+    /* outline: 1px solid green; */
+}
+
+.timeline-container::before{
+    /* design */
+    content: '';
+    background-color: black;
+    display: block;
+    transform-origin: 0% 50%;
+
+    /* size */
+    inline-size: 110%;
+    block-size: 1px;
+    grid-row: 2 / 3;
+    grid-column: 1 / var(--end-col-index);
+
+    /* animation */
+    animation: draw-line 5s both cubic-bezier(0.5, 0, 0, 1);;
 }
 
 .timeline-container::-webkit-scrollbar{
@@ -1438,31 +1455,13 @@ p.carousel-item{
 
 .timeline-container .bar{
     /* size */
-    width: calc(100% + 10rem);
-    height: 1px;
+    width: 1.5rem;
+    height: 4px;
 
     /* design */
     /* outline: 1px solid greenyellow; */
     background-color: black;
-
-    /* position */
-    position: relative;
-}
-
-.timeline-container .bar::before{
-    /* size */
-    width: 1.5rem;
-    height: .25rem;
-
-    /* position */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
-
-    /* design */
-    content: '';
-    background-color: black;
+    
 }
 
 .timeline-container .accolades{
@@ -1501,6 +1500,16 @@ p.carousel-item{
 
 .accolades .accolade:not(:first-child){
     margin-top: .5em;
+}
+
+@keyframes draw-line{
+    from{
+        transform: scaleX(0%);
+    }
+
+    to{
+        transform: scaleX(100%);
+    }
 }
 
 
