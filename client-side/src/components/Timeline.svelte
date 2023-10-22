@@ -1,6 +1,4 @@
 <script>
-    import { afterUpdate } from "svelte";
-
     const exp_descriptions = [
         {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
         {year: '2023', title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Mentored and guided AI/ML department of org in developing roadmap used by junior AI/ML cadets"]},
@@ -16,8 +14,6 @@
     // on length of experience descriptions
     const num_columns = exp_descriptions.length;
     const end_col_index = num_columns + 1;
-
-    
 </script>
 
 <div class="timeline-container" style:--end-col-index={end_col_index}>
@@ -32,7 +28,7 @@
             <h5 class="organization">{exp_descriptions[index]['organization']}</h5>
             {#if exp_descriptions[index]['year'] !== undefined}
                 <h3 class="year">{exp_descriptions[index]['year']}</h3>
-            {/if}                        
+            {/if}                 
         </div>
         <div 
             class="bar"

@@ -351,7 +351,7 @@ And then adding 4 to offset of 1 would result in index 5 which is out of the ram
 
 **Problems and solutions:**
 1. <s>because github skyline api was only until 2022 we would have to setup our own api to scrape and return our github contributions data. But because we cannot use our client site to fetch our contributions from our github profile we will have to set up a backend server proxy to make these requests for us instead of the client. This is because github has and will throw a cross origin resource sharing error due to our client side url being a foreign or being of a foreign origin and not recognized</s>
-2. Make accolade across all timeline items must be of the same height as well as header, however main problem with this is what if content from accolades is now bigger then header would now be bigger too and have too much whitespace 
+2. <s>Make accolade across all timeline items must be of the same height as well as header, however main problem with this is what if content from accolades is now bigger then header would now be bigger too and have too much whitespace</s>
 
 **Articles:**
 * staggered animations: https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
@@ -359,7 +359,7 @@ And then adding 4 to offset of 1 would result in index 5 which is out of the ram
 * scoped variables in animations: https://css-tricks.com/using-custom-properties-to-wrangle-variations-in-keyframe-animations/
 
 **Insights:**
-1. its better to use animation when you don't want to use a befire state and an after state for your components
+1. its better to use animation when you don't want to use a before state and an after state for your components
 2. <s>its better to use transition when same components have different values of the same property of their before state since animation only applies the same property of the same values for the components before state and after state e.g. `transform: translateX()` of each grid item before states must be different from each other</s>
 3. However we can still be able to stagger animations using scoped variables inside the declaration and definition of an animation
 
