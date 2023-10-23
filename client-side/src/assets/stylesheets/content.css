@@ -1593,6 +1593,10 @@ p.carousel-item{
     opacity: 100%;
 }
 
+.contribs-header:focus{
+    box-shadow: ;
+}
+
 .contribs-container{
     /* position */
     position: absolute;
@@ -1759,9 +1763,7 @@ table tr td[data-level="4"]{
 
 .cv-button:focus{
     /* design */
-    outline: none !important;
-    border: 1px solid black;
-    box-shadow: 0 0 10px #719ECE;
+    box-shadow: ;
 }
 
 
