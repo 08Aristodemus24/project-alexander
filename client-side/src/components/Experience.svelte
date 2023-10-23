@@ -65,9 +65,9 @@
         </div>
         <Timeline/>
         <ContribsButton/>
-        <a class="cv-header" href="https://drive.google.com/uc?export=download&id=1s36RyoYfjZOtEAxKcF4hchcIuXBYdAzu" download="Larry Miguel R. Cueva Resume">
+        <a class="cv-button" href="https://drive.google.com/uc?export=download&id=1s36RyoYfjZOtEAxKcF4hchcIuXBYdAzu" download="Larry Miguel R. Cueva Resume">
             <span class="cv-header-text">Download my cv</span>
-            <svg class="download-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" fill="black" width="1344" height="1344" viewBox="0 0 1008 1008"><path d="M493.4 1.5c-17.6 3.8-32.1 17.2-37.4 34.3-2 6.3-2 10-2 302.5v296.2l-86.2-86.1c-90.8-90.5-89.4-89.2-102.2-92.9-8.2-2.4-23.9-1.7-31.6 1.4-14.9 6.1-26.5 19.1-30.6 34.6-1.8 6.5-1.7 18.6 0 25.1 3.7 14.1-2.2 7.7 139 149 141.3 141.2 134.9 135.3 149 139 6.5 1.8 18.7 1.8 25.2 0 14.1-3.7 7.7 2.2 149-139 141.2-141.3 135.3-134.9 139-149 1.7-6.5 1.8-18.6 0-25.1-4.1-15.5-15.7-28.5-30.6-34.6-7.7-3.1-23.4-3.8-31.6-1.4-12.8 3.7-11.5 2.5-101.4 92.2-47.1 46.9-85.9 85.3-86.3 85.3-.4 0-.7-132.9-.7-295.4 0-291.8 0-295.5-2-301.8-5.3-17.4-19.9-30.5-37.8-34.4-8.1-1.7-12.8-1.7-20.8.1zM189.1 908.6c-22.5 6-37.3 25.4-37.4 48.9 0 22.2 13.6 40.8 35.3 48.1 5.3 1.8 15.8 1.9 317 1.9s311.7-.1 317-1.9c11.2-3.7 21.8-12 27.9-21.5 9.9-15.5 9.9-38 .1-53.5-6.7-10.5-18.2-18.9-30.5-22.1-5.3-1.3-40.5-1.5-315-1.4-266.5 0-309.7.2-314.4 1.5z"/></svg>
+            <span class="download-icon"></span>
         </a>
     </div>
 </section>
