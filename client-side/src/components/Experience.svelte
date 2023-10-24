@@ -1,9 +1,21 @@
 <script>
-    import { onMount } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     import Contributions from "./Contributions.svelte";
     import Timeline from "./Timeline.svelte";
     import ContribsButton from "./ContribsButton.svelte";
     import CvButton from "./CVButton.svelte";
+
+    // for header
+    let exp_header_container;
+    let is_opened = false;
+    const close_header = (event) => {
+        console.log(1)
+        // close header only once
+        if(is_opened === false){
+            is_opened = true;
+        }
+    };
+
 
     // initially all but user can change this depending
     // on what he wants to view
@@ -60,10 +72,10 @@
 
 <section id="exp-section">
     <div class="exp-content">
-        <div class="exp-header-container">
+        <div class="exp-header-container" class:closed={is_opened === true} bind:this={exp_header_container}>
             <h1 class="exp-header">Experience</h1>
-            <button>View time sequence</button>
         </div>
+        <button class="exp-header-button" on:click={close_header}>View time sequence</button>
         <Timeline/>
         <ContribsButton/>
         <CvButton/>

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import Accordion from "./Accordion.svelte";
+    import ProjectsButton from "./ProjectsButton.svelte";
 
     // initial state of list before fetching repositories
     let repos = [];
@@ -87,7 +88,7 @@
     <div class="projects-content">
         <div class="projects-header-container" class:closed={is_opened === true}>
             <h1>Projects</h1>
-            <button on:click={close_header}>See my projects</button>
+            <ProjectsButton close_header={close_header}/>
         </div>
         <div class="projects-accordion-container" class:opened={is_opened === true}>
             <Accordion repos={included}/>
