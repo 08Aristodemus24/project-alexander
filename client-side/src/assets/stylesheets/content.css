@@ -1594,7 +1594,18 @@ p.carousel-item{
 }
 
 .contribs-header:focus{
-    box-shadow: ;
+    /* design */
+    /* 
+    first value is how far is the box shadow along x-axis
+    second value is how far is the box shadow along y-axis
+    and third value is the blur radius
+
+    + value of y-offset moves shadow down, and - up
+    + value of x-offset moves shadow left, and + right
+     */
+    box-shadow:
+        3px 3px 10px rgba(0, 0, 0, 0.699),
+        0px 3px 10px rgba(255, 255, 255, 0.699);
 }
 
 .contribs-container{
@@ -1763,7 +1774,8 @@ table tr td[data-level="4"]{
 
 .cv-button:focus{
     /* design */
-    box-shadow: ;
+    box-shadow:
+        3px 3px 10px rgba(0, 0, 0, 0.699);
 }
 
 
