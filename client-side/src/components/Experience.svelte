@@ -5,8 +5,13 @@
     import ContribsButton from "./ContribsButton.svelte";
     import CvButton from "./CVButton.svelte";
 
+    // when component is mounted get experience content element
+    let exp_content, exp_header_container;
+    let exp_content_values, exp_header_container_values;
+
+    let exp_header_container_center;
+    
     // for header
-    let exp_header_container;
     let is_opened = false;
     const close_header = (event) => {
         console.log(1)
@@ -63,19 +68,72 @@
         }
     }
 
-    // upon mounting of component send http request to flask
-    // backend proxy server and retrieve contributions
+    const get_elem_vals = (el) => {
+        let rect = {};
+        console.log(el);
+
+        rect['center_x'] = (el.clientWidth) / 2;
+        rect['center_y'] = (el.clientHeight) / 2;
+        rect['client_width'] = el.clientWidth;
+        rect['client_height'] = el.clientHeight;
+        rect['offset_left'] = el.offsetLeft;
+        rect['offset_top'] = el.offsetTop;
+
+        return rect;
+    }
+
+    // on mount initially set state of null for the exp content
+    // and exp header container centers will now have calculated
+    // values of each of their respective center coordinates
     onMount(async () => {
         fetch_contribs();
+        exp_content_values = get_elem_vals(exp_content);
+        exp_header_container_values = get_elem_vals(exp_header_container);
+
+        exp_header_container_center = exp_content_values['center_y'] - exp_header_container_values['offset_top'];
     });
 </script>
 
+<svelte:window on:resize={() => {
+    /*
+    when window resizes we always calculate the state of the binded elements
+    current center coordinates, since their top, left, bottom, and right,
+    properties will always change 
+    */
+    // exp_content_rect = get_bounding_box(exp_content);
+    // console.log(`experience content: `);
+    // console.log(exp_content_rect);
+        
+    // exp_header_container_rect = get_bounding_box(exp_header_container);
+
+    exp_content_values = get_elem_vals(exp_content);
+    exp_header_container_values = get_elem_vals(exp_header_container);
+
+    console.log(exp_header_container_values);
+}}/>
+
 <section id="exp-section">
-    <div class="exp-content">
-        <div class="exp-header-container" class:closed={is_opened === true} bind:this={exp_header_container}>
+    <div class="exp-content" bind:this={exp_content}>
+        <div 
+            class="marker"
+            style:width="25px"
+            style:height="25px"
+            style:background-color="black"
+            style:position="absolute"
+            style:left={`${exp_content_values?.center_x}px`}
+            style:top={`${exp_content_values?.center_y}px`}
+            style:transform={`translate(-50%, -50%)`}
+        ></div>
+        <div 
+            class="exp-header-container"
+            class:closed={is_opened === true} 
+            bind:this={exp_header_container}
+            style:top={`${exp_header_container_center}px`}
+            style:transform={`translateY(-50%)`}
+        >
             <h1 class="exp-header">Experience</h1>
+            <button class="exp-header-button" on:click={close_header}>View time sequence</button>
         </div>
-        <button class="exp-header-button" on:click={close_header}>View time sequence</button>
         <Timeline/>
         <ContribsButton/>
         <CvButton/>
@@ -88,7 +146,7 @@
 <p>
     Primarily developed in X++ to create D365 reports for Rockwell Land Corporation
 </p>
-
+  
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1344" height="1344" viewBox="0 0 1008 1008"><path d="M340 65.6c-7 1.9-14.8 5.9-33.5 17.1-8.2 5-17.2 10.3-20 11.8-2.7 1.5-17.1 9.7-32 18.3-25.1 14.4-43.6 25-51.1 29.3-4.1 2.3-26.7 15.4-41.9 24.2-25.5 14.9-36.5 21.3-50.2 29.2-13.6 7.8-15.6 9.5-11 9.5 1.1 0 6.6 1.6 12.3 3.5 9.8 3.4 17.1 6.8 29.9 14.3 9.3 5.4 52.2 30.1 59.5 34.2 3.6 2 12.4 7.2 19.5 11.5 7.2 4.2 19.7 11.5 27.8 16.1l14.8 8.5 24.7-14.4c13.6-8 38.9-22.6 56.2-32.5 67.6-38.7 67.1-38.3 77.3-49.1 8.7-9.3 14.4-19.5 18.2-32.6 4.7-16.4 3.1-39.1-4.1-55.2-8.3-18.9-25.7-35-46-42.5-5.2-2-8.1-2.3-25.4-2.5-14.9-.2-20.8.1-25 1.3zM621.3 65.5c-10.9 3-25.8 12.1-34.5 21.3-23.8 24.9-28.9 60.9-13.3 92.7 1.9 3.8 5.8 9.9 8.6 13.5 9.1 11.4 12 13.4 55.6 39 7 4.1 15.7 9.1 19.3 11.1 25.3 14 24.7 13.7 31.6 18.3 3.3 2.2 6.8 4 7.9 4.1 1.1.1 3.2 1.3 4.7 2.8 2.6 2.6 4.2 3.1 8.1 2.8 1.1-.2 1.7.5 1.7 1.9 0 1.1.8 2.4 1.8 2.7.9.4 12.3 6.8 25.2 14.3 12.9 7.6 31.6 18.3 41.5 24 9.9 5.7 22.7 13.1 28.5 16.5 5.8 3.4 15.2 8.8 21 12 12.6 7 18.3 10.2 45 25.6 21.4 12.4 26.8 14.7 41.5 17.4 18.7 3.5 42.2-2.3 60-15 13.6-9.7 22.7-22.1 28.7-39.2 2.9-8.3 3.1-9.7 3.2-23.8.1-17-1.3-23.3-8.5-38-8.5-17.2-18.1-25.9-48.4-43.2-10.4-6-28.7-16.5-40.5-23.2-11.8-6.8-28.2-16.3-36.5-21.1-8.2-4.9-16.8-9.8-19-11-2.2-1.2-13.7-7.8-25.5-14.7-11.8-6.9-26.2-15.2-32-18.6-5.8-3.3-14.1-8.2-18.5-10.8-4.4-2.6-25.1-14.5-46-26.4-20.9-12-39.6-22.8-41.5-24-6.1-3.9-14.3-7.7-21.4-10.1-6.3-2.2-8.6-2.4-25-2.3-12.2 0-19.8.5-23.3 1.4zM62.3 228c-29.4 6.7-52.3 29.2-59.9 59-3 11.8-2.6 30.7 1 42.5 3.3 11 7.1 18.1 14.2 27.1 10.1 12.8 14.7 15.8 81.9 54.1 19.3 11 39 22.2 43.9 24.9 4.9 2.7 10.1 5.6 11.5 6.4 1.4.8 5.8 3.3 9.6 5.4 10.7 6 12.3 7 22.3 13 5.1 3.1 9.4 5.6 9.6 5.6.2 0 6.6 3.7 14.2 8.1 7.7 4.5 19.1 11.2 25.4 14.9 27.6 16.1 42 24.6 64.4 38 26.1 15.5 30.9 18 42.4 21.2 11 3.1 28.5 3.1 40 0 36.9-10 60.6-40.9 60.3-78.6-.2-21.3-7.3-39.7-21-54.9-7.7-8.6-10.3-10.2-72.6-46-18.1-10.4-41.8-24-52.5-30.2-35.9-20.7-78.4-45.1-85.5-49-3.8-2.1-13.5-7.7-21.5-12.5-63.9-38.2-78.8-46.1-91.9-49-10.9-2.5-24.9-2.4-35.8 0zM727 329.2c-8.5 5-24.5 14.2-35.5 20.6-11 6.3-25.8 14.9-33 19-7.1 4.1-21.3 12.3-31.5 18.1-32.2 18.5-39.7 24.4-48.4 37.5-12.3 18.6-16.3 36.4-13 57.6 3.2 20.3 16.4 41.7 32.9 53.1 19.6 13.6 42.5 18.8 62 13.9 14-3.4 23.4-8.3 64.5-33 8-4.8 17.9-10.5 22-12.7 4.1-2.2 9.9-5.5 12.8-7.2 2.9-1.7 5.5-3.1 5.7-3.1.9 0 18.6-10.6 23-13.8 2.8-2.1 7-4.8 9.5-6.1 2.5-1.3 6.4-3.7 8.7-5.2 2.2-1.6 10.3-6.1 18-10 7.6-4 16.7-8.9 20.3-10.9 3.6-2.1 12.1-6.9 19-10.8 6.9-3.8 18.1-10.3 25-14.4 6.9-4.1 14.7-8.8 17.5-10.3l5-2.9-3.5-.8c-8-2-20.8-6.2-24.5-8.1-4.2-2-31.9-18-56-32.2-7.7-4.5-20.3-11.8-28-16.2-7.7-4.4-23.1-13.3-34.3-19.7-11.2-6.4-20.9-11.5-21.5-11.5-.7.1-8.2 4.2-16.7 9.1zM284.6 767.8c-.3.3-.6 39.6-.6 87.4V942h21v-71h19.3c31.8 0 42.7-2.2 55.5-10.8 11.2-7.7 18-18.5 20.9-33.2 1.5-7.3 1.5-8.7 0-16-2.9-14.9-9.8-25.6-21.5-33.3-8.8-5.8-16.2-8.5-27.2-9.7-9.3-1.1-66.4-1.3-67.4-.2zm76.6 22.5c7.2 3.5 14 11 16.8 18.5 5.5 14.4-2 31.6-16.8 38.9-5.5 2.7-6.2 2.8-29.7 3.5-13.2.4-24.6.6-25.2.3-1-.3-1.3-7.8-1.3-32.5v-32.1l25.3.3 25.2.3 5.7 2.8zM440.7 767.8l-5.8.3.3 62.2c.3 55.6.6 62.8 2.1 68.2 7.1 24.3 22.7 39.6 46.9 45.7 12.2 3.1 28.9 2.3 41.1-1.9 4.8-1.7 11.2-4.6 14.3-6.4 11.5-6.9 20.9-20.5 25.6-36.9 2.1-7.2 2.2-9.7 2.5-69.3l.4-61.7-2.8-.1c-4.5-.2-6.4-.2-12.5-.1l-5.8.2v57.3c0 57.5-.3 64.5-3.7 73.7-2.2 6-8.5 15.3-12.6 18.4-9.4 7.2-24.2 10.7-37.2 8.7-19.3-2.8-32.8-16.1-36.4-35.6-.7-3.8-1.1-26.4-1.1-64.6v-58.6h-4.7c-2.7.1-7.4.3-10.6.5zM618.5 767.9l-9 .6v173.6l10.4-.3 10.4-.3-.2-35.3-.1-35.2h19.8c31.3 0 42.2-2.1 55-10.8 11.2-7.7 18-18.5 20.9-33.2 1.5-7.2 1.5-8.6 0-16.1-.9-4.5-2.7-10.5-4-13.3-7.6-16.3-24-27.2-44.4-29.6-9-1-42.8-1.1-58.8-.1zm67.7 22.4c21 10.3 25 36.6 7.8 52-8.7 7.8-12.2 8.6-39.7 8.9l-23.8.3-.2-32.3-.3-32.3 25.3.3 25.2.3 5.7 2.8z"/></svg>
 
 <h3>Achievements</h3>

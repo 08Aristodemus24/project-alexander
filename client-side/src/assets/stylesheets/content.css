@@ -1281,9 +1281,6 @@ p.carousel-item{
 
     /* design */
     outline: 2px solid purple;
-    
-    /* spacing */
-    margin-block: 1rem;
 }
 
 .exp-content{
@@ -1298,6 +1295,7 @@ p.carousel-item{
 
     /* size */
     min-height: 100vh;
+    padding-block: 1.5rem;
 
     /* design */
     outline: 2px solid greenyellow;
@@ -1306,21 +1304,19 @@ p.carousel-item{
 .exp-header-container{
     /* display */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    visibility: visible;
-    opacity: 100%;
+    row-gap: 1rem;
 
     /* position */
     position: relative;
     z-index: 1;
 
-    /* spacing */
-    row-gap: 2rem;
-
     /* design */
     outline: 1px solid blue;
+    visibility: visible;
+    opacity: 100%;
 
     /* transition */
     transition: position 0.5s ease-in-out;
@@ -1347,12 +1343,7 @@ p.carousel-item{
     /* display */
     display: block;
 
-    /* position */
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    z-index: 1;
-
+    /* size */
     width: fit-content;
     height: max-content;
 
