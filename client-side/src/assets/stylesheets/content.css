@@ -1284,9 +1284,6 @@ p.carousel-item{
 }
 
 .exp-content{
-    /* position */
-    position: relative;
-
     /* display */
     display: flex;
     justify-content: center;
@@ -1302,6 +1299,16 @@ p.carousel-item{
 }
 
 .exp-header-container{
+    /* position */
+    position: relative;
+
+    /* design */
+    outline: 1px solid blue;
+    visibility: visible;
+    opacity: 100%;
+}
+
+.exp-header-container .wrapper{
     /* display */
     display: flex;
     flex-direction: column;
@@ -1310,27 +1317,37 @@ p.carousel-item{
     row-gap: 1rem;
 
     /* position */
-    position: relative;
+    position: absolute;
+    top: var(--top-value);
+    transform: translateY(-50%);
+    inset-inline: 0;
+    margin-inline: auto;
     z-index: 1;
 
     /* design */
-    outline: 1px solid blue;
-    visibility: visible;
-    opacity: 100%;
+    outline: 1px solid greenyellow;
+
+    /* size */
+    height: max-content;
 
     /* transition */
-    transition: position 0.5s ease-in-out;
+    transition: 
+        transform 0.5s ease-in-out,
+        top 0.5s ease-in-out;
+
 }
 
-.exp-header-container.closed{
+.exp-header-container.closed .wrapper{
     /* 
     instead of hiding the header when exp-header-container is closed
     transition it from absolute to initial or static to place it with other
     flex items and remove instead button from flow
     */
+    top: 0;
+    transform: initial;
 }
 
-.exp-header-container .exp-header{
+.wrapper .exp-header{
     /* design */
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.5rem, 3.75vw, 3.75rem);
@@ -1367,7 +1384,6 @@ p.carousel-item{
         color 0.25s ease-in-out, 
         visibility 0.25s ease-in-out,
         opacity 0.25s ease-in-out,
-        display 0.25s ease-in-out;
 }
 
 .exp-header-button:hover{
@@ -1378,7 +1394,6 @@ p.carousel-item{
 .exp-header-container.closed .exp-header-button{
     visibility: hidden;
     opacity: 0%;
-    display: none;
 }
 
 
