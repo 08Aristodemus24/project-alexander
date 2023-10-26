@@ -5,12 +5,12 @@
     import ContribsButton from "./ContribsButton.svelte";
     import CvButton from "./CVButton.svelte";
 
-    // when component is mounted get experience content element
-    let exp_content, exp_header_container;
-    let exp_content_values, exp_header_container_values;
-    let exp_header_button;
-
-    let header_height;
+    // when component is mounted get experience content elements
+    // bounding rectangle and client width and height to compute
+    // distance from top
+    let exp_content;
+    let exp_content_values;
+    let exp_header_button, header_height;
     
     // for header
     let is_opened = false;
@@ -70,7 +70,7 @@
 
     const get_elem_vals = (el) => {
         let rect = {};
-        console.log(el);
+        const box = el.getBoundingClientRect();
 
         rect['center_x'] = (el.clientWidth) / 2;
         rect['center_y'] = (el.clientHeight) / 2;
@@ -78,6 +78,7 @@
         rect['client_height'] = el.clientHeight;
         rect['offset_left'] = el.offsetLeft;
         rect['offset_top'] = el.offsetTop;
+        rect['client_top'] = box.top;
 
         return rect;
     }
@@ -88,14 +89,15 @@
     onMount(async () => {
         fetch_contribs();
         exp_content_values = get_elem_vals(exp_content);
-        exp_header_container_values = get_elem_vals(exp_header_container);
     });
 
     afterUpdate(async () => {
         if(is_opened === true){
             setTimeout(() => {
+                // remove projects-header-container from dom precisely 
+                // 0.5s after visibility and opacity transition is ran
                 exp_header_button.style.display = "none";
-            }, 500);    
+            }, 500);
         }
     });
 </script>
@@ -107,25 +109,13 @@
     properties will always change 
     */
     exp_content_values = get_elem_vals(exp_content);
-    exp_header_container_values = get_elem_vals(exp_header_container);
 }}/>
 
 <section id="exp-section">
     <div class="exp-content" bind:this={exp_content}>
-        <!-- <div 
-            class="marker"
-            style:width="25px"
-            style:height="25px"
-            style:background-color="black"
-            style:position="absolute"
-            style:left={`${exp_content_values?.center_x}px`}
-            style:top={`${exp_content_values?.center_y}px`}
-            style:transform={`translate(-50%, -50%)`}
-        ></div> -->
         <div 
             class="exp-header-container"
             class:closed={is_opened === true} 
-            bind:this={exp_header_container}
             style:height={`${header_height}px`}
         >
             <div class="wrapper" style:--top-value={`${exp_content_values?.center_y}px`}>
@@ -134,6 +124,7 @@
             </div>
         </div>
         <Timeline/>
+        <Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
         <ContribsButton/>
         <CvButton/>
     </div>

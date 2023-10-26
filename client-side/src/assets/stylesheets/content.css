@@ -1303,7 +1303,7 @@ p.carousel-item{
     position: relative;
 
     /* design */
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
     visibility: visible;
     opacity: 100%;
 }
@@ -1318,14 +1318,14 @@ p.carousel-item{
 
     /* position */
     position: absolute;
-    top: var(--top-value);
+    top: calc(var(--top-value) - clamp(10rem, 25%, 862px));
     transform: translateY(-50%);
     inset-inline: 0;
     margin-inline: auto;
     z-index: 1;
 
     /* design */
-    outline: 1px solid greenyellow;
+    /* outline: 1px solid greenyellow; */
 
     /* size */
     height: max-content;
@@ -1356,7 +1356,7 @@ p.carousel-item{
     /* outline: 1px solid grey; */
 }
 
-.exp-header-button{
+.wrapper .exp-header-button{
     /* display */
     display: block;
 
@@ -1386,12 +1386,12 @@ p.carousel-item{
         opacity 0.25s ease-in-out,
 }
 
-.exp-header-button:hover{
+.wrapper .exp-header-button:hover{
     background-color: black;
     color: white;
 }
 
-.exp-header-container.closed .exp-header-button{
+.exp-header-container.closed .wrapper .exp-header-button{
     visibility: hidden;
     opacity: 0%;
 }
@@ -1449,11 +1449,10 @@ p.carousel-item{
 
 .timeline-container::-webkit-scrollbar{
     height: 0.125rem;
-    background-color: rgba(0, 0, 0, 0.068);
 }
 
 .timeline-container::-webkit-scrollbar-thumb{
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.125);
 }
 
 .timeline-container .header{
@@ -1688,6 +1687,8 @@ p.carousel-item{
 }
 
 .contribs-container{
+    /* design */
+    outline: 1px solid palevioletred;
     /* position */
     position: absolute;
     z-index: -1;

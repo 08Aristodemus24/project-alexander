@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     import Accordion from "./Accordion.svelte";
     import ProjectsButton from "./ProjectsButton.svelte";
 
@@ -70,6 +70,7 @@
 
 
     let is_opened = false;
+    let proj_header_container;
     const close_header = (event) => {
         // close header only once
         if(is_opened === false){
@@ -82,11 +83,21 @@
     onMount(async () => {
         fetch_repos();
     });
+
+    afterUpdate(async () => {
+        if(is_opened === true){
+            setTimeout(() => {
+                // remove projects-header-container from dom precisely 1
+                // second after visibility and opacity transition is ran
+                proj_header_container.style.display = "none";
+            }, 1000);
+        }
+    })
 </script>
 
 <section id="projects-section">
     <div class="projects-content">
-        <div class="projects-header-container" class:closed={is_opened === true}>
+        <div class="projects-header-container" class:closed={is_opened === true} bind:this={proj_header_container}>
             <h1>Projects</h1>
             <ProjectsButton close_header={close_header}/>
         </div>
