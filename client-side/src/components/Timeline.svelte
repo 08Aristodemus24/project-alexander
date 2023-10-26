@@ -25,6 +25,7 @@
             class="header" class:up={index % 2 === 0} class:down={index % 2 !== 0}
             style:grid-row={index % 2 === 0 ? `${1} / ${2}` : `${3} / ${4}`}
             style:grid-column={`${index + 1} / ${index + 2}`}
+            style:--time-animation-order={index}
         >
             <h3 class="title">{exp_descriptions[index]['title']}</h3>
             <h5 class="organization">{exp_descriptions[index]['organization']}</h5>
@@ -36,11 +37,13 @@
             class="bar"
             style:grid-row={`${2} / ${3}`}
             style:grid-column={`${index + 1} / ${index + 2}`}
+            style:--time-animation-order={index}
         ></div>
         <ul
             class="accolades" class:up={index % 2 === 0} class:down={index % 2 !== 0}
             style:grid-row={index % 2 === 0 ? `${3} / ${4}` : `${1} / ${2}`}
             style:grid-column={`${index + 1} / ${index + 2}`}
+            style:--time-animation-order={index}
         >
             {#each exp_desc['accolades'] as accolade}
                 <li class="accolade">{accolade}</li>

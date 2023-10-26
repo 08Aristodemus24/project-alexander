@@ -709,7 +709,7 @@ svg.linkedin-icon{
     opacity: 0%;
     /* outline: 1px solid white; */
 
-    /* animation */
+    /* transition */
     transition-property: transform, opacity;
     transition-duration: 0.8s, 0.8s;
     transition-delay: 0.3s, 0.65s;
@@ -733,7 +733,7 @@ svg.linkedin-icon{
     opacity: 0%;
     /* outline: 1px solid white; */
 
-    /* animation */
+    /* transition */
     transition-property: transform, opacity;
     transition-duration: 0.8s, 0.8s;
     transition-delay: 0.65s, 1s;
@@ -1436,6 +1436,7 @@ p.carousel-item{
     background-color: black;
     display: block;
     transform-origin: 0% 50%;
+    transform: scaleX(0%);
 
     /* size */
     inline-size: 110%;
@@ -1443,8 +1444,12 @@ p.carousel-item{
     grid-row: 2 / 3;
     grid-column: 1 / var(--end-col-index);
 
-    /* animation */
-    animation: draw-line 5s both cubic-bezier(0.5, 0, 0, 1);;
+    /* transition */
+    transition: transform 5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.exp-header-container.closed ~ .timeline-container::before{
+    transform: scaleX(100%);
 }
 
 .timeline-container::-webkit-scrollbar{
@@ -1452,7 +1457,11 @@ p.carousel-item{
 }
 
 .timeline-container::-webkit-scrollbar-thumb{
-    background-color: rgba(0, 0, 0, 0.125);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.exp-header-container.closed ~ .timeline-container::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.125);;
 }
 
 .timeline-container .header{
@@ -1462,6 +1471,14 @@ p.carousel-item{
     /* design */
     outline: 1px solid rgb(0, 0, 0);
     background-color: transparent;
+    opacity: 0%;
+
+    /* transition */
+    transition: opacity 1s calc(var(--time-animation-order) * 250ms) ease-in-out;
+}
+
+.exp-header-container.closed ~ .timeline-container .header{
+    opacity: 100%;
 }
 
 .header.up{
@@ -1517,7 +1534,6 @@ p.carousel-item{
     outline: 1px solid rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     
-
     /* size */
     padding-inline: 2em;
     padding-block: 0.5em;
@@ -1545,7 +1561,14 @@ p.carousel-item{
     /* design */
     /* outline: 1px solid greenyellow; */
     background-color: black;
+    opacity: 0%;
     
+    /* transition */
+    transition: opacity 1s calc(var(--time-animation-order) * 500ms) ease-in-out;
+}
+
+.exp-header-container.closed ~ .timeline-container .bar{
+    opacity: 100%;
 }
 
 .timeline-container .accolades{
@@ -1555,10 +1578,18 @@ p.carousel-item{
     /* design */
     outline: 1px solid black;
     list-style: square;
+    opacity: 0%;
 
     /* size */
     padding-block: 0.25rem;
     padding-right: 0.5rem;
+
+    /* transition */
+    transition: opacity 1s calc(var(--time-animation-order) * 250ms) ease-in-out;
+}
+
+.exp-header-container.closed ~ .timeline-container .accolades{
+    opacity: 100%;
 }
 
 .accolades.up{
@@ -1586,17 +1617,6 @@ p.carousel-item{
     margin-top: .5em;
 }
 
-@keyframes draw-line{
-    from{
-        transform: scaleX(0%);
-    }
-
-    to{
-        transform: scaleX(100%);
-    }
-}
-
-
 .contribs-header{
     /* display */
     display: block;
@@ -1611,6 +1631,7 @@ p.carousel-item{
     cursor: pointer;
     color: rgb(0, 0, 0);
     outline: 1px solid rgb(0, 0, 0);
+    /* opacity: 0%; */
 
     /* size */
     padding-inline: 1em;
@@ -1624,9 +1645,18 @@ p.carousel-item{
 
     /* position */
     position: relative;
+    transform: translateX(-200px);
 
     /* transition */
-    transition: color 0.25s ease-in-out;
+    transition: 
+        color 0.25s ease-in-out,
+        transform 0.8s 0.3s cubic-bezier(0.5, 0, 0, 1),
+        opacity 0.8s 0.65s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.exp-header-container.closed ~ .contribs-header{
+    transform: translateX(0px);
+    opacity: 100%;
 }
 
 .contribs-header:hover{
@@ -1774,6 +1804,7 @@ table tr td[data-level="4"]{
     text-align: center;
     color: rgb(0, 0, 0);
     outline: 1px solid rgb(0, 0, 0);
+    opacity: 0%;
 
     /* size */
     padding-inline: 1em;
@@ -1792,11 +1823,18 @@ table tr td[data-level="4"]{
     
     /* position */
     position: relative;
+    transform: translateX(-200px);
 
     /* transition */
     transition: 
         color 0.25s ease-in-out,
-        background-color 0.25s ease-in-out;
+        transform 0.8s 0.65s cubic-bezier(0.5, 0, 0, 1),
+        opacity 0.8s 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.exp-header-container.closed ~ .cv-button{
+    opacity: 100%;
+    transform: translateX(0px);
 }
 
 .cv-button::after{
@@ -1876,7 +1914,6 @@ table tr td[data-level="4"]{
 }
 
 .cv-button:hover{
-    /* background-color: black; */
     color: white;
 }
 
