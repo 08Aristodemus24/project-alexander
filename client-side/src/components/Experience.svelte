@@ -21,6 +21,21 @@
         }
     };
 
+    const get_elem_vals = (el) => {
+        let rect = {};
+        const box = el.getBoundingClientRect();
+
+        rect['center_x'] = (el.clientWidth) / 2;
+        rect['center_y'] = (el.clientHeight) / 2;
+        rect['client_width'] = el.clientWidth;
+        rect['client_height'] = el.clientHeight;
+        rect['offset_left'] = el.offsetLeft;
+        rect['offset_top'] = el.offsetTop;
+        rect['client_top'] = box.top;
+
+        return rect;
+    }
+
 
     // initially all but user can change this depending
     // on what he wants to view
@@ -68,20 +83,13 @@
         }
     }
 
-    const get_elem_vals = (el) => {
-        let rect = {};
-        const box = el.getBoundingClientRect();
-
-        rect['center_x'] = (el.clientWidth) / 2;
-        rect['center_y'] = (el.clientHeight) / 2;
-        rect['client_width'] = el.clientWidth;
-        rect['client_height'] = el.clientHeight;
-        rect['offset_left'] = el.offsetLeft;
-        rect['offset_top'] = el.offsetTop;
-        rect['client_top'] = box.top;
-
-        return rect;
-    }
+    // for setting height of exp-carousel-contaienr with carousel
+    // item and subsequently of button-carousel-container that 
+    // has largest height which are the timeline container and 
+    // contribs container and subsequently the timeline buttons and
+    // contribs buttons
+    let exp_carousel_height = null;
+    let button_carousel_height = null;
 
     // on mount initially set state of null for the exp content
     // and exp header container centers will now have calculated
@@ -123,12 +131,12 @@
                 <button class="exp-header-button" on:click={close_header} bind:this={exp_header_button}>View time sequence</button>
             </div>
         </div>
-        <div class="exp-carousel-container">
-            <Timeline/>
+        <div class="exp-carousel-container" style:height={`${exp_carousel_height}px`}>
+            <Timeline bind:exp_carousel_height/>
             <Contributions contribs={contribs}/>
         </div>
-        <div class="button-container">
-            <TimelineButtons/>
+        <div class="button-carousel-container" style:height={`${button_carousel_height}px`}>
+            <TimelineButtons bind:button_carousel_height/>
             <ContributionsButtons min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs}/>
         </div>
     </div>

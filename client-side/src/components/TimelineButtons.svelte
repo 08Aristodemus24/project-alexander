@@ -1,11 +1,13 @@
 <script>
     import { range } from "./Range";
 
+    export let button_carousel_height;
+
     const num_rows = 3;
     const num_cols = 14;
 </script>
 
-<div class="timeline-buttons">
+<div class="timeline-buttons" bind:offsetHeight={button_carousel_height}>
     <button class="contribs-button">
         View Github contributions
         <table>

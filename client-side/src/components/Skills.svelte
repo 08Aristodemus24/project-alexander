@@ -15,13 +15,11 @@
         const offset = event.target.dataset.carouselButton === 'next' ? 1 : -1;
         console.log(`${offset === 1 ? 'next' : 'prev'} button has been clicked`);
 
-        const carousel = document.querySelector('.carousel-inner');
+        const carousel_items = [...document.querySelectorAll('.carousel-inner .carousel-item')];
         const active_slide = document.querySelector('.carousel-item.active');
-
-        const carousel_items = [...carousel.children];
         console.log(carousel_items);
 
-        // A + 1 offset means we go forwards in accessing the carousel_items
+        // a + 1 offset means we go forwards in accessing the carousel_items
         // and a + -1 offset means we will go backwards in accessing the carousel_items
         new_index = carousel_items.indexOf(active_slide) + offset;
         if(new_index < 0){

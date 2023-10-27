@@ -989,7 +989,6 @@ svg.linkedin-icon{
     position: absolute;
     inset: 0;
     margin: auto;
-
 }
 
 .carousel-outer *[class*="title"]{
@@ -1396,7 +1395,11 @@ p.carousel-item{
 
 
 .exp-carousel-container{
-    outline: 1px solid seagreen;
+    /* design */
+    /* outline: 1px solid seagreen; */
+
+    /* position */
+    position: relative;
 }
 
 .timeline-container{
@@ -1409,9 +1412,8 @@ p.carousel-item{
     column-gap: 10rem;
     
     /* size */
-    min-height: 25vh;
-    padding-inline: 1rem;
-    padding-block: 1rem;
+    min-height: 40vh;
+    padding: 1rem;
 
     /* containment */
     overflow-x: scroll;
@@ -1419,16 +1421,15 @@ p.carousel-item{
     scroll-behavior: smooth;
     scroll-padding-inline: 1rem;
     
-
-    /* alignment */
-    margin-inline: 1rem;
+    /* spacing */
 
     /* position */
-    position: relative;
+    position: absolute;
+    inset: 0;
+    margin-block: auto;
+    margin-inline: 1rem;
 
     /* design */
-    /* opacity: 0%;
-    visibility: hidden; */
     /* outline: 1px solid black; */
 }
 
@@ -1448,7 +1449,6 @@ p.carousel-item{
     /* transition */
     transition: transform 5s cubic-bezier(0.5, 0, 0, 1);
 }
-
 
 .timeline-container::-webkit-scrollbar{
     height: 0.125rem;
@@ -1602,6 +1602,29 @@ p.carousel-item{
 .contribs-container{
     /* design */
     outline: 1px solid palevioletred;
+
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin-block: auto;
+    z-index: 1;
+
+    /* containment */
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+
+    /* spacing */
+    margin-inline: 1rem;
+}
+
+.contribs-container::-webkit-scrollbar{
+    height: 0.125rem;
+}
+
+.contribs-container::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.125);;
 }
 
 .empty-contribs{
@@ -1614,13 +1637,28 @@ p.carousel-item{
 }
 
 .contribs-table{
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
     /* design */
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
 }
 
-table tr td{
+.contribs-body{
+    /* design */
+    /* outline: 2px solid green; */
+}
+
+.contribs-table tr{
+    /* design */
+    /* outline: 1px solid seagreen; */
+}
+
+.contribs-table td{
     /* size */
-    padding: 0.5rem;
+    padding: 0.75rem;
 
     /* animation */
     animation-name: fade-in;
@@ -1630,34 +1668,37 @@ table tr td{
     animation-timing-function: ease-in-out;
 }
 
-table tr td[data-level="0"]{
+.contribs-table td[data-level="0"]{
     /* design */
     background-color: var(--contrib-level-1);
 }
 
-table tr td[data-level="1"]{
+.contribs-table td[data-level="1"]{
     /* design */
     background-color: var(--contrib-level-2);
 }
 
-table tr td[data-level="2"]{
+.contribs-table td[data-level="2"]{
     /* design */
     background-color: var(--contrib-level-3);
 }
 
-table tr td[data-level="3"]{
+.contribs-table td[data-level="3"]{
     /* design */
     background-color: var(--contrib-level-4);
 }
 
-table tr td[data-level="4"]{
+.contribs-table td[data-level="4"]{
     /* design */
     background-color: var(--contrib-level-5);
 }
 
-.button-container{
+.button-carousel-container{
     /* design */
     outline: 1px solid greenyellow;
+
+    /* position */
+    position: relative;
 }
 
 .timeline-buttons{
@@ -1666,11 +1707,19 @@ table tr td[data-level="4"]{
     justify-content: center;
     flex-wrap: wrap;
 
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    /* size */
+    height: max-content;
+
     /* spacing */
     gap: 2rem;
 
     /* design */
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
 }
 
 .contribs-button{
@@ -1895,7 +1944,16 @@ table tr td[data-level="4"]{
     justify-content: center;
     flex-wrap: wrap;
 
-    outline: 1px solid blue;
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+
+    height: max-content;
+
+    /* design */
+    /* outline: 1px solid blue; */
 }
 
 .contribs-buttons button{

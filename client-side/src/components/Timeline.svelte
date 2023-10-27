@@ -1,15 +1,22 @@
 <script>
+    // binds the timeline container to this variable in order
+    // access element and element attributes
     let timeline_container;
+
+    // binds the offset height of the timeline container to this
+    // variable to lift state and set dynamically the height of
+    // exp carousel container
+    export let exp_carousel_height;
 
     const exp_descriptions = [
         {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
         {year: '2023', title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Mentored and guided AI/ML department of org in developing roadmap used by junior AI/ML cadets"]},
         {title: 'Front End Web Developer', organization: 'LMC Engineering Front', accolades: ["Impemented and deployed client-side architecture of our engineering consultancy business firm"]},
-        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
     ];
 
     // determine the number of grid columns based 
@@ -35,7 +42,13 @@
     }
 </script>
 
-<div class="timeline-container" style:--end-col-index={end_col_index} on:wheel={scroll_x} bind:this={timeline_container}>
+<div 
+    class="timeline-container"
+    style:--end-col-index={end_col_index}
+    on:wheel={scroll_x} 
+    bind:this={timeline_container} 
+    bind:offsetHeight={exp_carousel_height}
+>
     {#each exp_descriptions as exp_desc, index}
         <!-- all odd numbered experiences will have its header on the end of the vertical axis and start of the horizontal axis -->
         <div 
