@@ -1,24 +1,41 @@
 <script>
-    import CvButton from "./CVButton.svelte";
+    let timeline_container;
 
     const exp_descriptions = [
         {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
         {year: '2023', title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Mentored and guided AI/ML department of org in developing roadmap used by junior AI/ML cadets"]},
         {title: 'Front End Web Developer', organization: 'LMC Engineering Front', accolades: ["Impemented and deployed client-side architecture of our engineering consultancy business firm"]},
-        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
     ];
 
     // determine the number of grid columns based 
     // on length of experience descriptions
     const num_columns = exp_descriptions.length + 1;
     const end_col_index = num_columns + 1;
+
+    // this callback is triggered when timeline container is 
+    // scrolled over and 
+    const scroll_x = (event) => {
+        // prevents typical vertical scrolling
+        // when on the element
+        event.preventDefault();
+        timeline_container.scrollLeft += event.deltaY;
+
+        if(event.deltaY >= -15 && event.deltaY <= 15){
+            timeline_container.scrollLeft += (event.deltaY * 40);
+        }
+        
+        else{
+            timeline_container.scrollLeft += (event.deltaY * 5);
+        }
+    }
 </script>
 
-<div class="timeline-container" style:--end-col-index={end_col_index}>
+<div class="timeline-container" style:--end-col-index={end_col_index} on:wheel={scroll_x} bind:this={timeline_container}>
     {#each exp_descriptions as exp_desc, index}
         <!-- all odd numbered experiences will have its header on the end of the vertical axis and start of the horizontal axis -->
         <div 

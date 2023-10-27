@@ -471,7 +471,6 @@ svg.linkedin-icon{
 .projects-button table td{
     /* design */
     background-color: black;
-    opacity: 0%;
     transform: scaleY(0%);
     transform-origin: 50% 100%;
     /* outline: 1px solid black; */
@@ -479,12 +478,10 @@ svg.linkedin-icon{
     /* transition */
     transition: 
         transform 0.5s calc(var(--btn-bar-animation-order) * 50ms) cubic-bezier(0.5, 0, 0, 1),
-        opacity 0.5s calc(var(--btn-bar-animation-order) * 50ms) ease-in-out;
 }
 
 .projects-button:hover table td{
     transform: scaleY(100%);
-    opacity: 100%;
 }
 
 .projects-button:focus{
@@ -1398,7 +1395,10 @@ p.carousel-item{
 
 
 
-/* TIMELINE */
+.exp-carousel-container{
+    outline: 1px solid seagreen;
+}
+
 .timeline-container{
     /* display */
     display: grid;
@@ -1410,7 +1410,7 @@ p.carousel-item{
     
     /* size */
     min-height: 25vh;
-    padding-inline: 0.25rem;
+    padding-inline: 1rem;
     padding-block: 1rem;
 
     /* containment */
@@ -1427,7 +1427,9 @@ p.carousel-item{
     position: relative;
 
     /* design */
-    /* outline: 1px solid green; */
+    /* opacity: 0%;
+    visibility: hidden; */
+    /* outline: 1px solid black; */
 }
 
 .timeline-container::before{
@@ -1436,7 +1438,6 @@ p.carousel-item{
     background-color: black;
     display: block;
     transform-origin: 0% 50%;
-    transform: scaleX(0%);
 
     /* size */
     inline-size: 110%;
@@ -1448,19 +1449,12 @@ p.carousel-item{
     transition: transform 5s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .timeline-container::before{
-    transform: scaleX(100%);
-}
 
 .timeline-container::-webkit-scrollbar{
     height: 0.125rem;
 }
 
 .timeline-container::-webkit-scrollbar-thumb{
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.exp-header-container.closed ~ .timeline-container::-webkit-scrollbar-thumb{
     background-color: rgba(0, 0, 0, 0.125);;
 }
 
@@ -1471,14 +1465,9 @@ p.carousel-item{
     /* design */
     outline: 1px solid rgb(0, 0, 0);
     background-color: transparent;
-    opacity: 0%;
 
     /* transition */
     transition: opacity 1s calc(var(--time-animation-order) * 250ms) ease-in-out;
-}
-
-.exp-header-container.closed ~ .timeline-container .header{
-    opacity: 100%;
 }
 
 .header.up{
@@ -1561,14 +1550,9 @@ p.carousel-item{
     /* design */
     /* outline: 1px solid greenyellow; */
     background-color: black;
-    opacity: 0%;
     
     /* transition */
     transition: opacity 1s calc(var(--time-animation-order) * 500ms) ease-in-out;
-}
-
-.exp-header-container.closed ~ .timeline-container .bar{
-    opacity: 100%;
 }
 
 .timeline-container .accolades{
@@ -1578,7 +1562,6 @@ p.carousel-item{
     /* design */
     outline: 1px solid black;
     list-style: square;
-    opacity: 0%;
 
     /* size */
     padding-block: 0.25rem;
@@ -1586,10 +1569,6 @@ p.carousel-item{
 
     /* transition */
     transition: opacity 1s calc(var(--time-animation-order) * 250ms) ease-in-out;
-}
-
-.exp-header-container.closed ~ .timeline-container .accolades{
-    opacity: 100%;
 }
 
 .accolades.up{
@@ -1617,111 +1596,12 @@ p.carousel-item{
     margin-top: .5em;
 }
 
-.contribs-header{
-    /* display */
-    display: block;
 
-    /* design */
-    background-color: transparent;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: clamp(12px, 1vw, 1rem);
-    font-weight: 300;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    outline: 1px solid rgb(0, 0, 0);
-    /* opacity: 0%; */
 
-    /* size */
-    padding-inline: 1em;
-    padding-block: 0.5em;
-
-    /* spacing */
-    margin-inline: 1rem;
-
-    /* alignment */
-    align-self: flex-start;
-
-    /* position */
-    position: relative;
-    transform: translateX(-200px);
-
-    /* transition */
-    transition: 
-        color 0.25s ease-in-out,
-        transform 0.8s 0.3s cubic-bezier(0.5, 0, 0, 1),
-        opacity 0.8s 0.65s cubic-bezier(0.5, 0, 0, 1);
-}
-
-.exp-header-container.closed ~ .contribs-header{
-    transform: translateX(0px);
-    opacity: 100%;
-}
-
-.contribs-header:hover{
-    color: white;
-}
-
-.contribs-header table{
-    /* display */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 1fr);
-    grid-auto-rows: 1fr;
-
-    /* position */
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    z-index: -1;
-
-    /* size */
-    width: 100%;
-    height: 100%;
-
-    /* design */
-    /* outline: 2px solid green; */
-}
-
-.contribs-header table td{
-    /* design */
-    background-color: black;
-    opacity: 0%;
-    transform: scale(0%);
-    /* outline: 1px solid black; */
-
-    /* transition */
-    transition: 
-        opacity 0.5s calc(var(--btn-grid-animation-order) * 50ms) ease-in-out,
-        transform 0.5s calc(var(--btn-grid-animation-order) * 50ms) ease-in-out;
-}
-
-.contribs-header:hover table td{
-    opacity: 100%;
-    transform: scale(100%);
-}
-
-.contribs-header:focus{
-    /* design */
-    /* 
-    first value is how far is the box shadow along x-axis
-    second value is how far is the box shadow along y-axis
-    and third value is the blur radius
-
-    + value of y-offset moves shadow down, and - up
-    + value of x-offset moves shadow left, and + right
-     */
-    box-shadow:
-        3px 3px 10px rgba(0, 0, 0, 0.699),
-        0px 3px 10px rgba(255, 255, 255, 0.699);
-}
-
+/* CONTRIBUTIONS */
 .contribs-container{
     /* design */
     outline: 1px solid palevioletred;
-    /* position */
-    position: absolute;
-    z-index: -1;
 }
 
 .empty-contribs{
@@ -1731,24 +1611,6 @@ p.carousel-item{
     font-size: clamp(12px, 1vw, 1rem);
     color: black;
     border: 1px solid black;
-}
-
-.contribs-container .button-container{
-    /* outline: 1px solid blue; */
-}
-
-.contribs-container .button-container button{
-    /* design */
-    background-color: transparent;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: clamp(12px, 1vw, 1rem);
-    color: black;
-    border: none;
-    outline: 1px solid black;
-    
-    /* size */
-    padding-inline: 1em;
-    padding-block: .5em;
 }
 
 .contribs-table{
@@ -1793,6 +1655,107 @@ table tr td[data-level="4"]{
     background-color: var(--contrib-level-5);
 }
 
+.button-container{
+    /* design */
+    outline: 1px solid greenyellow;
+}
+
+.timeline-buttons{
+    /* display */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /* spacing */
+    gap: 2rem;
+
+    /* design */
+    outline: 1px solid blue;
+}
+
+.contribs-button{
+    /* display */
+    display: block;
+
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    outline: 1px solid rgb(0, 0, 0);
+
+    /* size */
+    padding-inline: 1em;
+    padding-block: 0.5em;
+
+    /* position */
+    position: relative;
+
+    /* transition */
+    transition: 
+        color 0.25s ease-in-out,
+        transform 0.8s 0.3s cubic-bezier(0.5, 0, 0, 1),
+        opacity 0.8s 0.65s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.contribs-button:hover{
+    color: white;
+}
+
+.contribs-button table{
+    /* display */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-auto-rows: 1fr;
+
+    /* position */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+
+    /* size */
+    width: 100%;
+    height: 100%;
+
+    /* design */
+    /* outline: 2px solid green; */
+}
+
+.contribs-button table td{
+    /* design */
+    background-color: black;
+    opacity: 0%;
+    /* outline: 1px solid black; */
+
+    /* transition */
+    transition: 
+        opacity 0.5s calc(var(--btn-grid-animation-order) * 50ms) ease-in-out;
+}
+
+.contribs-button:hover table td{
+    opacity: 100%;
+}
+
+.contribs-button:focus{
+    /* design */
+    /* 
+    first value is how far is the box shadow along x-axis
+    second value is how far is the box shadow along y-axis
+    and third value is the blur radius
+
+    + value of y-offset moves shadow down, and - up
+    + value of x-offset moves shadow left, and + right
+     */
+    box-shadow:
+        3px 3px 10px rgba(0, 0, 0, 0.699),
+        0px 3px 10px rgba(255, 255, 255, 0.699);
+}
+
 .cv-button{
     /* design */
     display: block;
@@ -1804,7 +1767,6 @@ table tr td[data-level="4"]{
     text-align: center;
     color: rgb(0, 0, 0);
     outline: 1px solid rgb(0, 0, 0);
-    opacity: 0%;
 
     /* size */
     padding-inline: 1em;
@@ -1823,18 +1785,12 @@ table tr td[data-level="4"]{
     
     /* position */
     position: relative;
-    transform: translateX(-200px);
 
     /* transition */
     transition: 
         color 0.25s ease-in-out,
         transform 0.8s 0.65s cubic-bezier(0.5, 0, 0, 1),
         opacity 0.8s 1s cubic-bezier(0.5, 0, 0, 1);
-}
-
-.exp-header-container.closed ~ .cv-button{
-    opacity: 100%;
-    transform: translateX(0px);
 }
 
 .cv-button::after{
@@ -1931,6 +1887,35 @@ table tr td[data-level="4"]{
     /* design */
     box-shadow:
         3px 3px 10px rgba(0, 0, 0, 0.699);
+}
+
+.contribs-buttons{
+    /* display */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    outline: 1px solid blue;
+}
+
+.contribs-buttons button{
+    /* design */
+    background-color: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 1rem);
+    text-align: center;
+    color: black;
+    border-block: none;
+    border-right: 1px solid black;
+    border-left: none;
+    /* outline: 1px solid green; */
+    
+    /* size */
+    width: 7.5em;
+    
+    /* size */
+    padding-inline: 1em;
+    padding-block: .5em;
 }
 
 

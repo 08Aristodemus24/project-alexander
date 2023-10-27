@@ -19,7 +19,7 @@
 
     const fetch_repos = async () => {
         try{
-            const url = 'http://127.0.0.1:5000/repos';
+            const url = 'http://127.0.0.1:5000/repos/100';
             const response = await fetch(url);
             
             if(response.status === 200){
@@ -32,6 +32,7 @@
                 // everytime new repositories are added we overwrite the old
                 // contents of the repos state
                 repos = [...data];
+                console.log(data);
 
                 repos = repos.filter((repo) => {
                     const repo_names = ['LaRJ-Corpus',

@@ -2,8 +2,8 @@
     import { afterUpdate, onMount } from "svelte";
     import Contributions from "./Contributions.svelte";
     import Timeline from "./Timeline.svelte";
-    import ContribsButton from "./ContribsButton.svelte";
-    import CvButton from "./CVButton.svelte";
+    import TimelineButtons from './TimelineButtons.svelte';
+    import ContributionsButtons from "./ContributionsButtons.svelte";
 
     // when component is mounted get experience content elements
     // bounding rectangle and client width and height to compute
@@ -123,12 +123,13 @@
                 <button class="exp-header-button" on:click={close_header} bind:this={exp_header_button}>View time sequence</button>
             </div>
         </div>
-        <Timeline/>
-        <Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/>
-        <ContribsButton/>
-        <CvButton/>
+        <div class="exp-carousel-container">
+            <Timeline/>
+            <Contributions contribs={contribs}/>
+        </div>
+        <div class="button-container">
+            <TimelineButtons/>
+            <ContributionsButtons min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs}/>
+        </div>
     </div>
 </section>
-
-<!-- <h3>View my github contributions</h3>
-<Contributions min_year={min_year} max_year={max_year} contribs={contribs} on:changeYear={fetch_contribs}/> -->

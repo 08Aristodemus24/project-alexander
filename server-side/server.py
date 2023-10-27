@@ -25,7 +25,9 @@ app = Flask(__name__)
 CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173"])
 
 @app.route('/repos', methods=['GET'])
-def get_repos():
+@app.route('/repos/<int:repo_limit>', methods=['GET'])
+@app.route('/repos/all', methods=['GET'])
+def get_repos(repo_limit=None):
     """
     flask app will run at http://127.0.0.1:5000 if /
     in url succeeds another string <some string> then
@@ -35,7 +37,9 @@ def get_repos():
     github access token
     """
 
-    url = 'https://api.github.com/users/08Aristodemus24/repos'
+    # if no limit is provided for number 
+    # of repos to fetch use default of 30
+    url = "https://api.github.com/users/08Aristodemus24/repos{}".format('' if repo_limit == None else f'?per_page={repo_limit}')
     accept = 'application/vnd.github+json'
     auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
     headers = {
@@ -127,6 +131,7 @@ def get_contribs(year=None):
         days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
         for day in days:
             content = day.text.split(' ')
+            print(content)
 
             # for edge cases if there is no content or content has no elements 
             # whatsoever just append null to contribs
@@ -136,22 +141,23 @@ def get_contribs(year=None):
                 # some important attributes of the td element are also data-date
                 # and data-level which both contain the date of push and the 
                 # strength level of number of pushes the user has done in that day
-                date = day['data-date']
+                date = day['data-date'].split('-')
                 level = day['data-level']
 
                 curr_row.append({
                     'pushes': 0 if content[0] == 'No' else int(content[0]),
-                    'day-name': content[3].replace(',', ''),
-                    'month': content[4],
-                    'day-num': content[5].replace(',', ''),
-                    'year': content[6],
+                    'month-name': content[3],
+                    'month-num': date[1],
+                    # 'day-name': content[3].replace(',', ''),
+                    'day-num': date[2],
+                    'year': date[0],
                     'level': level
                 })
 
                 # determine the minimum and maximum years in whole span
                 # of github contributions timeline
-                max_year = max_year if max_year > int(content[6]) else int(content[6])
-                min_year = min_year if min_year < int(content[6]) else int(content[6])
+                max_year = max_year if max_year > int(date[0]) else int(date[0])
+                min_year = min_year if min_year < int(date[0]) else int(date[0])
             else:
                 curr_row.append(None)
 
