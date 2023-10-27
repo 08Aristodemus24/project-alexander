@@ -1607,7 +1607,7 @@ p.carousel-item{
     position: absolute;
     inset: 0;
     margin-block: auto;
-    z-index: 1;
+    z-index: -1;
 
     /* containment */
     overflow-x: scroll;
