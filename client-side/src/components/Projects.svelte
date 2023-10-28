@@ -77,6 +77,13 @@
         if(is_opened === false){
             is_opened = true;
         }
+
+        // run for precisely 1 second after state update
+        setTimeout(() => {
+            // remove projects-header-container from dom precisely 1
+            // second after visibility and opacity transition is ran
+            proj_header_container.style.display = "none";
+        }, 1000);
     };
 
     // upon mounting of component send http request to flask
@@ -86,13 +93,7 @@
     });
 
     afterUpdate(async () => {
-        if(is_opened === true){
-            setTimeout(() => {
-                // remove projects-header-container from dom precisely 1
-                // second after visibility and opacity transition is ran
-                proj_header_container.style.display = "none";
-            }, 1000);
-        }
+        console.log("component updated");
     })
 </script>
 

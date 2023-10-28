@@ -1,6 +1,12 @@
 <script>
-    let curr_year;
+    // props that will be assigned the contributions fetched by the parent
     export let contribs;
+
+    // prop that will be assigned the curr_index
+    // of the carousel
+    export let curr_index;
+
+    let curr_year;
 
     // binds the contribs container to this variable
     let contribs_container;
@@ -23,7 +29,12 @@
     };
 </script>
 
-<div class="contribs-container" bind:this={contribs_container} on:wheel={scroll_x}>
+<div 
+    class="contribs-container" 
+    class:active={curr_index === 1} 
+    bind:this={contribs_container} 
+    on:wheel={scroll_x}
+>
     <table class="contribs-table">
         <tbody class="contribs-body">
             {#if contribs.length === 0}

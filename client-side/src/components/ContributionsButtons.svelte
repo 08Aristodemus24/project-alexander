@@ -2,9 +2,15 @@
     import { createEventDispatcher } from 'svelte';
     import {range} from './Range';
 
-    let curr_year;
+    // prop that will be assigned the curr_index
+    // of the carousel
+    export let curr_index;
+
     export let max_year;
     export let min_year;
+    const years = range(min_year, max_year + 1, 1);
+
+    let curr_year;
 
     let dispatch = createEventDispatcher();
 
@@ -16,9 +22,9 @@
         dispatch('changeYear', curr_year);
     };
 </script>
-<div class="contribs-buttons">
-    {#each range(min_year, max_year + 1, 1) as year}
-        <button class={`button-${year}`} data-year={year} on:click={handle_click}>{year}</button>
+<div class="contribs-buttons" class:active={curr_index === 1}>
+    {#each years as year, index}
+        <button class={`button-${year}`} data-year={year} on:click={handle_click} style:--btn-contrib-animation-order={index}>{year}</button>
     {/each}
-    <button class="button-all" data-year="all" on:click={handle_click}>all</button>    
+    <button class="button-all" data-year="all" on:click={handle_click} style:--btn-contrib-animation-order={years.length}>all</button>
 </div>

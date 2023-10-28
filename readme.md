@@ -363,7 +363,9 @@ And then adding 4 to offset of 1 would result in index 5 which is out of the ram
 2. <s>its better to use transition when same components have different values of the same property of their before state since animation only applies the same property of the same values for the components before state and after state e.g. `transform: translateX()` of each grid item before states must be different from each other</s>
 3. However we can still be able to stagger animations using scoped variables inside the declaration and definition of an animation
 4. an important thing to note when setting horizontal overflow to scroll is that if the parent container centers the overflowing content itself then the content will be hidden from the left and completely inaccessible. this is why its better to position the child overflowing to absolute instead of setting the parent to for instance display flex and then centering using justify content and align items, you can also use for the parent grid instead of flex box to prevent this 'eating content from the left' problem/behavior
-
+5. so using and updating the variable binded to the exp_button_container inside the afterUpdate () function is bad practice because it produces an infinite loop, since state of button container is updated through its style therefore afterUpdate is ran again and thus updates the state of the button container yet again. 
+https://stackoverflow.com/questions/63736010/why-is-using-setstate-inside-componentdidupdate-seen-as-a-bad-practice-in-react
+6. It is good practice to instead set the function callback not in the afterUpdate() but precisely n seconds after setting the state by assignment in the handler function using some kind of function that delays the function callback by how many seconds
 
 
 

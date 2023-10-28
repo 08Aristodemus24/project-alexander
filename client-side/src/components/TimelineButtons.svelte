@@ -1,14 +1,24 @@
 <script>
     import { range } from "./Range";
 
+    // a prop representing the parent component state
+    // that will be binded to the timeline-buttons offset height
     export let button_carousel_height;
+
+    // prop assigned to the callback that 
+    // will handle viewing github contributions
+    export let switch_slide;
+
+    // prop that will be assigned the curr_index
+    // of the carousel
+    export let curr_index;
 
     const num_rows = 3;
     const num_cols = 14;
 </script>
 
-<div class="timeline-buttons" bind:offsetHeight={button_carousel_height}>
-    <button class="contribs-button">
+<div class="timeline-buttons" class:active={curr_index === 0} bind:offsetHeight={button_carousel_height}>
+    <button class="contribs-button" data-carousel-button="contribs" on:click={switch_slide}>
         View Github contributions
         <table>
             {#each range(0, num_rows) as i}

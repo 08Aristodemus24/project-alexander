@@ -3,6 +3,8 @@ from flask_cors import CORS
 from flask_ipban import IpBan
 
 import requests
+from requests.exceptions import ConnectionError
+from urllib3.exceptions import MaxRetryError, NameResolutionError
 import json
 from bs4 import BeautifulSoup
 from datetime import datetime as dt
@@ -114,70 +116,79 @@ def get_contribs(year=None):
     url = 'https://github.com/users/08Aristodemus24/contributions' if year == None \
     else f'https://github.com/users/08Aristodemus24/contributions?from={year}-01-01&to={year}-12-31'
 
-    response = requests.get(url)
-    dom = BeautifulSoup(response.text)
+    try:
+        response = requests.get(url)
+        dom = BeautifulSoup(response.text)
 
-    # determine also min year and max year
-    min_year = dt.now().year
-    max_year = 0
-    contribs = []
-    
-    # select all table rows and in every row select
-    # only the days and not the label of the day
-    rows = dom.find('tbody').find_all('tr')
-    print(len(rows))
-    for row in rows:
-        curr_row = []
-        days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
-        for day in days:
-            content = day.text.split(' ')
-            print(content)
+        # determine also min year and max year
+        min_year = dt.now().year
+        max_year = 0
+        contribs = []
+        
+        # select all table rows and in every row select
+        # only the days and not the label of the day
+        rows = dom.find('tbody').find_all('tr')
+        print(len(rows))
+        for row in rows:
+            curr_row = []
+            days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
+            for day in days:
+                content = day.text.split(' ')
+                print(content)
 
-            # for edge cases if there is no content or content has no elements 
-            # whatsoever just append null to contribs
-            if len(content) > 1:
-                # print(content)
+                # for edge cases if there is no content or content has no elements 
+                # whatsoever just append null to contribs
+                if len(content) > 1:
+                    # print(content)
 
-                # some important attributes of the td element are also data-date
-                # and data-level which both contain the date of push and the 
-                # strength level of number of pushes the user has done in that day
-                date = day['data-date'].split('-')
-                level = day['data-level']
+                    # some important attributes of the td element are also data-date
+                    # and data-level which both contain the date of push and the 
+                    # strength level of number of pushes the user has done in that day
+                    date = day['data-date'].split('-')
+                    level = day['data-level']
 
-                curr_row.append({
-                    'pushes': 0 if content[0] == 'No' else int(content[0]),
-                    'month-name': content[3],
-                    'month-num': date[1],
-                    # 'day-name': content[3].replace(',', ''),
-                    'day-num': date[2],
-                    'year': date[0],
-                    'level': level
-                })
+                    curr_row.append({
+                        'pushes': 0 if content[0] == 'No' else int(content[0]),
+                        'month-name': content[3],
+                        'month-num': date[1],
+                        # 'day-name': content[3].replace(',', ''),
+                        'day-num': date[2],
+                        'year': date[0],
+                        'level': level
+                    })
 
-                # determine the minimum and maximum years in whole span
-                # of github contributions timeline
-                max_year = max_year if max_year > int(date[0]) else int(date[0])
-                min_year = min_year if min_year < int(date[0]) else int(date[0])
-            else:
-                curr_row.append(None)
+                    # determine the minimum and maximum years in whole span
+                    # of github contributions timeline
+                    max_year = max_year if max_year > int(date[0]) else int(date[0])
+                    min_year = min_year if min_year < int(date[0]) else int(date[0])
+                else:
+                    curr_row.append(None)
 
-        # once done appending one of the 7 rows representing each 
-        # day in a week append it to contribs
-        contribs.append(curr_row)
-    
-    # if year is None meaning get all contributions 
-    # all the way from first push to recent push
-    data = [{'contribs': contribs}]
-    if year == None:
-        data[0]['min_year'] = min_year
-        data[0]['max_year'] = max_year
+            # once done appending one of the 7 rows representing each 
+            # day in a week append it to contribs
+            contribs.append(curr_row)
+        
+        # if year is None meaning get all contributions 
+        # all the way from first push to recent push
+        data = [{'contribs': contribs}]
+        if year == None:
+            data[0]['min_year'] = min_year
+            data[0]['max_year'] = max_year
 
-    if response.status_code == 200:
-        print('retrieval successful')
-        return jsonify(data)
-    
-    return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
+        if response.status_code == 200:
+            print('retrieval successful')
+            return jsonify(data)
+        
+        return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
 
+    except NameResolutionError as e:
+        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+
+    except ConnectionError as e:
+        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+
+    except MaxRetryError as e:
+        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
 
 
 
