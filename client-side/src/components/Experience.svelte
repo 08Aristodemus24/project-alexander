@@ -18,6 +18,7 @@
         // close header only once
         if(is_opened === false){
             is_opened = true;
+            curr_index = 0;
         }
 
         // run for precisely 0.5s after is_opened is set to true
@@ -99,7 +100,7 @@
     let button_carousel_height = null;
 
     // initial state of the current index
-    let curr_index = 0;
+    let curr_index = -1;
 
     // binds the inner carousel to this variable
     // instead of using dom api
@@ -170,7 +171,7 @@
         </div>
         <div class="button-carousel-container" style:height={`${button_carousel_height}px`}>
             <TimelineButtons bind:button_carousel_height switch_slide={switch_slide} curr_index={curr_index}/>
-            <ContributionsButtons min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs} curr_index={curr_index}/>
+            <ContributionsButtons min_year={min_year} max_year={max_year} on:changeYear={fetch_contribs} switch_slide={switch_slide} curr_index={curr_index}/>
         </div>
     </div>
 </section>

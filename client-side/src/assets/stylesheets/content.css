@@ -1429,7 +1429,13 @@ p.carousel-item{
     margin-inline: 1rem;
 
     /* design */
+    visibility: hidden;
     /* outline: 1px solid black; */
+}
+
+.timeline-container.active{
+    z-index: 1;
+    visibility: visible;
 }
 
 .timeline-container::before{
@@ -1447,10 +1453,10 @@ p.carousel-item{
     grid-column: 1 / var(--end-col-index);
 
     /* transition */
-    transition: transform 5s cubic-bezier(0.5, 0, 0, 1);
+    transition: transform 3s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .exp-carousel-container .timeline-container::before{
+.timeline-container.active::before{
     transform: scaleX(100%);
 }
 
@@ -1480,7 +1486,7 @@ p.carousel-item{
         transform 2s calc(var(--time-animation-order) * 250ms) cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .exp-carousel-container .timeline-container .header{
+.timeline-container.active .header{
     opacity: 100%;
     visibility: visible;
     transform: translateX(0px);
@@ -1572,11 +1578,11 @@ p.carousel-item{
     
     /* transition */
     transition: 
-        opacity 3s calc(var(--time-animation-order) * 500ms) ease-in-out,
-        visibility 3s calc(var(--time-animation-order) * 500ms) ease-in-out;
+        opacity 1s calc(var(--time-animation-order) * 500ms) ease-in-out,
+        visibility 1s calc(var(--time-animation-order) * 500ms) ease-in-out;
 }
 
-.exp-header-container.closed ~ .exp-carousel-container .timeline-container .bar{
+.timeline-container.active .bar{
     opacity: 100%;
     visibility: visible;
 }
@@ -1603,7 +1609,7 @@ p.carousel-item{
         transform 2s calc(var(--time-animation-order) * 500ms) cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .exp-carousel-container .timeline-container .accolades{
+.timeline-container.active .accolades{
     opacity: 100%;
     visibility: visible;
     transform: translateX(0px);
@@ -1639,13 +1645,13 @@ p.carousel-item{
 /* CONTRIBUTIONS */
 .contribs-container{
     /* design */
-    outline: 1px solid palevioletred;
+    visibility: hidden;
+    /* outline: 1px solid palevioletred; */
 
     /* position */
     position: absolute;
     inset: 0;
     margin-block: auto;
-    z-index: -1;
 
     /* containment */
     overflow-x: scroll;
@@ -1655,6 +1661,11 @@ p.carousel-item{
 
     /* spacing */
     margin-inline: 1rem;
+}
+
+.contribs-container.active{
+    z-index: 1;
+    visibility: visible;
 }
 
 .contribs-container::-webkit-scrollbar{
@@ -1739,7 +1750,7 @@ p.carousel-item{
 
 .button-carousel-container{
     /* design */
-    outline: 1px solid greenyellow;
+    /* outline: 1px solid greenyellow; */
 
     /* position */
     position: relative;
@@ -1763,7 +1774,13 @@ p.carousel-item{
     gap: 2rem;
 
     /* design */
+    visibility: hidden;
     /* outline: 1px solid blue; */
+}
+
+.timeline-buttons.active{
+    visibility: visible;
+    z-index: 1;
 }
 
 .contribs-button{
@@ -1799,7 +1816,7 @@ p.carousel-item{
         transform 2s 0.5s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .button-carousel-container .contribs-button{
+.timeline-buttons.active .contribs-button{
     opacity: 100%;
     visibility: visible;
     transform: translateX(0px);
@@ -1900,7 +1917,7 @@ p.carousel-item{
         transform 2s 0.25s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.exp-header-container.closed ~ .button-carousel-container .cv-button{
+.timeline-buttons.active .cv-button{
     opacity: 100%;
     visibility: visible;
     transform: translateX(0px);
@@ -2014,10 +2031,17 @@ p.carousel-item{
     margin: auto;
     z-index: -1;
 
+    /* size */
     height: max-content;
 
     /* design */
+    visibility: hidden;
     /* outline: 1px solid blue; */
+}
+
+.contribs-buttons.active{
+    visibility: visible;
+    z-index: 1;
 }
 
 .contribs-buttons button{
@@ -2043,8 +2067,19 @@ p.carousel-item{
 
     /* transition */
     transition: 
+        background-color 0.25s ease-in-out,
+        color 0.25s ease-in-out,
         opacity 1s calc(var(--btn-contrib-animation-order) * 50ms) ease-in-out,
         transform 1s calc(var(--btn-contrib-animation-order) * 50ms) ease-in-out;
+}
+
+.contribs-buttons button:first-child{
+    border-left: 1px solid black;
+}
+
+.contribs-buttons button:hover{
+    background-color: black;
+    color: white;
 }
 
 .contribs-buttons.active button{

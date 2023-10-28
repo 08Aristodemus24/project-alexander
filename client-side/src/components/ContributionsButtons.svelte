@@ -6,11 +6,17 @@
     // of the carousel
     export let curr_index;
 
+    // props are states of the parent experience component
     export let max_year;
     export let min_year;
-    const years = range(min_year, max_year + 1, 1);
+
+    // years depends on the state of the parents max_year 
+    // and min_year so specify dollar sign
+    $:years = range(min_year, max_year + 1, 1);
 
     let curr_year;
+
+    export let switch_slide;
 
     let dispatch = createEventDispatcher();
 
@@ -23,8 +29,9 @@
     };
 </script>
 <div class="contribs-buttons" class:active={curr_index === 1}>
+    <button class="button-back" on:click={switch_slide} data-carousel-button="timeline" style:--btn-contrib-animation-order={0}>back</button>
     {#each years as year, index}
-        <button class={`button-${year}`} data-year={year} on:click={handle_click} style:--btn-contrib-animation-order={index}>{year}</button>
+        <button class={`button-${year}`} data-year={year} on:click={handle_click} style:--btn-contrib-animation-order={index + 1}>{year}</button>
     {/each}
-    <button class="button-all" data-year="all" on:click={handle_click} style:--btn-contrib-animation-order={years.length}>all</button>
+    <button class="button-all" data-year="all" on:click={handle_click} style:--btn-contrib-animation-order={years.length + 1}>all</button>
 </div>
