@@ -16,7 +16,6 @@
     const scroll_x = (event) => {
         // prevents typical vertical scrolling
         // when on the element
-        event.preventDefault();
         contribs_container.scrollLeft += event.deltaY;
 
         if(event.deltaY >= -15 && event.deltaY <= 15){
@@ -33,7 +32,7 @@
     class="contribs-container" 
     class:active={curr_index === 1} 
     bind:this={contribs_container} 
-    on:wheel={scroll_x}
+    on:wheel|preventDefault={scroll_x}
 >
     <table class="contribs-table">
         <tbody class="contribs-body">

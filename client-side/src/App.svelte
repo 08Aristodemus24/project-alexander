@@ -13,6 +13,7 @@
   import './assets/stylesheets/content.css';
   import './assets/stylesheets/navbar-862-and-up.css';
   import './assets/stylesheets/navbar-862-down.css';
+    import Footer from "./components/Footer.svelte";
 </script>
 
 <Navbar/>
@@ -26,3 +27,4 @@
   </Work>
   <Contact slot="contact-section"/>
 </Content>
+<Footer/>

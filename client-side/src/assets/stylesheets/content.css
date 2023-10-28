@@ -124,13 +124,6 @@ body{
     text-align: center;
     color: white;
     /* outline: 1px solid lightgreen; */
-
-    /* animation */
-    animation-name: fade-in;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
-    animation-delay: 0s;
 }
 
 .greetings-container p{
@@ -144,13 +137,6 @@ body{
     font-size: clamp(14px, 2.1875vw, 22.4px);
     color: white;
     /* outline: 1px solid lightgreen; */
-
-    /* animation */
-    animation-name: fade-in;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
-    animation-delay: 0s;
 }
 
 .socials-container{
@@ -190,44 +176,10 @@ body{
     animation: fade-in both 1s cubic-bezier(0.5, 0, 0, 1);
 }
 
-svg.github-icon{
-    /* animation */
-    animation-delay: 0s;
-}
-
-svg.kaggle-icon{
-    /* animation */
-    animation-delay: 0.375s;
-}
-
-svg.stackoverflow-icon{
-    /* animation */
-    animation-delay: 0.75s;
-}
-
-svg.facebook-icon{
-    /* animation */
-    animation-delay: 1.125s;
-}
-
-svg.linkedin-icon{
-    /* animation */
-    animation-delay: 1.5s;
-}
-
 .socials-container svg:hover{
     fill: rgb(243, 80, 15);
 }
 
-@keyframes fade-in{
-    from{
-        opacity: 0%;
-    }
-
-    to{
-        opacity: 100%;
-    }
-}
 
 
 /* ABOUT SECTION */
@@ -335,8 +287,6 @@ svg.linkedin-icon{
 #work-group-section{
     /* outline: 3px solid rgb(72, 52, 255); */
 }
-
-
 
 #projects-section{
     /* design */
@@ -1276,7 +1226,7 @@ p.carousel-item{
     --contrib-level-1: #d0d0d0;
 
     /* design */
-    outline: 2px solid purple;
+    /* outline: 2px solid purple; */
 }
 
 .exp-content{
@@ -1291,7 +1241,7 @@ p.carousel-item{
     padding-block: 1.5rem;
 
     /* design */
-    outline: 2px solid greenyellow;
+    /* outline: 2px solid greenyellow; */
 }
 
 .exp-header-container{
@@ -1829,7 +1779,7 @@ p.carousel-item{
 
     /* transition */
     transition: 
-        color 0.25s 0.25s ease-in-out,
+        color 0.25s ease-in-out,
         visibility 1s 0.25s ease-in-out,
         opacity 1s 0.25s ease-in-out,
         transform 1s 0.25s cubic-bezier(0.5, 0, 0, 1);
@@ -1930,7 +1880,7 @@ p.carousel-item{
 
     /* transition */
     transition: 
-        color 1s 0.375s ease-in-out,
+        color 0.25s ease-in-out,
         visibility 1s 0.375s ease-in-out,
         opacity 1s 0.375s ease-in-out,
         transform 1s 0.375s cubic-bezier(0.5, 0, 0, 1);
@@ -2043,6 +1993,7 @@ p.carousel-item{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1px;
 
     /* position */
     position: absolute;
@@ -2082,7 +2033,7 @@ p.carousel-item{
     color: black;
     border-block: none;
     border-right: 1px solid black;
-    border-left: none;
+    border-left: 1px solid black;
     opacity: 0%;
     transform: translateX(500px);
     /* outline: 1px solid green; */
@@ -2100,10 +2051,6 @@ p.carousel-item{
         color 0.25s ease-in-out,
         opacity 1s calc(var(--btn-contrib-animation-order) * 50ms) ease-in-out,
         transform 1s calc(var(--btn-contrib-animation-order) * 50ms) ease-in-out;
-}
-
-.contribs-buttons button:first-child{
-    border-left: 1px solid black;
 }
 
 .contribs-buttons button:hover{
@@ -2208,7 +2155,7 @@ p.carousel-item{
     /* design */
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
-    font-size: 12px;
+    font-size: clamp(12px, 1vw, 1rem);
     color: white;
     /* outline: 1px solid brown; */
 
@@ -2229,6 +2176,7 @@ p.carousel-item{
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 1rem);
     color: white;
     border-top: none;
     border-right: none;
@@ -2253,7 +2201,7 @@ p.carousel-item{
     /* design */
     background-color: transparent;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 12px;
+    font-size: clamp(12px, 1vw, 1rem);
     color: white;
     border: 1px solid white;
     
@@ -2318,4 +2266,80 @@ p.carousel-item{
     .exp-grid-item:nth-child(n){
         grid-column: 1 / 5;
     }
+}
+
+
+
+/* FOOTER */
+.footer-container{
+    /* size */
+    width: 100%;
+
+    /* design */
+    /* outline: 1px solid gainsboro; */
+}
+
+.footer{
+    /* size */
+    height: clamp(3.5rem, 6.5vw, 6.5rem);
+
+    /* design */
+    background-color: black;
+    /* border: 3px solid green; */
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+
+    /* spacing */
+    padding-left: 2rem;
+}
+
+.footer-credits{
+    /* design */
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    /* outline: 1px solid steelblue; */
+}
+
+.footer-credits a{
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-end{
+    /* design */
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    /* outline: 1px solid steelblue; */
+}
+
+.footer-brand{
+    /* design */
+    color: white;
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    text-decoration: none;
+}
+
+.footer-text{
+    
+}
+
+.footer-year{
+    /* design */
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.125em;
+    font-size: 13px;
+    font-weight: 300;
 }

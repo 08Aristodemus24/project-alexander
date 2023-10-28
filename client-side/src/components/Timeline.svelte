@@ -16,11 +16,11 @@
         {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
         {year: '2023', title: 'Front End Web Developer', organization: 'LMC Engineering Front', accolades: ["Impemented and deployed client-side architecture of our engineering consultancy business firm"]},
         {title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Mentored and guided AI/ML department of org in developing roadmap used by junior AI/ML cadets"]},
-        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
     ];
 
     // determine the number of grid columns based 
@@ -33,7 +33,6 @@
     const scroll_x = (event) => {
         // prevents typical vertical scrolling
         // when on the element
-        event.preventDefault();
         timeline_container.scrollLeft += event.deltaY;
 
         if(event.deltaY >= -15 && event.deltaY <= 15){
@@ -50,7 +49,7 @@
     class="timeline-container"
     class:active={curr_index === 0}
     style:--end-col-index={end_col_index}
-    on:wheel={scroll_x} 
+    on:wheel|preventDefault={scroll_x} 
     bind:this={timeline_container} 
     bind:offsetHeight={exp_carousel_height}
 >
