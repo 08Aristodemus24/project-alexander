@@ -1419,8 +1419,6 @@ p.carousel-item{
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-inline: 1rem;
-    
-    /* spacing */
 
     /* position */
     position: absolute;
@@ -1430,11 +1428,18 @@ p.carousel-item{
 
     /* design */
     visibility: hidden;
+    opacity: 0%;
     /* outline: 1px solid black; */
+
+    /* transition */
+    transition: 
+        visibility 0.25s ease-in-out,
+        opacity 0.25s ease-in-out;
 }
 
 .timeline-container.active{
     z-index: 1;
+    opacity: 100%;
     visibility: visible;
 }
 
@@ -1447,7 +1452,7 @@ p.carousel-item{
     transform: scaleX(0%);
 
     /* size */
-    inline-size: 110%;
+    inline-size: 100%;
     block-size: 1px;
     grid-row: 2 / 3;
     grid-column: 1 / var(--end-col-index);
@@ -1477,7 +1482,7 @@ p.carousel-item{
     background-color: transparent;
     opacity: 0%;
     visibility: hidden;
-    transform: translateX(-2000px);
+    transform: translateX(-100px);
 
     /* transition */
     transition: 
@@ -1595,7 +1600,7 @@ p.carousel-item{
     outline: 1px solid black;
     list-style: square;
     opacity: 0%;
-    transform: translateX(-2000px);
+    transform: translateX(-100px);
     visibility: hidden;
 
     /* size */
@@ -1646,6 +1651,7 @@ p.carousel-item{
 .contribs-container{
     /* design */
     visibility: hidden;
+    opacity: 0%;
     /* outline: 1px solid palevioletred; */
 
     /* position */
@@ -1661,10 +1667,16 @@ p.carousel-item{
 
     /* spacing */
     margin-inline: 1rem;
+
+    /* transition */
+    transition: 
+        opacity 0.25s ease-in-out,
+        visibility 0.25s ease-in-out;
 }
 
 .contribs-container.active{
     z-index: 1;
+    opacity: 100%;
     visibility: visible;
 }
 
@@ -1775,11 +1787,18 @@ p.carousel-item{
 
     /* design */
     visibility: hidden;
+    opacity: 0%;
     /* outline: 1px solid blue; */
+
+    /* transition */
+    transition: 
+        opacity 1s 0.25s ease-in-out,
+        visibility 1s 0.25s ease-in-out;
 }
 
 .timeline-buttons.active{
     visibility: visible;
+    opacity: 100%;
     z-index: 1;
 }
 
@@ -1810,10 +1829,10 @@ p.carousel-item{
 
     /* transition */
     transition: 
-        color 0.25s ease-in-out,
-        visibility 2s 0.75s ease-in-out,
-        opacity 2s 0.75s ease-in-out,
-        transform 2s 0.5s cubic-bezier(0.5, 0, 0, 1);
+        color 0.25s 0.25s ease-in-out,
+        visibility 1s 0.25s ease-in-out,
+        opacity 1s 0.25s ease-in-out,
+        transform 1s 0.25s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .timeline-buttons.active .contribs-button{
@@ -1911,10 +1930,10 @@ p.carousel-item{
 
     /* transition */
     transition: 
-        color 0.25s ease-in-out,
-        visibility 2s 0.5s ease-in-out,
-        opacity 2s 0.5s ease-in-out,
-        transform 2s 0.25s cubic-bezier(0.5, 0, 0, 1);
+        color 1s 0.375s ease-in-out,
+        visibility 1s 0.375s ease-in-out,
+        opacity 1s 0.375s ease-in-out,
+        transform 1s 0.375s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .timeline-buttons.active .cv-button{
@@ -2031,15 +2050,25 @@ p.carousel-item{
     margin: auto;
     z-index: -1;
 
+    /* containment */
+    overflow-x: hidden;
+
     /* size */
     height: max-content;
 
     /* design */
+    opacity: 0%;
     visibility: hidden;
     /* outline: 1px solid blue; */
+
+    /* transition */
+    transition: 
+        opacity 0.5s ease-in-out,
+        visibility 0.5s ease-in-out;
 }
 
 .contribs-buttons.active{
+    opacity: 100%;
     visibility: visible;
     z-index: 1;
 }

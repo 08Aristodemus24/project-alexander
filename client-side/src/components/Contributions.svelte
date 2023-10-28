@@ -17,7 +17,6 @@
         // prevents typical vertical scrolling
         // when on the element
         event.preventDefault();
-        console.log(1);
         contribs_container.scrollLeft += event.deltaY;
 
         if(event.deltaY >= -15 && event.deltaY <= 15){
