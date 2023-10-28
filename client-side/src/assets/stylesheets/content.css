@@ -2276,26 +2276,53 @@ p.carousel-item{
     width: 100%;
 
     /* design */
+    background-color: black;
+    
     /* outline: 1px solid gainsboro; */
 }
 
-.footer{
+.footer-content{
+    /* display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* spacing */
+    column-gap: 3rem;
+
+}
+
+.footer-content::before, .footer-content::after{
+    /* design */
+    content: '';
+    background-color: white;
+
     /* size */
-    height: clamp(3.5rem, 6.5vw, 6.5rem);
+    /* flex-basis: 30%;
+    flex-grow: 1;
+    height: 1px; */
+
+    /* display */
+    display: block;
+}
+
+.wrapper{
+    /* size */
+    height: clamp(4rem, 6.5vw, 6.5rem);
+    flex-grow: 1;
 
     /* design */
-    background-color: black;
     /* border: 3px solid green; */
+
+    /* spacing */
+    margin-block: 1rem  ;
 
     /* display */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     row-gap: 0.5rem;
-
-    /* spacing */
-    padding-left: 2rem;
 }
 
 .footer-credits{
@@ -2306,6 +2333,9 @@ p.carousel-item{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     /* outline: 1px solid steelblue; */
+
+    /* size */
+    width: fit-content;
 }
 
 .footer-credits a{
@@ -2321,25 +2351,16 @@ p.carousel-item{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     /* outline: 1px solid steelblue; */
-}
 
-.footer-brand{
-    /* design */
-    color: white;
-    font-size: clamp(24px, 2vw, 32px);
-    font-weight: 700;
-    font-family: 'Cormorant Garamond', serif;
-    text-decoration: none;
-}
-
-.footer-text{
-
+    /* size */
+    width: max-content;
 }
 
 .footer-year{
     /* design */
     font-family: 'Oswald', sans-serif;
-    letter-spacing: 0.125em;
+    /* letter-spacing: 0.125em; */
     font-size: 13px;
     font-weight: 300;
 }
+
