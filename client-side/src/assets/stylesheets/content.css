@@ -2291,7 +2291,7 @@ p.carousel-item{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     row-gap: 0.5rem;
 
     /* spacing */
@@ -2333,7 +2333,7 @@ p.carousel-item{
 }
 
 .footer-text{
-    
+
 }
 
 .footer-year{
