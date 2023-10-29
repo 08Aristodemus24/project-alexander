@@ -2292,20 +2292,6 @@ p.carousel-item{
 
 }
 
-.footer-content::before, .footer-content::after{
-    /* design */
-    content: '';
-    background-color: white;
-
-    /* size */
-    /* flex-basis: 30%;
-    flex-grow: 1;
-    height: 1px; */
-
-    /* display */
-    display: block;
-}
-
 .wrapper{
     /* size */
     height: clamp(4rem, 6.5vw, 6.5rem);
