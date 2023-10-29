@@ -34,8 +34,16 @@ body{
 
     /* position */
     position: fixed;
-    top: 0px;
+    top: -10%;
     z-index: 10;
+
+    /* design */
+    /* outline: 1px solid red; */
+}
+
+.navbar-container.idle{
+    /* position */
+    top: 0;
 }
 
 .navbar{

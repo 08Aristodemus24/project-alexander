@@ -1,6 +1,7 @@
 <script>
   let is_opened = false;
-  const body = document.body;
+  let body;
+  let navbar_container;
   
   // if div is closed then its class is .closed if opened then .opened
   const toggle_menu = (event) => {
@@ -22,15 +23,24 @@
       is_opened = !is_opened;
       body.style.overflow = "auto";
     }
-  }
+  };
 
   const change_nav_color = () => {
 
-  }
+  };
+
+  // listen to idleness of mouse and hide navbar after n seconds
+  const hide_nav = (event) => {
+    // stops hiding navbar and sets interval after n seconds and
+    // hides navbar again
+    navbar_container
+  };
 </script>
 
+<svelte:body bind:this={body}/>
+<svelte:window on:scroll={hide_nav}/>
 
-<header class="navbar-container">
+<header class="navbar-container" bind:this={navbar_container}>
   <nav class="navbar" class:opened={is_opened === true}>
     <div class="nav-brand-container">
       <a class="navbar-brand" href="/" on:click|preventDefault={() => {

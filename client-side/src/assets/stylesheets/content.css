@@ -2288,7 +2288,6 @@ p.carousel-item{
     align-items: center;
 
     /* spacing */
-    column-gap: 3rem;
 
 }
 
@@ -2321,6 +2320,7 @@ p.carousel-item{
     /* outline: 1px solid steelblue; */
 
     /* size */
+    padding-inline: 1em;
     width: fit-content;
 }
 
@@ -2341,12 +2341,3 @@ p.carousel-item{
     /* size */
     width: max-content;
 }
-
-.footer-year{
-    /* design */
-    font-family: 'Oswald', sans-serif;
-    /* letter-spacing: 0.125em; */
-    font-size: 13px;
-    font-weight: 300;
-}
-
