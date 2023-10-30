@@ -35,7 +35,7 @@
 
     /* position */
     position: fixed;
-    top: -10%;
+    top: -9%;
     z-index: 10;
 
     /* transition */
@@ -64,7 +64,7 @@
 
     /* design */
     /* outline: 1px solid white; */
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   /* override min-height and min-width height and width values of .nav-brand-container 
@@ -93,7 +93,7 @@
 
     /* design */
     /* outline: 2px solid red; */
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   .nav-brand-container .navbar-brand{

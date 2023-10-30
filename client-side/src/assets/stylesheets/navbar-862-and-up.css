@@ -34,11 +34,12 @@ body{
 
     /* position */
     position: fixed;
-    top: -10%;
+    top: -9%;
     z-index: 10;
 
     /* transition */
     transition: top 0.25s cubic-bezier(0.5, 0, 0, 1);
+    mix-blend-mode: difference;
 }
 
 .navbar-container.shown{
@@ -64,7 +65,7 @@ body{
     /* design */
     /* border: 1px solid green; */
     /* background-color: black; */
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 .nav-brand-container{
@@ -91,6 +92,7 @@ body{
     font-weight: 700;
     font-family: 'Cormorant Garamond', serif;
     text-decoration: none;
+    /* mix-blend-mode: difference; */
 }
 
 .nav-brand-container .button-container{

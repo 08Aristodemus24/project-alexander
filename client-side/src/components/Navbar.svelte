@@ -1,5 +1,9 @@
 <script>
-  let is_opened = false, scroll_y = 0, idle = true;
+  import { afterUpdate } from "svelte";
+
+  let is_opened = false, idle = false, timeout = null;
+  let scroll_y = 0;
+  $:rounded_scroll_y = Math.round(scroll_y);
   const body = document.body;
   
   // if div is closed then its class is .closed if opened then .opened
@@ -7,6 +11,7 @@
     if(is_opened === false){
       is_opened = !is_opened;
       body.style.overflow = "hidden";
+
     }else{
       is_opened = !is_opened;
       body.style.overflow = "auto";
@@ -36,22 +41,31 @@
     so if idle state is now set to false meaning navbar is to 
     be shown then class shown is added to the navbar container 
     */
-    console.log(scroll_y);
-    if(scroll_y > 0){
-      idle = false;
+    const rounded_scroll_y = Math.round(scroll_y);
+    console.log(rounded_scroll_y);
+    idle = false;
+
+    // if strictly modal is closed and scrollY is scrolled and not
+    // at the top only count down to subsequently hide navbar
+    if(rounded_scroll_y > 0 && is_opened === false){
 
       // after precisely 5 seconds set navbar container to idle
       // again
-      setTimeout(() => {
+      timeout = setTimeout(() => {
+        console.log("timeout set");
         idle = true;
-      }, 5000);
+      }, 3000);
     }
   };
+
+  afterUpdate(() => {
+    console.log();
+  });
 </script>
 
-<svelte:window on:scroll={show_nav} bind:scrollY={scroll_y}/>
+<!-- <svelte:window on:scroll={show_nav} bind:scrollY={scroll_y}/> -->
 
-<header class="navbar-container" class:shown={idle === false}>
+<header class="navbar-container" class:shown={idle === false || rounded_scroll_y <= 0}>
   <nav class="navbar" class:opened={is_opened === true}>
     <div class="nav-brand-container">
       <a class="navbar-brand" href="/" on:click|preventDefault={() => {

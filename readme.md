@@ -169,10 +169,10 @@ main {
 4. <s>yes nav-menu-container is now fixed but problem of getting it behind .navbar still occurs because .navbar is relative - solution could be to just set fixed nav-menu-container behind nav-brand-container. Resolved</s>
 5. <s>since opening and closing of navbar functionality is finished is codepen implement it in svelte since codepen uses pure javascript like the DOM api to interact with the modal</s>
 6. <s>when setting navbar container to sticky yes it works however button does not work anymore when scrolling on other. Fixed by just adding z-index since we know position of element is relative when inactive and fixed when scrolling so we wanted it to be on top of all static elements in the page but still contained within the body</s>
-7. another problem about navbar is that when position is indeed sticky we don't want it to block the sections when we go to a section, we want it to do the ff:
-a. have black background when position is in white sections like projects and experience
-b. have maybe visibility and opacity of hidden and 0 if it reaches a threshold of idleness on parts of the page other than its original position
-c. when mouse or when user swipes down the view port show the navbar
+7. <s>another problem about navbar is that when position is indeed sticky we don't want it to block the sections when we go to a section, we want it to do the ff:</s>
+<s>a. have black background when position is in white sections like projects and experience</s>
+<s>b. have maybe visibility and opacity of hidden and 0 if it reaches a threshold of idleness on parts of the page other than its original position</s>
+<s>c. when mouse or when user swipes down the view port show the navbar</s>
 
 **Insights:**
 * A stacking context is a group of elements that have a common parent and move up and down the z axis together.
