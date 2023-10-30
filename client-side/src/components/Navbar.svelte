@@ -36,9 +36,9 @@
     so if idle state is now set to false meaning navbar is to 
     be shown then class shown is added to the navbar container 
     */
+    console.log(scroll_y);
     if(scroll_y > 0){
       idle = false;
-      console.log(scroll_y);
 
       // after precisely 5 seconds set navbar container to idle
       // again
