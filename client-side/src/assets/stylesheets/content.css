@@ -2312,7 +2312,7 @@ p.carousel-item{
     /* design */
     color: white;
     text-align: center;
-    font-size: 13px;
+    font-size: clamp(10px, 1vw, 1rem);
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     /* outline: 1px solid steelblue; */
@@ -2331,7 +2331,7 @@ p.carousel-item{
     /* design */
     color: white;
     text-align: center;
-    font-size: 13px;
+    font-size: clamp(10px, 1vw, 1rem);
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     /* outline: 1px solid steelblue; */
