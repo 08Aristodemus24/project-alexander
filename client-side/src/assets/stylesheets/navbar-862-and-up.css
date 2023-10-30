@@ -37,9 +37,16 @@ body{
     top: -9%;
     z-index: 10;
 
+    /* design */
+    mix-blend-mode: difference;
+
     /* transition */
     transition: top 0.25s cubic-bezier(0.5, 0, 0, 1);
-    mix-blend-mode: difference;
+    
+}
+
+.navbar-container.opened{
+    mix-blend-mode: initial;
 }
 
 .navbar-container.shown{
@@ -63,9 +70,7 @@ body{
     position: relative;
 
     /* design */
-    /* border: 1px solid green; */
-    /* background-color: black; */
-    /* background-color: transparent; */
+    /* outline: 1px solid white; */
 }
 
 .nav-brand-container{
@@ -92,7 +97,6 @@ body{
     font-weight: 700;
     font-family: 'Cormorant Garamond', serif;
     text-decoration: none;
-    /* mix-blend-mode: difference; */
 }
 
 .nav-brand-container .button-container{

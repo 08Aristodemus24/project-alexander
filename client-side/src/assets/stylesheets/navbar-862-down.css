@@ -38,6 +38,9 @@
     top: -9%;
     z-index: 10;
 
+    /* design */
+    mix-blend-mode: difference;
+
     /* transition */
     transition: top 0.25s cubic-bezier(0.5, 0, 0, 1);
   }
@@ -64,7 +67,6 @@
 
     /* design */
     /* outline: 1px solid white; */
-    /* background-color: transparent; */
   }
 
   /* override min-height and min-width height and width values of .nav-brand-container 
@@ -154,7 +156,7 @@
     justify-content: center;
 
     /* size */
-    width: 100vw;
+    width: 100%;
 
     /* animation */
     transition-property: opacity, visibility;
@@ -339,11 +341,15 @@
     transform: translate(-105%, -105%);
   }
 
-  .navbar.opened .nav-brand-container .navbar-brand{
+  .navbar-container.opened{
+    mix-blend-mode: normal;
+  }
+
+  .navbar-container.opened .nav-brand-container .navbar-brand{
     opacity: 0%;
   }
 
-  .navbar.opened .nav-menu-container{
+  .navbar-container.opened .nav-menu-container{
     visibility: visible;
     opacity: 100%;
   }

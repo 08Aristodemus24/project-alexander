@@ -65,8 +65,8 @@
 
 <!-- <svelte:window on:scroll={show_nav} bind:scrollY={scroll_y}/> -->
 
-<header class="navbar-container" class:shown={idle === false || rounded_scroll_y <= 0}>
-  <nav class="navbar" class:opened={is_opened === true}>
+<header class="navbar-container" class:shown={idle === false || rounded_scroll_y <= 0} class:opened={is_opened === true}>
+  <nav class="navbar">
     <div class="nav-brand-container">
       <a class="navbar-brand" href="/" on:click|preventDefault={() => {
         document.body.scrollIntoView();
