@@ -34,14 +34,14 @@ body{
 
     /* position */
     position: fixed;
-    top: -10%;
+    top: 0;
     z-index: 10;
 
-    /* design */
-    /* outline: 1px solid red; */
+    /* transition */
+    transition: top 0.25s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.navbar-container.idle{
+.navbar-container.shown{
     /* position */
     top: 0;
 }
@@ -143,6 +143,7 @@ body{
     
     /* size */
     position: absolute;
+    z-index: -1;
     inset: 0;
     margin: auto;
     width: 100%;

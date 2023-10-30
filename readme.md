@@ -164,7 +164,7 @@ main {
 **Problems and solutions:**
 1. <s>Maybe I can fix the nav-menu-container being in a fixed position using z-index - resolved</s>
 2. <s>prevent scrolling when navbar modal is open - resolved</s>
-3. <s>for some reason adding sections causes x or horizontal overflow thus having a sidebar appear. However in running svelte app overflow does occur however html element seems to be the same width as navbar so maybe the screen is what is the problem - https://stackoverflow.com/questions/68363478/why-horizontal-scrollbar-appears#:~:text=You%20horizontal%20scrollbar%20is%20caused,with%20a%20vertical%20one)%3B - resolved</s>
+3. <s>for some reason adding sections causes x or horizontal overflow thus having a sidebar appear. However in running svelte app overflow does occur however html element seems to be the same width as navbar so maybe the screen is what is the problem - https://stackoverflow.com/questions/68363478/why-horizontal-scrollbar-appears#:~:text=You%20horizontal%20scrollbar%20is%20caused,with%20a%20vertical%20one)%3B - resolved. Problem was I as transalting an element out of the viewport</s>
 
 4. <s>yes nav-menu-container is now fixed but problem of getting it behind .navbar still occurs because .navbar is relative - solution could be to just set fixed nav-menu-container behind nav-brand-container. Resolved</s>
 5. <s>since opening and closing of navbar functionality is finished is codepen implement it in svelte since codepen uses pure javascript like the DOM api to interact with the modal</s>

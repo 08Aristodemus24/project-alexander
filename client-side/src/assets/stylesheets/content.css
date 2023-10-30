@@ -1366,7 +1366,6 @@ p.carousel-item{
 
     /* containment */
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-inline: 1rem;
 
@@ -1612,7 +1611,6 @@ p.carousel-item{
     /* containment */
     overflow-x: scroll;
     scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     scroll-padding-inline: 1rem;
 
     /* spacing */
