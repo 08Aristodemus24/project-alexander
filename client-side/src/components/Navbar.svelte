@@ -26,7 +26,15 @@
     if(is_opened === true){
       is_opened = !is_opened;
       body.style.overflow = "auto";
+
+      const section_id = event.target.classList[1];
+      const section = document.querySelector(`#${section_id}`);
+      section.scrollIntoView({
+        block: 'start',
+      });
     }
+
+    
   }
 
   const show_nav = () => {
@@ -89,9 +97,9 @@
     
     <div class="nav-menu-container">
       <div class="nav-menu">
-        <a class="nav-item" href="#about-section" aria-current="page" on:click={close_and_go}>ABOUT</a>
-        <a class="nav-item" href="#work-group-section" on:click={close_and_go}>WORK</a>
-        <a class="nav-item" href="#contact-section" on:click={close_and_go}>CONTACT</a>
+        <a class="nav-item about-section" aria-current="page" on:click={close_and_go}>ABOUT</a>
+        <a class="nav-item work-group-section" on:click={close_and_go}>WORK</a>
+        <a class="nav-item contact-section" on:click={close_and_go}>CONTACT</a>
       </div>
     </div>
   </nav>

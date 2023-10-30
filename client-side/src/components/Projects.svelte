@@ -56,6 +56,8 @@
                     included[index]['name'] = repo['name'];
                     included[index]['description'] = repo['description'];
                     included[index]['html_url'] = repo['html_url'];
+                    included[index]['stargazers_count'] = repo['stargazers_count'];
+                    included[index]['forks_count'] = repo['forks_count'];
 
                     return included[index];
                 });

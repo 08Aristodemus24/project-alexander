@@ -176,8 +176,24 @@ body{
     animation: fade-in both 1s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.socials-container svg:hover{
-    fill: rgb(243, 80, 15);
+.github-icon:hover{
+    fill: #1c2128;
+}
+
+.medium-icon:hover{
+    fill: black;
+}
+
+.stackoverflow-icon:hover{
+    fill: #f7a664;
+}
+
+.facebook-icon:hover{
+    fill: #0866ff;
+}
+
+.linkedin-icon:hover{
+    fill: #0077b5;
 }
 
 
@@ -715,11 +731,74 @@ body{
     height: clamp(14px, 2.1875vw, 22.4px);
 }
 
-.github-fork{
+.project-stats{
     /* position */
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+
+    /* size */
+    width: 50%;
+
+    /* display */
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    /* design */
+    /* outline: 1px solid greenyellow; */
+}
+
+.project-stats::before, .project-stats::after{
+    /* design */
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-weight: 300;
+    /* outline: 1px solid white; */
+    opacity: 0%;
+
+    /* size */
+    width: 1rem;
+    height: 1rem;
+    
+    /* display */
+    display: block;
+}
+
+.project-stats::before{
+    /* design */
+    content: attr(data-fork-count);
+
+    /* display */
+    order: 2;
+
+    /* transition */
+    transition-property: opacity;
+    transition-duration: 0.65s;
+    transition-delay: 1s;
+    transition-timing-function: linear;
+}
+
+.project-stats::after{
+    /* design */
+    content: attr(data-star-count);
+
+    /* display */
+    order: 4;
+
+    /* transition */
+    transition-property: opacity;
+    transition-duration: 0.65s;
+    transition-delay: 1.25s;
+    transition-timing-function: linear;
+}
+
+.github-fork{
+    /* display */
+    display: block;
+    order: 1;
 
     /* design */
     fill: white;
@@ -731,7 +810,7 @@ body{
     width: clamp(14px, 2.1875vw, 22.4px);
     height: clamp(14px, 2.1875vw, 22.4px);
 
-    /* animation */
+    /* transition */
     transition-property: opacity;
     transition-duration: 0.65s;
     transition-delay: 1s;
@@ -739,10 +818,9 @@ body{
 }
 
 .github-star{
-    /* position */
-    position: absolute;
-    left: 5rem;
-    bottom: 1rem;
+    /* display */
+    display: block;
+    order: 3;
     
     /* design */
     fill: white;
@@ -754,7 +832,7 @@ body{
     width: clamp(14px, 2.1875vw, 22.4px);
     height: clamp(14px, 2.1875vw, 22.4px);
 
-    /* animation */
+    /* transition */
     transition-property: opacity;
     transition-duration: 0.65s;
     transition-delay: 1.25s;
@@ -817,7 +895,9 @@ body{
 
 .accordion-item[aria-expanded="true"] .project-link,
 .accordion-item[aria-expanded="true"] .github-fork,
-.accordion-item[aria-expanded="true"] .github-star{
+.accordion-item[aria-expanded="true"] .github-star,
+.accordion-item[aria-expanded="true"] .project-stats::before,
+.accordion-item[aria-expanded="true"] .project-stats::after{
     opacity: 100%;
 } 
 
@@ -1490,15 +1570,15 @@ p.carousel-item{
 
 .header .year{
     /* design */
-    /* background-color: rgba(30, 138, 210, 0.295); */
-    font-family: 'Oswald', sans-serif;
     letter-spacing: 0.25em;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
     font-size: clamp(12px, 1vw, 1rem);
     font-weight: 300;
     background-color: transparent;
     outline: 1px solid rgb(0, 0, 0);
     color: rgb(0, 0, 0);
+    /* background-color: rgba(30, 138, 210, 0.295); */
     
     /* size */
     padding-inline: 2em;

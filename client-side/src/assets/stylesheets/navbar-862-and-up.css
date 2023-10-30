@@ -132,6 +132,7 @@ body{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     text-decoration: none;
+    cursor: pointer;
     /* outline: 3px solid lightgreen; */
 
     /* position */
