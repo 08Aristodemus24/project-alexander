@@ -26,15 +26,13 @@
     if(is_opened === true){
       is_opened = !is_opened;
       body.style.overflow = "auto";
-
-      const section_id = event.target.classList[1];
-      const section = document.querySelector(`#${section_id}`);
-      section.scrollIntoView({
-        block: 'start',
-      });
     }
 
-    
+    const section_id = event.target.classList[1];
+    const section = document.querySelector(`#${section_id}`);
+    section.scrollIntoView({
+      block: 'start',
+    });
   }
 
   const show_nav = () => {

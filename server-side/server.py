@@ -18,13 +18,19 @@ from dotenv import load_dotenv
 env_dir = Path('./').parent.resolve()
 load_dotenv(os.path.join(env_dir, '.env'))
 
-app = Flask(__name__)
+# configure location of build file and the static html template file
+app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')
 
 # since simple html from url http://127.0.0.1:5000 requests to
 # api endpoint at http://127.0.0.1:5000/ we must set the allowed
 # origins or web apps with specific urls like http://127.0.0.1:5000
 # to be included otherwise it will be blocked by CORS policy
 CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173"])
+
+@app.route('/')
+@app.errorhandler(404)
+def index():
+    return app.send_static_file('index.html')
 
 @app.route('/repos', methods=['GET'])
 @app.route('/repos/<int:repo_limit>', methods=['GET'])
@@ -92,11 +98,11 @@ def send_mail():
 
     if response.status_code == 200:
         print('submission successful')
-        return json.dumps(({'success': True}, 200, {'Content-Type': 'application/text'}))
+        return json.dumps(({'success': True, 'message': 'submission successful'}, 200, {'Content-Type': 'application/text'}))
     
     else:
         print(f'submission unsucessful.\nstatus code: {response.status_code}\nmessage: {response.text}')
-        return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/text'}))
+        return json.dumps(({'success': False, 'message': 'submission unsuccessful'}, response.status_code, {'Content-Type': 'application/text'}))
     
 @app.route('/contribs/<int:year>', methods=['GET'])
 @app.route('/contribs', methods=['GET'])
