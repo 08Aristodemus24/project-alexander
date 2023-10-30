@@ -1,4 +1,4 @@
-# **STILL IN PRODUCTION**
+# **DEVELOPMENT FINISHED, AWAITING DEPLOYMENT**
 
 # My portfolio website for my AI/ML projects built with Svelte, Vanilla CSS, Leonardo.AI, and Flask
 
