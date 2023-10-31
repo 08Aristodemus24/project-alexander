@@ -476,4 +476,13 @@ ip_ban.url_pattern_add(r'/', match_type='regex')
 ```
 
 **Side notes:**
-1. to run flask server use `python server.py` or `python --app server run`
+1. to run flask server use `python server.py` or `flask --app server run`
+
+
+# Deployment to Render
+**To do:**
+1. activate conda environment and install gunicorn through `pip install gunicorn` for this will allow our local application to be deployed in a production server instead of a local server like our local machine
+2. create `requirements.txt` inside the server-side directory by `pip list --format=freeze > requirements.txt`
+
+**Side notes:**
+1. `gunicorn app:<name of flask file to be run by gunicorn e.g. server (note without the .py extension)>` is the start command we will use to start our server

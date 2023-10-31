@@ -195,8 +195,3 @@ def get_contribs(year=None):
 
     except MaxRetryError as e:
         return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
