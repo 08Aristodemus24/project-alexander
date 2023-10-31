@@ -61,7 +61,10 @@
         curr_year = event === undefined ? null : event.detail;
 
         try{
-            const url = `http://127.0.0.1:5000/contribs${curr_year === null ? '' : `/${curr_year}`}`;
+            // // for development
+            // const url = `http://127.0.0.1:5000/contribs${curr_year === null ? '' : `/${curr_year}`}`;
+            // for production
+            const url = `https://project-alexander.onrender.com${curr_year === null ? '' : `/${curr_year}`}`;
             const response = await fetch(url);
 
             if(response.status === 200){

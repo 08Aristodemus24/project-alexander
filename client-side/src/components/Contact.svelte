@@ -22,7 +22,11 @@
 
             // send here the data from the contact component to 
             // the backend proxy server
-            const url = 'http://127.0.0.1:5000/send-mail';
+            // // for development
+            // const url = 'http://127.0.0.1:5000/send-mail';
+            // for production
+            const url = 'https://project-alexander.onrender.com/send-mail';
+
             response = await fetch(url, {
                 'method': 'POST',
                 'headers': {
