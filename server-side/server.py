@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # use this only in development
-env_dir = Path('./').resolve()
-load_dotenv(os.path.join(env_dir, '.env'))
+# env_dir = Path('./').resolve()
+# load_dotenv(os.path.join(env_dir, '.env'))
 
 # configure location of build file and the static html template file
 app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')
