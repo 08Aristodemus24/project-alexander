@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-env_dir = Path('./').parent.resolve()
+env_dir = Path('./').resolve()
 load_dotenv(os.path.join(env_dir, '.env'))
 
 # configure location of build file and the static html template file

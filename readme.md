@@ -486,3 +486,4 @@ ip_ban.url_pattern_add(r'/', match_type='regex')
 
 **Side notes:**
 1. `gunicorn app:<name of flask file to be run by gunicorn e.g. server (note without the .py extension)>` is the start command we will use to start our server
+2. specify python version used when isntalling the python packages in the environment variables settings of render
