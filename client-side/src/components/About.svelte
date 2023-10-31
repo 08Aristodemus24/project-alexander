@@ -19,7 +19,8 @@
             <p>
                 Albeit I'm still in this continuous<br>
                 journey of learning here's some<br>
-                technologies I picked up
+                technologies I was and currently<br>
+                am involved in
             </p>
         </div>
         <div class="anims-container">

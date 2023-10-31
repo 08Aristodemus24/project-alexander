@@ -1,6 +1,6 @@
-# **DEVELOPMENT FINISHED, AWAITING DEPLOYMENT**
+# **WEBSITE DEPLOYED AND IN PRODUCTION**
 
-# My portfolio website for my AI/ML projects built with Svelte, Vanilla CSS, Leonardo.AI, and Flask
+# My portfolio website for all my AI/ML projects. Built with Svelte, Vanilla CSS, Leonardo.AI, Manim and Flask
 
 # Frontend
 ## Designing website template:

@@ -48,7 +48,7 @@
 >
     <p class="carousel-item" class:active={curr_index === 0}>
         And here are some of the hard skills <br> 
-        I learned building the projects I've <br>
+        I've learned building the projects I've <br>
         made above
     </p>
     <ul class="carousel-item" bind:offsetWidth={size_offsets[0].offset_width} bind:offsetHeight={size_offsets[0].offset_height} class:active={curr_index === 1}>
