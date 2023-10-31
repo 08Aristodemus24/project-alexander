@@ -1,6 +1,10 @@
 <script>
     import { onMount, onDestroy, createEventDispatcher } from "svelte";
 
+    // bind the passed state from Contact component to the form
+    // element in this Form component
+    export let form;
+
     let countries = [];
 
     let first_name = "";
@@ -50,7 +54,7 @@
     const phone_reg = `[0-9]{'{'}3{'}'}-[0-9]{'{'}3{'}'}-[0-9]{'{'}4{'}'}`;
 </script>
 
-<form class="form" on:submit|preventDefault={handle_submit} method="post">
+<form class="form" on:submit|preventDefault={handle_submit} method="post" bind:this={form}>
     <div class="fname-container">
         <label for="first-name" class="fname-label">First name</label>
         <input type="text" name="first_name" id="first-name" class="fname-field" placeholder="Larry Miguel" bind:value={first_name}/>
