@@ -14,13 +14,13 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# use this only in development
-env_dir = Path('./').resolve()
-load_dotenv(os.path.join(env_dir, '.env'))
+# # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# # use this only in development
+# env_dir = Path('./').resolve()
+# load_dotenv(os.path.join(env_dir, '.env'))
 
-# # and this for production
-# load_dotenv()
+# and this for production
+load_dotenv()
 
 # configure location of build file and the static html template file
 app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')

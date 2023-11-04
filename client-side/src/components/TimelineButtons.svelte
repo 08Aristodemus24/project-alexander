@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import { range } from "./Range";
 
     // a prop representing the parent component state
@@ -28,7 +29,7 @@
             {/each}
         </table>
     </button>
-    <a class="cv-button" href="https://drive.google.com/uc?export=download&id=1s36RyoYfjZOtEAxKcF4hchcIuXBYdAzu" download="Larry Miguel R. Cueva Resume">
+    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/assets/mediafiles/Cueva%2C%20Larry%20Miguel_Resume_A.pdf" download="Cueva_Larry_Miguel_R_Resume.pdf">
         <span class="cv-header">Download my cv</span>
         <span class="download-icon"></span>
     </a>
