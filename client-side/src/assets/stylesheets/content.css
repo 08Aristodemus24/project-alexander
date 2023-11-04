@@ -1447,6 +1447,7 @@ p.carousel-item{
 
     /* containment */
     overflow-x: scroll;
+    overflow-y: visible;
     scroll-behavior: smooth;
     scroll-padding-inline: 1rem;
 
@@ -1459,7 +1460,7 @@ p.carousel-item{
     /* design */
     visibility: hidden;
     opacity: 0%;
-    /* outline: 1px solid black; */
+    outline: 1px solid black;
 
     /* transition */
     transition: 
@@ -2151,12 +2152,12 @@ p.carousel-item{
     background-color: black;
 
     /* size */
-    min-height: 100vh;
+    /* will take height of contact content through auto value */
 
     /* display */
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 
 .contact-content{
@@ -2164,7 +2165,8 @@ p.carousel-item{
     /* outline: 1px solid rgb(243, 80, 15); */
 
     /* size */
-    min-height: 90vh;
+    min-height: 100vh;
+    padding-block: 1rem;
 
     /* alignment */
     display: flex;
@@ -2174,7 +2176,6 @@ p.carousel-item{
 
     /* spacing */
     row-gap: clamp(32px, 5vw, 80px);
-    margin: 2rem;
 }
 
 .contact-header-container{
