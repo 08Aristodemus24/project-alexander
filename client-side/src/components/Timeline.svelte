@@ -14,7 +14,7 @@
 
     const exp_descriptions = [
         {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
-        {year: '2023', title: 'Front End Web Developer', organization: 'LMC Engineering Front', accolades: ["Currently building client-side and server-side architecture of our engineering consultancy business firm"]},
+        {year: '2023', title: 'Full Stack Web Developer', organization: 'LMC Engineering Front', accolades: ["Currently building client-side and server-side architecture of our engineering consultancy business firm"]},
         {title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Currently mentoring and guiding GDSC-PUPs AI/ML department in developing roadmap to be used by junior AI/ML cadets"]},
         // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
         // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
