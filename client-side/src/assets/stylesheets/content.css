@@ -1460,7 +1460,7 @@ p.carousel-item{
     /* design */
     visibility: hidden;
     opacity: 0%;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
 
     /* transition */
     transition: 
