@@ -51,7 +51,7 @@
                     </svg>
                 </div>
             </div>
-            <img class="project-image" src={repo['project_image']} alt={repo['name']}>  
+            <img class="project-image" src={repo['project_image']} alt={repo['name']}>
         </div>    
     {/each}
 </div>

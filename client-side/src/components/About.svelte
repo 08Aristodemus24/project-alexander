@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import skills from '../assets/mediafiles/Skillsfinal.mp4';
 
     let is_mounted = false;
     onMount(async () => {
@@ -28,7 +29,7 @@
 
             {#if is_mounted === true}
                 <video autoplay muted loop>
-                    <source src="../assets/mediafiles/Skillsfinal.mp4" type="video/mp4">
+                    <source src={skills} type="video/mp4">
                 </video>
             {/if}
         </div>
