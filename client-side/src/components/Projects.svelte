@@ -9,20 +9,20 @@
     // list of repositories to include in projects section
     // if retrieval of repositories is unsuccessful just initialize empty repos
     let included = [
-        {name: null, description: null, html_url: null, project_id: 'I', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/ant%20swarm%20for%20breast-cancer-classifier%20upscaled.jpg"},
-        {name: null,   description: null, html_url: null, project_id: 'II', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/hate%20speech%20thumbnail%20final%202.png"},
-        {name: null, description: null, html_url: null, project_id: 'III', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Default_futuristic_houses_in_the_neighborhood_using_Artificial_0_ab4ded69-8d1b-45e1-ab07-be2eb27054cc_1.jpg"},
-        {name: null, description: null, html_url: null, project_id: 'IV', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Default_multiple_jurisprudence_documents_0_63f0c99d-d7ee-42d8-85d5-f178c77abc9a_1.jpg"},
-        {name: null, description: null, html_url: null, project_id: 'V', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Default_lady_justice_sunset_background_wormseye_view_perspecti_0_f49a15e9-180d-4205-9a2d-d3efe582958f_1.jpg"},
-        {name: null, description: null, html_url: null, project_id: 'VI', project_image: "https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1.jpg"}
+        {name: null, description: null, html_url: null, project_id: 'I', project_image: "../boards/ant%20swarm%20for%20breast-cancer-classifier%20upscaled.jpg"},
+        {name: null,   description: null, html_url: null, project_id: 'II', project_image: "../boards/hate%20speech%20thumbnail%20final%202.png"},
+        {name: null, description: null, html_url: null, project_id: 'III', project_image: "../boards/Default_futuristic_houses_in_the_neighborhood_using_Artificial_0_ab4ded69-8d1b-45e1-ab07-be2eb27054cc_1.jpg"},
+        {name: null, description: null, html_url: null, project_id: 'IV', project_image: "../boards/Default_multiple_jurisprudence_documents_0_63f0c99d-d7ee-42d8-85d5-f178c77abc9a_1.jpg"},
+        {name: null, description: null, html_url: null, project_id: 'V', project_image: "../boards/Default_lady_justice_sunset_background_wormseye_view_perspecti_0_f49a15e9-180d-4205-9a2d-d3efe582958f_1.jpg"},
+        {name: null, description: null, html_url: null, project_id: 'VI', project_image: "../boards/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1.jpg"}
     ];
 
     const fetch_repos = async () => {
         try{
-            // // for development
-            // const url = 'http://127.0.0.1:5000/repos/100';
-            // for production
-            const url = 'https://project-alexander.onrender.com/repos/100';
+            // for development
+            const url = 'http://127.0.0.1:5000/repos/100';
+            // // for production
+            // const url = 'https://project-alexander.onrender.com/repos/100';
             const response = await fetch(url);
             
             if(response.status === 200){

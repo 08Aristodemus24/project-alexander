@@ -85,7 +85,7 @@ body{
     /* design */
     content: '';
     /* '../mediafiles/Default_Far_out_image_of_a_human_at_the_forefront_of_human_exp_1_cd59dbf1-a928-4dbb-ae5d-6b76b432da37_1%20upscaled.jpg' */
-    background-image: url('https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/assets/mediafiles/Default_Far_out_image_of_a_human_at_the_forefront_of_human_exp_1_cd59dbf1-a928-4dbb-ae5d-6b76b432da37_1%20upscaled.jpg');
+    background-image: url('../mediafiles/Absolute_Reality_v16_Far_out_image_of_a_human_at_the_forefront_1.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

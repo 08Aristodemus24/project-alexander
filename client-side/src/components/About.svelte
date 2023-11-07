@@ -28,7 +28,7 @@
 
             {#if is_mounted === true}
                 <video autoplay muted loop>
-                    <source src="https://github.com/08Aristodemus24/project-alexander/raw/master/client-side/src/assets/mediafiles/Skillsfinal.mp4" type="video/mp4">
+                    <source src="../assets/mediafiles/Skillsfinal.mp4" type="video/mp4">
                 </video>
             {/if}
         </div>
