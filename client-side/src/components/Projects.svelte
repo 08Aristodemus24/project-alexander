@@ -3,12 +3,12 @@
     import Accordion from "./Accordion.svelte";
     import ProjectsButton from "./ProjectsButton.svelte";
     
-    import ants from '../boards/ant swarm for breast-cancer-classifier upscaled.jpg';
-    import snoo from '../boards/hate speech thumbnail final 2.png';
-    import house from '../boards/Default_futuristic_houses_in_the_neighborhood_using_Artificial_0_ab4ded69-8d1b-45e1-ab07-be2eb27054cc_1.jpg';
-    import juris_docs from '../boards/Default_multiple_jurisprudence_documents_0_63f0c99d-d7ee-42d8-85d5-f178c77abc9a_1.jpg';
-    import lady_justice from '../boards/Default_lady_justice_sunset_background_wormseye_view_perspecti_0_f49a15e9-180d-4205-9a2d-d3efe582958f_1.jpg';
-    import alexander from '../boards/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1.jpg';
+    // import ants from '../boards/ant swarm for breast-cancer-classifier upscaled.jpg';
+    // import snoo from '../boards/hate speech thumbnail final 2.png';
+    // import house from '../boards/Default_futuristic_houses_in_the_neighborhood_using_Artificial_0_ab4ded69-8d1b-45e1-ab07-be2eb27054cc_1.jpg';
+    // import juris_docs from '../boards/Default_multiple_jurisprudence_documents_0_63f0c99d-d7ee-42d8-85d5-f178c77abc9a_1.jpg';
+    // import lady_justice from '../boards/Default_lady_justice_sunset_background_wormseye_view_perspecti_0_f49a15e9-180d-4205-9a2d-d3efe582958f_1.jpg';
+    // import alexander from '../boards/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1.jpg';
 
     // initial state of list before fetching repositories
     let repos = [];
@@ -16,12 +16,12 @@
     // list of repositories to include in projects section
     // if retrieval of repositories is unsuccessful just initialize empty repos
     let included = [
-        {name: null, description: null, html_url: null, project_id: 'I', project_image: ants},
-        {name: null,   description: null, html_url: null, project_id: 'II', project_image: snoo},
-        {name: null, description: null, html_url: null, project_id: 'III', project_image: house},
-        {name: null, description: null, html_url: null, project_id: 'IV', project_image: juris_docs},
-        {name: null, description: null, html_url: null, project_id: 'V', project_image: lady_justice},
-        {name: null, description: null, html_url: null, project_id: 'VI', project_image: alexander}
+        {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/'},
+        {name: null,   description: null, html_url: null, project_id: 'II', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/'},
+        {name: null, description: null, html_url: null, project_id: 'III', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/'},
+        {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/Default_multiple_jurisprudence_documents_0_63f0c99d-d7ee-42d8-85d5-f178c77abc9a_1_5_11zon.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'V', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/Default_lady_justice_sunset_background_wormseye_view_perspecti_0_f49a15e9-180d-4205-9a2d-d3efe582958f_1_4_11zon.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/Default_far_out_side_view_statue_of_Alexander_The_Great_conque_1_76c1007c-b966-40e0-a74f-9ad4dc8bcec8_1_2_11zon.jpg'}
     ];
 
     const fetch_repos = async () => {
