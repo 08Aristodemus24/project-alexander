@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import skills from '../assets/mediafiles/Skillsfinal.mp4';
 
     let is_mounted = false;
     onMount(async () => {
