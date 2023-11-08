@@ -9,12 +9,12 @@
     // list of repositories to include in projects section
     // if retrieval of repositories is unsuccessful just initialize empty repos
     let included = [
-        {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/project-alexander.jpg'},
-        {name: null,   description: null, html_url: null, project_id: 'II', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phil-jurisprudence-recsys.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'III', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/larj-corpus.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/hate-speech-classifier.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'V', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/housing-prices-predictor.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/breast-cancer-classifier.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/breast-cancer-classifier.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'II', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/hate-speech-classifier.png'},
+        {name: null, description: null, html_url: null, project_id: 'III', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/housing-prices-predictor.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/larj-corpus.jpg'},
+        {name: null,   description: null, html_url: null, project_id: 'V', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phil-jurisprudence-recsys.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/project-alexander.jpg'},
     ];
 
     const fetch_repos = async () => {

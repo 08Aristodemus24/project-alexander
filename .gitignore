@@ -1,6 +1,7 @@
 # assets
 /client-side/src/concepts
 /client-side/src/app.css
+/client-side/src/assets/mediafiles/dark-academia.rar
 
 # packages
 /client-side/node_modules/
