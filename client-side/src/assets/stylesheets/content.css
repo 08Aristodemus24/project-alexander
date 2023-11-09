@@ -49,7 +49,7 @@ body{
     /* size for each section*/
     /* take into account navbar in landing section */
     /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
-    min-height: 100vh;
+    min-height: 100dvh;
 
     /* display */
     display: flex;
@@ -204,7 +204,7 @@ body{
     background-color: black;
 
     /* size */
-    min-height: 100vh;
+    min-height: 100dvh;
 
     /* unlike the accordion item which has 
     content embedded in it and which basically 
@@ -495,7 +495,7 @@ body{
 
 .accordion-item{
     /* size */
-    min-height: 100vh;
+    min-height: 100dvh;
     flex-grow: 1;
     flex-basis: 200px;
     
@@ -916,7 +916,7 @@ body{
         flex-direction: column;
 
         /* size */
-        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .accordion-item{
@@ -947,7 +947,7 @@ body{
     /* outline: 2px solid greenyellow; */
 
     /* size */
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 1rem;
 
     /* display */
@@ -1316,7 +1316,7 @@ p.carousel-item{
     row-gap: 2rem;
 
     /* size */
-    min-height: 100vh;
+    min-height: 100dvh;
     padding-block: 1.5rem;
 
     /* design */
@@ -2164,7 +2164,7 @@ p.carousel-item{
     /* outline: 1px solid rgb(243, 80, 15); */
 
     /* size */
-    min-height: 100vh;
+    min-height: 100dvh;
     padding-block: 1rem;
 
     /* alignment */
