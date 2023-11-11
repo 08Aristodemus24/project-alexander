@@ -22,8 +22,9 @@ load_dotenv(os.path.join(env_dir, '.env'))
 # # and this for production
 # load_dotenv()
 
-# configure location of build file and the static html template file
-app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')
+# # configure location of build file and the static html template file
+# app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')
+app = Flask(__name__, static_url_path='/', static_folder='./dist')
 
 # since simple html from url http://127.0.0.1:5000 requests to
 # api endpoint at http://127.0.0.1:5000/ we must set the allowed
