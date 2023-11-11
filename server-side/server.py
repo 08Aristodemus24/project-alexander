@@ -30,7 +30,10 @@ app = Flask(__name__, static_url_path='/', static_folder='./dist')
 # api endpoint at http://127.0.0.1:5000/ we must set the allowed
 # origins or web apps with specific urls like http://127.0.0.1:5000
 # to be included otherwise it will be blocked by CORS policy
-CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.onrender.com", "https://project-alexander.vercel.app/"])
+# CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.onrender.com"])
+# CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.onrender.com", "https://project-alexander.vercel.app"])
+CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.vercel.app"])
+
 @app.route('/')
 @app.errorhandler(404)
 def index():
