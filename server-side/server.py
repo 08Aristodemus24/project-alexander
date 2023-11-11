@@ -34,7 +34,7 @@ app = Flask(__name__, static_url_path='/', static_folder='./dist')
 # CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.onrender.com", "https://project-alexander.vercel.app"])
 CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://project-alexander.vercel.app"])
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 @app.errorhandler(404)
 def index():
     return app.send_static_file('index.html')
