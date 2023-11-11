@@ -25,7 +25,8 @@
             // // for development
             // const url = 'http://127.0.0.1:5000/send-mail';
             // for production
-            const url = 'https://project-alexander.onrender.com/send-mail';
+            // const url = 'https://project-alexander.onrender.com/send-mail';
+            const url = 'https://project-alexander.vercel.app/send-mail';
 
             response = await fetch(url, {
                 'method': 'POST',
