@@ -35,7 +35,7 @@ CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://pr
 @app.route('/')
 @app.errorhandler(404)
 def index():
-    return app.send_static_file('index')
+    return app.send_static_file('index.html')
 
 @app.route('/repos', methods=['GET'])
 @app.route('/repos/<int:repo_limit>', methods=['GET'])
