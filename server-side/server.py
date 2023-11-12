@@ -1,6 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-from flask_ipban import IpBan
 
 import requests
 from requests.exceptions import ConnectionError
@@ -24,7 +23,7 @@ load_dotenv()
 
 # # configure location of build file and the static html template file
 # app = Flask(__name__, static_url_path='/', static_folder='../client-side/dist')
-app = Flask(__name__, static_url_path='/', static_folder='./dist')
+app = Flask(__name__, static_url_path='/dist', static_folder='./dist')
 
 # since simple html from url http://127.0.0.1:5000 requests to
 # api endpoint at http://127.0.0.1:5000/ we must set the allowed
@@ -36,7 +35,7 @@ CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5173", "https://pr
 @app.route('/')
 @app.errorhandler(404)
 def index():
-    return app.send_static_file('index.html')
+    return app.send_static_file('index')
 
 @app.route('/repos', methods=['GET'])
 @app.route('/repos/<int:repo_limit>', methods=['GET'])
