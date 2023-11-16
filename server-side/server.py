@@ -114,6 +114,98 @@ def send_mail():
         print(f'submission unsucessful.\nstatus code: {response.status_code}\nmessage: {response.text}')
         return json.dumps(({'success': False, 'message': 'submission unsuccessful'}, response.status_code, {'Content-Type': 'application/text'}))
     
+# @app.route('/contribs/<int:year>', methods=['GET'])
+# @app.route('/contribs', methods=['GET'])
+# def get_contribs(year=None):
+#     """
+#     instead of client-side making the request to fetch the raw html data
+#     leading as we know a CORS error this route function will instead make
+#     such a request for us in order to bypass this CORS error
+
+#     by default user will request for route /contribs thereby not specifying 
+#     the year which allows our route function to return to the user the maximum
+#     date and minimum year to which he can choose from
+#     """
+#     print(year)
+    
+
+#     url = 'https://github.com/users/08Aristodemus24/contributions' if year == None \
+#     else f'https://github.com/users/08Aristodemus24/contributions?from={year}-01-01&to={year}-12-31'
+
+#     try:
+#         response = requests.get(url)
+#         dom = BeautifulSoup(response.text)
+
+#         # determine also min year and max year
+#         min_year = dt.now().year
+#         max_year = 0
+#         contribs = []
+        
+#         # select all table rows and in every row select
+#         # only the days and not the label of the day
+#         rows = dom.find('tbody').find_all('tr')
+#         print(len(rows))
+#         for row in rows:
+#             curr_row = []
+#             days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
+#             for day in days:
+#                 content = day.text.split(' ')
+#                 print(content)
+
+#                 # for edge cases if there is no content or content has no elements 
+#                 # whatsoever just append null to contribs
+#                 if len(content) > 1:
+#                     # print(content)
+
+#                     # some important attributes of the td element are also data-date
+#                     # and data-level which both contain the date of push and the 
+#                     # strength level of number of pushes the user has done in that day
+#                     date = day['data-date'].split('-')
+#                     level = day['data-level']
+
+#                     curr_row.append({
+#                         'pushes': 0 if content[0] == 'No' else int(content[0]),
+#                         'month-name': content[3],
+#                         'month-num': date[1],
+#                         # 'day-name': content[3].replace(',', ''),
+#                         'day-num': date[2],
+#                         'year': date[0],
+#                         'level': level
+#                     })
+
+#                     # determine the minimum and maximum years in whole span
+#                     # of github contributions timeline
+#                     max_year = max_year if max_year > int(date[0]) else int(date[0])
+#                     min_year = min_year if min_year < int(date[0]) else int(date[0])
+#                 else:
+#                     curr_row.append(None)
+
+#             # once done appending one of the 7 rows representing each 
+#             # day in a week append it to contribs
+#             contribs.append(curr_row)
+        
+#         # if year is None meaning get all contributions 
+#         # all the way from first push to recent push
+#         data = [{'contribs': contribs}]
+#         if year == None:
+#             data[0]['min_year'] = min_year
+#             data[0]['max_year'] = max_year
+
+#         if response.status_code == 200:
+#             print('retrieval successful')
+#             return jsonify(data)
+        
+#         return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
+
+#     except NameResolutionError as e:
+#         return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+
+#     except ConnectionError as e:
+#         return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+
+#     except MaxRetryError as e:
+#         return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+
 @app.route('/contribs/<int:year>', methods=['GET'])
 @app.route('/contribs', methods=['GET'])
 def get_contribs(year=None):
@@ -129,68 +221,27 @@ def get_contribs(year=None):
     print(year)
     
 
-    url = 'https://github.com/users/08Aristodemus24/contributions' if year == None \
-    else f'https://github.com/users/08Aristodemus24/contributions?from={year}-01-01&to={year}-12-31'
+    url = 'https://github-contributions-api.deno.dev/08Aristodemus24.json' if year == None \
+    else f'https://github-contributions-api.deno.dev/08Aristodemus24.json?from={year}-01-01&to={year}-12-31'
 
     try:
         response = requests.get(url)
-        dom = BeautifulSoup(response.text)
-
-        # determine also min year and max year
-        min_year = dt.now().year
-        max_year = 0
-        contribs = []
+        data = json.loads(response.text)
         
-        # select all table rows and in every row select
-        # only the days and not the label of the day
-        rows = dom.find('tbody').find_all('tr')
-        print(len(rows))
-        for row in rows:
+        # get length of last and first rows
+        contribs = data['contributions']
+        last_row_len = len(contribs[-1])
+        first_row_len = len(contribs[0])
+
+        # print(data)
+        print(first_row_len)
+        print(last_row_len)
+
+        for contrib in contribs:
             curr_row = []
-            days = row.find_all('td', attrs={'class': 'ContributionCalendar-day'})
-            for day in days:
-                content = day.text.split(' ')
-                print(content)
-
-                # for edge cases if there is no content or content has no elements 
-                # whatsoever just append null to contribs
-                if len(content) > 1:
-                    # print(content)
-
-                    # some important attributes of the td element are also data-date
-                    # and data-level which both contain the date of push and the 
-                    # strength level of number of pushes the user has done in that day
-                    date = day['data-date'].split('-')
-                    level = day['data-level']
-
-                    curr_row.append({
-                        'pushes': 0 if content[0] == 'No' else int(content[0]),
-                        'month-name': content[3],
-                        'month-num': date[1],
-                        # 'day-name': content[3].replace(',', ''),
-                        'day-num': date[2],
-                        'year': date[0],
-                        'level': level
-                    })
-
-                    # determine the minimum and maximum years in whole span
-                    # of github contributions timeline
-                    max_year = max_year if max_year > int(date[0]) else int(date[0])
-                    min_year = min_year if min_year < int(date[0]) else int(date[0])
-                else:
-                    curr_row.append(None)
-
-            # once done appending one of the 7 rows representing each 
-            # day in a week append it to contribs
-            contribs.append(curr_row)
-        
-        # if year is None meaning get all contributions 
-        # all the way from first push to recent push
-        data = [{'contribs': contribs}]
-        if year == None:
-            data[0]['min_year'] = min_year
-            data[0]['max_year'] = max_year
-
+            # days = 
+            # for day in days:
+    
         if response.status_code == 200:
             print('retrieval successful')
             return jsonify(data)
