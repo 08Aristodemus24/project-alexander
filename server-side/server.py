@@ -228,23 +228,48 @@ def get_contribs(year=None):
         response = requests.get(url)
         data = json.loads(response.text)
         
-        # get length of last and first rows
+        # initialized to determine also min year and max year
+        min_year = dt.now().year
+        max_year = 0
+
+        # get contributions for parsing from response
         contribs = data['contributions']
-        last_row_len = len(contribs[-1])
-        first_row_len = len(contribs[0])
 
-        # print(data)
-        print(first_row_len)
-        print(last_row_len)
+        contribs_ref = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
+        contrib_levels = {'NONE': 0, 'FIRST_QUARTILE': 1, 'SECOND_QUARTILE': 2, 'THIRD_QUARTILE': 3, 'FOURTH_QUARTILE': 4}
 
-        for contrib in contribs:
-            curr_row = []
-            # days = 
-            # for day in days:
+        for week in contribs:
+            for day in week:
+                date = dt.strptime(day['date'], '%Y-%m-%d')
+                day_of_week = date.weekday()
+
+                # if a day of the week has not already 
+                # been appended append it. Day of week range
+                # from 0 to 6
+                contribs_ref[day_of_week].append({
+                    'pushes': day['contributionCount'],
+                    'month-name': date.month,
+                    'month-num': date.strftime('%B'),
+                    'day-num': date.day,
+                    'year': date.year,
+                    'level': contrib_levels[day['contributionLevel']]
+                })
+
+                # determine the minimum and maximum years in whole span
+                # of github contributions timeline
+                max_year = max_year if max_year > date.year else date.year
+                min_year = min_year if min_year < date.year else date.year
+
+        # if year is None meaning get all contributions 
+        # all the way from first push to recent push
+        payload = [{'contribs': list(contribs_ref.values())}]
+        if year == None:
+            payload[0]['min_year'] = min_year
+            payload[0]['max_year'] = max_year
     
         if response.status_code == 200:
             print('retrieval successful')
-            return jsonify(data)
+            return jsonify(payload)
         
         return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
 

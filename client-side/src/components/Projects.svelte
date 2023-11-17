@@ -19,10 +19,10 @@
 
     const fetch_repos = async () => {
         try{
-            // for development
-            const url = 'http://127.0.0.1:5000/repos/100';
-            // // for production
-            // const url = 'https://project-alexander.vercel.app/repos/100';
+            // // for development
+            // const url = 'http://127.0.0.1:5000/repos/100';
+            // for production
+            const url = 'https://project-alexander.vercel.app/repos/100';
             const response = await fetch(url);
             
             if(response.status === 200){
