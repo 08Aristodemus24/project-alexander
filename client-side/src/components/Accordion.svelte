@@ -2,7 +2,7 @@
     export let repos = [];
 
     // initially all panels are closed
-    let panel_activity = [false, false, false, false, false, false];
+    let panel_activity = [false, false, false, false, false, false, false];
     let active_panel_index = null;
 
     // handler for either click and enter key event
