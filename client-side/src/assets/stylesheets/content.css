@@ -318,13 +318,14 @@ body{
     align-items: center;
     justify-content: center;
 
-    --accordion-item-1: #4a4d52;
-    --accordion-item-2: #89898b;
-    --accordion-item-3: #aaabaf;
-    --accordion-item-4: #cdcfd3;
-    --accordion-item-5: #c9c8c8;
-    --accordion-item-6: #cfcfcf;
-    --accordion-item-7: #e0e0e0;
+    --accordion-item-1: #cdcbce;
+    --accordion-item-2: #aaa9ae;
+    --accordion-item-3: #9a989d;
+    --accordion-item-4: #88868b;
+    --accordion-item-5: #78767b;
+    --accordion-item-6: #444247;
+    --accordion-item-7: #28262b;
+    --accordion-item-8: #101012;
 }
 
 .projects-content{
@@ -543,17 +544,17 @@ body{
     transition-timing-function: ease-in-out, ease-in-out;
 }
 
-.accordion-item:nth-child(7) .project-id{
+.accordion-item:nth-child(1) .project-id{
     /* design */
     background-color: var(--accordion-item-1);
 }
 
-.accordion-item:nth-child(6) .project-id{
+.accordion-item:nth-child(2) .project-id{
     /* design */
     background-color: var(--accordion-item-2);
 }
 
-.accordion-item:nth-child(5) .project-id{
+.accordion-item:nth-child(3) .project-id{
     /* design */
     background-color: var(--accordion-item-3);
 }
@@ -563,19 +564,24 @@ body{
     background-color: var(--accordion-item-4);
 }
 
-.accordion-item:nth-child(3) .project-id{
+.accordion-item:nth-child(5) .project-id{
     /* design */
     background-color: var(--accordion-item-5);
 }
 
-.accordion-item:nth-child(2) .project-id{
+.accordion-item:nth-child(6) .project-id{
     /* design */
     background-color: var(--accordion-item-6);
 }
 
-.accordion-item:nth-child(1) .project-id{
+.accordion-item:nth-child(7) .project-id{
     /* design */
     background-color: var(--accordion-item-7);
+}
+
+.accordion-item:nth-child(8) .project-id{
+    /* design */
+    background-color: var(--accordion-item-8);
 }
 
 .accordion-item .project-id::before{
@@ -626,13 +632,15 @@ body{
 .accordion-item:nth-child(5):hover .project-id,
 .accordion-item:nth-child(6):hover .project-id,
 .accordion-item:nth-child(7):hover .project-id,
+.accordion-item:nth-child(8):hover .project-id,
 .accordion-item:nth-child(1):hover .project-id::before,
 .accordion-item:nth-child(2):hover .project-id::before,
 .accordion-item:nth-child(3):hover .project-id::before,
 .accordion-item:nth-child(4):hover .project-id::before,
 .accordion-item:nth-child(5):hover .project-id::before,
 .accordion-item:nth-child(6):hover .project-id::before,
-.accordion-item:nth-child(7):hover .project-id::before{
+.accordion-item:nth-child(7):hover .project-id::before,
+.accordion-item:nth-child(8):hover .project-id::before{
     /* design */
     opacity: 0%;
     visibility: hidden;
@@ -884,13 +892,15 @@ body{
 .accordion-item:nth-child(5)[aria-expanded="true"] .project-id,
 .accordion-item:nth-child(6)[aria-expanded="true"] .project-id,
 .accordion-item:nth-child(7)[aria-expanded="true"] .project-id,
+.accordion-item:nth-child(8)[aria-expanded="true"] .project-id,
 .accordion-item:nth-child(1)[aria-expanded="true"] .project-id::before,
 .accordion-item:nth-child(2)[aria-expanded="true"] .project-id::before,
 .accordion-item:nth-child(3)[aria-expanded="true"] .project-id::before,
 .accordion-item:nth-child(4)[aria-expanded="true"] .project-id::before,
 .accordion-item:nth-child(5)[aria-expanded="true"] .project-id::before,
 .accordion-item:nth-child(6)[aria-expanded="true"] .project-id::before,
-.accordion-item:nth-child(7)[aria-expanded="true"] .project-id::before{
+.accordion-item:nth-child(7)[aria-expanded="true"] .project-id::before,
+.accordion-item:nth-child(8)[aria-expanded="true"] .project-id::before{
     /* design */
     opacity: 0%;
     visibility: hidden;
