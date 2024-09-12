@@ -70,12 +70,13 @@ def get_repos(repo_limit=None):
 
     # check if response returns an 'ok' (200) status 
     if response.status_code == 200:
+        print(data)
         return data
     
     # if error occurs in request just return the key value
     # pairs of the response.json() dictionary and the status
     # code of the response object
-    return json.dumps({'success': False}, response.status_code, {'Content-Type': 'appliction/json'})
+    return json.dumps({'success': False}, response.status_code, {'Content-Type': 'application/json'})
 
 @app.route('/send-mail', methods=['POST'])
 def send_mail():
