@@ -4,8 +4,8 @@
 
 # Frontend
 ## Designing website template:
-**Prerequisites to do:**
-1. 
+**Notes:**
+1. If there is a problem with retrieving repositories and contributions it could be the personal access token you have has expired and is in need of replacement and then using that replacement to update env vawriables in vercel, and in regards to contribs it may have be that the website you are getting contribs from has updated and is therefore in need for you to update the code
 
 **To do:**
 1. create designs for each section on paper for mobile and desktop
