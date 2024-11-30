@@ -195,6 +195,13 @@ body{
     fill: #0077b5;
 }
 
+.researchgate-icon:hover{
+    fill: black;
+}
+
+.fiverr-icon:hover{
+    fill: #00b12b;
+}
 
 
 /* ABOUT SECTION */
