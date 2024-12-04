@@ -203,6 +203,9 @@ body{
     fill: #00b12b;
 }
 
+.upwork-icon:hover{
+    fill: black;
+}
 
 /* ABOUT SECTION */
 #about-section{
