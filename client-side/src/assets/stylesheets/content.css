@@ -183,6 +183,10 @@ body{
     fill: black;
 }
 
+.youtube-icon:hover{
+    fill:  #FF0000;
+}
+
 .stackoverflow-icon:hover{
     fill: #f7a664;
 }
