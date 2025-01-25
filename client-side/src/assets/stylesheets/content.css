@@ -1250,6 +1250,7 @@ p.carousel-item{
     color: white;
     text-align: center;
     opacity: 0%;
+    /* outline: 1px solid white; */
 
     /* size */
     width: 5em;
