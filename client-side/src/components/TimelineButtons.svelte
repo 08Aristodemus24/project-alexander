@@ -29,11 +29,11 @@
             {/each}
         </table>
     </button>
-    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Larry_Miguel_R_Cueva_CV.pdf" download="Larry_Miguel_R_Cueva_DE_CV.pdf">
+    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Larry_Miguel_R_Cueva_DE_CV.pdf" download="Larry_Miguel_R_Cueva_DE_CV.pdf">
         <span class="cv-header">Data Engineering CV</span>
         <span class="download-icon"></span>
     </a>
-    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Larry_Miguel_R_Cueva_CV.pdf" download="Larry_Miguel_R_Cueva_ML_CV.pdf">
+    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/Larry_Miguel_R_Cueva_ML_CV.pdf" download="Larry_Miguel_R_Cueva_ML_CV.pdf">
         <span class="cv-header">AI/ML CV</span>
         <span class="download-icon"></span>
     </a>
