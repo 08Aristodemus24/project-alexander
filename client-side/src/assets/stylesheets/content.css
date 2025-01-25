@@ -1554,7 +1554,7 @@ p.carousel-item{
 }
 
 .timeline-container::-webkit-scrollbar-thumb{
-    background-color: rgba(0, 0, 0, 0.125);;
+    background-color: rgba(0, 0, 0, 0.125);
 }
 
 .timeline-container .header{
