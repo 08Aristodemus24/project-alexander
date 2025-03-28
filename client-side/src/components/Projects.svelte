@@ -9,16 +9,16 @@
     // list of repositories to include in projects section
     // if retrieval of repositories is unsuccessful just initialize empty repos
     let included = [
-        {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/breast-cancer-classifier.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/chronic-disease-analyses.jpg'},
         {name: null, description: null, html_url: null, project_id: 'II', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/depressive-sentiment-analyzer.png'},
         {name: null, description: null, html_url: null, project_id: 'III', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/eda-denoiser-stress-detector.png'},
         {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phi.png'},
         {name: null, description: null, html_url: null, project_id: 'V', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/hate-speech-classifier.png'},
-        {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/housing-prices-predictor.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'VII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/larj-corpus.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'VIII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/bacteria.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'XI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phil-jurisprudence-recsys.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'X', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/project-alexander.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/larj-corpus.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'VII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/bacteria.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'VIII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phil-jurisprudence-recsys.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'IX', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/project-alexander.jpg'},
+        {name: null, description: null, html_url: null, project_id: 'X', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/usd-php-ml-pipeline.jpg'},
     ];
 
     const fetch_repos = async () => {
@@ -43,16 +43,16 @@
 
                 repos = repos.filter((repo) => {
                     const repo_names = ['LaRJ-Corpus',
-                    'phil-jurisprudence-recsys',
-                    'hate-speech-classifier',
-                    'auto-job-app-sender',
-                    'usd-php-ml-pipeline',
-                    'project-alexander',
-                    'gen-philo-text',
-                    'micro-organism-classifier',
-                    'depressive-sentiment-analyzer',
-                    'eda-denoiser-stress-detector'
-                ];
+                        'phil-jurisprudence-recsys',
+                        'hate-speech-classifier',
+                        'variable-data-analyses',
+                        'usd-php-ml-pipeline',
+                        'project-alexander',
+                        'gen-philo-text',
+                        'micro-organism-classifier',
+                        'depressive-sentiment-analyzer',
+                        'eda-denoiser-stress-detector'
+                    ];
                     
                     // callbacdk returns true if repo name is part of
                     // exclusive repos list
