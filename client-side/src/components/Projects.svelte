@@ -45,7 +45,7 @@
                     const repo_names = ['LaRJ-Corpus',
                         'phil-jurisprudence-recsys',
                         'hate-speech-classifier',
-                        'variable-data-analyses',
+                        'chronic-disease-analyses',
                         'usd-php-ml-pipeline',
                         'project-alexander',
                         'gen-philo-text',
