@@ -12,9 +12,9 @@
         <div class="about-header-container">
             <h1>About me</h1>
             <p>
-                I am a currently a student specializing<br>
-                in machine learning engineering and an<br>
-                aspiring computational immunologist
+                I am computer science major specializing<br>
+                in Data Analytics/Engineering and an<br>
+                aspiring computational psychologist
             </p>
             <p>
                 Albeit I'm still in this continuous<br>
