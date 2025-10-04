@@ -61,7 +61,7 @@ def get_repos(repo_limit=None):
     auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
     headers = {
         "Accept": accept,
-        "Authorization": auth_token
+        # "Authorization": auth_token
     }
 
     response = requests.get(url, headers=headers)
