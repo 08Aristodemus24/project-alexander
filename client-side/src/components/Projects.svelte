@@ -12,13 +12,13 @@
         {name: null, description: null, html_url: null, project_id: 'I', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/chronic-disease-analyses.png'},
         {name: null, description: null, html_url: null, project_id: 'II', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/depressive-sentiment-analyzer.png'},
         {name: null, description: null, html_url: null, project_id: 'III', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/eda-denoiser-stress-detector.png'},
-        {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/forums-analyses.png'},
+        {name: null, description: null, html_url: null, project_id: 'IV', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/forums-analyses.jpg'},
         {name: null, description: null, html_url: null, project_id: 'V', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phi.png'},
         {name: null, description: null, html_url: null, project_id: 'VI', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/hate-speech-classifier.png'},
         {name: null, description: null, html_url: null, project_id: 'VII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/larj-corpus.jpg'},
         {name: null, description: null, html_url: null, project_id: 'VIII', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/phil-jurisprudence-recsys.jpg'},
         {name: null, description: null, html_url: null, project_id: 'IX', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/project-alexander.jpg'},
-        {name: null, description: null, html_url: null, project_id: 'X', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/signal-gender-predictor.png'},
+        {name: null, description: null, html_url: null, project_id: 'X', project_image: 'https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/signal-gender-predictor.jpg'},
     ];
 
     const fetch_repos = async () => {
