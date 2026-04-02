@@ -12,9 +12,10 @@
         <div class="about-header-container">
             <h1>About me</h1>
             <p>
-                I am computer science major specializing<br>
-                in Data Analytics/Engineering and an<br>
-                aspiring computational psychologist
+                I am computer science major working in<br>
+                Data & ML Engineering, aspiring as well<br>
+                to enter the field of computational<br>
+                psychology 
             </p>
             <p>
                 Albeit I'm still in this continuous<br>
