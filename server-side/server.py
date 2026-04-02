@@ -105,7 +105,6 @@ def send_mail():
 
     response = requests.post(url=url, headers=headers, data=json.dumps(data))
     
-
     if response.status_code == 200:
         print('submission successful')
         return json.dumps(({'success': True, 'message': 'submission successful'}, 200, {'Content-Type': 'application/text'}))
