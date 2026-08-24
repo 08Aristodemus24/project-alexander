@@ -31,6 +31,18 @@ app = Flask(__name__, template_folder='static')
 # to be included otherwise it will be blocked by CORS policy
 CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5000", "http://localhost:5173", "http://127.0.0.1:5173", "https://project-alexander.vercel.app"])
 
+# define variables for github data
+GITHUB_USERNAME = "08Aristodemus24"
+GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
+CONTRIB_LEVELS = {
+    'NONE': 0,
+    'FIRST_QUARTILE': 1,
+    'SECOND_QUARTILE': 2,
+    'THIRD_QUARTILE': 3,
+    'FOURTH_QUARTILE': 4
+}
+# print(os.environ.get('GITHUB_ACCESS_TOKEN'))
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -208,78 +220,100 @@ def send_mail():
 #     except MaxRetryError as e:
 #         return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
 
+def _graphql_request(query, variables):
+    headers = {
+        "Authorization": f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}",
+        "Content-Type": "application/json"
+    }
+    resp = requests.post(GITHUB_GRAPHQL_URL, json={"query": query, "variables": variables}, headers=headers)
+    resp.raise_for_status()
+    payload = resp.json()
+    if 'errors' in payload:
+        raise ValueError(payload['errors'])
+    return payload
+
+def _get_account_created_at(username):
+    resp = requests.get(f"https://api.github.com/users/{username}")
+    resp.raise_for_status()
+    return dt.strptime(resp.json()['created_at'], '%Y-%m-%dT%H:%M:%SZ')
+
+def _fetch_contribution_days(username, start, end):
+    query = """
+        query($login: String!, $from: DateTime!, $to: DateTime!) {
+            user(login: $login) {
+                    contributionsCollection(from: $from, to: $to) {
+                    contributionCalendar {
+                        weeks {
+                            contributionDays {
+                                date
+                                contributionCount
+                                contributionLevel
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    """
+    variables = {
+        "login": username,
+        "from": start.strftime('%Y-%m-%dT00:00:00Z'),
+        "to": end.strftime('%Y-%m-%dT23:59:59Z')
+    }
+    result = _graphql_request(query, variables)
+    weeks = result['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+    days = []
+    for week in weeks:
+        days.extend(week['contributionDays'])
+    return days
+
+
 @app.route('/contribs/<int:year>', methods=['GET'])
 @app.route('/contribs', methods=['GET'])
 def get_contribs(year=None):
     """
-    instead of client-side making the request to fetch the raw html data
-    leading as we know a CORS error this route function will instead make
-    such a request for us in order to bypass this CORS error
-
-    by default user will request for route /contribs thereby not specifying 
-    the year which allows our route function to return to the user the maximum
-    date and minimum year to which he can choose from
+    Fetches GitHub contribution data via the official GraphQL API instead
+    of scraping or relying on third-party mirrors. If no year is given,
+    walks year-by-year from account creation to now, since a single
+    contributionsCollection query is capped at a 1-year window.
     """
-    print(year)
-    
-
-    url = 'https://github-contributions-api.deno.dev/08Aristodemus24.json' if year == None \
-    else f'https://github-contributions-api.deno.dev/08Aristodemus24.json?from={year}-01-01&to={year}-12-31'
-
     try:
-        response = requests.get(url)
-        data = json.loads(response.text)
-        
-        # initialized to determine also min year and max year
-        min_year = dt.now().year
-        max_year = 0
+        created_at = _get_account_created_at(GITHUB_USERNAME)
+        min_year = created_at.year
+        max_year = dt.now().year
 
-        # get contributions for parsing from response
-        contribs = data['contributions']
+        if year is not None:
+            start = dt(year, 1, 1)
+            end = dt(year, 12, 31)
+            print(start)
+            all_days = _fetch_contribution_days(GITHUB_USERNAME, start, end)
+        else:
+            all_days = []
+            for y in range(min_year, max_year + 1):
+                start = created_at if y == min_year else dt(y, 1, 1)
+                end = dt.now() if y == max_year else dt(y, 12, 31)
+                all_days.extend(_fetch_contribution_days(GITHUB_USERNAME, start, end))
 
         contribs_ref = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
-        contrib_levels = {'NONE': 0, 'FIRST_QUARTILE': 1, 'SECOND_QUARTILE': 2, 'THIRD_QUARTILE': 3, 'FOURTH_QUARTILE': 4}
+        for day in all_days:
+            date = dt.strptime(day['date'], '%Y-%m-%d')
+            contribs_ref[date.weekday()].append({
+                'pushes': day['contributionCount'],
+                'month-name': date.strftime('%B'),
+                'month-num': date.month,
+                'day-num': date.day,
+                'year': date.year,
+                'level': CONTRIB_LEVELS[day['contributionLevel']]
+            })
 
-        for week in contribs:
-            for day in week:
-                date = dt.strptime(day['date'], '%Y-%m-%d')
-                day_of_week = date.weekday()
-
-                # if a day of the week has not already 
-                # been appended append it. Day of week range
-                # from 0 to 6
-                contribs_ref[day_of_week].append({
-                    'pushes': day['contributionCount'],
-                    'month-name': date.month,
-                    'month-num': date.strftime('%B'),
-                    'day-num': date.day,
-                    'year': date.year,
-                    'level': contrib_levels[day['contributionLevel']]
-                })
-
-                # determine the minimum and maximum years in whole span
-                # of github contributions timeline
-                max_year = max_year if max_year > date.year else date.year
-                min_year = min_year if min_year < date.year else date.year
-
-        # if year is None meaning get all contributions 
-        # all the way from first push to recent push
         payload = [{'contribs': list(contribs_ref.values())}]
-        if year == None:
+        if year is None:
             payload[0]['min_year'] = min_year
             payload[0]['max_year'] = max_year
-    
-        if response.status_code == 200:
-            print('retrieval successful')
-            return jsonify(payload)
-        
-        return json.dumps(({'success': False}, response.status_code, {'Content-Type': 'application/json'}))
 
-    except NameResolutionError as e:
-        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+        return jsonify(payload)
 
-    except ConnectionError as e:
-        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
-
-    except MaxRetryError as e:
-        return json.dumps(({'success': False, 'message': f'{e} has occured'}, response.status_code, {'Content-Type': 'application/json'}))
+    except requests.exceptions.RequestException as e:
+        return jsonify({'success': False, 'message': f'{e} has occured'}), 502
+    except ValueError as e:
+        return jsonify({'success': False, 'message': f'GraphQL error: {e}'}), 502
