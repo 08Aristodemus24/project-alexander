@@ -41,7 +41,6 @@ CONTRIB_LEVELS = {
     'THIRD_QUARTILE': 3,
     'FOURTH_QUARTILE': 4
 }
-# print(os.environ.get('GITHUB_ACCESS_TOKEN'))
 
 @app.route('/')
 def index():

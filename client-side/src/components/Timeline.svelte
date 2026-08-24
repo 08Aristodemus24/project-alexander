@@ -13,21 +13,33 @@
     export let curr_index;
 
     const exp_descriptions = [
-        {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: ["Primarily developed reports using the X++ programming language", "Queried data from company database to create reports"]},
-        {year: '2023', title: 'Full Stack Web Developer', organization: 'LMC Engineering Front', accolades: ["Currently building client-side and server-side architecture of our engineering consultancy business firm"]},
-        {title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Currently mentoring and guiding GDSC-PUPs AI/ML department in developing roadmap to be used by junior AI/ML cadets"]},
-        {year: '2024', title: 'Data Engineer Intern', organization: 'Virtuals Protocol', accolades: ["Cleaned, preprocessed, and ingested data for RAG AI agents"]},
+        {year: '2022', title: 'X++ Developer', organization: 'Creative Dynamix Solutions, Inc.', accolades: [
+            "Developed and queried data to enhance sales reporting using Power BI and X++, streamlining reporting turnaround for [ ]+ recurring sales reports",
+            "Queried and transformed data from the company's ERP database to build production-ready X++ reports consumed by [ ]+ sales/ops stakeholders",
+            "Utilized AnyDesk to tunnel into a remote virtual machine environment for day-to-day report development and deployment tasks"
+        ]},
+        {title: 'AI/ML Subject Matter Expert', organization: 'GDSC PUP (Manila Chapter)', accolades: ["Currently mentoring and guiding GDSC-PUP's AI/ML department in developing roadmap to be used by junior AI/ML cadets"]},
+        {year: '2024', title: 'Data Engineer Intern', organization: 'Virtuals Protocol', accolades: [
+            "Cleaned and processed more than 500k rows of data for various retrieval augmented generation (RAG) AI agents",
+            "Developed and wrote scripts automating data ingestion processes for RAG AI agents, pulling raw datasets uploaded by users to offload the main workflow to data transformation"
+        ]},
         {title: 'Customer Support', organization: 'Virtuals Protocol', accolades: 
             [
-                "Addressed ff. technical issues faced by clients in building RAG AI agents",
-                "automatic HTTP request of agent to X/Twitter API endpoints",
-                "created guides for clients/builders how to create their own custom functionalities for their respective agents i.e. automatic image generation using OPEN AI API, posting tweets on X using X API, etc.",
-                "Agent interacting automatically with X users allows increase in market capital"
+                "Addressed technical issues faced by clients in building RAG AI agents",
+                "Debugged automatic HTTP requests from agents to the X/Twitter API endpoints",
+                "Created guides for clients/builders on custom agent functionalities, e.g. automatic image generation via the OpenAI API, posting tweets via the X API",
+                "Enabled agents to interact automatically with X users, contributing to increased market capital"
             ]},
-        // {year: '2024', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
-        // {year: '2025', title: 'AI Researcher', organization: 'Deep Mind', accolades: ["Lead a team of ML researchers in conducting an experiment of testing novel language model architectures"]},
+        {year: '2025', title: 'Data & Analytics Engineer', organization: 'ACEN Corporation', accolades: [
+            "Architected an ELT pipeline ingesting quarterly cost data across 3 fiscal years, 16+ workstreams, and 4 cost categories into Snowflake, replacing a fully manual Excel-driven process for FP&A",
+            "Built a 3-layer dbt pipeline (staging → intermediate → marts) with SCD Type 2 dimensions, surfaced in a Power BI dashboard for FP&A and CFO-level stakeholders",
+            "Spearheading a SharePoint Lists → MS Graph API → Snowflake redesign of the cost pipeline, delivering Snowflake Intelligence Agents as a self-service interface for FP&A",
+            "Replaced a paid Fivetran connector with a custom REST API integration, eliminating recurring SaaS spend entirely ($0 ingestion cost)",
+            "Automated ingestion of IT tickets, Microsoft user data, and dbt metadata into Snowflake, enabling real-time analytics across 5+ IT teams processing thousands of records daily",
+            "Built an ML time-series model forecasting IT ticket volumes 1–6 months ahead to support proactive resource planning",
+            "Contributed to Project Apollo's SAP ERP pipeline, standardizing 14 source table schemas and implementing MD5-hashed MERGE logic for idempotent incremental loads"
+        ]},
+        {title: 'AI-900: Microsoft Azure AI Fundamentals', organization: 'Microsoft Certification', accolades: ["Passed the AI-900: Microsoft Azure AI Fundamentals certification exam"]},
     ];
 
     // determine the number of grid columns based 
