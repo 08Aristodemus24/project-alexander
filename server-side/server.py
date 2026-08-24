@@ -54,17 +54,20 @@ def get_repos(repo_limit=None):
     github access token
     """
 
-    # if no limit is provided for number 
-    # of repos to fetch use default of 30
-    url = "https://api.github.com/users/08Aristodemus24/repos{}".format('' if repo_limit == None else f'?per_page={repo_limit}')
-    accept = 'application/vnd.github+json'
-    auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
-    headers = {
-        "Accept": accept,
-        # "Authorization": auth_token
-    }
+    # # if no limit is provided for number 
+    # # of repos to fetch use default of 30
+    # url = "https://api.github.com/users/08Aristodemus24/repos{}".format('' if repo_limit == None else f'?per_page={repo_limit}')
+    # accept = 'application/vnd.github+json'
+    # auth_token = f"Bearer {os.environ['GITHUB_ACCESS_TOKEN']}"
+    # headers = {
+    #     "Accept": accept,
+    #     # "Authorization": auth_token
+    # }
+    # response = requests.get(url, headers=headers)
+    
+    url = "https://api.github.com/users/08Aristodemus24/repos"
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     data = response.json()
 
     # check if response returns an 'ok' (200) status 
