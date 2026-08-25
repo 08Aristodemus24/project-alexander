@@ -69,13 +69,20 @@ in Vercel's project settings under **Environment Variables**), add:
 GMAIL_CLIENT_ID=<from step 4>
 GMAIL_CLIENT_SECRET=<from step 4>
 GMAIL_REFRESH_TOKEN=<from step 5>
-GMAIL_SENDER=<the Gmail address you're sending from>
 GMAIL_RECEIVER=<the address you want the form submissions sent to>
 ```
 
 `.gitignore` should already exclude `.env` — never commit the real file. If you
-deploy to Vercel, set these same five as **environment variables in the Vercel
+deploy to Vercel, set these same four as **environment variables in the Vercel
 dashboard**, not in code — `.env` files aren't uploaded on most platforms.
+
+Note there's no `GMAIL_SENDER` var here — see step 8 below, where the "from" address
+is built from what the *visitor* typed into the form instead of a fixed env var.
+
+**Environment scoping on Vercel**: if you set these under "Production" only (as
+shown in the Vercel dashboard's environment picker), they will *not* be present on
+Preview deployments (pushes to non-production branches, PRs). If you push somewhere
+other than your production branch and the mail route fails there, this is why.
 
 You can delete the old `SERVICE_ID`, `TEMPLATE_ID`, `PUBLIC_KEY`, `PRIVATE_KEY` vars
 once the migration is done.
@@ -89,6 +96,38 @@ google-auth
 google-auth-httplib2
 google-api-python-client
 ```
+
+**Why this step matters more than it looks:** these imports load at the top of
+`server.py`, before any route runs. If the packages aren't actually installed at
+deploy time, the whole app fails to import — meaning *every* route crashes (not just
+`/send-mail`), which on Vercel shows up as a generic
+`500: INTERNAL_SERVER_ERROR — FUNCTION_INVOCATION_FAILED` with no obvious link to
+mail sending at all. Always check the deployment's **Function Logs** (or Build Logs)
+in the Vercel dashboard for the real Python traceback rather than guessing from the
+crash page — it's the fastest way to tell "dependency missing" apart from "dependency
+conflict" apart from an actual runtime bug.
+
+**Watch for dependency conflicts, too.** If `requirements.txt` already has other
+packages with hard-pinned versions (e.g. `click==8.1.7`), adding a new library can
+introduce a transitive requirement that conflicts with an existing pin — Vercel's `uv`
+resolver will fail the *build* outright with a message like:
+
+```
+Because typer==0.24.1 depends on click>=8.2.1 and your project depends
+on click==8.1.7, we can conclude that your project and typer==0.24.1
+are incompatible.
+```
+
+This isn't caused by the Gmail packages specifically — it can happen any time you add
+a new dependency to a `requirements.txt` that has other exact-version pins sitting in
+it. Fix it by loosening or bumping whichever pin is too low (here, `click==8.1.7` →
+`click==8.2.1`) — check first that nothing else in the file caps it lower than what's
+needed.
+
+It's also worth periodically checking `requirements.txt` for packages nothing in
+`server.py` actually imports (leftover from copying a broader environment's
+`pip freeze`). They don't cause today's bug, but each one is a future version-conflict
+risk and adds to your Vercel function's bundle size.
 
 ## 8. Update `server.py`
 
