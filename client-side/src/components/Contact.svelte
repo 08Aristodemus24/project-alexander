@@ -22,6 +22,7 @@
 
             // send here the data from the contact component to 
             // the backend proxy server
+
             // // for development
             // const url = 'http://127.0.0.1:5000/send-mail';
             // for production

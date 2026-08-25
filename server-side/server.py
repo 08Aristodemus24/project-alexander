@@ -1,10 +1,16 @@
+import base64
+import requests
+import json
+
+from email.mime.text import MIMEText
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
-import requests
 from requests.exceptions import ConnectionError
 from urllib3.exceptions import MaxRetryError, NameResolutionError
-import json
 from bs4 import BeautifulSoup
 from datetime import datetime as dt
 
@@ -90,42 +96,87 @@ def get_repos(repo_limit=None):
     # code of the response object
     return json.dumps({'success': False}, response.status_code, {'Content-Type': 'application/json'})
 
+
+def get_gmail_service():
+    """
+    Rebuilds Gmail API credentials from the long-lived refresh token
+    stored in environment variables, then returns an authorized
+    Gmail API client. The account these credentials belong to is
+    always the one actually sending the message — Gmail does not
+    let you send "as" an arbitrary address just by setting a header.
+    """
+    creds = Credentials(
+        token=None,
+        refresh_token=os.environ['GMAIL_REFRESH_TOKEN'],
+        client_id=os.environ['GMAIL_CLIENT_ID'],
+        client_secret=os.environ['GMAIL_CLIENT_SECRET'],
+        token_uri='https://oauth2.googleapis.com/token',
+        scopes=['https://www.googleapis.com/auth/gmail.send'],
+    )
+    return build('gmail', 'v1', credentials=creds)
+
+
+def build_message(raw_data):
+    """
+    Formats the form submission into an email addressed to
+    GMAIL_RECEIVER (your inbox). The 'from' and 'reply-to' headers
+    both use the email address the visitor typed into the form
+    (raw_data['email_address']) rather than a fixed env var, so you
+    can reply straight to whoever submitted the form.
+
+    Note: Gmail will still show the message as sent by your
+    authenticated account (the one behind GMAIL_REFRESH_TOKEN) —
+    it doesn't let a 'from' header spoof an address you don't own.
+    Setting it to the visitor's email here mainly makes the
+    reply-to behavior explicit and keeps the header human-readable;
+    the practical "reply to the visitor" behavior comes from the
+    reply-to header either way.
+    """
+    sender_email = raw_data.get('email_address')
+
+    body = (
+        f"First name: {raw_data.get('first_name')}\n"
+        f"Last name: {raw_data.get('last_name')}\n"
+        f"Email: {sender_email}\n"
+        f"Phone: {raw_data.get('country_code')} {raw_data.get('mobile_num')}\n\n"
+        f"Message:\n{raw_data.get('message')}"
+    )
+
+    message = MIMEText(body)
+    message['to'] = os.environ['GMAIL_RECEIVER']
+    message['from'] = f"Project Alexander Client <{sender_email}>"
+    message['subject'] = f"{raw_data.get('first_name')} {raw_data.get('last_name')} has messaged you"
+    message['reply-to'] = sender_email
+
+    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+    return {
+        'raw': raw
+    }
+
+
 @app.route('/send-mail', methods=['POST'])
 def send_mail():
     """
-    catches the http post request from the form in the front end
-    and makes a proxy request to email.js to post the raw data
-    in order to send as an email to designated email
+    Catches the HTTP POST request from the form in the front end
+    and sends the submission as an email via the Gmail API, using
+    the visitor's own submitted email as the from/reply-to address.
     """
-    # prints the ff: {'first_name': '<first name>', 'last_name': 
-    # '<last name>', 'email_address': '<email_address>', 'country_code': 
-    # '<country code>', 'mobile_num': '<mobile number>', 'message': '<message>'}
     raw_data = request.json
     print(type(raw_data))
     print(raw_data)
-    
-    url = 'https://api.emailjs.com/api/v1.0/email/send'
-    headers = {
-        'content-type': 'application/json'
-    }
-    data = {
-        'service_id': os.environ['SERVICE_ID'],
-        'template_id': os.environ['TEMPLATE_ID'],
-        'user_id': os.environ['PUBLIC_KEY'],
-        'accessToken': os.environ['PRIVATE_KEY'],
-        'template_params': raw_data
-    }
 
-    response = requests.post(url=url, headers=headers, data=json.dumps(data))
-    
-    if response.status_code == 200:
+    try:
+        service = get_gmail_service()
+        message = build_message(raw_data)
+        service.users().messages().send(userId='me', body=message).execute()
+
         print('submission successful')
         return json.dumps(({'success': True, 'message': 'submission successful'}, 200, {'Content-Type': 'application/text'}))
-    
-    else:
-        print(f'submission unsucessful.\nstatus code: {response.status_code}\nmessage: {response.text}')
-        return json.dumps(({'success': False, 'message': 'submission unsuccessful'}, response.status_code, {'Content-Type': 'application/text'}))
-    
+
+    except Exception as e:
+        print(f'submission unsuccessful.\nerror: {e}')
+        return json.dumps(({'success': False, 'message': 'submission unsuccessful'}, 500, {'Content-Type': 'application/text'}))
+
 # @app.route('/contribs/<int:year>', methods=['GET'])
 # @app.route('/contribs', methods=['GET'])
 # def get_contribs(year=None):

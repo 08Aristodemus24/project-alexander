@@ -65,7 +65,7 @@
     </div>
     <div class="email-container">
         <label for="email-address" class="email-label">Email</label>
-        <input type="email" name="email_address" id="email-address" class="email-field" placeholder="MichaelAveuc571@gmail.com" bind:value={email_address} required/>
+        <input type="email" name="email_address" id="email-address" class="email-field" placeholder="larrymiguelcueva@gmail.com" bind:value={email_address} required/>
     </div>
     <div class="country-code-container">
         <label for="country-code" class="country-code-label">Country Code</label>
