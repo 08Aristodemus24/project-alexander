@@ -29,7 +29,7 @@
             {/each}
         </table>
     </button>
-    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/auto-job-app-sender/master/client-side/src/boards/data_engineer_cv_wsum_full_template_new.pdf" download="Larry_Miguel_R_Cueva_CV.pdf">
+    <a class="cv-button" href="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/data_engineer_cv_wsum_full_template_new.pdf" download="Larry_Miguel_R_Cueva_CV.pdf">
         <span class="cv-header">Download CV</span>
         <span class="download-icon"></span>
     </a>
