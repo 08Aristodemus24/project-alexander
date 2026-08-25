@@ -76,8 +76,7 @@ def get_repos(repo_limit=None):
     # }
     # response = requests.get(url, headers=headers)
     
-    url = "https://api.github.com/users/08Aristodemus24/repos"
-
+    url = "https://api.github.com/users/08Aristodemus24/repos{}".format('' if repo_limit == None else f'?per_page={repo_limit}')
     response = requests.get(url)
     data = response.json()
 
