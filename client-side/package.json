@@ -1,0 +1,24 @@
+{
+  "name": "client-side",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./src/assets/stylesheets/custom.css -o ./src/app.css",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "svelte": "^4.0.5",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@threlte/core": "^6.0.10",
+    "@threlte/extras": "^7.0.0",
+    "three": "^0.157.0"
+  }
+}
