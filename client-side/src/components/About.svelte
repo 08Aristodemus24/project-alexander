@@ -29,7 +29,8 @@
 
             {#if is_mounted === true}
                 <video autoplay muted loop>
-                    <source src="https://raw.githubusercontent.com/08Aristodemus24/project-alexander/master/client-side/src/boards/compressed%20images/Skillsfinal.mp4" type="video/mp4">
+                    <!-- Point to your Vercel API route -->
+                    <source src="/api/video" type="video/mp4">
                 </video>
             {/if}
         </div>
